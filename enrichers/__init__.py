@@ -4,6 +4,7 @@ from .clb import enrich_clb
 from .mysql import enrich_mysql
 from .redis_enrich import enrich_redis
 from .generic import enrich_generic
+from .gaap import enrich_gaap
 
 # Map ServiceType -> enricher function
 ENRICHERS = {
@@ -12,6 +13,7 @@ ENRICHERS = {
     "clb": enrich_clb,
     "cdb": enrich_mysql,
     "redis": enrich_redis,
+    "gaap": enrich_gaap,
 }
 
 
