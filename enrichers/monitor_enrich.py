@@ -78,6 +78,7 @@ def enrich_monitor(cred, region, resource_ids):
             req.from_json_string(json.dumps({
                 "Module": "monitor",
                 "NoticeIds": notice_ids,
+                "Order": "DESC",
                 "PageNumber": 1,
                 "PageSize": 200,
             }))

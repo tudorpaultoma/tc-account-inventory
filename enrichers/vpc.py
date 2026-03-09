@@ -49,18 +49,21 @@ def enrich_vpc(cred, region, resource_ids):
     if not resource_ids:
         return {}
 
-    client = _make_client(cred, region)
+    # Address templates are global resources but VPC API requires a real region
+    effective_region = region if region and region != "global" else "ap-singapore"
+    client = _make_client(cred, effective_region)
     result = {}
 
     # Group IDs by prefix
     groups = {
         "vpc-": [], "subnet-": [], "acl-": [], "sg-": [],
-        "eip-": [], "rtb-": [],
+        "eip-": [], "eipv6-": [], "rtb-": [], "ipm-": [], "ipmg-": [],
     }
     other = []
     for rid in resource_ids:
         matched = False
-        for prefix in groups:
+        # Check longer prefixes first to avoid ipmg- matching ipm-
+        for prefix in sorted(groups.keys(), key=len, reverse=True):
             if rid.startswith(prefix):
                 groups[prefix].append(rid)
                 matched = True
@@ -108,6 +111,14 @@ def enrich_vpc(cred, region, resource_ids):
             "AddressIds", "AddressSet", "AddressId", "AddressName",
         ))
 
+    # IPv6 EIPs
+    if groups["eipv6-"]:
+        result.update(_fetch_by_ids(
+            client, groups["eipv6-"],
+            "DescribeIp6Addresses", models.DescribeIp6AddressesRequest,
+            "Ip6AddressIds", "AddressSet", "AddressId", "AddressName",
+        ))
+
     # Route Tables
     if groups["rtb-"]:
         result.update(_fetch_by_ids(
@@ -115,6 +126,50 @@ def enrich_vpc(cred, region, resource_ids):
             "DescribeRouteTables", models.DescribeRouteTablesRequest,
             "RouteTableIds", "RouteTableSet", "RouteTableId", "RouteTableName",
         ))
+
+    # Address Templates (IP parameter templates)
+    if groups["ipm-"]:
+        try:
+            for i in range(0, len(groups["ipm-"]), 100):
+                batch = groups["ipm-"][i:i + 100]
+                req = models.DescribeAddressTemplatesRequest()
+                req.from_json_string(json.dumps({
+                    "Filters": [{"Name": "address-template-id", "Values": batch}],
+                    "Limit": "100",
+                }))
+                resp = client.DescribeAddressTemplates(req)
+                for tpl in (resp.AddressTemplateSet or []):
+                    result[tpl.AddressTemplateId] = {
+                        "ResourceType": "address-template",
+                        "PaymentModel": "",
+                        "Status": "",
+                        "Name": tpl.AddressTemplateName or "",
+                        "CreationDate": getattr(tpl, "CreatedTime", "") or "",
+                    }
+        except TencentCloudSDKException as e:
+            print(f"  [WARN] VPC DescribeAddressTemplates error: {e}")
+
+    # Address Template Groups (IP parameter template groups)
+    if groups["ipmg-"]:
+        try:
+            for i in range(0, len(groups["ipmg-"]), 100):
+                batch = groups["ipmg-"][i:i + 100]
+                req = models.DescribeAddressTemplateGroupsRequest()
+                req.from_json_string(json.dumps({
+                    "Filters": [{"Name": "address-template-group-id", "Values": batch}],
+                    "Limit": "100",
+                }))
+                resp = client.DescribeAddressTemplateGroups(req)
+                for grp in (resp.AddressTemplateGroupSet or []):
+                    result[grp.AddressTemplateGroupId] = {
+                        "ResourceType": "address-template-group",
+                        "PaymentModel": "",
+                        "Status": "",
+                        "Name": grp.AddressTemplateGroupName or "",
+                        "CreationDate": getattr(grp, "CreatedTime", "") or "",
+                    }
+        except TencentCloudSDKException as e:
+            print(f"  [WARN] VPC DescribeAddressTemplateGroups error: {e}")
 
     # Keep unknown-prefix resources (don't flag as ghost)
     for rid in other:

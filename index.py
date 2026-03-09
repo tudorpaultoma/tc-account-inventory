@@ -7,7 +7,7 @@ enriches them with service-specific details (type, payment model, status),
 outputs a CSV inventory file and uploads it to COS.
 
 SCF Entry point: index.main_handler
-Version: 2.2.0 — single-file core + enrichers package
+Version: 2.3.0 — single-file core + enrichers package
 """
 
 import os
@@ -51,7 +51,7 @@ SERVICE_RESOURCE_MAP = {
     "cvm": ["instance"],
     "cbs": ["disk"],
     "clb": ["lb"],
-    "vpc": ["vpc", "subnet", "eip", "natGateway", "vpngw"],
+    "vpc": ["vpc", "subnet", "eip", "eipv6", "natGateway", "vpngw", "address", "addressGroup"],
     "ccn": ["ccn"],
     "scf": ["function"],
     "cos": ["bucket"],
@@ -65,7 +65,7 @@ SERVICE_RESOURCE_MAP = {
     "es": ["instance"],           # Elasticsearch
     "emr": ["emr-instance"],
     "tke": ["cluster"],
-    "cls": ["topic"],
+    "cls": ["topic", "logset", "machineGroup", "alarm", "notice"],
     "ckafka": ["instance"],
     "tdmq": ["cluster"],
     "lighthouse": ["instance"],
@@ -473,7 +473,7 @@ def upload_to_cos(csv_content):
 
 def main_handler(event, context):
     """SCF entry point."""
-    print("[*] TC Account Inventory — SCF invocation started (v2.2.0)")
+    print("[*] TC Account Inventory — SCF invocation started (v2.3.0)")
     start = time.time()
 
     try:
