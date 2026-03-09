@@ -39,9 +39,11 @@ def enrich_ctsdb(cred, region, resource_ids):
     except TencentCloudSDKException as e:
         print(f"  [WARN] CTSDB DescribeClusters error: {e}")
 
-    # Fill missing
-    for rid in resource_ids:
-        if rid not in result:
-            result[rid] = {"ResourceType": "", "PaymentModel": "", "Status": "", "Name": "", "CreationDate": ""}
+    # Log ghosts
+    found = len(result)
+    ghost = len(resource_ids) - found
+    if ghost:
+        ghost_ids = [rid for rid in resource_ids if rid not in result]
+        print(f"  [CTSDB] {found} valid, {ghost} ghost resources: {ghost_ids[:5]}")
 
     return result

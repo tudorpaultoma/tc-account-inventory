@@ -28,6 +28,7 @@
         "cam:DescribeRoleList",
         "cam:GetPolicy",
         "tke:DescribeClusters",
+        "tke:DescribeClusterInstances",
         "ssl:DescribeCertificates",
         "scf:ListFunctions",
         "cls:DescribeTopics",
@@ -50,7 +51,9 @@
         "organization:DescribeOrganizationMembers",
         "rum:DescribeProjects",
         "ctsdb:DescribeClusters",
-        "privatedns:DescribePrivateZoneList"
+        "privatedns:DescribePrivateZoneList",
+        "gme:DescribeApplicationList",
+        "trtc:DescribeTrtcUsage"
       ],
       "resource": ["*"]
     }

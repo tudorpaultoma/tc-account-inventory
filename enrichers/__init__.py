@@ -24,6 +24,8 @@ from .vod_enrich import enrich_vod
 from .organization_enrich import enrich_organization
 from .rum_enrich import enrich_rum
 from .ctsdb_enrich import enrich_ctsdb
+from .gme import enrich_gme
+from .trtc import enrich_trtc
 
 # Map ServiceType -> enricher function
 ENRICHERS = {
@@ -52,6 +54,8 @@ ENRICHERS = {
     "organization": enrich_organization,
     "rum": enrich_rum,
     "ctsdb": enrich_ctsdb,
+    "gme": enrich_gme,
+    "trtc": enrich_trtc,
 }
 
 

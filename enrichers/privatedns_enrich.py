@@ -40,18 +40,16 @@ def enrich_privatedns(cred, region, resource_ids):
                 break
             offset += 100
 
+        found = 0
         for rid in resource_ids:
             if rid in all_zones:
                 result[rid] = all_zones[rid]
-            else:
-                print(f"  [PrivateDNS] zone {rid} not found in API (zones returned: {list(all_zones.keys())[:5]})")
-                result[rid] = {
-                    "ResourceType": "",
-                    "PaymentModel": "",
-                    "Status": "",
-                    "Name": "",
-                    "CreationDate": "",
-                }
+                found += 1
+
+        ghost = len(resource_ids) - found
+        if ghost:
+            ghost_ids = [rid for rid in resource_ids if rid not in all_zones]
+            print(f"  [PrivateDNS] {found} valid, {ghost} ghost zones: {ghost_ids[:5]}")
     except TencentCloudSDKException as e:
         print(f"  [WARN] PrivateDNS DescribePrivateZoneList error: {e}")
         for rid in resource_ids:

@@ -47,15 +47,19 @@ def enrich_cos(cred, region, resource_ids):
 
     result = {}
     for rid in resource_ids:
-        # resource_ids for COS are empty; the ResourcePrefix holds the bucket name
-        # But enricher receives ResourceId, which is empty for COS buckets.
-        # We'll still return a default entry; COS creation dates need special handling.
-        result[rid] = {
-            "ResourceType": "",
-            "PaymentModel": "",
-            "Status": "",
-            "Name": "",
-            "CreationDate": bucket_dates.get(rid, ""),
-        }
+        if rid in bucket_dates:
+            result[rid] = {
+                "ResourceType": "",
+                "PaymentModel": "",
+                "Status": "",
+                "Name": "",
+                "CreationDate": bucket_dates.get(rid, ""),
+            }
+
+    found = len(result)
+    ghost = len(resource_ids) - found
+    if ghost:
+        ghost_ids = [rid for rid in resource_ids if rid not in result]
+        print(f"  [COS] {found} valid, {ghost} ghost buckets: {ghost_ids[:5]}")
 
     return result

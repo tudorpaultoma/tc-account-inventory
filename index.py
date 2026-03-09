@@ -374,7 +374,7 @@ def generate_inventory(cred):
         time.sleep(API_SLEEP)
 
     # 4b. Filter ghost resources — not found by their service API
-    VALIDATED_SERVICES = {"gaap", "cvm", "vpc", "as", "clb", "cbs", "cdb", "redis", "tke", "ssl", "privatedns"}
+    VALIDATED_SERVICES = {"gaap", "cvm", "vpc", "as", "clb", "cbs", "cdb", "redis", "tke", "ssl", "privatedns", "tione", "trtc", "gme", "cos", "ctsdb"}
     before = len(all_resources)
     all_resources = [
         r for r in all_resources
