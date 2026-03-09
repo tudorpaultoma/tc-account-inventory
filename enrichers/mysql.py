@@ -34,6 +34,7 @@ def enrich_mysql(cred, region, resource_ids):
                         "PaymentModel": "PREPAID" if inst.PayType == 0 else "POSTPAID",
                         "Status": str(inst.Status) if inst.Status is not None else "",
                         "Name": inst.InstanceName or "",
+                        "CreationDate": inst.CreateTime or "",
                     }
         except TencentCloudSDKException as e:
             print(f"  [WARN] MySQL enrich error (region={region}): {e}")

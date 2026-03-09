@@ -8,4 +8,5 @@ def enrich_generic(cred, region, resource_ids):
         "PaymentModel": "",
         "Status": "",
         "Name": "",
+        "CreationDate": "",
     } for rid in resource_ids}

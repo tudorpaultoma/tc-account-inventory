@@ -42,6 +42,7 @@ def enrich_cvm(cred, region, resource_ids):
                         "PaymentModel": inst.InstanceChargeType or "",
                         "Status": inst.InstanceState or "",
                         "Name": inst.InstanceName or "",
+                        "CreationDate": inst.CreatedTime or "",
                     }
         except TencentCloudSDKException as e:
             print(f"  [WARN] CVM enrich error (region={region}): {e}")

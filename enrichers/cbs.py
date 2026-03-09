@@ -34,6 +34,7 @@ def enrich_cbs(cred, region, resource_ids):
                         "PaymentModel": d.DiskChargeType or "",
                         "Status": d.DiskState or "",
                         "Name": d.DiskName or "",
+                        "CreationDate": d.CreateTime or "",
                     }
         except TencentCloudSDKException as e:
             print(f"  [WARN] CBS enrich error (region={region}): {e}")

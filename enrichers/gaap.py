@@ -29,6 +29,7 @@ def _fetch_proxies(client):
                 "PaymentModel": "",
                 "Status": p.Status or "",
                 "Name": p.ProxyName or "",
+                "CreationDate": p.CreateTime or "",
             }
         if not resp.ProxySet or len(result) >= (resp.TotalCount or 0):
             break
@@ -75,6 +76,7 @@ def _fetch_real_servers(client):
                 "PaymentModel": "",
                 "Status": "",
                 "Name": rs.RealServerName or "",
+                "CreationDate": "",
             }
         if not resp.RealServerSet or len(result) >= (resp.TotalCount or 0):
             break
@@ -117,14 +119,6 @@ def enrich_gaap(cred, region, resource_ids):
     for rid in resource_ids:
         if rid in valid:
             result[rid] = valid[rid]
-        # domain IDs (dm-*) can't be directly listed — keep them if a proxy exists
-        elif rid.startswith("dm-"):
-            result[rid] = {
-                "ResourceType": "domain",
-                "PaymentModel": "",
-                "Status": "",
-                "Name": "",
-            }
 
     found = len(result)
     ghost = len(resource_ids) - found

@@ -35,6 +35,7 @@ def enrich_clb(cred, region, resource_ids):
                         "PaymentModel": lb.ChargeType if hasattr(lb, "ChargeType") else "",
                         "Status": str(lb.Status) if lb.Status is not None else "",
                         "Name": lb.LoadBalancerName or "",
+                        "CreationDate": lb.CreateTime or "",
                     }
         except TencentCloudSDKException as e:
             print(f"  [WARN] CLB enrich error (region={region}): {e}")

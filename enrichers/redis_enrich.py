@@ -44,6 +44,7 @@ def enrich_redis(cred, region, resource_ids):
                     "PaymentModel": "PREPAID" if inst.BillingMode == 1 else "POSTPAID",
                     "Status": str(inst.Status) if inst.Status is not None else "",
                     "Name": inst.InstanceName or "",
+                    "CreationDate": inst.Createtime or "",
                 }
     except TencentCloudSDKException as e:
         print(f"  [WARN] Redis enrich error (region={region}): {e}")

@@ -1,0 +1,52 @@
+{
+  "version": "2.0",
+  "statement": [
+    {
+      "effect": "allow",
+      "action": [
+        "tag:GetResources",
+        "cvm:DescribeRegions",
+        "cvm:DescribeInstances",
+        "cbs:DescribeDisks",
+        "clb:DescribeLoadBalancers",
+        "cdb:DescribeDBInstances",
+        "redis:DescribeInstances",
+        "gaap:DescribeProxies",
+        "gaap:DescribeProxyGroupList",
+        "gaap:DescribeRealServers",
+        "vpc:DescribeVpcs",
+        "vpc:DescribeSubnets",
+        "vpc:DescribeNetworkAcls",
+        "vpc:DescribeSecurityGroups",
+        "vpc:DescribeAddresses",
+        "vpc:DescribeRouteTables",
+        "as:DescribeAutoScalingGroups",
+        "as:DescribeLaunchConfigurations",
+        "cam:DescribeRoleList",
+        "cam:GetPolicy",
+        "tke:DescribeClusters",
+        "ssl:DescribeCertificates",
+        "scf:ListFunctions",
+        "cls:DescribeTopics",
+        "cls:DescribeLogsets",
+        "lighthouse:DescribeInstances",
+        "lighthouse:DescribeBlueprints",
+        "apigw:DescribeServicesStatus",
+        "cos:GetService",
+        "cos:PutObject",
+        "tat:DescribeCommands",
+        "live:DescribeLiveDomains",
+        "monitor:DescribeGrafanaInstances",
+        "monitor:DescribePrometheusInstances",
+        "monitor:DescribeAlarmNotices",
+        "vod:DescribeSubAppIds",
+        "organization:DescribeOrganizationNodes",
+        "organization:DescribeOrganizationMembers",
+        "rum:DescribeProjects",
+        "ctsdb:DescribeClusters",
+        "privatedns:DescribePrivateZoneList"
+      ],
+      "resource": ["*"]
+    }
+  ]
+}
