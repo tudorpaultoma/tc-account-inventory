@@ -1,0 +1,710 @@
+# -*- coding: utf8 -*-
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import json
+
+from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
+from tencentcloud.common.abstract_client import AbstractClient
+from tencentcloud.tat.v20201028 import models
+
+
+class TatClient(AbstractClient):
+    _apiVersion = '2020-10-28'
+    _endpoint = 'tat.intl.tencentcloudapi.com'
+    _service = 'tat'
+
+
+    def CancelInvocation(self, request):
+        r"""Cancel the executed command on one or multiple instances.
+
+        * If the command is not delivered to the agent and the task status is in PENDING, DELIVERING, or DELIVER_DELAYED, the state of a task is CANCELLED after cancellation.
+        * If the command is sent to the agent and the task status is RUNNING, the task status is TERMINATED after cancellation.
+
+        :param request: Request instance for CancelInvocation.
+        :type request: :class:`tencentcloud.tat.v20201028.models.CancelInvocationRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.CancelInvocationResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("CancelInvocation", params, headers=headers)
+            response = json.loads(body)
+            model = models.CancelInvocationResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def CreateCommand(self, request):
+        r"""This API is used to create a command.
+
+        :param request: Request instance for CreateCommand.
+        :type request: :class:`tencentcloud.tat.v20201028.models.CreateCommandRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.CreateCommandResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("CreateCommand", params, headers=headers)
+            response = json.loads(body)
+            model = models.CreateCommandResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def CreateInvoker(self, request):
+        r"""This API is used to create an invoker.
+
+        :param request: Request instance for CreateInvoker.
+        :type request: :class:`tencentcloud.tat.v20201028.models.CreateInvokerRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.CreateInvokerResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("CreateInvoker", params, headers=headers)
+            response = json.loads(body)
+            model = models.CreateInvokerResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def CreateRegisterCode(self, request):
+        r"""This API is used to create a registration code.
+
+        :param request: Request instance for CreateRegisterCode.
+        :type request: :class:`tencentcloud.tat.v20201028.models.CreateRegisterCodeRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.CreateRegisterCodeResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("CreateRegisterCode", params, headers=headers)
+            response = json.loads(body)
+            model = models.CreateRegisterCodeResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DeleteCommand(self, request):
+        r"""This API is used to delete a command.
+        Commands bound to an invoker cannot be deleted.
+
+        :param request: Request instance for DeleteCommand.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DeleteCommandRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DeleteCommandResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DeleteCommand", params, headers=headers)
+            response = json.loads(body)
+            model = models.DeleteCommandResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DeleteCommands(self, request):
+        r"""This API is used to execute batch deletion commands.
+
+        :param request: Request instance for DeleteCommands.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DeleteCommandsRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DeleteCommandsResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DeleteCommands", params, headers=headers)
+            response = json.loads(body)
+            model = models.DeleteCommandsResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DeleteInvoker(self, request):
+        r"""This API is used to delete an invoker.
+
+        :param request: Request instance for DeleteInvoker.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DeleteInvokerRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DeleteInvokerResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DeleteInvoker", params, headers=headers)
+            response = json.loads(body)
+            model = models.DeleteInvokerResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DeleteRegisterCodes(self, request):
+        r"""This API is used to delete registration codes in batches.
+
+        :param request: Request instance for DeleteRegisterCodes.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DeleteRegisterCodesRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DeleteRegisterCodesResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DeleteRegisterCodes", params, headers=headers)
+            response = json.loads(body)
+            model = models.DeleteRegisterCodesResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DeleteRegisterInstance(self, request):
+        r"""This API is used to delete managed instances.
+
+        :param request: Request instance for DeleteRegisterInstance.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DeleteRegisterInstanceRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DeleteRegisterInstanceResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DeleteRegisterInstance", params, headers=headers)
+            response = json.loads(body)
+            model = models.DeleteRegisterInstanceResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeAutomationAgentStatus(self, request):
+        r"""This API is used to query the status of the TAT agent.
+
+        :param request: Request instance for DescribeAutomationAgentStatus.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DescribeAutomationAgentStatusRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DescribeAutomationAgentStatusResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeAutomationAgentStatus", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeAutomationAgentStatusResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeCommands(self, request):
+        r"""This API is used to query command details.
+
+        :param request: Request instance for DescribeCommands.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DescribeCommandsRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DescribeCommandsResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeCommands", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeCommandsResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeInvocationTasks(self, request):
+        r"""This API is used to query execution task details.
+
+        :param request: Request instance for DescribeInvocationTasks.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DescribeInvocationTasksRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DescribeInvocationTasksResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeInvocationTasks", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeInvocationTasksResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeInvocations(self, request):
+        r"""This API is used to query execution activity details.
+
+        :param request: Request instance for DescribeInvocations.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DescribeInvocationsRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DescribeInvocationsResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeInvocations", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeInvocationsResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeInvokerRecords(self, request):
+        r"""This API is used to query the execution history of an invoker.
+
+        :param request: Request instance for DescribeInvokerRecords.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DescribeInvokerRecordsRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DescribeInvokerRecordsResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeInvokerRecords", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeInvokerRecordsResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeInvokers(self, request):
+        r"""This API is used to query invoker details.
+
+        :param request: Request instance for DescribeInvokers.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DescribeInvokersRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DescribeInvokersResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeInvokers", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeInvokersResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeQuotas(self, request):
+        r"""This API is used to obtain quota information.
+
+        :param request: Request instance for DescribeQuotas.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DescribeQuotasRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DescribeQuotasResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeQuotas", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeQuotasResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeRegions(self, request):
+        r"""This API is used to query the list of regions that supports TAT.
+        If the `RegionState` is `AVAILABLE`, it means that TAT is available in the region. If no value is returned, TAT is not available in the region.
+
+        :param request: Request instance for DescribeRegions.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DescribeRegionsRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DescribeRegionsResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeRegions", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeRegionsResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeRegisterCodes(self, request):
+        r"""This API is used to query registration code info.
+
+        :param request: Request instance for DescribeRegisterCodes.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DescribeRegisterCodesRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DescribeRegisterCodesResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeRegisterCodes", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeRegisterCodesResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeRegisterInstances(self, request):
+        r"""This API is used to query managed instance information.
+
+        :param request: Request instance for DescribeRegisterInstances.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DescribeRegisterInstancesRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DescribeRegisterInstancesResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeRegisterInstances", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeRegisterInstancesResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeScenes(self, request):
+        r"""This API is used to query scenario details.
+
+        :param request: Request instance for DescribeScenes.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DescribeScenesRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DescribeScenesResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeScenes", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeScenesResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DisableInvoker(self, request):
+        r"""This API is used to disable an invoker.
+
+        :param request: Request instance for DisableInvoker.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DisableInvokerRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DisableInvokerResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DisableInvoker", params, headers=headers)
+            response = json.loads(body)
+            model = models.DisableInvokerResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DisableRegisterCodes(self, request):
+        r"""This API is used to bulk disable registration codes.
+
+        :param request: Request instance for DisableRegisterCodes.
+        :type request: :class:`tencentcloud.tat.v20201028.models.DisableRegisterCodesRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.DisableRegisterCodesResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DisableRegisterCodes", params, headers=headers)
+            response = json.loads(body)
+            model = models.DisableRegisterCodesResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def EnableInvoker(self, request):
+        r"""This API is used to enable an invoker.
+
+        :param request: Request instance for EnableInvoker.
+        :type request: :class:`tencentcloud.tat.v20201028.models.EnableInvokerRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.EnableInvokerResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("EnableInvoker", params, headers=headers)
+            response = json.loads(body)
+            model = models.EnableInvokerResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def InvokeCommand(self, request):
+        r"""This API is used to trigger a command on the specified instance and returns the execution activity ID (inv-xxxxxxxx) on success. Each execution activity has one or more execution tasks (invt-xxxxxxxx) and each execution task indicates an execution record on a CVM or Lighthouse instance.
+
+        * If the agent is not installed on the instance or is offline, an error is returned.
+        * If the command type is not supported by the agent runtime environment, an error is returned.
+        * The specified instance needs to be in a VPC network.
+        * The specified instance needs to be in the RUNNING status.
+        * Only one type of instances (CVM or Lighthouse) can be specified in a single request.
+
+        :param request: Request instance for InvokeCommand.
+        :type request: :class:`tencentcloud.tat.v20201028.models.InvokeCommandRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.InvokeCommandResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("InvokeCommand", params, headers=headers)
+            response = json.loads(body)
+            model = models.InvokeCommandResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def ModifyCommand(self, request):
+        r"""This API is used to modify a command.
+
+        :param request: Request instance for ModifyCommand.
+        :type request: :class:`tencentcloud.tat.v20201028.models.ModifyCommandRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.ModifyCommandResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("ModifyCommand", params, headers=headers)
+            response = json.loads(body)
+            model = models.ModifyCommandResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def ModifyInvoker(self, request):
+        r"""This API is used to modify an invoker.
+
+        :param request: Request instance for ModifyInvoker.
+        :type request: :class:`tencentcloud.tat.v20201028.models.ModifyInvokerRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.ModifyInvokerResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("ModifyInvoker", params, headers=headers)
+            response = json.loads(body)
+            model = models.ModifyInvokerResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def ModifyRegisterInstance(self, request):
+        r"""This API is used to modify managed instance information.
+
+        :param request: Request instance for ModifyRegisterInstance.
+        :type request: :class:`tencentcloud.tat.v20201028.models.ModifyRegisterInstanceRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.ModifyRegisterInstanceResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("ModifyRegisterInstance", params, headers=headers)
+            response = json.loads(body)
+            model = models.ModifyRegisterInstanceResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def PreviewReplacedCommandContent(self, request):
+        r"""This API is used to preview the command with custom parameters. The command is not executed.
+
+        :param request: Request instance for PreviewReplacedCommandContent.
+        :type request: :class:`tencentcloud.tat.v20201028.models.PreviewReplacedCommandContentRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.PreviewReplacedCommandContentResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("PreviewReplacedCommandContent", params, headers=headers)
+            response = json.loads(body)
+            model = models.PreviewReplacedCommandContentResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def RunCommand(self, request):
+        r"""This API is used to execute a command and returns the execution activity ID (inv-xxxxxxxx) on success. Each execution has one or more execution tasks (invt-xxxxxxxx) and each execution task indicates an execution record on a CVM or Lighthouse instance.
+
+        * If the agent is not installed on the instance or is offline, an error is returned.
+        * If the command type is not supported by the agent runtime environment, an error is returned.
+        * The specified instance needs to be in a VPC network.
+        * The specified instance needs to be in the `RUNNING` status.
+        * Only one type of instances (CVM or Lighthouse) can be specified in a single request.
+
+        :param request: Request instance for RunCommand.
+        :type request: :class:`tencentcloud.tat.v20201028.models.RunCommandRequest`
+        :rtype: :class:`tencentcloud.tat.v20201028.models.RunCommandResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("RunCommand", params, headers=headers)
+            response = json.loads(body)
+            model = models.RunCommandResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))

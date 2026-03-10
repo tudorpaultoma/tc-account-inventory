@@ -1,0 +1,1297 @@
+# -*- coding: utf8 -*-
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import json
+
+from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
+from tencentcloud.common.abstract_client import AbstractClient
+from tencentcloud.trtc.v20190722 import models
+
+
+class TrtcClient(AbstractClient):
+    _apiVersion = '2019-07-22'
+    _endpoint = 'trtc.intl.tencentcloudapi.com'
+    _service = 'trtc'
+
+
+    def ControlAIConversation(self, request):
+        r"""This API is used to provide service for server-side robot control.
+
+        :param request: Request instance for ControlAIConversation.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.ControlAIConversationRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.ControlAIConversationResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("ControlAIConversation", params, headers=headers)
+            response = json.loads(body)
+            model = models.ControlAIConversationResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def CreateCloudModeration(self, request):
+        r"""API description:
+        This API is used to enable the cloud moderation feature to complete audio and video slicing, video frame extraction, and audio stream recording in the room, and submit them to the specified moderation supplier for completing the moderation.
+
+        This API is used to achieve the following goals:
+        * This API is used to specify the moderation parameters (ModerationParams) to specify the detailed parameters required for moderation.
+        * This API is used to specify the storage parameter (SliceStorageParams) to specify the cloud storage you want to upload the file complying with the moderation policy to. Currently, Tencent Cloud Object Storage (COS) and third-party AWS are supported.
+
+        :param request: Request instance for CreateCloudModeration.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.CreateCloudModerationRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.CreateCloudModerationResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("CreateCloudModeration", params, headers=headers)
+            response = json.loads(body)
+            model = models.CreateCloudModerationResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def CreateCloudRecording(self, request):
+        r"""API description:.
+        Start on-cloud recording to complete audio and video recording in the room and upload to designated cloud storage. This API is used to record each audio and video stream in the TRTC room separately or merge multiple video images into one stream.
+        Before official online operation, pay attention to the recording best practices (https://www.tencentcloud.comom/document/product/647/76497?from_cn_redirect=1#e7e2f04c-6cde-43c9-9cd0-0f8d22dee68c). In conjunction with best practices, it can greatly improve API recording availability.
+
+        This API is used to achieve the following goals:.
+        Specify the subscription stream parameter (RecordParams) to specify the blocklist or allowlist of anchors that need to be recorded.
+        * This API is used to specify the storage parameter (StorageParams) to specify the cloud storage you want to upload to. Currently, Tencent Cloud Video on Demand (VOD), Cloud Object Storage (COS), and third-party AWS are supported.
+        Specify detailed parameters for audio and video transcoding in mixed-stream mode (MixTranscodeParams), including video resolution, video bitrate, video frame rate, and sound quality.
+        * Specify the position and layout of each stream in mixed-stream mode, or configure via an automatic Template.
+
+        Key nouns:.
+        * Single stream recording: Record the audio and video of subscribed UserIds in the room separately. The recording service uploads the files to your designated cloud storage in real time.
+        Mixed-stream recording: Mix the audio and video of subscribed UserId in the room into a video file and upload the recorded files to your designated cloud storage. (After recording ends, go to the VOD console https://console.cloud.tencent.com/vod/media or the object storage COS console https://console.cloud.tencent.com/cos/bucket to view files).
+
+        :param request: Request instance for CreateCloudRecording.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.CreateCloudRecordingRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.CreateCloudRecordingResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("CreateCloudRecording", params, headers=headers)
+            response = json.loads(body)
+            model = models.CreateCloudRecordingResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def CreateCloudSliceTask(self, request):
+        r"""API description:
+        This API is used to enable the cloud slicing feature, completing audio and video slicing tasks in the room, and uploading them to the specified cloud storage.
+        This API is used to achieve the following goals:
+        * This API is used to specify the slicing parameter (SliceParams) to define the blocklist or allowlist of the anchors that require slicing.
+        * This API is used to specify the storage parameter (SliceStorageParams) to specify the cloud storage you want to upload to. Currently, Tencent Cloud Object Storage (COS) and third-party AWS are supported.
+
+        :param request: Request instance for CreateCloudSliceTask.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.CreateCloudSliceTaskRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.CreateCloudSliceTaskResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("CreateCloudSliceTask", params, headers=headers)
+            response = json.loads(body)
+            model = models.CreateCloudSliceTaskResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DeleteCloudModeration(self, request):
+        r"""This API is used to stop submission for moderation after the cloud moderation task is successfully started.
+
+        :param request: Request instance for DeleteCloudModeration.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DeleteCloudModerationRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DeleteCloudModerationResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DeleteCloudModeration", params, headers=headers)
+            response = json.loads(body)
+            model = models.DeleteCloudModerationResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DeleteCloudRecording(self, request):
+        r"""This API is used to stop a recording task. If a task is stopped successfully, but the uploading of recording files has not completed, the backend will continue to upload the files and will notify you via a callback when the upload is completed.
+
+        :param request: Request instance for DeleteCloudRecording.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DeleteCloudRecordingRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DeleteCloudRecordingResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DeleteCloudRecording", params, headers=headers)
+            response = json.loads(body)
+            model = models.DeleteCloudRecordingResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DeleteCloudSliceTask(self, request):
+        r"""This API is used to stop the slicing task after it is started. Successfully stopping the slicing does not mean that all files are fully transmitted; if the transmission is not completed, the backend will continue to upload files. After the upload is successful, a notification is sent to the customer, prompting that all files have been transmitted, through the event callback.
+
+        :param request: Request instance for DeleteCloudSliceTask.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DeleteCloudSliceTaskRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DeleteCloudSliceTaskResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DeleteCloudSliceTask", params, headers=headers)
+            response = json.loads(body)
+            model = models.DeleteCloudSliceTaskResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeAIConversation(self, request):
+        r"""Describe the AI conversation task status
+
+        :param request: Request instance for DescribeAIConversation.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeAIConversationRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeAIConversationResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeAIConversation", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeAIConversationResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeAITranscription(self, request):
+        r"""Describe AI transcription task status
+
+        :param request: Request instance for DescribeAITranscription.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeAITranscriptionRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeAITranscriptionResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeAITranscription", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeAITranscriptionResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeCallDetailInfo(self, request):
+        r"""This API (the old `DescribeCallDetail`) is used to query the user list and call quality data of a specified time range in the last 14 days. If `DataType` is not null, the data of up to six users during a period of up to one hour can be queried (the period can start and end on different days). If `DataType` is null, the data of up to 100 users can be returned per page (the value of `PageSize` cannot exceed 100). Six users are queried by default. The period queried cannot exceed four hours. This API is used to query call quality and is not recommended for billing purposes.
+        **Note**:
+        1. You can use this API to query historical data or for reconciliation purposes, but we do not recommend you use it for crucial business logic.
+        2. If you need to call this API, please upgrade the monitoring dashboard version to "Standard". For more details, please refer to: https://trtc.io/document/54481?product=pricing.
+
+        :param request: Request instance for DescribeCallDetailInfo.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeCallDetailInfoRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeCallDetailInfoResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeCallDetailInfo", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeCallDetailInfoResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeCloudModeration(self, request):
+        r"""This API is used to query the status of the moderation task and information about the subscription blocklist and allowlist after the task is started, which is valid only when the task is in progress. An error will be returned if the task is exited.
+
+        :param request: Request instance for DescribeCloudModeration.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeCloudModerationRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeCloudModerationResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeCloudModeration", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeCloudModerationResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeCloudRecording(self, request):
+        r"""This API is used to query the status of a recording task after it starts. It works only when a task is in progress. If the task has already ended when this API is called, an error will be returned.
+        If a recording file is being uploaded to VOD, the response parameter `StorageFileList` will not contain the information of the recording file. Please listen for the recording file callback to get the information.
+
+        :param request: Request instance for DescribeCloudRecording.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeCloudRecordingRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeCloudRecordingResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeCloudRecording", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeCloudRecordingResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeCloudSliceTask(self, request):
+        r"""This API is used to query the status of the slicing task after it is started, which is valid only when the task is in progress. An error will be returned if the task is exited.
+
+        :param request: Request instance for DescribeCloudSliceTask.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeCloudSliceTaskRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeCloudSliceTaskResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeCloudSliceTask", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeCloudSliceTaskResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeMixTranscodingUsage(self, request):
+        r"""This API is used to query your usage of TRTC’s On-Cloud MixTranscoding service.
+        - If the period queried is one day or shorter, the statistics returned are on a five-minute basis. If the period queried is longer than one day, the statistics returned are on a daily basis.
+        - The period queried per request cannot be longer than 31 days.
+        - If you query the statistics of the current day, the statistics returned may be inaccurate due to the delay in data collection.
+        - You can use this API to query your historical usage or to reconcile data, but we do not recommend you use it for crucial business logic.
+        - The rate limit of this API is five calls per second.
+
+        :param request: Request instance for DescribeMixTranscodingUsage.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeMixTranscodingUsageRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeMixTranscodingUsageResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeMixTranscodingUsage", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeMixTranscodingUsageResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeRecordingUsage(self, request):
+        r"""This API is used to query your TRTC recording usage.
+        - If the period queried is one day or shorter, the statistics returned are on a five-minute basis. If the period queried is longer than one day, the statistics returned are on a daily basis.
+        - The period queried per request cannot be longer than 31 days.
+        - If you query the statistics of the current day, the statistics returned may be inaccurate due to the delay in data collection.
+        - You can use this API to query your historical usage or to reconcile data, but we do not recommend you use it for crucial business logic.
+        - The rate limit of this API is five calls per second.
+
+        :param request: Request instance for DescribeRecordingUsage.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeRecordingUsageRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeRecordingUsageResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeRecordingUsage", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeRecordingUsageResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeRelayUsage(self, request):
+        r"""This API is used to query your usage of TRTC’s relay to CDN service.
+        - If the period queried is one day or shorter, the statistics returned are on a five-minute basis. If the period queried is longer than one day, the statistics returned are on a daily basis.
+        - The period queried per request cannot be longer than 31 days.
+        - If you query the statistics of the current day, the statistics returned may be inaccurate due to the delay in data collection.
+        - You can use this API to query your historical usage or to reconcile data, but we do not recommend you use it for crucial business logic.
+        - The rate limit of this API is five calls per second.
+
+        :param request: Request instance for DescribeRelayUsage.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeRelayUsageRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeRelayUsageResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeRelayUsage", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeRelayUsageResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeRoomInfo(self, request):
+        r"""This API (the old `DescribeRoomInformation`) is used to query the rooms of an application (`SDKAppID`) in the last 14 days. Up to 100 records can be returned per call (10 are returned by default).
+        **Note**:
+        1. You can use this API to query historical data or for reconciliation purposes, but we do not recommend you use it for crucial business logic.
+        2. If you need to call this API, please upgrade the monitoring dashboard version to "Standard". For more details, please refer to: https://trtc.io/document/54481
+
+        :param request: Request instance for DescribeRoomInfo.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeRoomInfoRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeRoomInfoResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeRoomInfo", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeRoomInfoResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeScaleInfo(self, request):
+        r"""This API (the old `DescribeHistoryScale`) is used to query the daily number of rooms and users of an application (`SDKAppID`) in the last 14 days. Data for the current day cannot be queried.
+
+        :param request: Request instance for DescribeScaleInfo.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeScaleInfoRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeScaleInfoResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeScaleInfo", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeScaleInfoResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeStreamIngest(self, request):
+        r"""You can query the status of the Relay task.
+
+        :param request: Request instance for DescribeStreamIngest.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeStreamIngestRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeStreamIngestResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeStreamIngest", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeStreamIngestResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeTRTCMarketQualityData(self, request):
+        r"""Query TRTC Monitoring Dashboard - Data Dashboard Quality Metrics (including the following metrics)
+        joinSuccessRate: Join channel success rate.
+        joinSuccessIn5sRate: Join channel success rate within 5s.
+        audioFreezeRate: Audio stutter rate.
+        videoFreezeRate: Video stutter rate.
+        networkDelay: Lag rate.
+        Note:
+        1. To call the API, you need to activate the monitoring dashboard Standard Edition and Premium Edition, the monitoring dashboard Free Edition does not support calling. Monitoring dashboard version features and billing overview: https://trtc.io/document/54481.
+        2. The query time range depends on the monitoring dashboard function version, premium edition can query the last 30 days.
+
+        :param request: Request instance for DescribeTRTCMarketQualityData.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeTRTCMarketQualityDataRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeTRTCMarketQualityDataResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeTRTCMarketQualityData", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeTRTCMarketQualityDataResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeTRTCMarketScaleData(self, request):
+        r"""Query TRTC Monitoring Dashboard - Data Dashboard Scale Metrics (will return userCount, roomCount, peakCurrentUsers, peakCurrentChannels)
+        - userCount: number of users in the call,
+        - roomCount: number of rooms in the call, counted as one call channel from the time a user joins the channel to the time all users leave the channel.
+        - peakCurrentChannels: peak number of channels online at the same time.
+        - peakCurrentUsers: peak number of users online at the same time.
+        Note:
+        1. To call the interface, you need to activate the monitoring dashboard Standard Edition and Premium Edition, the monitoring dashboard Free Edition does not support calling, for monitoring dashboard version features and billing overview: https://trtc.io/document/54481.
+        2. The query time range depends on the monitoring dashboard function version, premium edition can query up to 60 days.
+
+        :param request: Request instance for DescribeTRTCMarketScaleData.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeTRTCMarketScaleDataRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeTRTCMarketScaleDataResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeTRTCMarketScaleData", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeTRTCMarketScaleDataResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeTRTCRealTimeQualityData(self, request):
+        r"""Query TRTC Monitoring Dashboard - Real-Time Monitoring Quality Metrics (return the following metrics)
+         -Video stutter rate
+         -Audio stutter rate
+         Note:
+         1. To call the API, you need to activate the Monitoring Dashboard Standard Edition and Premium Edition. The Monitoring Dashboard Free Edition does not support calling. For monitoring dashboard version features and billing overview, please visit: https://trtc.io/document/54481.
+         2. The query time range depends on the monitoring dashboard function version. The premium edition can query up to 1 hours
+
+        :param request: Request instance for DescribeTRTCRealTimeQualityData.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeTRTCRealTimeQualityDataRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeTRTCRealTimeQualityDataResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeTRTCRealTimeQualityData", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeTRTCRealTimeQualityDataResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeTRTCRealTimeScaleData(self, request):
+        r"""Query TRTC Monitoring Dashboard - Real-Time Monitoring Scale Metrics (the following metrics will be returned) -userCount (Online users) -roomCount (Online rooms) Note: 1. To call the interface, you need to activate the monitoring dashboard Standard Edition and Premium Edition, the monitoring dashboard Free Edition does not support calling. For monitoring dashboard version features and billing overview, please visit: https://trtc.io/document/54481. 2. The query time range depends on the function version of the monitoring dashboard. The premium edition can query the last 1 hours
+
+        :param request: Request instance for DescribeTRTCRealTimeScaleData.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeTRTCRealTimeScaleDataRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeTRTCRealTimeScaleDataResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeTRTCRealTimeScaleData", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeTRTCRealTimeScaleDataResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeTrtcRoomUsage(self, request):
+        r"""This API is used to query usage data grouped by room.
+        - The queried period cannot exceed 24 hours. If the period spans two different days, the data returned may not be accurate due to a delay in data collection. You can make multiple calls to query the usage on different days.
+        - You can use this API to query your historical usage or to reconcile data, but we do not recommend you use it for crucial business logic.
+        - The rate limit of this API is one call every 15 seconds.
+
+        :param request: Request instance for DescribeTrtcRoomUsage.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeTrtcRoomUsageRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeTrtcRoomUsageResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeTrtcRoomUsage", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeTrtcRoomUsageResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeTrtcUsage(self, request):
+        r"""This API is used to query your TRTC audio/video duration.
+        - If the period queried is one day or shorter, the statistics returned are on a five-minute basis. If the period queried is longer than one day, the statistics returned are on a daily basis.
+        - The period queried per request cannot be longer than 31 days.
+        - If you query the statistics of the current day, the statistics returned may be inaccurate due to the delay in data collection.
+        - You can use this API to query your historical usage or to reconcile data, but we do not recommend you use it for crucial business logic.
+        - The rate limit of this API is five calls per second.
+
+        :param request: Request instance for DescribeTrtcUsage.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeTrtcUsageRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeTrtcUsageResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeTrtcUsage", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeTrtcUsageResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeUnusualEvent(self, request):
+        r"""This API (the old `DescribeAbnormalEvent`) is used to query up to 20 random abnormal user experiences of an application (`SDKAppID`) in the last 14 days. The start and end time can be on two different days, but they cannot be more than one hour apart.
+        For details about the error events, see https://intl.cloud.tencent.com/document/product/647/44916?from_cn_redirect=1
+        **Note**:
+        1. You can use this API to query historical data or for reconciliation purposes, but we do not recommend you use it for crucial business logic.
+        2. If you need to call this API, please upgrade the monitoring dashboard version to "Standard". For more details, please refer to: https://www.tencentcloud.com/document/product/647/54481.
+
+        :param request: Request instance for DescribeUnusualEvent.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeUnusualEventRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeUnusualEventResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeUnusualEvent", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeUnusualEventResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeUserEvent(self, request):
+        r"""This API (the old `DescribeDetailEvent`) is used to query the events of a call in the last 14 days, including user entry and exit, turning the camera on/off, etc.
+        **Note**:
+        1. You can use this API to query historical data or for reconciliation purposes, but we do not recommend you use it for crucial business logic.
+        2. If you need to call this API, please upgrade the monitoring dashboard version to "Standard". For more details, please refer to: https://trtc.io/document/54481?product=pricing.
+
+        :param request: Request instance for DescribeUserEvent.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeUserEventRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeUserEventResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeUserEvent", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeUserEventResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeUserInfo(self, request):
+        r"""This API (the old `DescribeUserInformation`) is used to query the user list of a specified time range (up to four hours) in the last 14 days. The data of up to 100 users can be returned per page (six are returned by default).
+        **Note**:
+        1. You can use this API to query historical data or for reconciliation purposes, but we do not recommend you use it for crucial business logic.
+        2. If you need to call this API, please upgrade the monitoring dashboard version to "Standard". For more details, please refer to: https://trtc.io/document/60214?product=pricing.
+
+        :param request: Request instance for DescribeUserInfo.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeUserInfoRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeUserInfoResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeUserInfo", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeUserInfoResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DescribeWebRecord(self, request):
+        r"""Queries the status of a web-page recording task
+
+        :param request: Request instance for DescribeWebRecord.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DescribeWebRecordRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DescribeWebRecordResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DescribeWebRecord", params, headers=headers)
+            response = json.loads(body)
+            model = models.DescribeWebRecordResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DismissRoom(self, request):
+        r"""This API is used to remove all users from a room and dismiss the room. It supports all platforms. For Android, iOS, Windows, and macOS, the TRTC SDK needs to be upgraded to v6.6 or above.
+
+        :param request: Request instance for DismissRoom.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DismissRoomRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DismissRoomResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DismissRoom", params, headers=headers)
+            response = json.loads(body)
+            model = models.DismissRoomResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def DismissRoomByStrRoomId(self, request):
+        r"""This API is used to remove all users from a room and close the room. It works on all platforms. For Android, iOS, Windows, and macOS, you need to update the TRTC SDK to version 6.6 or above.
+
+        :param request: Request instance for DismissRoomByStrRoomId.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.DismissRoomByStrRoomIdRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.DismissRoomByStrRoomIdResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("DismissRoomByStrRoomId", params, headers=headers)
+            response = json.loads(body)
+            model = models.DismissRoomByStrRoomIdResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def ModifyCloudModeration(self, request):
+        r"""This API is used to update the subscription blocklist and allowlist after the cloud moderation task is successfully started.
+
+        :param request: Request instance for ModifyCloudModeration.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.ModifyCloudModerationRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.ModifyCloudModerationResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("ModifyCloudModeration", params, headers=headers)
+            response = json.loads(body)
+            model = models.ModifyCloudModerationResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def ModifyCloudRecording(self, request):
+        r"""This API is used to modify a recording task. It works only when a task is in progress. If the task has already ended when this API is called, an error will be returned. You need to specify all the parameters for each request instead of just the ones you want to modify.
+
+        :param request: Request instance for ModifyCloudRecording.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.ModifyCloudRecordingRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.ModifyCloudRecordingResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("ModifyCloudRecording", params, headers=headers)
+            response = json.loads(body)
+            model = models.ModifyCloudRecordingResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def ModifyCloudSliceTask(self, request):
+        r"""This API is used to update the slicing task after it is started. It can be used to update the allowlist or blocklist for the specified subscription stream.
+
+        :param request: Request instance for ModifyCloudSliceTask.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.ModifyCloudSliceTaskRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.ModifyCloudSliceTaskResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("ModifyCloudSliceTask", params, headers=headers)
+            response = json.loads(body)
+            model = models.ModifyCloudSliceTaskResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def RemoveUser(self, request):
+        r"""This API is used to remove a user from a room. It is applicable to scenarios where the anchor, room owner, or admin wants to kick out a user. It supports all platforms. For Android, iOS, Windows, and macOS, the TRTC SDK needs to be upgraded to v6.6 or above.
+
+        :param request: Request instance for RemoveUser.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.RemoveUserRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.RemoveUserResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("RemoveUser", params, headers=headers)
+            response = json.loads(body)
+            model = models.RemoveUserResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def RemoveUserByStrRoomId(self, request):
+        r"""This API is used to remove a user from a room. It allows the anchor, room owner, or admin to kick out a user, and works on all platforms. For Android, iOS, Windows, and macOS, you need to update the TRTC SDK to version 6.6 or above.
+
+        :param request: Request instance for RemoveUserByStrRoomId.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.RemoveUserByStrRoomIdRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.RemoveUserByStrRoomIdResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("RemoveUserByStrRoomId", params, headers=headers)
+            response = json.loads(body)
+            model = models.RemoveUserByStrRoomIdResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def SetUserBlocked(self, request):
+        r"""This API is used to disable or enable the audio and video of a user. It can be used by an anchor, room owner, or admin to block or unblock a user. It supports platforms including Android, iOS, Windows, macOS, web, and WeChat Mini Program. Use this API if the room ID is a number.
+
+        :param request: Request instance for SetUserBlocked.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.SetUserBlockedRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.SetUserBlockedResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("SetUserBlocked", params, headers=headers)
+            response = json.loads(body)
+            model = models.SetUserBlockedResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def SetUserBlockedByStrRoomId(self, request):
+        r"""This API allows an anchor, room owner, admin to mute/unmute a user. It can be used on platforms including Android, iOS, Windows, macOS, web, and WeChat Mini Program. Use this API when the room ID is a string.
+
+        :param request: Request instance for SetUserBlockedByStrRoomId.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.SetUserBlockedByStrRoomIdRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.SetUserBlockedByStrRoomIdResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("SetUserBlockedByStrRoomId", params, headers=headers)
+            response = json.loads(body)
+            model = models.SetUserBlockedByStrRoomIdResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def StartAIConversation(self, request):
+        r"""Initiate AI conversation task, where the AI bot enters the TRTC room to engage in AI conversation with specified members in the room. This is suitable for scenarios such as intelligent customer service and AI language teachers. The TRTC AI conversation feature has built-in speech-to-text capabilities , allowing customers to flexibly specify third-party AI model (LLM) services and text-to-speech (TTS) services. For more [feature details](https://cloud.tencent.com/document/product/647/108901).
+
+        :param request: Request instance for StartAIConversation.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.StartAIConversationRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.StartAIConversationResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("StartAIConversation", params, headers=headers)
+            response = json.loads(body)
+            model = models.StartAIConversationResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def StartAITranscription(self, request):
+        r"""Initiate the transcription bot. The backend will pull the stream through the bot to perform real-time speech recognition and deliver subtitles and transcription messages. The transcription bot supports two stream pulling modes, controlled by the `TranscriptionMode` field:
+        - Pull the stream of the entire room.
+        - Pull the stream of a specific user.
+
+        The server delivers subtitles and transcription messages in real-time through TRTC's custom messages, with `CmdId` fixed at 1. The client only needs to listen for the callback of custom messages. For example, see the [C++ callback](https://cloud.tencent.com/document/product/647/79637#4cd82f4edb24992a15a25187089e1565). Other clients, such as Android, Web, etc., can also be found at the same link.
+
+        :param request: Request instance for StartAITranscription.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.StartAITranscriptionRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.StartAITranscriptionResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("StartAITranscription", params, headers=headers)
+            response = json.loads(body)
+            model = models.StartAITranscriptionResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def StartPublishCdnStream(self, request):
+        r"""**API Description**
+
+        This API starts a stream mixing and relaying task. This API mixes multiple audio/video streams from a TRTC room into a single stream, encodes it, and then pushes it to CDN server or publishs it into the TRTC room. It also supports relaying a single stream from a TRTC room directly without transcoding.
+
+        After success, the API returns a globally unique TaskID. You will need this TaskId in later operations such as updating or stopping the task.
+
+        For more details, refer to the document:  [Feature Description](https://trtc.io/zh/document/47858?product=rtcengine ) and [FAQs](https://trtc.io/zh/document/36058?product=rtcengine&menulabel=core%20sdk&platform=web) .
+
+        Note: You can enable the relay to CDN in the console to monitor events under the CDN relay status. For callback details, see: [Relay to CDN Callback Description](https://trtc.io/zh/document/54913?product=rtcengine&menulabel=core%20sdk&platform=web ) .
+
+        Starting a relay task may incur the following fees:
+        MCU stream mixing and transcoding fees: [See Cloud Stream Mixing and Transcoding Pricing](https://trtc.io/zh/document/47631 ) .
+
+        :param request: Request instance for StartPublishCdnStream.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.StartPublishCdnStreamRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.StartPublishCdnStreamResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("StartPublishCdnStream", params, headers=headers)
+            response = json.loads(body)
+            model = models.StartPublishCdnStreamResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def StartStreamIngest(self, request):
+        r"""Push an online media stream to the TRTC room.
+
+        :param request: Request instance for StartStreamIngest.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.StartStreamIngestRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.StartStreamIngestResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("StartStreamIngest", params, headers=headers)
+            response = json.loads(body)
+            model = models.StartStreamIngestResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def StartWebRecord(self, request):
+        r"""This interface can be used to initiate a web-page recording task. In the interface parameters, specify the recording URL, recording resolution, recording result storage and other parameters. If there are parameter or API logic problems, the result will be returned immediately. If there are page problems, such as the page cannot be accessed, the result will be returned in the callback. Please pay attention.
+
+        :param request: Request instance for StartWebRecord.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.StartWebRecordRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.StartWebRecordResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("StartWebRecord", params, headers=headers)
+            response = json.loads(body)
+            model = models.StartWebRecordResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def StopAIConversation(self, request):
+        r"""Stop AI conversation task
+
+        :param request: Request instance for StopAIConversation.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.StopAIConversationRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.StopAIConversationResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("StopAIConversation", params, headers=headers)
+            response = json.loads(body)
+            model = models.StopAIConversationResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def StopAITranscription(self, request):
+        r"""Stop AI Transcription task
+
+        :param request: Request instance for StopAITranscription.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.StopAITranscriptionRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.StopAITranscriptionResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("StopAITranscription", params, headers=headers)
+            response = json.loads(body)
+            model = models.StopAITranscriptionResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def StopPublishCdnStream(self, request):
+        r"""This API is used to stop a relaying task.
+        You can create a relay task before the anchor enters the room. When the relay task is finished, you need to call the stop interface actively. If you do not call the Stop Relay Task Interface, Tencent Cloud will automatically stop the mix relay task when all users participating in the mix have no data uploaded for a period of time exceeding the timeout (AgentParams.MaxIdleTime) set when starting the relay task.
+
+        :param request: Request instance for StopPublishCdnStream.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.StopPublishCdnStreamRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.StopPublishCdnStreamResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("StopPublishCdnStream", params, headers=headers)
+            response = json.loads(body)
+            model = models.StopPublishCdnStreamResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def StopStreamIngest(self, request):
+        r"""Stop a Pull stream Relay task.
+
+        :param request: Request instance for StopStreamIngest.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.StopStreamIngestRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.StopStreamIngestResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("StopStreamIngest", params, headers=headers)
+            response = json.loads(body)
+            model = models.StopStreamIngestResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def StopWebRecord(self, request):
+        r"""Stop an web-page recording task
+
+        :param request: Request instance for StopWebRecord.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.StopWebRecordRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.StopWebRecordResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("StopWebRecord", params, headers=headers)
+            response = json.loads(body)
+            model = models.StopWebRecordResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def UpdateAIConversation(self, request):
+        r"""Update AI conversation task parameters
+
+        :param request: Request instance for UpdateAIConversation.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.UpdateAIConversationRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.UpdateAIConversationResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("UpdateAIConversation", params, headers=headers)
+            response = json.loads(body)
+            model = models.UpdateAIConversationResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def UpdatePublishCdnStream(self, request):
+        r"""This API is used to change the parameters of a relaying task.
+        Note: For details about how to use this API, see the `StartPublishCdnStream` document.
+
+        :param request: Request instance for UpdatePublishCdnStream.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.UpdatePublishCdnStreamRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.UpdatePublishCdnStreamResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("UpdatePublishCdnStream", params, headers=headers)
+            response = json.loads(body)
+            model = models.UpdatePublishCdnStreamResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))
+
+
+    def UpdateStreamIngest(self, request):
+        r"""You can update the StreamUrl of the Relay task.
+
+        :param request: Request instance for UpdateStreamIngest.
+        :type request: :class:`tencentcloud.trtc.v20190722.models.UpdateStreamIngestRequest`
+        :rtype: :class:`tencentcloud.trtc.v20190722.models.UpdateStreamIngestResponse`
+
+        """
+        try:
+            params = request._serialize()
+            headers = request.headers
+            body = self.call("UpdateStreamIngest", params, headers=headers)
+            response = json.loads(body)
+            model = models.UpdateStreamIngestResponse()
+            model._deserialize(response["Response"])
+            return model
+        except Exception as e:
+            if isinstance(e, TencentCloudSDKException):
+                raise
+            else:
+                raise TencentCloudSDKException(type(e).__name__, str(e))

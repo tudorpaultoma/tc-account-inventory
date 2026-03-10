@@ -1,0 +1,17548 @@
+# -*- coding: utf8 -*-
+# Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import warnings
+
+from tencentcloud.common.abstract_model import AbstractModel
+
+
+class AIAgentInfo(AbstractModel):
+    r"""Intelligent agent info.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _AIAgentId: Intelligent agent ID.
+        :type AIAgentId: int
+        :param _AIAgentName: Intelligent agent name.
+        :type AIAgentName: str
+        """
+        self._AIAgentId = None
+        self._AIAgentName = None
+
+    @property
+    def AIAgentId(self):
+        r"""Intelligent agent ID.
+        :rtype: int
+        """
+        return self._AIAgentId
+
+    @AIAgentId.setter
+    def AIAgentId(self, AIAgentId):
+        self._AIAgentId = AIAgentId
+
+    @property
+    def AIAgentName(self):
+        r"""Intelligent agent name.
+        :rtype: str
+        """
+        return self._AIAgentName
+
+    @AIAgentName.setter
+    def AIAgentName(self, AIAgentName):
+        self._AIAgentName = AIAgentName
+
+
+    def _deserialize(self, params):
+        self._AIAgentId = params.get("AIAgentId")
+        self._AIAgentName = params.get("AIAgentName")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class AIAnalysisResult(AbstractModel):
+    r"""AI conversation analytics result.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Type: Summary: describes the session summary.
+mood: specifies the emotion analysis.
+intention extraction.
+        :type Type: str
+        :param _Result: AI session analysis result.
+        :type Result: str
+        """
+        self._Type = None
+        self._Result = None
+
+    @property
+    def Type(self):
+        r"""Summary: describes the session summary.
+mood: specifies the emotion analysis.
+intention extraction.
+        :rtype: str
+        """
+        return self._Type
+
+    @Type.setter
+    def Type(self, Type):
+        self._Type = Type
+
+    @property
+    def Result(self):
+        r"""AI session analysis result.
+        :rtype: str
+        """
+        return self._Result
+
+    @Result.setter
+    def Result(self, Result):
+        self._Result = Result
+
+
+    def _deserialize(self, params):
+        self._Type = params.get("Type")
+        self._Result = params.get("Result")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class AICallExtractConfigElement(AbstractModel):
+    r"""AI call extraction configuration item.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _InfoType: Configuration item type, including.
+Text.
+Selector option.
+Boolean value.
+Number.
+        :type InfoType: str
+        :param _InfoName: Configuration item name, duplicat.
+        :type InfoName: str
+        :param _InfoContent: Specific content of the configuration item.
+        :type InfoContent: str
+        :param _Examples: Example of extracted content from the configuration item.
+        :type Examples: list of str
+        :param _Choices: When infotype is selector, this field needs to be configured.
+        :type Choices: list of str
+        """
+        self._InfoType = None
+        self._InfoName = None
+        self._InfoContent = None
+        self._Examples = None
+        self._Choices = None
+
+    @property
+    def InfoType(self):
+        r"""Configuration item type, including.
+Text.
+Selector option.
+Boolean value.
+Number.
+        :rtype: str
+        """
+        return self._InfoType
+
+    @InfoType.setter
+    def InfoType(self, InfoType):
+        self._InfoType = InfoType
+
+    @property
+    def InfoName(self):
+        r"""Configuration item name, duplicat.
+        :rtype: str
+        """
+        return self._InfoName
+
+    @InfoName.setter
+    def InfoName(self, InfoName):
+        self._InfoName = InfoName
+
+    @property
+    def InfoContent(self):
+        r"""Specific content of the configuration item.
+        :rtype: str
+        """
+        return self._InfoContent
+
+    @InfoContent.setter
+    def InfoContent(self, InfoContent):
+        self._InfoContent = InfoContent
+
+    @property
+    def Examples(self):
+        r"""Example of extracted content from the configuration item.
+        :rtype: list of str
+        """
+        return self._Examples
+
+    @Examples.setter
+    def Examples(self, Examples):
+        self._Examples = Examples
+
+    @property
+    def Choices(self):
+        r"""When infotype is selector, this field needs to be configured.
+        :rtype: list of str
+        """
+        return self._Choices
+
+    @Choices.setter
+    def Choices(self, Choices):
+        self._Choices = Choices
+
+
+    def _deserialize(self, params):
+        self._InfoType = params.get("InfoType")
+        self._InfoName = params.get("InfoName")
+        self._InfoContent = params.get("InfoContent")
+        self._Examples = params.get("Examples")
+        self._Choices = params.get("Choices")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class AICallExtractResultElement(AbstractModel):
+    r"""AI call extraction result.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _InfoType: Type of extracted information.
+Text.
+Selector options.
+Boolean value.
+Number.
+        :type InfoType: str
+        :param _InfoName: Name of the extracted information.
+        :type InfoName: str
+        :param _InfoContent: Specific description of the extracted information.
+        :type InfoContent: str
+        :param _Result: Specific result of the extracted information.
+        :type Result: :class:`tencentcloud.ccc.v20200210.models.AICallExtractResultInfo`
+        """
+        self._InfoType = None
+        self._InfoName = None
+        self._InfoContent = None
+        self._Result = None
+
+    @property
+    def InfoType(self):
+        r"""Type of extracted information.
+Text.
+Selector options.
+Boolean value.
+Number.
+        :rtype: str
+        """
+        return self._InfoType
+
+    @InfoType.setter
+    def InfoType(self, InfoType):
+        self._InfoType = InfoType
+
+    @property
+    def InfoName(self):
+        r"""Name of the extracted information.
+        :rtype: str
+        """
+        return self._InfoName
+
+    @InfoName.setter
+    def InfoName(self, InfoName):
+        self._InfoName = InfoName
+
+    @property
+    def InfoContent(self):
+        r"""Specific description of the extracted information.
+        :rtype: str
+        """
+        return self._InfoContent
+
+    @InfoContent.setter
+    def InfoContent(self, InfoContent):
+        self._InfoContent = InfoContent
+
+    @property
+    def Result(self):
+        r"""Specific result of the extracted information.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.AICallExtractResultInfo`
+        """
+        return self._Result
+
+    @Result.setter
+    def Result(self, Result):
+        self._Result = Result
+
+
+    def _deserialize(self, params):
+        self._InfoType = params.get("InfoType")
+        self._InfoName = params.get("InfoName")
+        self._InfoContent = params.get("InfoContent")
+        if params.get("Result") is not None:
+            self._Result = AICallExtractResultInfo()
+            self._Result._deserialize(params.get("Result"))
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class AICallExtractResultInfo(AbstractModel):
+    r"""Specific information of AI call result.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Text: The extracted type is text.
+        :type Text: str
+        :param _Chosen: The extracted type is option.
+        :type Chosen: list of str
+        :param _Boolean: The extracted type is a boolean value.
+        :type Boolean: bool
+        :param _Number: The extracted type is a number.
+        :type Number: float
+        """
+        self._Text = None
+        self._Chosen = None
+        self._Boolean = None
+        self._Number = None
+
+    @property
+    def Text(self):
+        r"""The extracted type is text.
+        :rtype: str
+        """
+        return self._Text
+
+    @Text.setter
+    def Text(self, Text):
+        self._Text = Text
+
+    @property
+    def Chosen(self):
+        r"""The extracted type is option.
+        :rtype: list of str
+        """
+        return self._Chosen
+
+    @Chosen.setter
+    def Chosen(self, Chosen):
+        self._Chosen = Chosen
+
+    @property
+    def Boolean(self):
+        r"""The extracted type is a boolean value.
+        :rtype: bool
+        """
+        return self._Boolean
+
+    @Boolean.setter
+    def Boolean(self, Boolean):
+        self._Boolean = Boolean
+
+    @property
+    def Number(self):
+        r"""The extracted type is a number.
+        :rtype: float
+        """
+        return self._Number
+
+    @Number.setter
+    def Number(self, Number):
+        self._Number = Number
+
+
+    def _deserialize(self, params):
+        self._Text = params.get("Text")
+        self._Chosen = params.get("Chosen")
+        self._Boolean = params.get("Boolean")
+        self._Number = params.get("Number")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class AILatencyDetail(AbstractModel):
+    r"""AI latency details.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RoundId: Dialog ID.
+        :type RoundId: str
+        :param _ASRLatency: Specifies the asr latency in milliseconds.
+        :type ASRLatency: int
+        :param _TTSLatency: Specifies the tts delay in milliseconds.
+        :type TTSLatency: int
+        :param _LLMLatency: llm latency (ms).
+        :type LLMLatency: int
+        :param _LLMFirstTokenLatency: llm first token latency (ms).
+        :type LLMFirstTokenLatency: int
+        :param _ETELatency: End-To-End delay (ms).
+        :type ETELatency: int
+        """
+        self._RoundId = None
+        self._ASRLatency = None
+        self._TTSLatency = None
+        self._LLMLatency = None
+        self._LLMFirstTokenLatency = None
+        self._ETELatency = None
+
+    @property
+    def RoundId(self):
+        r"""Dialog ID.
+        :rtype: str
+        """
+        return self._RoundId
+
+    @RoundId.setter
+    def RoundId(self, RoundId):
+        self._RoundId = RoundId
+
+    @property
+    def ASRLatency(self):
+        r"""Specifies the asr latency in milliseconds.
+        :rtype: int
+        """
+        return self._ASRLatency
+
+    @ASRLatency.setter
+    def ASRLatency(self, ASRLatency):
+        self._ASRLatency = ASRLatency
+
+    @property
+    def TTSLatency(self):
+        r"""Specifies the tts delay in milliseconds.
+        :rtype: int
+        """
+        return self._TTSLatency
+
+    @TTSLatency.setter
+    def TTSLatency(self, TTSLatency):
+        self._TTSLatency = TTSLatency
+
+    @property
+    def LLMLatency(self):
+        r"""llm latency (ms).
+        :rtype: int
+        """
+        return self._LLMLatency
+
+    @LLMLatency.setter
+    def LLMLatency(self, LLMLatency):
+        self._LLMLatency = LLMLatency
+
+    @property
+    def LLMFirstTokenLatency(self):
+        r"""llm first token latency (ms).
+        :rtype: int
+        """
+        return self._LLMFirstTokenLatency
+
+    @LLMFirstTokenLatency.setter
+    def LLMFirstTokenLatency(self, LLMFirstTokenLatency):
+        self._LLMFirstTokenLatency = LLMFirstTokenLatency
+
+    @property
+    def ETELatency(self):
+        r"""End-To-End delay (ms).
+        :rtype: int
+        """
+        return self._ETELatency
+
+    @ETELatency.setter
+    def ETELatency(self, ETELatency):
+        self._ETELatency = ETELatency
+
+
+    def _deserialize(self, params):
+        self._RoundId = params.get("RoundId")
+        self._ASRLatency = params.get("ASRLatency")
+        self._TTSLatency = params.get("TTSLatency")
+        self._LLMLatency = params.get("LLMLatency")
+        self._LLMFirstTokenLatency = params.get("LLMFirstTokenLatency")
+        self._ETELatency = params.get("ETELatency")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class AILatencyStatistics(AbstractModel):
+    r"""AI latency statistics.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _ASRLatency: Specifies the asr latency statistics.
+        :type ASRLatency: :class:`tencentcloud.ccc.v20200210.models.AILatencyStatisticsInfo`
+        :param _TTSLatency: Specifies the statistics of tts delay.
+        :type TTSLatency: :class:`tencentcloud.ccc.v20200210.models.AILatencyStatisticsInfo`
+        :param _LLMLatency: llm latency statistics.
+        :type LLMLatency: :class:`tencentcloud.ccc.v20200210.models.AILatencyStatisticsInfo`
+        :param _ETELatency: Specifies the end-to-end latency statistics.
+        :type ETELatency: :class:`tencentcloud.ccc.v20200210.models.AILatencyStatisticsInfo`
+        """
+        self._ASRLatency = None
+        self._TTSLatency = None
+        self._LLMLatency = None
+        self._ETELatency = None
+
+    @property
+    def ASRLatency(self):
+        r"""Specifies the asr latency statistics.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.AILatencyStatisticsInfo`
+        """
+        return self._ASRLatency
+
+    @ASRLatency.setter
+    def ASRLatency(self, ASRLatency):
+        self._ASRLatency = ASRLatency
+
+    @property
+    def TTSLatency(self):
+        r"""Specifies the statistics of tts delay.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.AILatencyStatisticsInfo`
+        """
+        return self._TTSLatency
+
+    @TTSLatency.setter
+    def TTSLatency(self, TTSLatency):
+        self._TTSLatency = TTSLatency
+
+    @property
+    def LLMLatency(self):
+        r"""llm latency statistics.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.AILatencyStatisticsInfo`
+        """
+        return self._LLMLatency
+
+    @LLMLatency.setter
+    def LLMLatency(self, LLMLatency):
+        self._LLMLatency = LLMLatency
+
+    @property
+    def ETELatency(self):
+        r"""Specifies the end-to-end latency statistics.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.AILatencyStatisticsInfo`
+        """
+        return self._ETELatency
+
+    @ETELatency.setter
+    def ETELatency(self, ETELatency):
+        self._ETELatency = ETELatency
+
+
+    def _deserialize(self, params):
+        if params.get("ASRLatency") is not None:
+            self._ASRLatency = AILatencyStatisticsInfo()
+            self._ASRLatency._deserialize(params.get("ASRLatency"))
+        if params.get("TTSLatency") is not None:
+            self._TTSLatency = AILatencyStatisticsInfo()
+            self._TTSLatency._deserialize(params.get("TTSLatency"))
+        if params.get("LLMLatency") is not None:
+            self._LLMLatency = AILatencyStatisticsInfo()
+            self._LLMLatency._deserialize(params.get("LLMLatency"))
+        if params.get("ETELatency") is not None:
+            self._ETELatency = AILatencyStatisticsInfo()
+            self._ETELatency._deserialize(params.get("ETELatency"))
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class AILatencyStatisticsInfo(AbstractModel):
+    r"""AI latency statistics.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _MinLatency: Specifies the minimum value.
+        :type MinLatency: int
+        :param _MiddleLatency: Specifies the median.
+        :type MiddleLatency: int
+        :param _P90Latency: p90
+        :type P90Latency: int
+        """
+        self._MinLatency = None
+        self._MiddleLatency = None
+        self._P90Latency = None
+
+    @property
+    def MinLatency(self):
+        r"""Specifies the minimum value.
+        :rtype: int
+        """
+        return self._MinLatency
+
+    @MinLatency.setter
+    def MinLatency(self, MinLatency):
+        self._MinLatency = MinLatency
+
+    @property
+    def MiddleLatency(self):
+        r"""Specifies the median.
+        :rtype: int
+        """
+        return self._MiddleLatency
+
+    @MiddleLatency.setter
+    def MiddleLatency(self, MiddleLatency):
+        self._MiddleLatency = MiddleLatency
+
+    @property
+    def P90Latency(self):
+        r"""p90
+        :rtype: int
+        """
+        return self._P90Latency
+
+    @P90Latency.setter
+    def P90Latency(self, P90Latency):
+        self._P90Latency = P90Latency
+
+
+    def _deserialize(self, params):
+        self._MinLatency = params.get("MinLatency")
+        self._MiddleLatency = params.get("MiddleLatency")
+        self._P90Latency = params.get("P90Latency")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class AITransferItem(AbstractModel):
+    r"""AI to human configuration item.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _TransferFunctionName: Name of the function calling for transfer to human.
+        :type TransferFunctionName: str
+        :param _TransferFunctionDesc: Takes effect when transferfunctionenable is true; the description of transfer_to_human function calling defaults to "transfer to human when the user has to transfer to human (like says transfer to human) or you are instructed to do so.".
+        :type TransferFunctionDesc: str
+        :param _TransferSkillGroupId: Skill group id for transferring to human agent.
+        :type TransferSkillGroupId: int
+        """
+        self._TransferFunctionName = None
+        self._TransferFunctionDesc = None
+        self._TransferSkillGroupId = None
+
+    @property
+    def TransferFunctionName(self):
+        r"""Name of the function calling for transfer to human.
+        :rtype: str
+        """
+        return self._TransferFunctionName
+
+    @TransferFunctionName.setter
+    def TransferFunctionName(self, TransferFunctionName):
+        self._TransferFunctionName = TransferFunctionName
+
+    @property
+    def TransferFunctionDesc(self):
+        r"""Takes effect when transferfunctionenable is true; the description of transfer_to_human function calling defaults to "transfer to human when the user has to transfer to human (like says transfer to human) or you are instructed to do so.".
+        :rtype: str
+        """
+        return self._TransferFunctionDesc
+
+    @TransferFunctionDesc.setter
+    def TransferFunctionDesc(self, TransferFunctionDesc):
+        self._TransferFunctionDesc = TransferFunctionDesc
+
+    @property
+    def TransferSkillGroupId(self):
+        r"""Skill group id for transferring to human agent.
+        :rtype: int
+        """
+        return self._TransferSkillGroupId
+
+    @TransferSkillGroupId.setter
+    def TransferSkillGroupId(self, TransferSkillGroupId):
+        self._TransferSkillGroupId = TransferSkillGroupId
+
+
+    def _deserialize(self, params):
+        self._TransferFunctionName = params.get("TransferFunctionName")
+        self._TransferFunctionDesc = params.get("TransferFunctionDesc")
+        self._TransferSkillGroupId = params.get("TransferSkillGroupId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class AbortAgentCruiseDialingCampaignRequest(AbstractModel):
+    r"""AbortAgentCruiseDialingCampaign request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _CampaignId: <Task id>.
+        :type CampaignId: int
+        """
+        self._SdkAppId = None
+        self._CampaignId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def CampaignId(self):
+        r"""<Task id>.
+        :rtype: int
+        """
+        return self._CampaignId
+
+    @CampaignId.setter
+    def CampaignId(self, CampaignId):
+        self._CampaignId = CampaignId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._CampaignId = params.get("CampaignId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class AbortAgentCruiseDialingCampaignResponse(AbstractModel):
+    r"""AbortAgentCruiseDialingCampaign response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class AbortPredictiveDialingCampaignRequest(AbstractModel):
+    r"""AbortPredictiveDialingCampaign request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _CampaignId: Task id.
+        :type CampaignId: int
+        """
+        self._SdkAppId = None
+        self._CampaignId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def CampaignId(self):
+        r"""Task id.
+        :rtype: int
+        """
+        return self._CampaignId
+
+    @CampaignId.setter
+    def CampaignId(self, CampaignId):
+        self._CampaignId = CampaignId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._CampaignId = params.get("CampaignId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class AbortPredictiveDialingCampaignResponse(AbstractModel):
+    r"""AbortPredictiveDialingCampaign response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class AsrData(AbstractModel):
+    r"""Speech-to-text information
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _User: User side.
+        :type User: str
+        :param _Message: Message content.
+        :type Message: str
+        :param _Timestamp: Timestamp.
+        :type Timestamp: int
+        :param _Start: Sentence start time, unix millisecond timestamp.
+        :type Start: int
+        :param _End: Sentence end time, unix millisecond timestamp.
+        :type End: int
+        """
+        self._User = None
+        self._Message = None
+        self._Timestamp = None
+        self._Start = None
+        self._End = None
+
+    @property
+    def User(self):
+        r"""User side.
+        :rtype: str
+        """
+        return self._User
+
+    @User.setter
+    def User(self, User):
+        self._User = User
+
+    @property
+    def Message(self):
+        r"""Message content.
+        :rtype: str
+        """
+        return self._Message
+
+    @Message.setter
+    def Message(self, Message):
+        self._Message = Message
+
+    @property
+    def Timestamp(self):
+        warnings.warn("parameter `Timestamp` is deprecated", DeprecationWarning) 
+
+        r"""Timestamp.
+        :rtype: int
+        """
+        return self._Timestamp
+
+    @Timestamp.setter
+    def Timestamp(self, Timestamp):
+        warnings.warn("parameter `Timestamp` is deprecated", DeprecationWarning) 
+
+        self._Timestamp = Timestamp
+
+    @property
+    def Start(self):
+        r"""Sentence start time, unix millisecond timestamp.
+        :rtype: int
+        """
+        return self._Start
+
+    @Start.setter
+    def Start(self, Start):
+        self._Start = Start
+
+    @property
+    def End(self):
+        r"""Sentence end time, unix millisecond timestamp.
+        :rtype: int
+        """
+        return self._End
+
+    @End.setter
+    def End(self, End):
+        self._End = End
+
+
+    def _deserialize(self, params):
+        self._User = params.get("User")
+        self._Message = params.get("Message")
+        self._Timestamp = params.get("Timestamp")
+        self._Start = params.get("Start")
+        self._End = params.get("End")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class AudioFileInfo(AbstractModel):
+    r"""Audio file review information
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _FileId: File id.
+        :type FileId: int
+        :param _CustomFileName: File alias.
+        :type CustomFileName: str
+        :param _AudioFileName: Filename.
+        :type AudioFileName: str
+        :param _Status: Review status: 0 - unreviewed, 1 - approved, 2 - rejected.
+        :type Status: int
+        """
+        self._FileId = None
+        self._CustomFileName = None
+        self._AudioFileName = None
+        self._Status = None
+
+    @property
+    def FileId(self):
+        r"""File id.
+        :rtype: int
+        """
+        return self._FileId
+
+    @FileId.setter
+    def FileId(self, FileId):
+        self._FileId = FileId
+
+    @property
+    def CustomFileName(self):
+        r"""File alias.
+        :rtype: str
+        """
+        return self._CustomFileName
+
+    @CustomFileName.setter
+    def CustomFileName(self, CustomFileName):
+        self._CustomFileName = CustomFileName
+
+    @property
+    def AudioFileName(self):
+        r"""Filename.
+        :rtype: str
+        """
+        return self._AudioFileName
+
+    @AudioFileName.setter
+    def AudioFileName(self, AudioFileName):
+        self._AudioFileName = AudioFileName
+
+    @property
+    def Status(self):
+        r"""Review status: 0 - unreviewed, 1 - approved, 2 - rejected.
+        :rtype: int
+        """
+        return self._Status
+
+    @Status.setter
+    def Status(self, Status):
+        self._Status = Status
+
+
+    def _deserialize(self, params):
+        self._FileId = params.get("FileId")
+        self._CustomFileName = params.get("CustomFileName")
+        self._AudioFileName = params.get("AudioFileName")
+        self._Status = params.get("Status")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class AutoCalloutTaskCalleeInfo(AbstractModel):
+    r"""Outbound call task called information.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Callee: Called number.
+        :type Callee: str
+        :param _State: Call status 0 - initial, 1 - answered, 2 - unanswered, 3 - calling, 4 - pending retry.
+        :type State: int
+        :param _Sessions: List of session ids.
+        :type Sessions: list of str
+        """
+        self._Callee = None
+        self._State = None
+        self._Sessions = None
+
+    @property
+    def Callee(self):
+        r"""Called number.
+        :rtype: str
+        """
+        return self._Callee
+
+    @Callee.setter
+    def Callee(self, Callee):
+        self._Callee = Callee
+
+    @property
+    def State(self):
+        r"""Call status 0 - initial, 1 - answered, 2 - unanswered, 3 - calling, 4 - pending retry.
+        :rtype: int
+        """
+        return self._State
+
+    @State.setter
+    def State(self, State):
+        self._State = State
+
+    @property
+    def Sessions(self):
+        r"""List of session ids.
+        :rtype: list of str
+        """
+        return self._Sessions
+
+    @Sessions.setter
+    def Sessions(self, Sessions):
+        self._Sessions = Sessions
+
+
+    def _deserialize(self, params):
+        self._Callee = params.get("Callee")
+        self._State = params.get("State")
+        self._Sessions = params.get("Sessions")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class AutoCalloutTaskInfo(AbstractModel):
+    r"""Automatic outbound call task list item.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Name: Task name.
+        :type Name: str
+        :param _CalleeCount: Number of called parties.
+        :type CalleeCount: int
+        :param _Callers: List of calling numbers.
+        :type Callers: list of str
+        :param _NotBefore: Start timestamp.
+        :type NotBefore: int
+        :param _NotAfter: End timestamp
+.
+Note: this field may return null, indicating that no valid values can be obtained.
+        :type NotAfter: int
+        :param _IvrId: IvrId used by the task.
+        :type IvrId: int
+        :param _State: Task status:.
+0 initial: task creation, call not started.
+1 running.
+2 completed: all calls in the task are completed.
+3 ending: the task has expired, but there are still some calls not ended.
+4 ended: task terminated due to expiration.
+        :type State: int
+        :param _TaskId: <Task id>.
+        :type TaskId: int
+        """
+        self._Name = None
+        self._CalleeCount = None
+        self._Callers = None
+        self._NotBefore = None
+        self._NotAfter = None
+        self._IvrId = None
+        self._State = None
+        self._TaskId = None
+
+    @property
+    def Name(self):
+        r"""Task name.
+        :rtype: str
+        """
+        return self._Name
+
+    @Name.setter
+    def Name(self, Name):
+        self._Name = Name
+
+    @property
+    def CalleeCount(self):
+        r"""Number of called parties.
+        :rtype: int
+        """
+        return self._CalleeCount
+
+    @CalleeCount.setter
+    def CalleeCount(self, CalleeCount):
+        self._CalleeCount = CalleeCount
+
+    @property
+    def Callers(self):
+        r"""List of calling numbers.
+        :rtype: list of str
+        """
+        return self._Callers
+
+    @Callers.setter
+    def Callers(self, Callers):
+        self._Callers = Callers
+
+    @property
+    def NotBefore(self):
+        r"""Start timestamp.
+        :rtype: int
+        """
+        return self._NotBefore
+
+    @NotBefore.setter
+    def NotBefore(self, NotBefore):
+        self._NotBefore = NotBefore
+
+    @property
+    def NotAfter(self):
+        r"""End timestamp
+.
+Note: this field may return null, indicating that no valid values can be obtained.
+        :rtype: int
+        """
+        return self._NotAfter
+
+    @NotAfter.setter
+    def NotAfter(self, NotAfter):
+        self._NotAfter = NotAfter
+
+    @property
+    def IvrId(self):
+        r"""IvrId used by the task.
+        :rtype: int
+        """
+        return self._IvrId
+
+    @IvrId.setter
+    def IvrId(self, IvrId):
+        self._IvrId = IvrId
+
+    @property
+    def State(self):
+        r"""Task status:.
+0 initial: task creation, call not started.
+1 running.
+2 completed: all calls in the task are completed.
+3 ending: the task has expired, but there are still some calls not ended.
+4 ended: task terminated due to expiration.
+        :rtype: int
+        """
+        return self._State
+
+    @State.setter
+    def State(self, State):
+        self._State = State
+
+    @property
+    def TaskId(self):
+        r"""<Task id>.
+        :rtype: int
+        """
+        return self._TaskId
+
+    @TaskId.setter
+    def TaskId(self, TaskId):
+        self._TaskId = TaskId
+
+
+    def _deserialize(self, params):
+        self._Name = params.get("Name")
+        self._CalleeCount = params.get("CalleeCount")
+        self._Callers = params.get("Callers")
+        self._NotBefore = params.get("NotBefore")
+        self._NotAfter = params.get("NotAfter")
+        self._IvrId = params.get("IvrId")
+        self._State = params.get("State")
+        self._TaskId = params.get("TaskId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class BindNumberCallInInterfaceRequest(AbstractModel):
+    r"""BindNumberCallInInterface request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: App ID (required). can be used to view https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _Number: Number to be bound.
+        :type Number: str
+        :param _CallInInterface: Specifies the callback url to be bound.
+        :type CallInInterface: :class:`tencentcloud.ccc.v20200210.models.Interface`
+        :param _NumberType: Bind number type. specifies the type of the bind number. inner: internal number | number: line number.
+        :type NumberType: str
+        """
+        self._SdkAppId = None
+        self._Number = None
+        self._CallInInterface = None
+        self._NumberType = None
+
+    @property
+    def SdkAppId(self):
+        r"""App ID (required). can be used to view https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def Number(self):
+        r"""Number to be bound.
+        :rtype: str
+        """
+        return self._Number
+
+    @Number.setter
+    def Number(self, Number):
+        self._Number = Number
+
+    @property
+    def CallInInterface(self):
+        r"""Specifies the callback url to be bound.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.Interface`
+        """
+        return self._CallInInterface
+
+    @CallInInterface.setter
+    def CallInInterface(self, CallInInterface):
+        self._CallInInterface = CallInInterface
+
+    @property
+    def NumberType(self):
+        r"""Bind number type. specifies the type of the bind number. inner: internal number | number: line number.
+        :rtype: str
+        """
+        return self._NumberType
+
+    @NumberType.setter
+    def NumberType(self, NumberType):
+        self._NumberType = NumberType
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._Number = params.get("Number")
+        if params.get("CallInInterface") is not None:
+            self._CallInInterface = Interface()
+            self._CallInInterface._deserialize(params.get("CallInInterface"))
+        self._NumberType = params.get("NumberType")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class BindNumberCallInInterfaceResponse(AbstractModel):
+    r"""BindNumberCallInInterface response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class BindNumberCallOutSkillGroupRequest(AbstractModel):
+    r"""BindNumberCallOutSkillGroup request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _Number: Number to be bound.
+        :type Number: str
+        :param _SkillGroupIds: Skill group id list to be bound.
+        :type SkillGroupIds: list of int non-negative
+        """
+        self._SdkAppId = None
+        self._Number = None
+        self._SkillGroupIds = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def Number(self):
+        r"""Number to be bound.
+        :rtype: str
+        """
+        return self._Number
+
+    @Number.setter
+    def Number(self, Number):
+        self._Number = Number
+
+    @property
+    def SkillGroupIds(self):
+        r"""Skill group id list to be bound.
+        :rtype: list of int non-negative
+        """
+        return self._SkillGroupIds
+
+    @SkillGroupIds.setter
+    def SkillGroupIds(self, SkillGroupIds):
+        self._SkillGroupIds = SkillGroupIds
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._Number = params.get("Number")
+        self._SkillGroupIds = params.get("SkillGroupIds")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class BindNumberCallOutSkillGroupResponse(AbstractModel):
+    r"""BindNumberCallOutSkillGroup response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class BindStaffSkillGroupListRequest(AbstractModel):
+    r"""BindStaffSkillGroupList request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _StaffEmail: Agent email.
+        :type StaffEmail: str
+        :param _SkillGroupList: Bound skill group list.
+        :type SkillGroupList: list of int
+        :param _StaffSkillGroupList: Bound skill group list (required).
+        :type StaffSkillGroupList: list of StaffSkillGroupList
+        """
+        self._SdkAppId = None
+        self._StaffEmail = None
+        self._SkillGroupList = None
+        self._StaffSkillGroupList = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def StaffEmail(self):
+        r"""Agent email.
+        :rtype: str
+        """
+        return self._StaffEmail
+
+    @StaffEmail.setter
+    def StaffEmail(self, StaffEmail):
+        self._StaffEmail = StaffEmail
+
+    @property
+    def SkillGroupList(self):
+        warnings.warn("parameter `SkillGroupList` is deprecated", DeprecationWarning) 
+
+        r"""Bound skill group list.
+        :rtype: list of int
+        """
+        return self._SkillGroupList
+
+    @SkillGroupList.setter
+    def SkillGroupList(self, SkillGroupList):
+        warnings.warn("parameter `SkillGroupList` is deprecated", DeprecationWarning) 
+
+        self._SkillGroupList = SkillGroupList
+
+    @property
+    def StaffSkillGroupList(self):
+        r"""Bound skill group list (required).
+        :rtype: list of StaffSkillGroupList
+        """
+        return self._StaffSkillGroupList
+
+    @StaffSkillGroupList.setter
+    def StaffSkillGroupList(self, StaffSkillGroupList):
+        self._StaffSkillGroupList = StaffSkillGroupList
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._StaffEmail = params.get("StaffEmail")
+        self._SkillGroupList = params.get("SkillGroupList")
+        if params.get("StaffSkillGroupList") is not None:
+            self._StaffSkillGroupList = []
+            for item in params.get("StaffSkillGroupList"):
+                obj = StaffSkillGroupList()
+                obj._deserialize(item)
+                self._StaffSkillGroupList.append(obj)
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class BindStaffSkillGroupListResponse(AbstractModel):
+    r"""BindStaffSkillGroupList response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class CallInMetrics(AbstractModel):
+    r"""Real-Time inbound metric.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _IvrCount: Number of ivr residency.
+        :type IvrCount: int
+        :param _QueueCount: Number in queue.
+        :type QueueCount: int
+        :param _RingCount: Number in ringing.
+        :type RingCount: int
+        :param _AcceptCount: Number of connections.
+        :type AcceptCount: int
+        :param _TransferOuterCount: Number of customer service transferring to the external line.
+        :type TransferOuterCount: int
+        :param _MaxQueueDuration: Maximum queue duration.
+        :type MaxQueueDuration: int
+        :param _AvgQueueDuration: Average queue duration.
+        :type AvgQueueDuration: int
+        :param _MaxRingDuration: Maximum ringing duration.
+        :type MaxRingDuration: int
+        :param _AvgRingDuration: Average ringing duration.
+        :type AvgRingDuration: int
+        :param _MaxAcceptDuration: Maximum connection duration.
+        :type MaxAcceptDuration: int
+        :param _AvgAcceptDuration: Average connection duration.
+        :type AvgAcceptDuration: int
+        """
+        self._IvrCount = None
+        self._QueueCount = None
+        self._RingCount = None
+        self._AcceptCount = None
+        self._TransferOuterCount = None
+        self._MaxQueueDuration = None
+        self._AvgQueueDuration = None
+        self._MaxRingDuration = None
+        self._AvgRingDuration = None
+        self._MaxAcceptDuration = None
+        self._AvgAcceptDuration = None
+
+    @property
+    def IvrCount(self):
+        r"""Number of ivr residency.
+        :rtype: int
+        """
+        return self._IvrCount
+
+    @IvrCount.setter
+    def IvrCount(self, IvrCount):
+        self._IvrCount = IvrCount
+
+    @property
+    def QueueCount(self):
+        r"""Number in queue.
+        :rtype: int
+        """
+        return self._QueueCount
+
+    @QueueCount.setter
+    def QueueCount(self, QueueCount):
+        self._QueueCount = QueueCount
+
+    @property
+    def RingCount(self):
+        r"""Number in ringing.
+        :rtype: int
+        """
+        return self._RingCount
+
+    @RingCount.setter
+    def RingCount(self, RingCount):
+        self._RingCount = RingCount
+
+    @property
+    def AcceptCount(self):
+        r"""Number of connections.
+        :rtype: int
+        """
+        return self._AcceptCount
+
+    @AcceptCount.setter
+    def AcceptCount(self, AcceptCount):
+        self._AcceptCount = AcceptCount
+
+    @property
+    def TransferOuterCount(self):
+        r"""Number of customer service transferring to the external line.
+        :rtype: int
+        """
+        return self._TransferOuterCount
+
+    @TransferOuterCount.setter
+    def TransferOuterCount(self, TransferOuterCount):
+        self._TransferOuterCount = TransferOuterCount
+
+    @property
+    def MaxQueueDuration(self):
+        r"""Maximum queue duration.
+        :rtype: int
+        """
+        return self._MaxQueueDuration
+
+    @MaxQueueDuration.setter
+    def MaxQueueDuration(self, MaxQueueDuration):
+        self._MaxQueueDuration = MaxQueueDuration
+
+    @property
+    def AvgQueueDuration(self):
+        r"""Average queue duration.
+        :rtype: int
+        """
+        return self._AvgQueueDuration
+
+    @AvgQueueDuration.setter
+    def AvgQueueDuration(self, AvgQueueDuration):
+        self._AvgQueueDuration = AvgQueueDuration
+
+    @property
+    def MaxRingDuration(self):
+        r"""Maximum ringing duration.
+        :rtype: int
+        """
+        return self._MaxRingDuration
+
+    @MaxRingDuration.setter
+    def MaxRingDuration(self, MaxRingDuration):
+        self._MaxRingDuration = MaxRingDuration
+
+    @property
+    def AvgRingDuration(self):
+        r"""Average ringing duration.
+        :rtype: int
+        """
+        return self._AvgRingDuration
+
+    @AvgRingDuration.setter
+    def AvgRingDuration(self, AvgRingDuration):
+        self._AvgRingDuration = AvgRingDuration
+
+    @property
+    def MaxAcceptDuration(self):
+        r"""Maximum connection duration.
+        :rtype: int
+        """
+        return self._MaxAcceptDuration
+
+    @MaxAcceptDuration.setter
+    def MaxAcceptDuration(self, MaxAcceptDuration):
+        self._MaxAcceptDuration = MaxAcceptDuration
+
+    @property
+    def AvgAcceptDuration(self):
+        r"""Average connection duration.
+        :rtype: int
+        """
+        return self._AvgAcceptDuration
+
+    @AvgAcceptDuration.setter
+    def AvgAcceptDuration(self, AvgAcceptDuration):
+        self._AvgAcceptDuration = AvgAcceptDuration
+
+
+    def _deserialize(self, params):
+        self._IvrCount = params.get("IvrCount")
+        self._QueueCount = params.get("QueueCount")
+        self._RingCount = params.get("RingCount")
+        self._AcceptCount = params.get("AcceptCount")
+        self._TransferOuterCount = params.get("TransferOuterCount")
+        self._MaxQueueDuration = params.get("MaxQueueDuration")
+        self._AvgQueueDuration = params.get("AvgQueueDuration")
+        self._MaxRingDuration = params.get("MaxRingDuration")
+        self._AvgRingDuration = params.get("AvgRingDuration")
+        self._MaxAcceptDuration = params.get("MaxAcceptDuration")
+        self._AvgAcceptDuration = params.get("AvgAcceptDuration")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CallInNumberMetrics(AbstractModel):
+    r"""Inbound line dimension metrics.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Number: Line number.
+        :type Number: str
+        :param _Metrics: Line-Related metrics.
+        :type Metrics: :class:`tencentcloud.ccc.v20200210.models.CallInMetrics`
+        :param _SkillGroupMetrics: Bound skill group metrics.
+        :type SkillGroupMetrics: list of CallInSkillGroupMetrics
+        """
+        self._Number = None
+        self._Metrics = None
+        self._SkillGroupMetrics = None
+
+    @property
+    def Number(self):
+        r"""Line number.
+        :rtype: str
+        """
+        return self._Number
+
+    @Number.setter
+    def Number(self, Number):
+        self._Number = Number
+
+    @property
+    def Metrics(self):
+        r"""Line-Related metrics.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.CallInMetrics`
+        """
+        return self._Metrics
+
+    @Metrics.setter
+    def Metrics(self, Metrics):
+        self._Metrics = Metrics
+
+    @property
+    def SkillGroupMetrics(self):
+        r"""Bound skill group metrics.
+        :rtype: list of CallInSkillGroupMetrics
+        """
+        return self._SkillGroupMetrics
+
+    @SkillGroupMetrics.setter
+    def SkillGroupMetrics(self, SkillGroupMetrics):
+        self._SkillGroupMetrics = SkillGroupMetrics
+
+
+    def _deserialize(self, params):
+        self._Number = params.get("Number")
+        if params.get("Metrics") is not None:
+            self._Metrics = CallInMetrics()
+            self._Metrics._deserialize(params.get("Metrics"))
+        if params.get("SkillGroupMetrics") is not None:
+            self._SkillGroupMetrics = []
+            for item in params.get("SkillGroupMetrics"):
+                obj = CallInSkillGroupMetrics()
+                obj._deserialize(item)
+                self._SkillGroupMetrics.append(obj)
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CallInSkillGroupMetrics(AbstractModel):
+    r"""Inbound capability group metrics.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SkillGroupId: Skill group id.
+        :type SkillGroupId: int
+        :param _Metrics: Data metrics.
+        :type Metrics: :class:`tencentcloud.ccc.v20200210.models.CallInMetrics`
+        :param _Name: Skill group name.
+        :type Name: str
+        """
+        self._SkillGroupId = None
+        self._Metrics = None
+        self._Name = None
+
+    @property
+    def SkillGroupId(self):
+        r"""Skill group id.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+    @property
+    def Metrics(self):
+        r"""Data metrics.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.CallInMetrics`
+        """
+        return self._Metrics
+
+    @Metrics.setter
+    def Metrics(self, Metrics):
+        self._Metrics = Metrics
+
+    @property
+    def Name(self):
+        r"""Skill group name.
+        :rtype: str
+        """
+        return self._Name
+
+    @Name.setter
+    def Name(self, Name):
+        self._Name = Name
+
+
+    def _deserialize(self, params):
+        self._SkillGroupId = params.get("SkillGroupId")
+        if params.get("Metrics") is not None:
+            self._Metrics = CallInMetrics()
+            self._Metrics._deserialize(params.get("Metrics"))
+        self._Name = params.get("Name")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CalleeAttribute(AbstractModel):
+    r"""Property of the called.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Callee: Called number.
+        :type Callee: str
+        :param _UUI: Accompanying data.
+        :type UUI: str
+        :param _Variables: Parameter.
+        :type Variables: list of Variable
+        """
+        self._Callee = None
+        self._UUI = None
+        self._Variables = None
+
+    @property
+    def Callee(self):
+        r"""Called number.
+        :rtype: str
+        """
+        return self._Callee
+
+    @Callee.setter
+    def Callee(self, Callee):
+        self._Callee = Callee
+
+    @property
+    def UUI(self):
+        r"""Accompanying data.
+        :rtype: str
+        """
+        return self._UUI
+
+    @UUI.setter
+    def UUI(self, UUI):
+        self._UUI = UUI
+
+    @property
+    def Variables(self):
+        r"""Parameter.
+        :rtype: list of Variable
+        """
+        return self._Variables
+
+    @Variables.setter
+    def Variables(self, Variables):
+        self._Variables = Variables
+
+
+    def _deserialize(self, params):
+        self._Callee = params.get("Callee")
+        self._UUI = params.get("UUI")
+        if params.get("Variables") is not None:
+            self._Variables = []
+            for item in params.get("Variables"):
+                obj = Variable()
+                obj._deserialize(item)
+                self._Variables.append(obj)
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ClientInfo(AbstractModel):
+    r"""Terminal information of the logged-in agent.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _ClientType: Endpoint type for login. "Web" means Web workbench. "WeChatMiniProgram" refers to wechat mini program.
+        :type ClientType: str
+        :param _IsConnected: Whether the currently logged-in endpoint is in the foreground. if the endpoint is Web, the value is true. if the endpoint is WeChatMiniProgram, true indicates the wechat mini program is open, and false indicates it is in the background.
+        :type IsConnected: bool
+        """
+        self._ClientType = None
+        self._IsConnected = None
+
+    @property
+    def ClientType(self):
+        r"""Endpoint type for login. "Web" means Web workbench. "WeChatMiniProgram" refers to wechat mini program.
+        :rtype: str
+        """
+        return self._ClientType
+
+    @ClientType.setter
+    def ClientType(self, ClientType):
+        self._ClientType = ClientType
+
+    @property
+    def IsConnected(self):
+        r"""Whether the currently logged-in endpoint is in the foreground. if the endpoint is Web, the value is true. if the endpoint is WeChatMiniProgram, true indicates the wechat mini program is open, and false indicates it is in the background.
+        :rtype: bool
+        """
+        return self._IsConnected
+
+    @IsConnected.setter
+    def IsConnected(self, IsConnected):
+        self._IsConnected = IsConnected
+
+
+    def _deserialize(self, params):
+        self._ClientType = params.get("ClientType")
+        self._IsConnected = params.get("IsConnected")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ControlAIConversationRequest(AbstractModel):
+    r"""ControlAIConversation request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SessionId: Specifies the session ID.
+        :type SessionId: str
+        :param _SdkAppId: App ID (required). can be used to view https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _Command: Control command. currently supported commands are as follows:.
+
+-ServerPushText. specifies the text sent by the server to the AI robot for broadcast.
+-InvokeLLM. specifies the server sends text to the large model to trigger a dialogue.
+        :type Command: str
+        :param _ServerPushText: Specifies the server-sent broadcast text Command. required when Command is ServerPushText.
+        :type ServerPushText: :class:`tencentcloud.ccc.v20200210.models.ServerPushText`
+        :param _InvokeLLM: The server sends a Command to proactively request the large model. when Command is InvokeLLM, it sends the content to the large model and adds X-Invoke-LLM="1" to the header.
+        :type InvokeLLM: :class:`tencentcloud.ccc.v20200210.models.InvokeLLM`
+        """
+        self._SessionId = None
+        self._SdkAppId = None
+        self._Command = None
+        self._ServerPushText = None
+        self._InvokeLLM = None
+
+    @property
+    def SessionId(self):
+        r"""Specifies the session ID.
+        :rtype: str
+        """
+        return self._SessionId
+
+    @SessionId.setter
+    def SessionId(self, SessionId):
+        self._SessionId = SessionId
+
+    @property
+    def SdkAppId(self):
+        r"""App ID (required). can be used to view https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def Command(self):
+        r"""Control command. currently supported commands are as follows:.
+
+-ServerPushText. specifies the text sent by the server to the AI robot for broadcast.
+-InvokeLLM. specifies the server sends text to the large model to trigger a dialogue.
+        :rtype: str
+        """
+        return self._Command
+
+    @Command.setter
+    def Command(self, Command):
+        self._Command = Command
+
+    @property
+    def ServerPushText(self):
+        r"""Specifies the server-sent broadcast text Command. required when Command is ServerPushText.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.ServerPushText`
+        """
+        return self._ServerPushText
+
+    @ServerPushText.setter
+    def ServerPushText(self, ServerPushText):
+        self._ServerPushText = ServerPushText
+
+    @property
+    def InvokeLLM(self):
+        r"""The server sends a Command to proactively request the large model. when Command is InvokeLLM, it sends the content to the large model and adds X-Invoke-LLM="1" to the header.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.InvokeLLM`
+        """
+        return self._InvokeLLM
+
+    @InvokeLLM.setter
+    def InvokeLLM(self, InvokeLLM):
+        self._InvokeLLM = InvokeLLM
+
+
+    def _deserialize(self, params):
+        self._SessionId = params.get("SessionId")
+        self._SdkAppId = params.get("SdkAppId")
+        self._Command = params.get("Command")
+        if params.get("ServerPushText") is not None:
+            self._ServerPushText = ServerPushText()
+            self._ServerPushText._deserialize(params.get("ServerPushText"))
+        if params.get("InvokeLLM") is not None:
+            self._InvokeLLM = InvokeLLM()
+            self._InvokeLLM._deserialize(params.get("InvokeLLM"))
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ControlAIConversationResponse(AbstractModel):
+    r"""ControlAIConversation response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class CreateAIAgentCallRequest(AbstractModel):
+    r"""CreateAIAgentCall request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _AIAgentId: AI agent id.
+        :type AIAgentId: int
+        :param _Callee: Callee number.
+        :type Callee: str
+        :param _Callers: Caller number list
+        :type Callers: list of str
+        :param _PromptVariables: Prompt variable.
+        :type PromptVariables: list of Variable
+        :param _Variables: <P>Prompt variable</p> <p>welcome message variable</p> <p>welcome message delay playback (in seconds): welcome-message-delay</p> <p>dify variable</p>.  
+
+dify-inputs-xxx specifies the inputs variable for dify.
+2. the dify-inputs-user specifies the user value for dify.
+3. dify-inputs-conversation_id is the conversation_id value of dify.
+        :type Variables: list of Variable
+        """
+        self._SdkAppId = None
+        self._AIAgentId = None
+        self._Callee = None
+        self._Callers = None
+        self._PromptVariables = None
+        self._Variables = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def AIAgentId(self):
+        r"""AI agent id.
+        :rtype: int
+        """
+        return self._AIAgentId
+
+    @AIAgentId.setter
+    def AIAgentId(self, AIAgentId):
+        self._AIAgentId = AIAgentId
+
+    @property
+    def Callee(self):
+        r"""Callee number.
+        :rtype: str
+        """
+        return self._Callee
+
+    @Callee.setter
+    def Callee(self, Callee):
+        self._Callee = Callee
+
+    @property
+    def Callers(self):
+        r"""Caller number list
+        :rtype: list of str
+        """
+        return self._Callers
+
+    @Callers.setter
+    def Callers(self, Callers):
+        self._Callers = Callers
+
+    @property
+    def PromptVariables(self):
+        warnings.warn("parameter `PromptVariables` is deprecated", DeprecationWarning) 
+
+        r"""Prompt variable.
+        :rtype: list of Variable
+        """
+        return self._PromptVariables
+
+    @PromptVariables.setter
+    def PromptVariables(self, PromptVariables):
+        warnings.warn("parameter `PromptVariables` is deprecated", DeprecationWarning) 
+
+        self._PromptVariables = PromptVariables
+
+    @property
+    def Variables(self):
+        r"""<P>Prompt variable</p> <p>welcome message variable</p> <p>welcome message delay playback (in seconds): welcome-message-delay</p> <p>dify variable</p>.  
+
+dify-inputs-xxx specifies the inputs variable for dify.
+2. the dify-inputs-user specifies the user value for dify.
+3. dify-inputs-conversation_id is the conversation_id value of dify.
+        :rtype: list of Variable
+        """
+        return self._Variables
+
+    @Variables.setter
+    def Variables(self, Variables):
+        self._Variables = Variables
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._AIAgentId = params.get("AIAgentId")
+        self._Callee = params.get("Callee")
+        self._Callers = params.get("Callers")
+        if params.get("PromptVariables") is not None:
+            self._PromptVariables = []
+            for item in params.get("PromptVariables"):
+                obj = Variable()
+                obj._deserialize(item)
+                self._PromptVariables.append(obj)
+        if params.get("Variables") is not None:
+            self._Variables = []
+            for item in params.get("Variables"):
+                obj = Variable()
+                obj._deserialize(item)
+                self._Variables.append(obj)
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CreateAIAgentCallResponse(AbstractModel):
+    r"""CreateAIAgentCall response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SessionId: Newly created session id.
+        :type SessionId: str
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._SessionId = None
+        self._RequestId = None
+
+    @property
+    def SessionId(self):
+        r"""Newly created session id.
+        :rtype: str
+        """
+        return self._SessionId
+
+    @SessionId.setter
+    def SessionId(self, SessionId):
+        self._SessionId = SessionId
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._SessionId = params.get("SessionId")
+        self._RequestId = params.get("RequestId")
+
+
+class CreateAICallRequest(AbstractModel):
+    r"""CreateAICall request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application ID (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _Callee: Called number.
+        :type Callee: str
+        :param _LLMType: Model API protocol type. currently compatible with four protocol types:.
+
+-OpenAI protocol (including GPT, hunyuan, DeepSeek, etc.): "OpenAI".
+-Azure protocol: "azure".
+-Specifies the "Minimax" protocol.
+-Dify protocol: "dify".
+        :type LLMType: str
+        :param _APIKey: Model API key, for authentication information, please refer to the respective model's official website
+
+- OpenAI protocol: [GPT](https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key), [DeepSeek](https://api-docs.deepseek.com/zh-cn/);
+
+- Azure protocol: [Azure GPT](https://learn.microsoft.com/en-us/azure/ai-services/openai/chatgpt-quickstart?tabs=command-line%2Ctypescript%2Cpython-new&pivots=programming-language-studio#key-settings);
+
+- Minimax:[Minimax](https://platform.minimaxi.com/document/Fast%20access?key=66701cf51d57f38758d581b2)
+        :type APIKey: str
+        :param _APIUrl: Model interface address
+
+- OpenAI protocol
+GPT:"https://api.openai.com/v1/"
+Deepseek:"https://api.deepseek.com/v1"
+
+- Azure protocol
+ "https://{your-resource-name}.openai.azure.com?api-version={api-version}"
+
+- Minimax protocol
+"https://api.minimax.chat/v1"
+        :type APIUrl: str
+        :param _SystemPrompt: ## Identity
+You are Kate from the appointment department at Retell Health calling Cindy over the phone to prepare for the annual checkup coming up. You are a pleasant and friendly receptionist caring deeply for the user. You don't provide medical advice but would use the medical knowledge to understand user responses.
+
+## Style Guardrails
+Be Concise: Respond succinctly, addressing one topic at most.
+Embrace Variety: Use diverse language and rephrasing to enhance clarity without repeating content.
+Be Conversational: Use everyday language, making the chat feel like talking to a friend.
+Be Proactive: Lead the conversation, often wrapping up with a question or next-step suggestion.
+Avoid multiple questions in a single response.
+Get clarity: If the user only partially answers a question, or if the answer is unclear, keep asking to get clarity.
+Use a colloquial way of referring to the date (like Friday, January 14th, or Tuesday, January 12th, 2024 at 8am).
+
+## Response Guideline
+Adapt and Guess: Try to understand transcripts that may contain transcription errors. Avoid mentioning "transcription error" in the response.
+Stay in Character: Keep conversations within your role's scope, guiding them back creatively without repeating.
+Ensure Fluid Dialogue: Respond in a role-appropriate, direct manner to maintain a smooth conversation flow.
+
+## Task
+You will follow the steps below, do not skip steps, and only ask up to one question in response.
+If at any time the user showed anger or wanted a human agent, call transfer_call to transfer to a human representative.
+1. Begin with a self-introduction and verify if callee is Cindy.
+  - if callee is not Cindy, call end_call to hang up, say sorry for the confusion when hanging up.
+  - if Cindy is not available, call end_call politely to hang up, say you will call back later when hanging up.
+2. Inform Cindy she has an annual body check coming up on April 4th, 2024 at 10am PDT. Check if Cindy is available.
+  - If not, tell Cindy to reschedule online and jump to step 5.
+3. Ask Cindy if there's anything that the doctor should know before the annual checkup.
+  - Ask followup questions as needed to assess the severity of the issue, and understand how it has progressed.
+4. Tell Cindy to not eat or drink that day before the checkup. Also tell Cindy to give you a callback if there's any changes in health condition.
+5. Ask Cindy if she has any questions, and if so, answer them until there are no questions.
+  - If user asks something you do not know, let them know you don't have the answer. Ask them if they have any other questions.
+  - If user do not have any questions, call function end_call to hang up.
+        :type SystemPrompt: str
+        :param _Model: Model name, such as
+
+- OpenAI protocol
+"gpt-4o-mini","gpt-4o","deepseek-chat";
+
+- Azure protocol
+"gpt-4o-mini", "gpt-4o";
+
+- Minimax protocol
+"deepseek-chat".
+        :type Model: str
+        :param _VoiceType: The following voice parameter values are available by default. If you wish to customize the voice type, please leave VoiceType blank and configure it in the CustomTTSConfig parameter.
+
+Chinese:
+ZhiMei: Zhimei, customer service female voice
+ZhiXi: Zhixi, general female voice
+ZhiQi: Zhiqi, customer service female voice
+ZhiTian: Zhitian, female child voice
+AiXiaoJing: Ai Xiaojing, dialogue female voice
+
+English:
+WeRose:English Female Voice
+Monika:English Female Voice
+
+Japanese:
+Nanami
+
+Korean:
+SunHi
+
+Indonesian (Indonesia):
+Gadis
+
+Malay (Malaysia):
+Yasmin
+
+ Tamil (Malaysia):
+Kani
+
+Thai (Thailand):
+Achara
+
+Vietnamese (Vietnam):
+HoaiMy
+
+
+        :type VoiceType: str
+        :param _Callers: Caller number list
+        :type Callers: list of str
+        :param _WelcomeMessage: Used to set the AI Agent Welcome Message.
+        :type WelcomeMessage: str
+        :param _WelcomeType: 0: Use welcomeMessage (if empty, the callee speaks first; if not empty, the bot speaks first)
+1:   Use AI to automatically generate welcomeMessage and speak first based on the prompt
+        :type WelcomeType: int
+        :param _WelcomeMessagePriority: 0: interruptible by default, 2: high priority non-interruptible.
+        :type WelcomeMessagePriority: int
+        :param _MaxDuration: Maximum Waiting Duration (milliseconds), default is 60 seconds, if the user does not speak within this time, the call is automatically terminated
+        :type MaxDuration: int
+        :param _Languages: ASR Supported Languages, default is "zh" Chinese,
+Fill in the array with up to 4 languages, the first is the primary language for recognition, followed by optional languages,
+Note: When the primary language is a Chinese dialect, optional languages are invalid
+Currently, the supported languages are as follows. The English name of the language is on the left side of the equals sign, and the value to be filled in the Language field is on the right side, following ISO639:
+1. Chinese = "zh" # Chinese
+2. Chinese_TW = "zh-TW" # Taiwan (China)
+3. Chinese_DIALECT = "zh-dialect" # Chinese Dialect
+4. English = "en" # English
+5. Vietnamese = "vi" # Vietnamese
+6. Japanese = "ja" # Japanese
+7. Korean = "ko" # Korean
+8. Indonesia = "id" # Indonesian
+9. Thai = "th" # Thai
+10. Portuguese = "pt" # Portuguese
+11. Turkish = "tr" # Turkish
+12. Arabic = "ar" # Arabic
+13. Spanish = "es" # Spanish
+14. Hindi = "hi" # Hindi
+15. French = "fr" # French
+16. Malay = "ms" # Malay
+17. Filipino = "fil" # Filipino
+18. German = "de" # German
+19. Italian = "it" # Italian
+20. Russian = "ru" # Russian
+        :type Languages: list of str
+        :param _InterruptMode: Interrupt ai speaking mode. default is 0. 0 indicates automatic interruption and 1 indicates no interruption.
+        :type InterruptMode: int
+        :param _InterruptSpeechDuration: Used when InterruptMode is 0, unit in milliseconds, default is 500ms. It means that the server-side detects ongoing vocal input for the InterruptSpeechDuration milliseconds and then interrupts.
+        :type InterruptSpeechDuration: int
+        :param _EndFunctionEnable: Whether the model supports (or enables) call_end function calling
+        :type EndFunctionEnable: bool
+        :param _EndFunctionDesc: Effective when EndFunctionEnable is true; the description of call_end function calling, default is "End the call when user has to leave (like says bye) or you are instructed to do so."
+        :type EndFunctionDesc: str
+        :param _TransferFunctionEnable: Whether the model supports (or enables) transfer_to_human function calling.
+        :type TransferFunctionEnable: bool
+        :param _TransferItems: Takes effect when transferfunctionenable is true: transfer to human configuration.
+        :type TransferItems: list of AITransferItem
+        :param _NotifyDuration: The duration after which the user hasn't spoken to trigger a notification, minimum 10 seconds, default 10 seconds
+        :type NotifyDuration: int
+        :param _NotifyMessage: The AI prompt when NotifyDuration has passed without the user speaking, default is "Sorry, I didn't hear you clearly. Can you repeat that?"
+        :type NotifyMessage: str
+        :param _NotifyMaxCount: Maximum number of times to trigger ai prompt sound, unlimited by default.
+        :type NotifyMaxCount: int
+        :param _CustomTTSConfig: <p>Either the VoiceType field or a custom TTS is required. this uses your own custom TTS, while VoiceType provides some built-in voice types.</p>.
+<ul>
+<li>Tencent TTS<br>
+For configuration, see <a href="https://www.tencentcloud.comom/document/product/1073/92668?from_cn_redirect=1#55924b56-1a73-4663-a7a1-a8dd82d6e823" target="_blank">tencent cloud TTS documentation link</a></li>.
+</ul>
+<div class="v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class"><pre class="v-md-prism-"><code>{ 
+"TTSType": "tencent", // String TTS type. currently supports "tencent" and "minixmax". the rest manufacturers are under support.
+  "AppId": "your application ID", // String required.
+  "SecretId": "your key ID", // String required.
+  "SecretKey": "your Key", // String required.
+  "VoiceType": 101001, // Integer  required. the voice ID, including standard timbre and premium timbre. premium timbre has higher fidelity and different pricing from standard timbre. please refer to the text to speech billing overview. for the complete supported timbre list, see the text to speech timbre list.
+  "Speed": 1.25, // Integer optional, speaking rate, value range: [-2,6], respectively represent different speaking rates: -2: 0.6x -1: 0.8x 0: 1.0x (default) 1: 1.2x 2: 1.5x 6: 2.5x. if more refined speaking rates are needed, up to 2 decimal places can be retained, such as 0.5, 1.25, or 2.81. for parameter value to actual speech Speed conversion, refer to speech Speed switch.
+  "Volume": 5, // Integer optional. specifies the Volume level. value range: [0,10], corresponding to 11 severity levels respectively. default value: 0, which represents normal Volume.
+  "PrimaryLanguage": 1, // Integer option primary language 1-chinese (default) 2-english 3-japanese.
+"FastVoiceType": "xxxx"   //  optional parameter. parameters for quick voice clone. 
+  }
+</code></pre>
+ </div><ul>
+<li>Minimax TTS<br>
+For configuration, refer to the <a href="https://platform.minimaxi.com/document/T2a%20V2?key=66719005a427f0c8a5701643" target="_blank">Minimax TTS documentation link</a>. note that Minimax TTS has frequency limits. overfrequency may result in response delays. see the <a href="https://platform.minimaxi.com/document/Rate%20limits?key=66b19417290299a26b234572" target="_blank">Minimax TTS frequency limit documentation link</a>.</li>.
+</ul>
+<div class="v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class"><pre class="v-md-prism-"><code>{
+"TTSType": "minimax",  // String TTS type. 
+        &quot;Model&quot;: &quot;speech-01-turbo&quot;,
+        &quot;APIUrl&quot;: &quot;https://api.minimax.chat/v1/t2a_v2&quot;,
+        &quot;APIKey&quot;: &quot;eyxxxx&quot;,
+        &quot;GroupId&quot;: &quot;181000000000000&quot;,
+        &quot;VoiceType&quot;:&quot;female-tianmei&quot;,
+        &quot;Speed&quot;: 1.2
+}
+</code></pre>
+</div><ul>
+<li>Volcano TTS</li>.
+</ul>
+<p>Configure the timbre type. see <a href="https://www.volcengine.com/docs/6561/162929" target="_blank">volcano TTS documentation link</a><br>.
+Text to speech timbre list - voice technology - volcano engine.
+Large model TTS timbre list - voice technology - volcano engine</p>.
+<div class="v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class"><pre class="v-md-prism-"><code>{
+"TTSType": "volcengine",  // required: String TTS type.
+"AppId": "xxxxxxxx",   // required: String AppId assigned by volcano engine.
+"Token": "TY9d4sQXHxxxxxxx", // required: String type, access Token for volcano engine.
+"Speed": 1.0,            // optional parameter. speaking rate, defaults to 1.0.
+"Volume": 1.0,            // optional parameter, Volume, defaults to 1.0.
+"Cluster": "volcano_tts", // optional parameter, business Cluster, is selected by default.
+"VoiceType": "zh_male_aojiaobazong_moon_bigtts" // timbre type, defaults to the TTS voice type of the large model. if using ordinary text to speech, you need to fill in the corresponding voice type. input errors in voice type can cause no sound.
+}
+</code></pre>
+</div><ul>
+<li>Azure TTS<br>
+For configuration, refer to the <a href="https://docs.azure.cn/zh-cn/ai-services/speech-service/speech-synthesis-markup-voice" target="_blank">AzureTTS documentation link</a></li>.
+</ul>
+<div class="v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class"><pre class="v-md-prism-"><code>{
+"TTSType": "azure", // required: String TTS type.
+"SubscriptionKey": "xxxxxxxx", // required: String subscription Key.
+"Region": "chinanorth3",  // required: String the Region to subscribe to.
+"VoiceName": "zh-CN-XiaoxiaoNeural", // required: String specifies the required VoiceName.
+"Language": "zh-CN", // required: String specifies the synthesis Language.  
+"Rate": 1 // optional: float, speech speed. value range: 0.5–2. default is 1.
+}
+</code></pre>
+</div><ul>
+<li>Custom TTS</li>.
+</ul>
+<p>For the specific protocol specification, refer to <a href="https://doc.weixin.qq.com/doc/w3_ANQAiAbdAFwHILbJBmtSqSbV1WZ3L?scode=AJEAIQdfAAo5a1xajYANQAiAbdAFw" target="_blank">tencent documentation</a></p>.
+<div class="v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class"><pre class="v-md-prism-"><code>{
+"TTSType": "custom", // String required.
+"APIKey": "APIKey", // String required. be used to authenticate.
+"APIUrl": "http://0.0.0.0:8080/stream-audio" // String, required, TTS API URL.
+"AudioFormat": "wav", // String, optional, specifies the desired audio format, such as mp3, ogg_opus, pcm, wav. defaults to wav. currently only support pcm and wav.
+"SampleRate": 16000,  // Integer, optional, audio sample rate, defaults to 16000 (16k), recommended value is 16000.
+"AudioChannel": 1,    // Integer, optional, audio channel quantity. valid values: 1 or 2. default is 1.  
+}
+</code></pre>
+</div>
+        :type CustomTTSConfig: str
+        :param _PromptVariables: Prompt word variable.
+        :type PromptVariables: list of Variable
+        :param _VadSilenceTime: Automatic speech recognition vad time ranges from 240 to 2000, with a default of 1000, measured in milliseconds. smaller values will make automatic speech recognition segment faster.
+        :type VadSilenceTime: int
+        :param _ExtractConfig: Call content extraction configuration.
+        :type ExtractConfig: list of AICallExtractConfigElement
+        :param _Temperature: Model temperature control.
+        :type Temperature: float
+        :param _Variables: Common variable: <p>prompt content variable</p> <p>welcome message variable</p> <p>welcome message delay playback (in seconds): welcome-message-delay</p> <p>dify variable</p>.  
+
+dify-inputs-xxx specifies the inputs variable for dify.
+2. the dify-inputs-user specifies the user value for dify.
+3. dify-inputs-conversation_id is the conversation_id value of dify.
+        :type Variables: list of Variable
+        :param _TopP: Specifies the model topP.
+        :type TopP: float
+        :param _VadLevel: The vad far-field voice suppression capacity (does not impact asr recognition performance). value range: [0, 3]. default is 0. recommended setting: 2 for better far-field voice suppression.
+        :type VadLevel: int
+        :param _ToneWord: Transition.
+        :type ToneWord: :class:`tencentcloud.ccc.v20200210.models.ToneWordInfo`
+        :param _EnableComplianceAudio: Compliant prompt sound. 
+This parameter set to true (default) means call initiation plays morse code, with a Note that the conversation content is AI-generated.
+Passing 'false' to this parameter disables the compliance prompt sound. passing 'false' signifies you have read and agree to the following agreement:.
+Our side fully acknowledges and understands that according to the laws and regulations specified in the "cybersecurity law" (https://www.cac.gov.cn/2016-11/07/c_1119867116.htm), "provision on administration of deep synthesis of internet-based information service" (https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm), "interim measures for the management of generative artificial intelligence services" (https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm), and "measures for the identification of artificial intelligence-generated synthetic content" (https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm), explicit and implicit identification should be added to ai-generated synthetic content. based on business requirements, we request tencent cloud not to add explicit identification to generated synthetic content. we commit to lawful and compliant use of generated synthetic content to avoid causing confusion or misunderstanding. if the generated synthetic content is used to provide services to the public or spread over networks, we will proactively add explicit identification that complies with legal provisions and national standards, and bear the legal obligation for identifying ai-generated synthetic content. our side will fully assume all related responsibilities if adverse consequences arise from failure to appropriately and reasonably fulfill the obligation of ai content identification, or if penalties are imposed by the competent department.
+        :type EnableComplianceAudio: bool
+        :param _EnableVoicemailDetection: Whether to enable voice mail recognition.
+        :type EnableVoicemailDetection: bool
+        :param _VoicemailAction: Detect behavior when the peer is voice mail. this parameter is valid only when EnableVoicemailDetection is True.
+0: hang up the phone (default).
+        :type VoicemailAction: int
+        :param _LLMExtraBody: Large model extended parameter, format is json string.
+        :type LLMExtraBody: str
+        :param _MaxCallDurationMs: Maximum call duration, default not limited. unit: milliseconds (ms).
+        :type MaxCallDurationMs: int
+        :param _MaxRingTimeoutSecond: Maximum ringing duration. auto hang up when the duration threshold is reached. **only own number supports current parameter.**.
+        :type MaxRingTimeoutSecond: int
+        """
+        self._SdkAppId = None
+        self._Callee = None
+        self._LLMType = None
+        self._APIKey = None
+        self._APIUrl = None
+        self._SystemPrompt = None
+        self._Model = None
+        self._VoiceType = None
+        self._Callers = None
+        self._WelcomeMessage = None
+        self._WelcomeType = None
+        self._WelcomeMessagePriority = None
+        self._MaxDuration = None
+        self._Languages = None
+        self._InterruptMode = None
+        self._InterruptSpeechDuration = None
+        self._EndFunctionEnable = None
+        self._EndFunctionDesc = None
+        self._TransferFunctionEnable = None
+        self._TransferItems = None
+        self._NotifyDuration = None
+        self._NotifyMessage = None
+        self._NotifyMaxCount = None
+        self._CustomTTSConfig = None
+        self._PromptVariables = None
+        self._VadSilenceTime = None
+        self._ExtractConfig = None
+        self._Temperature = None
+        self._Variables = None
+        self._TopP = None
+        self._VadLevel = None
+        self._ToneWord = None
+        self._EnableComplianceAudio = None
+        self._EnableVoicemailDetection = None
+        self._VoicemailAction = None
+        self._LLMExtraBody = None
+        self._MaxCallDurationMs = None
+        self._MaxRingTimeoutSecond = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application ID (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def Callee(self):
+        r"""Called number.
+        :rtype: str
+        """
+        return self._Callee
+
+    @Callee.setter
+    def Callee(self, Callee):
+        self._Callee = Callee
+
+    @property
+    def LLMType(self):
+        r"""Model API protocol type. currently compatible with four protocol types:.
+
+-OpenAI protocol (including GPT, hunyuan, DeepSeek, etc.): "OpenAI".
+-Azure protocol: "azure".
+-Specifies the "Minimax" protocol.
+-Dify protocol: "dify".
+        :rtype: str
+        """
+        return self._LLMType
+
+    @LLMType.setter
+    def LLMType(self, LLMType):
+        self._LLMType = LLMType
+
+    @property
+    def APIKey(self):
+        r"""Model API key, for authentication information, please refer to the respective model's official website
+
+- OpenAI protocol: [GPT](https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key), [DeepSeek](https://api-docs.deepseek.com/zh-cn/);
+
+- Azure protocol: [Azure GPT](https://learn.microsoft.com/en-us/azure/ai-services/openai/chatgpt-quickstart?tabs=command-line%2Ctypescript%2Cpython-new&pivots=programming-language-studio#key-settings);
+
+- Minimax:[Minimax](https://platform.minimaxi.com/document/Fast%20access?key=66701cf51d57f38758d581b2)
+        :rtype: str
+        """
+        return self._APIKey
+
+    @APIKey.setter
+    def APIKey(self, APIKey):
+        self._APIKey = APIKey
+
+    @property
+    def APIUrl(self):
+        r"""Model interface address
+
+- OpenAI protocol
+GPT:"https://api.openai.com/v1/"
+Deepseek:"https://api.deepseek.com/v1"
+
+- Azure protocol
+ "https://{your-resource-name}.openai.azure.com?api-version={api-version}"
+
+- Minimax protocol
+"https://api.minimax.chat/v1"
+        :rtype: str
+        """
+        return self._APIUrl
+
+    @APIUrl.setter
+    def APIUrl(self, APIUrl):
+        self._APIUrl = APIUrl
+
+    @property
+    def SystemPrompt(self):
+        r"""## Identity
+You are Kate from the appointment department at Retell Health calling Cindy over the phone to prepare for the annual checkup coming up. You are a pleasant and friendly receptionist caring deeply for the user. You don't provide medical advice but would use the medical knowledge to understand user responses.
+
+## Style Guardrails
+Be Concise: Respond succinctly, addressing one topic at most.
+Embrace Variety: Use diverse language and rephrasing to enhance clarity without repeating content.
+Be Conversational: Use everyday language, making the chat feel like talking to a friend.
+Be Proactive: Lead the conversation, often wrapping up with a question or next-step suggestion.
+Avoid multiple questions in a single response.
+Get clarity: If the user only partially answers a question, or if the answer is unclear, keep asking to get clarity.
+Use a colloquial way of referring to the date (like Friday, January 14th, or Tuesday, January 12th, 2024 at 8am).
+
+## Response Guideline
+Adapt and Guess: Try to understand transcripts that may contain transcription errors. Avoid mentioning "transcription error" in the response.
+Stay in Character: Keep conversations within your role's scope, guiding them back creatively without repeating.
+Ensure Fluid Dialogue: Respond in a role-appropriate, direct manner to maintain a smooth conversation flow.
+
+## Task
+You will follow the steps below, do not skip steps, and only ask up to one question in response.
+If at any time the user showed anger or wanted a human agent, call transfer_call to transfer to a human representative.
+1. Begin with a self-introduction and verify if callee is Cindy.
+  - if callee is not Cindy, call end_call to hang up, say sorry for the confusion when hanging up.
+  - if Cindy is not available, call end_call politely to hang up, say you will call back later when hanging up.
+2. Inform Cindy she has an annual body check coming up on April 4th, 2024 at 10am PDT. Check if Cindy is available.
+  - If not, tell Cindy to reschedule online and jump to step 5.
+3. Ask Cindy if there's anything that the doctor should know before the annual checkup.
+  - Ask followup questions as needed to assess the severity of the issue, and understand how it has progressed.
+4. Tell Cindy to not eat or drink that day before the checkup. Also tell Cindy to give you a callback if there's any changes in health condition.
+5. Ask Cindy if she has any questions, and if so, answer them until there are no questions.
+  - If user asks something you do not know, let them know you don't have the answer. Ask them if they have any other questions.
+  - If user do not have any questions, call function end_call to hang up.
+        :rtype: str
+        """
+        return self._SystemPrompt
+
+    @SystemPrompt.setter
+    def SystemPrompt(self, SystemPrompt):
+        self._SystemPrompt = SystemPrompt
+
+    @property
+    def Model(self):
+        r"""Model name, such as
+
+- OpenAI protocol
+"gpt-4o-mini","gpt-4o","deepseek-chat";
+
+- Azure protocol
+"gpt-4o-mini", "gpt-4o";
+
+- Minimax protocol
+"deepseek-chat".
+        :rtype: str
+        """
+        return self._Model
+
+    @Model.setter
+    def Model(self, Model):
+        self._Model = Model
+
+    @property
+    def VoiceType(self):
+        r"""The following voice parameter values are available by default. If you wish to customize the voice type, please leave VoiceType blank and configure it in the CustomTTSConfig parameter.
+
+Chinese:
+ZhiMei: Zhimei, customer service female voice
+ZhiXi: Zhixi, general female voice
+ZhiQi: Zhiqi, customer service female voice
+ZhiTian: Zhitian, female child voice
+AiXiaoJing: Ai Xiaojing, dialogue female voice
+
+English:
+WeRose:English Female Voice
+Monika:English Female Voice
+
+Japanese:
+Nanami
+
+Korean:
+SunHi
+
+Indonesian (Indonesia):
+Gadis
+
+Malay (Malaysia):
+Yasmin
+
+ Tamil (Malaysia):
+Kani
+
+Thai (Thailand):
+Achara
+
+Vietnamese (Vietnam):
+HoaiMy
+
+
+        :rtype: str
+        """
+        return self._VoiceType
+
+    @VoiceType.setter
+    def VoiceType(self, VoiceType):
+        self._VoiceType = VoiceType
+
+    @property
+    def Callers(self):
+        r"""Caller number list
+        :rtype: list of str
+        """
+        return self._Callers
+
+    @Callers.setter
+    def Callers(self, Callers):
+        self._Callers = Callers
+
+    @property
+    def WelcomeMessage(self):
+        r"""Used to set the AI Agent Welcome Message.
+        :rtype: str
+        """
+        return self._WelcomeMessage
+
+    @WelcomeMessage.setter
+    def WelcomeMessage(self, WelcomeMessage):
+        self._WelcomeMessage = WelcomeMessage
+
+    @property
+    def WelcomeType(self):
+        r"""0: Use welcomeMessage (if empty, the callee speaks first; if not empty, the bot speaks first)
+1:   Use AI to automatically generate welcomeMessage and speak first based on the prompt
+        :rtype: int
+        """
+        return self._WelcomeType
+
+    @WelcomeType.setter
+    def WelcomeType(self, WelcomeType):
+        self._WelcomeType = WelcomeType
+
+    @property
+    def WelcomeMessagePriority(self):
+        r"""0: interruptible by default, 2: high priority non-interruptible.
+        :rtype: int
+        """
+        return self._WelcomeMessagePriority
+
+    @WelcomeMessagePriority.setter
+    def WelcomeMessagePriority(self, WelcomeMessagePriority):
+        self._WelcomeMessagePriority = WelcomeMessagePriority
+
+    @property
+    def MaxDuration(self):
+        r"""Maximum Waiting Duration (milliseconds), default is 60 seconds, if the user does not speak within this time, the call is automatically terminated
+        :rtype: int
+        """
+        return self._MaxDuration
+
+    @MaxDuration.setter
+    def MaxDuration(self, MaxDuration):
+        self._MaxDuration = MaxDuration
+
+    @property
+    def Languages(self):
+        r"""ASR Supported Languages, default is "zh" Chinese,
+Fill in the array with up to 4 languages, the first is the primary language for recognition, followed by optional languages,
+Note: When the primary language is a Chinese dialect, optional languages are invalid
+Currently, the supported languages are as follows. The English name of the language is on the left side of the equals sign, and the value to be filled in the Language field is on the right side, following ISO639:
+1. Chinese = "zh" # Chinese
+2. Chinese_TW = "zh-TW" # Taiwan (China)
+3. Chinese_DIALECT = "zh-dialect" # Chinese Dialect
+4. English = "en" # English
+5. Vietnamese = "vi" # Vietnamese
+6. Japanese = "ja" # Japanese
+7. Korean = "ko" # Korean
+8. Indonesia = "id" # Indonesian
+9. Thai = "th" # Thai
+10. Portuguese = "pt" # Portuguese
+11. Turkish = "tr" # Turkish
+12. Arabic = "ar" # Arabic
+13. Spanish = "es" # Spanish
+14. Hindi = "hi" # Hindi
+15. French = "fr" # French
+16. Malay = "ms" # Malay
+17. Filipino = "fil" # Filipino
+18. German = "de" # German
+19. Italian = "it" # Italian
+20. Russian = "ru" # Russian
+        :rtype: list of str
+        """
+        return self._Languages
+
+    @Languages.setter
+    def Languages(self, Languages):
+        self._Languages = Languages
+
+    @property
+    def InterruptMode(self):
+        r"""Interrupt ai speaking mode. default is 0. 0 indicates automatic interruption and 1 indicates no interruption.
+        :rtype: int
+        """
+        return self._InterruptMode
+
+    @InterruptMode.setter
+    def InterruptMode(self, InterruptMode):
+        self._InterruptMode = InterruptMode
+
+    @property
+    def InterruptSpeechDuration(self):
+        r"""Used when InterruptMode is 0, unit in milliseconds, default is 500ms. It means that the server-side detects ongoing vocal input for the InterruptSpeechDuration milliseconds and then interrupts.
+        :rtype: int
+        """
+        return self._InterruptSpeechDuration
+
+    @InterruptSpeechDuration.setter
+    def InterruptSpeechDuration(self, InterruptSpeechDuration):
+        self._InterruptSpeechDuration = InterruptSpeechDuration
+
+    @property
+    def EndFunctionEnable(self):
+        r"""Whether the model supports (or enables) call_end function calling
+        :rtype: bool
+        """
+        return self._EndFunctionEnable
+
+    @EndFunctionEnable.setter
+    def EndFunctionEnable(self, EndFunctionEnable):
+        self._EndFunctionEnable = EndFunctionEnable
+
+    @property
+    def EndFunctionDesc(self):
+        r"""Effective when EndFunctionEnable is true; the description of call_end function calling, default is "End the call when user has to leave (like says bye) or you are instructed to do so."
+        :rtype: str
+        """
+        return self._EndFunctionDesc
+
+    @EndFunctionDesc.setter
+    def EndFunctionDesc(self, EndFunctionDesc):
+        self._EndFunctionDesc = EndFunctionDesc
+
+    @property
+    def TransferFunctionEnable(self):
+        r"""Whether the model supports (or enables) transfer_to_human function calling.
+        :rtype: bool
+        """
+        return self._TransferFunctionEnable
+
+    @TransferFunctionEnable.setter
+    def TransferFunctionEnable(self, TransferFunctionEnable):
+        self._TransferFunctionEnable = TransferFunctionEnable
+
+    @property
+    def TransferItems(self):
+        r"""Takes effect when transferfunctionenable is true: transfer to human configuration.
+        :rtype: list of AITransferItem
+        """
+        return self._TransferItems
+
+    @TransferItems.setter
+    def TransferItems(self, TransferItems):
+        self._TransferItems = TransferItems
+
+    @property
+    def NotifyDuration(self):
+        r"""The duration after which the user hasn't spoken to trigger a notification, minimum 10 seconds, default 10 seconds
+        :rtype: int
+        """
+        return self._NotifyDuration
+
+    @NotifyDuration.setter
+    def NotifyDuration(self, NotifyDuration):
+        self._NotifyDuration = NotifyDuration
+
+    @property
+    def NotifyMessage(self):
+        r"""The AI prompt when NotifyDuration has passed without the user speaking, default is "Sorry, I didn't hear you clearly. Can you repeat that?"
+        :rtype: str
+        """
+        return self._NotifyMessage
+
+    @NotifyMessage.setter
+    def NotifyMessage(self, NotifyMessage):
+        self._NotifyMessage = NotifyMessage
+
+    @property
+    def NotifyMaxCount(self):
+        r"""Maximum number of times to trigger ai prompt sound, unlimited by default.
+        :rtype: int
+        """
+        return self._NotifyMaxCount
+
+    @NotifyMaxCount.setter
+    def NotifyMaxCount(self, NotifyMaxCount):
+        self._NotifyMaxCount = NotifyMaxCount
+
+    @property
+    def CustomTTSConfig(self):
+        r"""<p>Either the VoiceType field or a custom TTS is required. this uses your own custom TTS, while VoiceType provides some built-in voice types.</p>.
+<ul>
+<li>Tencent TTS<br>
+For configuration, see <a href="https://www.tencentcloud.comom/document/product/1073/92668?from_cn_redirect=1#55924b56-1a73-4663-a7a1-a8dd82d6e823" target="_blank">tencent cloud TTS documentation link</a></li>.
+</ul>
+<div class="v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class"><pre class="v-md-prism-"><code>{ 
+"TTSType": "tencent", // String TTS type. currently supports "tencent" and "minixmax". the rest manufacturers are under support.
+  "AppId": "your application ID", // String required.
+  "SecretId": "your key ID", // String required.
+  "SecretKey": "your Key", // String required.
+  "VoiceType": 101001, // Integer  required. the voice ID, including standard timbre and premium timbre. premium timbre has higher fidelity and different pricing from standard timbre. please refer to the text to speech billing overview. for the complete supported timbre list, see the text to speech timbre list.
+  "Speed": 1.25, // Integer optional, speaking rate, value range: [-2,6], respectively represent different speaking rates: -2: 0.6x -1: 0.8x 0: 1.0x (default) 1: 1.2x 2: 1.5x 6: 2.5x. if more refined speaking rates are needed, up to 2 decimal places can be retained, such as 0.5, 1.25, or 2.81. for parameter value to actual speech Speed conversion, refer to speech Speed switch.
+  "Volume": 5, // Integer optional. specifies the Volume level. value range: [0,10], corresponding to 11 severity levels respectively. default value: 0, which represents normal Volume.
+  "PrimaryLanguage": 1, // Integer option primary language 1-chinese (default) 2-english 3-japanese.
+"FastVoiceType": "xxxx"   //  optional parameter. parameters for quick voice clone. 
+  }
+</code></pre>
+ </div><ul>
+<li>Minimax TTS<br>
+For configuration, refer to the <a href="https://platform.minimaxi.com/document/T2a%20V2?key=66719005a427f0c8a5701643" target="_blank">Minimax TTS documentation link</a>. note that Minimax TTS has frequency limits. overfrequency may result in response delays. see the <a href="https://platform.minimaxi.com/document/Rate%20limits?key=66b19417290299a26b234572" target="_blank">Minimax TTS frequency limit documentation link</a>.</li>.
+</ul>
+<div class="v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class"><pre class="v-md-prism-"><code>{
+"TTSType": "minimax",  // String TTS type. 
+        &quot;Model&quot;: &quot;speech-01-turbo&quot;,
+        &quot;APIUrl&quot;: &quot;https://api.minimax.chat/v1/t2a_v2&quot;,
+        &quot;APIKey&quot;: &quot;eyxxxx&quot;,
+        &quot;GroupId&quot;: &quot;181000000000000&quot;,
+        &quot;VoiceType&quot;:&quot;female-tianmei&quot;,
+        &quot;Speed&quot;: 1.2
+}
+</code></pre>
+</div><ul>
+<li>Volcano TTS</li>.
+</ul>
+<p>Configure the timbre type. see <a href="https://www.volcengine.com/docs/6561/162929" target="_blank">volcano TTS documentation link</a><br>.
+Text to speech timbre list - voice technology - volcano engine.
+Large model TTS timbre list - voice technology - volcano engine</p>.
+<div class="v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class"><pre class="v-md-prism-"><code>{
+"TTSType": "volcengine",  // required: String TTS type.
+"AppId": "xxxxxxxx",   // required: String AppId assigned by volcano engine.
+"Token": "TY9d4sQXHxxxxxxx", // required: String type, access Token for volcano engine.
+"Speed": 1.0,            // optional parameter. speaking rate, defaults to 1.0.
+"Volume": 1.0,            // optional parameter, Volume, defaults to 1.0.
+"Cluster": "volcano_tts", // optional parameter, business Cluster, is selected by default.
+"VoiceType": "zh_male_aojiaobazong_moon_bigtts" // timbre type, defaults to the TTS voice type of the large model. if using ordinary text to speech, you need to fill in the corresponding voice type. input errors in voice type can cause no sound.
+}
+</code></pre>
+</div><ul>
+<li>Azure TTS<br>
+For configuration, refer to the <a href="https://docs.azure.cn/zh-cn/ai-services/speech-service/speech-synthesis-markup-voice" target="_blank">AzureTTS documentation link</a></li>.
+</ul>
+<div class="v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class"><pre class="v-md-prism-"><code>{
+"TTSType": "azure", // required: String TTS type.
+"SubscriptionKey": "xxxxxxxx", // required: String subscription Key.
+"Region": "chinanorth3",  // required: String the Region to subscribe to.
+"VoiceName": "zh-CN-XiaoxiaoNeural", // required: String specifies the required VoiceName.
+"Language": "zh-CN", // required: String specifies the synthesis Language.  
+"Rate": 1 // optional: float, speech speed. value range: 0.5–2. default is 1.
+}
+</code></pre>
+</div><ul>
+<li>Custom TTS</li>.
+</ul>
+<p>For the specific protocol specification, refer to <a href="https://doc.weixin.qq.com/doc/w3_ANQAiAbdAFwHILbJBmtSqSbV1WZ3L?scode=AJEAIQdfAAo5a1xajYANQAiAbdAFw" target="_blank">tencent documentation</a></p>.
+<div class="v-md-pre-wrapper copy-code-mode v-md-pre-wrapper- extra-class"><pre class="v-md-prism-"><code>{
+"TTSType": "custom", // String required.
+"APIKey": "APIKey", // String required. be used to authenticate.
+"APIUrl": "http://0.0.0.0:8080/stream-audio" // String, required, TTS API URL.
+"AudioFormat": "wav", // String, optional, specifies the desired audio format, such as mp3, ogg_opus, pcm, wav. defaults to wav. currently only support pcm and wav.
+"SampleRate": 16000,  // Integer, optional, audio sample rate, defaults to 16000 (16k), recommended value is 16000.
+"AudioChannel": 1,    // Integer, optional, audio channel quantity. valid values: 1 or 2. default is 1.  
+}
+</code></pre>
+</div>
+        :rtype: str
+        """
+        return self._CustomTTSConfig
+
+    @CustomTTSConfig.setter
+    def CustomTTSConfig(self, CustomTTSConfig):
+        self._CustomTTSConfig = CustomTTSConfig
+
+    @property
+    def PromptVariables(self):
+        warnings.warn("parameter `PromptVariables` is deprecated", DeprecationWarning) 
+
+        r"""Prompt word variable.
+        :rtype: list of Variable
+        """
+        return self._PromptVariables
+
+    @PromptVariables.setter
+    def PromptVariables(self, PromptVariables):
+        warnings.warn("parameter `PromptVariables` is deprecated", DeprecationWarning) 
+
+        self._PromptVariables = PromptVariables
+
+    @property
+    def VadSilenceTime(self):
+        r"""Automatic speech recognition vad time ranges from 240 to 2000, with a default of 1000, measured in milliseconds. smaller values will make automatic speech recognition segment faster.
+        :rtype: int
+        """
+        return self._VadSilenceTime
+
+    @VadSilenceTime.setter
+    def VadSilenceTime(self, VadSilenceTime):
+        self._VadSilenceTime = VadSilenceTime
+
+    @property
+    def ExtractConfig(self):
+        r"""Call content extraction configuration.
+        :rtype: list of AICallExtractConfigElement
+        """
+        return self._ExtractConfig
+
+    @ExtractConfig.setter
+    def ExtractConfig(self, ExtractConfig):
+        self._ExtractConfig = ExtractConfig
+
+    @property
+    def Temperature(self):
+        r"""Model temperature control.
+        :rtype: float
+        """
+        return self._Temperature
+
+    @Temperature.setter
+    def Temperature(self, Temperature):
+        self._Temperature = Temperature
+
+    @property
+    def Variables(self):
+        r"""Common variable: <p>prompt content variable</p> <p>welcome message variable</p> <p>welcome message delay playback (in seconds): welcome-message-delay</p> <p>dify variable</p>.  
+
+dify-inputs-xxx specifies the inputs variable for dify.
+2. the dify-inputs-user specifies the user value for dify.
+3. dify-inputs-conversation_id is the conversation_id value of dify.
+        :rtype: list of Variable
+        """
+        return self._Variables
+
+    @Variables.setter
+    def Variables(self, Variables):
+        self._Variables = Variables
+
+    @property
+    def TopP(self):
+        r"""Specifies the model topP.
+        :rtype: float
+        """
+        return self._TopP
+
+    @TopP.setter
+    def TopP(self, TopP):
+        self._TopP = TopP
+
+    @property
+    def VadLevel(self):
+        r"""The vad far-field voice suppression capacity (does not impact asr recognition performance). value range: [0, 3]. default is 0. recommended setting: 2 for better far-field voice suppression.
+        :rtype: int
+        """
+        return self._VadLevel
+
+    @VadLevel.setter
+    def VadLevel(self, VadLevel):
+        self._VadLevel = VadLevel
+
+    @property
+    def ToneWord(self):
+        r"""Transition.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.ToneWordInfo`
+        """
+        return self._ToneWord
+
+    @ToneWord.setter
+    def ToneWord(self, ToneWord):
+        self._ToneWord = ToneWord
+
+    @property
+    def EnableComplianceAudio(self):
+        r"""Compliant prompt sound. 
+This parameter set to true (default) means call initiation plays morse code, with a Note that the conversation content is AI-generated.
+Passing 'false' to this parameter disables the compliance prompt sound. passing 'false' signifies you have read and agree to the following agreement:.
+Our side fully acknowledges and understands that according to the laws and regulations specified in the "cybersecurity law" (https://www.cac.gov.cn/2016-11/07/c_1119867116.htm), "provision on administration of deep synthesis of internet-based information service" (https://www.gov.cn/zhengce/zhengceku/2022-12/12/content_5731431.htm), "interim measures for the management of generative artificial intelligence services" (https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm), and "measures for the identification of artificial intelligence-generated synthetic content" (https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm), explicit and implicit identification should be added to ai-generated synthetic content. based on business requirements, we request tencent cloud not to add explicit identification to generated synthetic content. we commit to lawful and compliant use of generated synthetic content to avoid causing confusion or misunderstanding. if the generated synthetic content is used to provide services to the public or spread over networks, we will proactively add explicit identification that complies with legal provisions and national standards, and bear the legal obligation for identifying ai-generated synthetic content. our side will fully assume all related responsibilities if adverse consequences arise from failure to appropriately and reasonably fulfill the obligation of ai content identification, or if penalties are imposed by the competent department.
+        :rtype: bool
+        """
+        return self._EnableComplianceAudio
+
+    @EnableComplianceAudio.setter
+    def EnableComplianceAudio(self, EnableComplianceAudio):
+        self._EnableComplianceAudio = EnableComplianceAudio
+
+    @property
+    def EnableVoicemailDetection(self):
+        r"""Whether to enable voice mail recognition.
+        :rtype: bool
+        """
+        return self._EnableVoicemailDetection
+
+    @EnableVoicemailDetection.setter
+    def EnableVoicemailDetection(self, EnableVoicemailDetection):
+        self._EnableVoicemailDetection = EnableVoicemailDetection
+
+    @property
+    def VoicemailAction(self):
+        r"""Detect behavior when the peer is voice mail. this parameter is valid only when EnableVoicemailDetection is True.
+0: hang up the phone (default).
+        :rtype: int
+        """
+        return self._VoicemailAction
+
+    @VoicemailAction.setter
+    def VoicemailAction(self, VoicemailAction):
+        self._VoicemailAction = VoicemailAction
+
+    @property
+    def LLMExtraBody(self):
+        r"""Large model extended parameter, format is json string.
+        :rtype: str
+        """
+        return self._LLMExtraBody
+
+    @LLMExtraBody.setter
+    def LLMExtraBody(self, LLMExtraBody):
+        self._LLMExtraBody = LLMExtraBody
+
+    @property
+    def MaxCallDurationMs(self):
+        r"""Maximum call duration, default not limited. unit: milliseconds (ms).
+        :rtype: int
+        """
+        return self._MaxCallDurationMs
+
+    @MaxCallDurationMs.setter
+    def MaxCallDurationMs(self, MaxCallDurationMs):
+        self._MaxCallDurationMs = MaxCallDurationMs
+
+    @property
+    def MaxRingTimeoutSecond(self):
+        r"""Maximum ringing duration. auto hang up when the duration threshold is reached. **only own number supports current parameter.**.
+        :rtype: int
+        """
+        return self._MaxRingTimeoutSecond
+
+    @MaxRingTimeoutSecond.setter
+    def MaxRingTimeoutSecond(self, MaxRingTimeoutSecond):
+        self._MaxRingTimeoutSecond = MaxRingTimeoutSecond
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._Callee = params.get("Callee")
+        self._LLMType = params.get("LLMType")
+        self._APIKey = params.get("APIKey")
+        self._APIUrl = params.get("APIUrl")
+        self._SystemPrompt = params.get("SystemPrompt")
+        self._Model = params.get("Model")
+        self._VoiceType = params.get("VoiceType")
+        self._Callers = params.get("Callers")
+        self._WelcomeMessage = params.get("WelcomeMessage")
+        self._WelcomeType = params.get("WelcomeType")
+        self._WelcomeMessagePriority = params.get("WelcomeMessagePriority")
+        self._MaxDuration = params.get("MaxDuration")
+        self._Languages = params.get("Languages")
+        self._InterruptMode = params.get("InterruptMode")
+        self._InterruptSpeechDuration = params.get("InterruptSpeechDuration")
+        self._EndFunctionEnable = params.get("EndFunctionEnable")
+        self._EndFunctionDesc = params.get("EndFunctionDesc")
+        self._TransferFunctionEnable = params.get("TransferFunctionEnable")
+        if params.get("TransferItems") is not None:
+            self._TransferItems = []
+            for item in params.get("TransferItems"):
+                obj = AITransferItem()
+                obj._deserialize(item)
+                self._TransferItems.append(obj)
+        self._NotifyDuration = params.get("NotifyDuration")
+        self._NotifyMessage = params.get("NotifyMessage")
+        self._NotifyMaxCount = params.get("NotifyMaxCount")
+        self._CustomTTSConfig = params.get("CustomTTSConfig")
+        if params.get("PromptVariables") is not None:
+            self._PromptVariables = []
+            for item in params.get("PromptVariables"):
+                obj = Variable()
+                obj._deserialize(item)
+                self._PromptVariables.append(obj)
+        self._VadSilenceTime = params.get("VadSilenceTime")
+        if params.get("ExtractConfig") is not None:
+            self._ExtractConfig = []
+            for item in params.get("ExtractConfig"):
+                obj = AICallExtractConfigElement()
+                obj._deserialize(item)
+                self._ExtractConfig.append(obj)
+        self._Temperature = params.get("Temperature")
+        if params.get("Variables") is not None:
+            self._Variables = []
+            for item in params.get("Variables"):
+                obj = Variable()
+                obj._deserialize(item)
+                self._Variables.append(obj)
+        self._TopP = params.get("TopP")
+        self._VadLevel = params.get("VadLevel")
+        if params.get("ToneWord") is not None:
+            self._ToneWord = ToneWordInfo()
+            self._ToneWord._deserialize(params.get("ToneWord"))
+        self._EnableComplianceAudio = params.get("EnableComplianceAudio")
+        self._EnableVoicemailDetection = params.get("EnableVoicemailDetection")
+        self._VoicemailAction = params.get("VoicemailAction")
+        self._LLMExtraBody = params.get("LLMExtraBody")
+        self._MaxCallDurationMs = params.get("MaxCallDurationMs")
+        self._MaxRingTimeoutSecond = params.get("MaxRingTimeoutSecond")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CreateAICallResponse(AbstractModel):
+    r"""CreateAICall response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SessionId: Newly created session ID.
+        :type SessionId: str
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._SessionId = None
+        self._RequestId = None
+
+    @property
+    def SessionId(self):
+        r"""Newly created session ID.
+        :rtype: str
+        """
+        return self._SessionId
+
+    @SessionId.setter
+    def SessionId(self, SessionId):
+        self._SessionId = SessionId
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._SessionId = params.get("SessionId")
+        self._RequestId = params.get("RequestId")
+
+
+class CreateAdminURLRequest(AbstractModel):
+    r"""CreateAdminURL request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _SeatUserId: Admin account.
+        :type SeatUserId: str
+        """
+        self._SdkAppId = None
+        self._SeatUserId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def SeatUserId(self):
+        r"""Admin account.
+        :rtype: str
+        """
+        return self._SeatUserId
+
+    @SeatUserId.setter
+    def SeatUserId(self, SeatUserId):
+        self._SeatUserId = SeatUserId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._SeatUserId = params.get("SeatUserId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CreateAdminURLResponse(AbstractModel):
+    r"""CreateAdminURL response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _URL: Log-In link.
+        :type URL: str
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._URL = None
+        self._RequestId = None
+
+    @property
+    def URL(self):
+        r"""Log-In link.
+        :rtype: str
+        """
+        return self._URL
+
+    @URL.setter
+    def URL(self, URL):
+        self._URL = URL
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._URL = params.get("URL")
+        self._RequestId = params.get("RequestId")
+
+
+class CreateAgentCruiseDialingCampaignRequest(AbstractModel):
+    r"""CreateAgentCruiseDialingCampaign request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _Name: Task name.
+        :type Name: str
+        :param _Agent: Agent account.
+        :type Agent: str
+        :param _ConcurrencyNumber: Single-Round concurrent call volume 1-20.
+        :type ConcurrencyNumber: int
+        :param _StartTime: Task start time. unix timestamp. the task will automatically start after this time.
+        :type StartTime: int
+        :param _EndTime: Task termination time. unix timestamp. the task will automatically terminate after this time.
+        :type EndTime: int
+        :param _Callees: Called list supporting e.164 or number formats without country code.
+        :type Callees: list of str
+        :param _Callers: Calling list using the number formats displayed on the management side.
+        :type Callers: list of str
+        :param _CallOrder: Being called sequence: 0 for random 1 for in order.
+        :type CallOrder: int
+        :param _UUI: Caller custom data, maximum length 1024.
+        :type UUI: str
+        """
+        self._SdkAppId = None
+        self._Name = None
+        self._Agent = None
+        self._ConcurrencyNumber = None
+        self._StartTime = None
+        self._EndTime = None
+        self._Callees = None
+        self._Callers = None
+        self._CallOrder = None
+        self._UUI = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def Name(self):
+        r"""Task name.
+        :rtype: str
+        """
+        return self._Name
+
+    @Name.setter
+    def Name(self, Name):
+        self._Name = Name
+
+    @property
+    def Agent(self):
+        r"""Agent account.
+        :rtype: str
+        """
+        return self._Agent
+
+    @Agent.setter
+    def Agent(self, Agent):
+        self._Agent = Agent
+
+    @property
+    def ConcurrencyNumber(self):
+        r"""Single-Round concurrent call volume 1-20.
+        :rtype: int
+        """
+        return self._ConcurrencyNumber
+
+    @ConcurrencyNumber.setter
+    def ConcurrencyNumber(self, ConcurrencyNumber):
+        self._ConcurrencyNumber = ConcurrencyNumber
+
+    @property
+    def StartTime(self):
+        r"""Task start time. unix timestamp. the task will automatically start after this time.
+        :rtype: int
+        """
+        return self._StartTime
+
+    @StartTime.setter
+    def StartTime(self, StartTime):
+        self._StartTime = StartTime
+
+    @property
+    def EndTime(self):
+        r"""Task termination time. unix timestamp. the task will automatically terminate after this time.
+        :rtype: int
+        """
+        return self._EndTime
+
+    @EndTime.setter
+    def EndTime(self, EndTime):
+        self._EndTime = EndTime
+
+    @property
+    def Callees(self):
+        r"""Called list supporting e.164 or number formats without country code.
+        :rtype: list of str
+        """
+        return self._Callees
+
+    @Callees.setter
+    def Callees(self, Callees):
+        self._Callees = Callees
+
+    @property
+    def Callers(self):
+        r"""Calling list using the number formats displayed on the management side.
+        :rtype: list of str
+        """
+        return self._Callers
+
+    @Callers.setter
+    def Callers(self, Callers):
+        self._Callers = Callers
+
+    @property
+    def CallOrder(self):
+        r"""Being called sequence: 0 for random 1 for in order.
+        :rtype: int
+        """
+        return self._CallOrder
+
+    @CallOrder.setter
+    def CallOrder(self, CallOrder):
+        self._CallOrder = CallOrder
+
+    @property
+    def UUI(self):
+        r"""Caller custom data, maximum length 1024.
+        :rtype: str
+        """
+        return self._UUI
+
+    @UUI.setter
+    def UUI(self, UUI):
+        self._UUI = UUI
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._Name = params.get("Name")
+        self._Agent = params.get("Agent")
+        self._ConcurrencyNumber = params.get("ConcurrencyNumber")
+        self._StartTime = params.get("StartTime")
+        self._EndTime = params.get("EndTime")
+        self._Callees = params.get("Callees")
+        self._Callers = params.get("Callers")
+        self._CallOrder = params.get("CallOrder")
+        self._UUI = params.get("UUI")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CreateAgentCruiseDialingCampaignResponse(AbstractModel):
+    r"""CreateAgentCruiseDialingCampaign response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _CampaignId: Generated task id.
+        :type CampaignId: int
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._CampaignId = None
+        self._RequestId = None
+
+    @property
+    def CampaignId(self):
+        r"""Generated task id.
+        :rtype: int
+        """
+        return self._CampaignId
+
+    @CampaignId.setter
+    def CampaignId(self, CampaignId):
+        self._CampaignId = CampaignId
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._CampaignId = params.get("CampaignId")
+        self._RequestId = params.get("RequestId")
+
+
+class CreateAutoCalloutTaskRequest(AbstractModel):
+    r"""CreateAutoCalloutTask request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _NotBefore: Task starting timestamp. unix second-level timestamp.
+        :type NotBefore: int
+        :param _Callees: List of called numbers.
+        :type Callees: list of str
+        :param _Callers: List of calling numbers.
+        :type Callers: list of str
+        :param _IvrId: IVR Id used for calling. if not filled, AIAgentId needs to be filled.
+        :type IvrId: int
+        :param _Name: Task name.
+        :type Name: str
+        :param _Description: <Task description>.
+        :type Description: str
+        :param _NotAfter: Task stop timestamp. unix second-level timestamp.
+        :type NotAfter: int
+        :param _Tries: Maximum attempts, 1-3 times.
+        :type Tries: int
+        :param _Variables: Custom variable (advanced edition support). using the same variable in the CalleeAttributes field will overwrite here.
+        :type Variables: list of Variable
+        :param _UUI: User-Defined data. specifies that using UUI in the CalleeAttributes field will overwrite here.
+        :type UUI: str
+        :param _CalleeAttributes: Property of the called.
+        :type CalleeAttributes: list of CalleeAttribute
+        :param _TimeZone: IANA time zone name. see https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones.
+        :type TimeZone: str
+        :param _AvailableTime: Available time period.
+        :type AvailableTime: list of TimeRange
+        :param _AIAgentId: Intelligent agent ID. if not filled, IvrId needs to be filled.
+        :type AIAgentId: int
+        """
+        self._SdkAppId = None
+        self._NotBefore = None
+        self._Callees = None
+        self._Callers = None
+        self._IvrId = None
+        self._Name = None
+        self._Description = None
+        self._NotAfter = None
+        self._Tries = None
+        self._Variables = None
+        self._UUI = None
+        self._CalleeAttributes = None
+        self._TimeZone = None
+        self._AvailableTime = None
+        self._AIAgentId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def NotBefore(self):
+        r"""Task starting timestamp. unix second-level timestamp.
+        :rtype: int
+        """
+        return self._NotBefore
+
+    @NotBefore.setter
+    def NotBefore(self, NotBefore):
+        self._NotBefore = NotBefore
+
+    @property
+    def Callees(self):
+        r"""List of called numbers.
+        :rtype: list of str
+        """
+        return self._Callees
+
+    @Callees.setter
+    def Callees(self, Callees):
+        self._Callees = Callees
+
+    @property
+    def Callers(self):
+        r"""List of calling numbers.
+        :rtype: list of str
+        """
+        return self._Callers
+
+    @Callers.setter
+    def Callers(self, Callers):
+        self._Callers = Callers
+
+    @property
+    def IvrId(self):
+        r"""IVR Id used for calling. if not filled, AIAgentId needs to be filled.
+        :rtype: int
+        """
+        return self._IvrId
+
+    @IvrId.setter
+    def IvrId(self, IvrId):
+        self._IvrId = IvrId
+
+    @property
+    def Name(self):
+        r"""Task name.
+        :rtype: str
+        """
+        return self._Name
+
+    @Name.setter
+    def Name(self, Name):
+        self._Name = Name
+
+    @property
+    def Description(self):
+        r"""<Task description>.
+        :rtype: str
+        """
+        return self._Description
+
+    @Description.setter
+    def Description(self, Description):
+        self._Description = Description
+
+    @property
+    def NotAfter(self):
+        r"""Task stop timestamp. unix second-level timestamp.
+        :rtype: int
+        """
+        return self._NotAfter
+
+    @NotAfter.setter
+    def NotAfter(self, NotAfter):
+        self._NotAfter = NotAfter
+
+    @property
+    def Tries(self):
+        r"""Maximum attempts, 1-3 times.
+        :rtype: int
+        """
+        return self._Tries
+
+    @Tries.setter
+    def Tries(self, Tries):
+        self._Tries = Tries
+
+    @property
+    def Variables(self):
+        r"""Custom variable (advanced edition support). using the same variable in the CalleeAttributes field will overwrite here.
+        :rtype: list of Variable
+        """
+        return self._Variables
+
+    @Variables.setter
+    def Variables(self, Variables):
+        self._Variables = Variables
+
+    @property
+    def UUI(self):
+        r"""User-Defined data. specifies that using UUI in the CalleeAttributes field will overwrite here.
+        :rtype: str
+        """
+        return self._UUI
+
+    @UUI.setter
+    def UUI(self, UUI):
+        self._UUI = UUI
+
+    @property
+    def CalleeAttributes(self):
+        r"""Property of the called.
+        :rtype: list of CalleeAttribute
+        """
+        return self._CalleeAttributes
+
+    @CalleeAttributes.setter
+    def CalleeAttributes(self, CalleeAttributes):
+        self._CalleeAttributes = CalleeAttributes
+
+    @property
+    def TimeZone(self):
+        r"""IANA time zone name. see https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones.
+        :rtype: str
+        """
+        return self._TimeZone
+
+    @TimeZone.setter
+    def TimeZone(self, TimeZone):
+        self._TimeZone = TimeZone
+
+    @property
+    def AvailableTime(self):
+        r"""Available time period.
+        :rtype: list of TimeRange
+        """
+        return self._AvailableTime
+
+    @AvailableTime.setter
+    def AvailableTime(self, AvailableTime):
+        self._AvailableTime = AvailableTime
+
+    @property
+    def AIAgentId(self):
+        r"""Intelligent agent ID. if not filled, IvrId needs to be filled.
+        :rtype: int
+        """
+        return self._AIAgentId
+
+    @AIAgentId.setter
+    def AIAgentId(self, AIAgentId):
+        self._AIAgentId = AIAgentId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._NotBefore = params.get("NotBefore")
+        self._Callees = params.get("Callees")
+        self._Callers = params.get("Callers")
+        self._IvrId = params.get("IvrId")
+        self._Name = params.get("Name")
+        self._Description = params.get("Description")
+        self._NotAfter = params.get("NotAfter")
+        self._Tries = params.get("Tries")
+        if params.get("Variables") is not None:
+            self._Variables = []
+            for item in params.get("Variables"):
+                obj = Variable()
+                obj._deserialize(item)
+                self._Variables.append(obj)
+        self._UUI = params.get("UUI")
+        if params.get("CalleeAttributes") is not None:
+            self._CalleeAttributes = []
+            for item in params.get("CalleeAttributes"):
+                obj = CalleeAttribute()
+                obj._deserialize(item)
+                self._CalleeAttributes.append(obj)
+        self._TimeZone = params.get("TimeZone")
+        if params.get("AvailableTime") is not None:
+            self._AvailableTime = []
+            for item in params.get("AvailableTime"):
+                obj = TimeRange()
+                obj._deserialize(item)
+                self._AvailableTime.append(obj)
+        self._AIAgentId = params.get("AIAgentId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CreateAutoCalloutTaskResponse(AbstractModel):
+    r"""CreateAutoCalloutTask response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _TaskId: Task id.
+        :type TaskId: int
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._TaskId = None
+        self._RequestId = None
+
+    @property
+    def TaskId(self):
+        r"""Task id.
+        :rtype: int
+        """
+        return self._TaskId
+
+    @TaskId.setter
+    def TaskId(self, TaskId):
+        self._TaskId = TaskId
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._TaskId = params.get("TaskId")
+        self._RequestId = params.get("RequestId")
+
+
+class CreateCCCSkillGroupRequest(AbstractModel):
+    r"""CreateCCCSkillGroup request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _SkillGroupName: Skill group name.
+        :type SkillGroupName: str
+        :param _SkillGroupType: Skill group type 0-cell phone, 1-online, 3-audio, 4-video.
+        :type SkillGroupType: int
+        :param _MaxConcurrency: The maximum number of people received by the skill group (the maximum number of people that one agent in this skill group can receive) is set to 1 by default. if the skill group type is online, the maximum can be set to one or more.
+2. if the skill group type is phone, audio, or video, then the reception limit must be 1.
+        :type MaxConcurrency: int
+        """
+        self._SdkAppId = None
+        self._SkillGroupName = None
+        self._SkillGroupType = None
+        self._MaxConcurrency = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def SkillGroupName(self):
+        r"""Skill group name.
+        :rtype: str
+        """
+        return self._SkillGroupName
+
+    @SkillGroupName.setter
+    def SkillGroupName(self, SkillGroupName):
+        self._SkillGroupName = SkillGroupName
+
+    @property
+    def SkillGroupType(self):
+        r"""Skill group type 0-cell phone, 1-online, 3-audio, 4-video.
+        :rtype: int
+        """
+        return self._SkillGroupType
+
+    @SkillGroupType.setter
+    def SkillGroupType(self, SkillGroupType):
+        self._SkillGroupType = SkillGroupType
+
+    @property
+    def MaxConcurrency(self):
+        r"""The maximum number of people received by the skill group (the maximum number of people that one agent in this skill group can receive) is set to 1 by default. if the skill group type is online, the maximum can be set to one or more.
+2. if the skill group type is phone, audio, or video, then the reception limit must be 1.
+        :rtype: int
+        """
+        return self._MaxConcurrency
+
+    @MaxConcurrency.setter
+    def MaxConcurrency(self, MaxConcurrency):
+        self._MaxConcurrency = MaxConcurrency
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._SkillGroupName = params.get("SkillGroupName")
+        self._SkillGroupType = params.get("SkillGroupType")
+        self._MaxConcurrency = params.get("MaxConcurrency")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CreateCCCSkillGroupResponse(AbstractModel):
+    r"""CreateCCCSkillGroup response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SkillGroupId: Skill group id.
+        :type SkillGroupId: int
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._SkillGroupId = None
+        self._RequestId = None
+
+    @property
+    def SkillGroupId(self):
+        r"""Skill group id.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._SkillGroupId = params.get("SkillGroupId")
+        self._RequestId = params.get("RequestId")
+
+
+class CreateCallOutSessionRequest(AbstractModel):
+    r"""CreateCallOutSession request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id.
+        :type SdkAppId: int
+        :param _UserId: Customer service user ID, generally the customer service email. ensure that the mobile number has been bound. https://intl.cloud.tencent.com/document/product/679/76067?from_cn_redirect=1#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E5.AE.8C.E5.96.84.E8.B4.A6.E5.8F.B7.E4.BF.A1.E6.81.AF.
+        :type UserId: str
+        :param _Callee: Called number must be preceded by 0086.
+        :type Callee: str
+        :param _Caller: Caller number (obsolete one and use callers) must be preceded by 0086.
+        :type Caller: str
+        :param _Callers: Designated caller number list. if the prior number fails, it will automatically switch to the next number that must be preceded by 0086.
+        :type Callers: list of str
+        :param _IsForceUseMobile: Whether to force the use of mobile outbound call. currently only supports true. if set to true, ensure the allowlist is configured. https://intl.cloud.tencent.com/document/product/679/76744?from_cn_redirect=1#.E6.93.8D.E4.BD.9C.E6.AD.A5.E9.AA.A4.
+        :type IsForceUseMobile: bool
+        :param _Uui: Custom data, length limited to 1024 bytes.
+        :type Uui: str
+        :param _UUI: Custom data, length limited to 1024 bytes.
+        :type UUI: str
+        """
+        self._SdkAppId = None
+        self._UserId = None
+        self._Callee = None
+        self._Caller = None
+        self._Callers = None
+        self._IsForceUseMobile = None
+        self._Uui = None
+        self._UUI = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def UserId(self):
+        r"""Customer service user ID, generally the customer service email. ensure that the mobile number has been bound. https://intl.cloud.tencent.com/document/product/679/76067?from_cn_redirect=1#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E5.AE.8C.E5.96.84.E8.B4.A6.E5.8F.B7.E4.BF.A1.E6.81.AF.
+        :rtype: str
+        """
+        return self._UserId
+
+    @UserId.setter
+    def UserId(self, UserId):
+        self._UserId = UserId
+
+    @property
+    def Callee(self):
+        r"""Called number must be preceded by 0086.
+        :rtype: str
+        """
+        return self._Callee
+
+    @Callee.setter
+    def Callee(self, Callee):
+        self._Callee = Callee
+
+    @property
+    def Caller(self):
+        r"""Caller number (obsolete one and use callers) must be preceded by 0086.
+        :rtype: str
+        """
+        return self._Caller
+
+    @Caller.setter
+    def Caller(self, Caller):
+        self._Caller = Caller
+
+    @property
+    def Callers(self):
+        r"""Designated caller number list. if the prior number fails, it will automatically switch to the next number that must be preceded by 0086.
+        :rtype: list of str
+        """
+        return self._Callers
+
+    @Callers.setter
+    def Callers(self, Callers):
+        self._Callers = Callers
+
+    @property
+    def IsForceUseMobile(self):
+        r"""Whether to force the use of mobile outbound call. currently only supports true. if set to true, ensure the allowlist is configured. https://intl.cloud.tencent.com/document/product/679/76744?from_cn_redirect=1#.E6.93.8D.E4.BD.9C.E6.AD.A5.E9.AA.A4.
+        :rtype: bool
+        """
+        return self._IsForceUseMobile
+
+    @IsForceUseMobile.setter
+    def IsForceUseMobile(self, IsForceUseMobile):
+        self._IsForceUseMobile = IsForceUseMobile
+
+    @property
+    def Uui(self):
+        warnings.warn("parameter `Uui` is deprecated", DeprecationWarning) 
+
+        r"""Custom data, length limited to 1024 bytes.
+        :rtype: str
+        """
+        return self._Uui
+
+    @Uui.setter
+    def Uui(self, Uui):
+        warnings.warn("parameter `Uui` is deprecated", DeprecationWarning) 
+
+        self._Uui = Uui
+
+    @property
+    def UUI(self):
+        r"""Custom data, length limited to 1024 bytes.
+        :rtype: str
+        """
+        return self._UUI
+
+    @UUI.setter
+    def UUI(self, UUI):
+        self._UUI = UUI
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._UserId = params.get("UserId")
+        self._Callee = params.get("Callee")
+        self._Caller = params.get("Caller")
+        self._Callers = params.get("Callers")
+        self._IsForceUseMobile = params.get("IsForceUseMobile")
+        self._Uui = params.get("Uui")
+        self._UUI = params.get("UUI")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CreateCallOutSessionResponse(AbstractModel):
+    r"""CreateCallOutSession response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SessionId: Newly created session id.
+        :type SessionId: str
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._SessionId = None
+        self._RequestId = None
+
+    @property
+    def SessionId(self):
+        r"""Newly created session id.
+        :rtype: str
+        """
+        return self._SessionId
+
+    @SessionId.setter
+    def SessionId(self, SessionId):
+        self._SessionId = SessionId
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._SessionId = params.get("SessionId")
+        self._RequestId = params.get("RequestId")
+
+
+class CreateExtensionRequest(AbstractModel):
+    r"""CreateExtension request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _ExtensionId: Extension.
+        :type ExtensionId: str
+        :param _ExtensionName: Extension name.
+        :type ExtensionName: str
+        :param _SkillGroupIds: Bound skill group list.
+        :type SkillGroupIds: list of int non-negative
+        :param _Relation: Bound agent email.
+        :type Relation: str
+        """
+        self._SdkAppId = None
+        self._ExtensionId = None
+        self._ExtensionName = None
+        self._SkillGroupIds = None
+        self._Relation = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def ExtensionId(self):
+        r"""Extension.
+        :rtype: str
+        """
+        return self._ExtensionId
+
+    @ExtensionId.setter
+    def ExtensionId(self, ExtensionId):
+        self._ExtensionId = ExtensionId
+
+    @property
+    def ExtensionName(self):
+        r"""Extension name.
+        :rtype: str
+        """
+        return self._ExtensionName
+
+    @ExtensionName.setter
+    def ExtensionName(self, ExtensionName):
+        self._ExtensionName = ExtensionName
+
+    @property
+    def SkillGroupIds(self):
+        r"""Bound skill group list.
+        :rtype: list of int non-negative
+        """
+        return self._SkillGroupIds
+
+    @SkillGroupIds.setter
+    def SkillGroupIds(self, SkillGroupIds):
+        self._SkillGroupIds = SkillGroupIds
+
+    @property
+    def Relation(self):
+        r"""Bound agent email.
+        :rtype: str
+        """
+        return self._Relation
+
+    @Relation.setter
+    def Relation(self, Relation):
+        self._Relation = Relation
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._ExtensionId = params.get("ExtensionId")
+        self._ExtensionName = params.get("ExtensionName")
+        self._SkillGroupIds = params.get("SkillGroupIds")
+        self._Relation = params.get("Relation")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CreateExtensionResponse(AbstractModel):
+    r"""CreateExtension response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class CreateIVRSessionRequest(AbstractModel):
+    r"""CreateIVRSession request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _Callee: Called.
+        :type Callee: str
+        :param _IVRId: Specified ivr id. currently, it supports inbound and automatic outbound types.
+        :type IVRId: int
+        :param _Callers: List of calling numbers.
+        :type Callers: list of str
+        :param _Variables: Custom variable.
+        :type Variables: list of Variable
+        :param _UUI: User data.
+        :type UUI: str
+        """
+        self._SdkAppId = None
+        self._Callee = None
+        self._IVRId = None
+        self._Callers = None
+        self._Variables = None
+        self._UUI = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def Callee(self):
+        r"""Called.
+        :rtype: str
+        """
+        return self._Callee
+
+    @Callee.setter
+    def Callee(self, Callee):
+        self._Callee = Callee
+
+    @property
+    def IVRId(self):
+        r"""Specified ivr id. currently, it supports inbound and automatic outbound types.
+        :rtype: int
+        """
+        return self._IVRId
+
+    @IVRId.setter
+    def IVRId(self, IVRId):
+        self._IVRId = IVRId
+
+    @property
+    def Callers(self):
+        r"""List of calling numbers.
+        :rtype: list of str
+        """
+        return self._Callers
+
+    @Callers.setter
+    def Callers(self, Callers):
+        self._Callers = Callers
+
+    @property
+    def Variables(self):
+        r"""Custom variable.
+        :rtype: list of Variable
+        """
+        return self._Variables
+
+    @Variables.setter
+    def Variables(self, Variables):
+        self._Variables = Variables
+
+    @property
+    def UUI(self):
+        r"""User data.
+        :rtype: str
+        """
+        return self._UUI
+
+    @UUI.setter
+    def UUI(self, UUI):
+        self._UUI = UUI
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._Callee = params.get("Callee")
+        self._IVRId = params.get("IVRId")
+        self._Callers = params.get("Callers")
+        if params.get("Variables") is not None:
+            self._Variables = []
+            for item in params.get("Variables"):
+                obj = Variable()
+                obj._deserialize(item)
+                self._Variables.append(obj)
+        self._UUI = params.get("UUI")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CreateIVRSessionResponse(AbstractModel):
+    r"""CreateIVRSession response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SessionId: Newly created session id.
+        :type SessionId: str
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._SessionId = None
+        self._RequestId = None
+
+    @property
+    def SessionId(self):
+        r"""Newly created session id.
+        :rtype: str
+        """
+        return self._SessionId
+
+    @SessionId.setter
+    def SessionId(self, SessionId):
+        self._SessionId = SessionId
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._SessionId = params.get("SessionId")
+        self._RequestId = params.get("RequestId")
+
+
+class CreateOwnNumberApplyRequest(AbstractModel):
+    r"""CreateOwnNumberApply request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _SipTrunkId: SIP connection id.
+        :type SipTrunkId: int
+        :param _DetailList: Circuit-Related parameters.
+        :type DetailList: list of OwnNumberApplyDetailItem
+        :param _Prefix: Prefix for sending numbers.
+        :type Prefix: str
+        :param _MobileNddPrefix: Domestic long-distance mobile phone prefix.
+        :type MobileNddPrefix: str
+        :param _LocalNumberTrimAC: Removes the area code for local calls.
+        :type LocalNumberTrimAC: bool
+        """
+        self._SdkAppId = None
+        self._SipTrunkId = None
+        self._DetailList = None
+        self._Prefix = None
+        self._MobileNddPrefix = None
+        self._LocalNumberTrimAC = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def SipTrunkId(self):
+        r"""SIP connection id.
+        :rtype: int
+        """
+        return self._SipTrunkId
+
+    @SipTrunkId.setter
+    def SipTrunkId(self, SipTrunkId):
+        self._SipTrunkId = SipTrunkId
+
+    @property
+    def DetailList(self):
+        r"""Circuit-Related parameters.
+        :rtype: list of OwnNumberApplyDetailItem
+        """
+        return self._DetailList
+
+    @DetailList.setter
+    def DetailList(self, DetailList):
+        self._DetailList = DetailList
+
+    @property
+    def Prefix(self):
+        r"""Prefix for sending numbers.
+        :rtype: str
+        """
+        return self._Prefix
+
+    @Prefix.setter
+    def Prefix(self, Prefix):
+        self._Prefix = Prefix
+
+    @property
+    def MobileNddPrefix(self):
+        r"""Domestic long-distance mobile phone prefix.
+        :rtype: str
+        """
+        return self._MobileNddPrefix
+
+    @MobileNddPrefix.setter
+    def MobileNddPrefix(self, MobileNddPrefix):
+        self._MobileNddPrefix = MobileNddPrefix
+
+    @property
+    def LocalNumberTrimAC(self):
+        r"""Removes the area code for local calls.
+        :rtype: bool
+        """
+        return self._LocalNumberTrimAC
+
+    @LocalNumberTrimAC.setter
+    def LocalNumberTrimAC(self, LocalNumberTrimAC):
+        self._LocalNumberTrimAC = LocalNumberTrimAC
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._SipTrunkId = params.get("SipTrunkId")
+        if params.get("DetailList") is not None:
+            self._DetailList = []
+            for item in params.get("DetailList"):
+                obj = OwnNumberApplyDetailItem()
+                obj._deserialize(item)
+                self._DetailList.append(obj)
+        self._Prefix = params.get("Prefix")
+        self._MobileNddPrefix = params.get("MobileNddPrefix")
+        self._LocalNumberTrimAC = params.get("LocalNumberTrimAC")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CreateOwnNumberApplyResponse(AbstractModel):
+    r"""CreateOwnNumberApply response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _ApplyId: Approval id.
+        :type ApplyId: int
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._ApplyId = None
+        self._RequestId = None
+
+    @property
+    def ApplyId(self):
+        r"""Approval id.
+        :rtype: int
+        """
+        return self._ApplyId
+
+    @ApplyId.setter
+    def ApplyId(self, ApplyId):
+        self._ApplyId = ApplyId
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._ApplyId = params.get("ApplyId")
+        self._RequestId = params.get("RequestId")
+
+
+class CreatePredictiveDialingCampaignRequest(AbstractModel):
+    r"""CreatePredictiveDialingCampaign request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _Name: <Task name>.
+        :type Name: str
+        :param _Callees: Called list supporting e.164 or number formats without country code.
+        :type Callees: list of str
+        :param _Callers: Calling list using the number formats displayed on the management side.
+        :type Callers: list of str
+        :param _CallOrder: Being called sequence: 0 for random 1 for in order.
+        :type CallOrder: int
+        :param _SkillGroupId: ID of the used skill group of agents.
+        :type SkillGroupId: int
+        :param _Priority: Running priority of multiple tasks in the same application, from high to low 1 - 5.
+        :type Priority: int
+        :param _ExpectedAbandonRate: Expected call drop rate. value range: 0-50%.
+        :type ExpectedAbandonRate: int
+        :param _RetryInterval: Call retry interval, in seconds, [60 - 86,400].
+        :type RetryInterval: int
+        :param _StartTime: Task start time. unix timestamp. the task will automatically start after this time.
+        :type StartTime: int
+        :param _EndTime: Task termination time. unix timestamp. the task will automatically terminate after this time.
+        :type EndTime: int
+        :param _IVRId: Specified ivr id.
+        :type IVRId: int
+        :param _RetryTimes: Number of call retries, 0 - 2.
+        :type RetryTimes: int
+        :param _Variables: Custom variable.
+        :type Variables: list of Variable
+        :param _UUI: UUI
+        :type UUI: str
+        :param _CalleeAttributes: Property of the called.
+        :type CalleeAttributes: list of CalleeAttribute
+        :param _TimeZone: IANA time zone name. see https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones.
+        :type TimeZone: str
+        :param _AvailableTime: Value range of available time.
+        :type AvailableTime: list of TimeRange
+        """
+        self._SdkAppId = None
+        self._Name = None
+        self._Callees = None
+        self._Callers = None
+        self._CallOrder = None
+        self._SkillGroupId = None
+        self._Priority = None
+        self._ExpectedAbandonRate = None
+        self._RetryInterval = None
+        self._StartTime = None
+        self._EndTime = None
+        self._IVRId = None
+        self._RetryTimes = None
+        self._Variables = None
+        self._UUI = None
+        self._CalleeAttributes = None
+        self._TimeZone = None
+        self._AvailableTime = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def Name(self):
+        r"""<Task name>.
+        :rtype: str
+        """
+        return self._Name
+
+    @Name.setter
+    def Name(self, Name):
+        self._Name = Name
+
+    @property
+    def Callees(self):
+        r"""Called list supporting e.164 or number formats without country code.
+        :rtype: list of str
+        """
+        return self._Callees
+
+    @Callees.setter
+    def Callees(self, Callees):
+        self._Callees = Callees
+
+    @property
+    def Callers(self):
+        r"""Calling list using the number formats displayed on the management side.
+        :rtype: list of str
+        """
+        return self._Callers
+
+    @Callers.setter
+    def Callers(self, Callers):
+        self._Callers = Callers
+
+    @property
+    def CallOrder(self):
+        r"""Being called sequence: 0 for random 1 for in order.
+        :rtype: int
+        """
+        return self._CallOrder
+
+    @CallOrder.setter
+    def CallOrder(self, CallOrder):
+        self._CallOrder = CallOrder
+
+    @property
+    def SkillGroupId(self):
+        r"""ID of the used skill group of agents.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+    @property
+    def Priority(self):
+        r"""Running priority of multiple tasks in the same application, from high to low 1 - 5.
+        :rtype: int
+        """
+        return self._Priority
+
+    @Priority.setter
+    def Priority(self, Priority):
+        self._Priority = Priority
+
+    @property
+    def ExpectedAbandonRate(self):
+        r"""Expected call drop rate. value range: 0-50%.
+        :rtype: int
+        """
+        return self._ExpectedAbandonRate
+
+    @ExpectedAbandonRate.setter
+    def ExpectedAbandonRate(self, ExpectedAbandonRate):
+        self._ExpectedAbandonRate = ExpectedAbandonRate
+
+    @property
+    def RetryInterval(self):
+        r"""Call retry interval, in seconds, [60 - 86,400].
+        :rtype: int
+        """
+        return self._RetryInterval
+
+    @RetryInterval.setter
+    def RetryInterval(self, RetryInterval):
+        self._RetryInterval = RetryInterval
+
+    @property
+    def StartTime(self):
+        r"""Task start time. unix timestamp. the task will automatically start after this time.
+        :rtype: int
+        """
+        return self._StartTime
+
+    @StartTime.setter
+    def StartTime(self, StartTime):
+        self._StartTime = StartTime
+
+    @property
+    def EndTime(self):
+        r"""Task termination time. unix timestamp. the task will automatically terminate after this time.
+        :rtype: int
+        """
+        return self._EndTime
+
+    @EndTime.setter
+    def EndTime(self, EndTime):
+        self._EndTime = EndTime
+
+    @property
+    def IVRId(self):
+        r"""Specified ivr id.
+        :rtype: int
+        """
+        return self._IVRId
+
+    @IVRId.setter
+    def IVRId(self, IVRId):
+        self._IVRId = IVRId
+
+    @property
+    def RetryTimes(self):
+        r"""Number of call retries, 0 - 2.
+        :rtype: int
+        """
+        return self._RetryTimes
+
+    @RetryTimes.setter
+    def RetryTimes(self, RetryTimes):
+        self._RetryTimes = RetryTimes
+
+    @property
+    def Variables(self):
+        r"""Custom variable.
+        :rtype: list of Variable
+        """
+        return self._Variables
+
+    @Variables.setter
+    def Variables(self, Variables):
+        self._Variables = Variables
+
+    @property
+    def UUI(self):
+        r"""UUI
+        :rtype: str
+        """
+        return self._UUI
+
+    @UUI.setter
+    def UUI(self, UUI):
+        self._UUI = UUI
+
+    @property
+    def CalleeAttributes(self):
+        r"""Property of the called.
+        :rtype: list of CalleeAttribute
+        """
+        return self._CalleeAttributes
+
+    @CalleeAttributes.setter
+    def CalleeAttributes(self, CalleeAttributes):
+        self._CalleeAttributes = CalleeAttributes
+
+    @property
+    def TimeZone(self):
+        r"""IANA time zone name. see https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones.
+        :rtype: str
+        """
+        return self._TimeZone
+
+    @TimeZone.setter
+    def TimeZone(self, TimeZone):
+        self._TimeZone = TimeZone
+
+    @property
+    def AvailableTime(self):
+        r"""Value range of available time.
+        :rtype: list of TimeRange
+        """
+        return self._AvailableTime
+
+    @AvailableTime.setter
+    def AvailableTime(self, AvailableTime):
+        self._AvailableTime = AvailableTime
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._Name = params.get("Name")
+        self._Callees = params.get("Callees")
+        self._Callers = params.get("Callers")
+        self._CallOrder = params.get("CallOrder")
+        self._SkillGroupId = params.get("SkillGroupId")
+        self._Priority = params.get("Priority")
+        self._ExpectedAbandonRate = params.get("ExpectedAbandonRate")
+        self._RetryInterval = params.get("RetryInterval")
+        self._StartTime = params.get("StartTime")
+        self._EndTime = params.get("EndTime")
+        self._IVRId = params.get("IVRId")
+        self._RetryTimes = params.get("RetryTimes")
+        if params.get("Variables") is not None:
+            self._Variables = []
+            for item in params.get("Variables"):
+                obj = Variable()
+                obj._deserialize(item)
+                self._Variables.append(obj)
+        self._UUI = params.get("UUI")
+        if params.get("CalleeAttributes") is not None:
+            self._CalleeAttributes = []
+            for item in params.get("CalleeAttributes"):
+                obj = CalleeAttribute()
+                obj._deserialize(item)
+                self._CalleeAttributes.append(obj)
+        self._TimeZone = params.get("TimeZone")
+        if params.get("AvailableTime") is not None:
+            self._AvailableTime = []
+            for item in params.get("AvailableTime"):
+                obj = TimeRange()
+                obj._deserialize(item)
+                self._AvailableTime.append(obj)
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CreatePredictiveDialingCampaignResponse(AbstractModel):
+    r"""CreatePredictiveDialingCampaign response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _CampaignId: Generated task id.
+        :type CampaignId: int
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._CampaignId = None
+        self._RequestId = None
+
+    @property
+    def CampaignId(self):
+        r"""Generated task id.
+        :rtype: int
+        """
+        return self._CampaignId
+
+    @CampaignId.setter
+    def CampaignId(self, CampaignId):
+        self._CampaignId = CampaignId
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._CampaignId = params.get("CampaignId")
+        self._RequestId = params.get("RequestId")
+
+
+class CreateSDKLoginTokenRequest(AbstractModel):
+    r"""CreateSDKLoginToken request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _SeatUserId: Agent account.
+        :type SeatUserId: str
+        :param _OnlyOnce: Whether the generated token is for one-time verification?.
+        :type OnlyOnce: bool
+        """
+        self._SdkAppId = None
+        self._SeatUserId = None
+        self._OnlyOnce = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def SeatUserId(self):
+        r"""Agent account.
+        :rtype: str
+        """
+        return self._SeatUserId
+
+    @SeatUserId.setter
+    def SeatUserId(self, SeatUserId):
+        self._SeatUserId = SeatUserId
+
+    @property
+    def OnlyOnce(self):
+        r"""Whether the generated token is for one-time verification?.
+        :rtype: bool
+        """
+        return self._OnlyOnce
+
+    @OnlyOnce.setter
+    def OnlyOnce(self, OnlyOnce):
+        self._OnlyOnce = OnlyOnce
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._SeatUserId = params.get("SeatUserId")
+        self._OnlyOnce = params.get("OnlyOnce")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CreateSDKLoginTokenResponse(AbstractModel):
+    r"""CreateSDKLoginToken response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Token: SDK log-in token.
+        :type Token: str
+        :param _ExpiredTime: Expiry timestamp. unix timestamp.
+        :type ExpiredTime: int
+        :param _SdkURL: The path in which the sdk is loaded will change with its release.
+        :type SdkURL: str
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._Token = None
+        self._ExpiredTime = None
+        self._SdkURL = None
+        self._RequestId = None
+
+    @property
+    def Token(self):
+        r"""SDK log-in token.
+        :rtype: str
+        """
+        return self._Token
+
+    @Token.setter
+    def Token(self, Token):
+        self._Token = Token
+
+    @property
+    def ExpiredTime(self):
+        r"""Expiry timestamp. unix timestamp.
+        :rtype: int
+        """
+        return self._ExpiredTime
+
+    @ExpiredTime.setter
+    def ExpiredTime(self, ExpiredTime):
+        self._ExpiredTime = ExpiredTime
+
+    @property
+    def SdkURL(self):
+        r"""The path in which the sdk is loaded will change with its release.
+        :rtype: str
+        """
+        return self._SdkURL
+
+    @SdkURL.setter
+    def SdkURL(self, SdkURL):
+        self._SdkURL = SdkURL
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._Token = params.get("Token")
+        self._ExpiredTime = params.get("ExpiredTime")
+        self._SdkURL = params.get("SdkURL")
+        self._RequestId = params.get("RequestId")
+
+
+class CreateStaffRequest(AbstractModel):
+    r"""CreateStaff request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _Staffs: Customer information, no more than 10.
+        :type Staffs: list of SeatUserInfo
+        :param _SendPassword: Whether to send a password mail or not (the default is true).
+        :type SendPassword: bool
+        """
+        self._SdkAppId = None
+        self._Staffs = None
+        self._SendPassword = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def Staffs(self):
+        r"""Customer information, no more than 10.
+        :rtype: list of SeatUserInfo
+        """
+        return self._Staffs
+
+    @Staffs.setter
+    def Staffs(self, Staffs):
+        self._Staffs = Staffs
+
+    @property
+    def SendPassword(self):
+        r"""Whether to send a password mail or not (the default is true).
+        :rtype: bool
+        """
+        return self._SendPassword
+
+    @SendPassword.setter
+    def SendPassword(self, SendPassword):
+        self._SendPassword = SendPassword
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        if params.get("Staffs") is not None:
+            self._Staffs = []
+            for item in params.get("Staffs"):
+                obj = SeatUserInfo()
+                obj._deserialize(item)
+                self._Staffs.append(obj)
+        self._SendPassword = params.get("SendPassword")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CreateStaffResponse(AbstractModel):
+    r"""CreateStaff response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _ErrorStaffList: Error agent list and error information.
+        :type ErrorStaffList: list of ErrStaffItem
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._ErrorStaffList = None
+        self._RequestId = None
+
+    @property
+    def ErrorStaffList(self):
+        r"""Error agent list and error information.
+        :rtype: list of ErrStaffItem
+        """
+        return self._ErrorStaffList
+
+    @ErrorStaffList.setter
+    def ErrorStaffList(self, ErrorStaffList):
+        self._ErrorStaffList = ErrorStaffList
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        if params.get("ErrorStaffList") is not None:
+            self._ErrorStaffList = []
+            for item in params.get("ErrorStaffList"):
+                obj = ErrStaffItem()
+                obj._deserialize(item)
+                self._ErrorStaffList.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class CreateUserSigRequest(AbstractModel):
+    r"""CreateUserSig request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: App ID (required). can be used to view https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _Uid: User ID, must be consistent with the Uid value in the ClientData field.
+        :type Uid: str
+        :param _ExpiredTime: Valid period, in seconds, no more than 1 hr.
+        :type ExpiredTime: int
+        :param _ClientData: Signature data of the user. required field. standard JSON format.
+        :type ClientData: str
+        """
+        self._SdkAppId = None
+        self._Uid = None
+        self._ExpiredTime = None
+        self._ClientData = None
+
+    @property
+    def SdkAppId(self):
+        r"""App ID (required). can be used to view https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def Uid(self):
+        r"""User ID, must be consistent with the Uid value in the ClientData field.
+        :rtype: str
+        """
+        return self._Uid
+
+    @Uid.setter
+    def Uid(self, Uid):
+        self._Uid = Uid
+
+    @property
+    def ExpiredTime(self):
+        r"""Valid period, in seconds, no more than 1 hr.
+        :rtype: int
+        """
+        return self._ExpiredTime
+
+    @ExpiredTime.setter
+    def ExpiredTime(self, ExpiredTime):
+        self._ExpiredTime = ExpiredTime
+
+    @property
+    def ClientData(self):
+        r"""Signature data of the user. required field. standard JSON format.
+        :rtype: str
+        """
+        return self._ClientData
+
+    @ClientData.setter
+    def ClientData(self, ClientData):
+        self._ClientData = ClientData
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._Uid = params.get("Uid")
+        self._ExpiredTime = params.get("ExpiredTime")
+        self._ClientData = params.get("ClientData")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class CreateUserSigResponse(AbstractModel):
+    r"""CreateUserSig response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _UserSig: Signature result.
+        :type UserSig: str
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._UserSig = None
+        self._RequestId = None
+
+    @property
+    def UserSig(self):
+        r"""Signature result.
+        :rtype: str
+        """
+        return self._UserSig
+
+    @UserSig.setter
+    def UserSig(self, UserSig):
+        self._UserSig = UserSig
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._UserSig = params.get("UserSig")
+        self._RequestId = params.get("RequestId")
+
+
+class DeleteCCCSkillGroupRequest(AbstractModel):
+    r"""DeleteCCCSkillGroup request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: App ID (required), which can be viewed at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _SkillGroupId: Skill group ID.
+        :type SkillGroupId: int
+        """
+        self._SdkAppId = None
+        self._SkillGroupId = None
+
+    @property
+    def SdkAppId(self):
+        r"""App ID (required), which can be viewed at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def SkillGroupId(self):
+        r"""Skill group ID.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._SkillGroupId = params.get("SkillGroupId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DeleteCCCSkillGroupResponse(AbstractModel):
+    r"""DeleteCCCSkillGroup response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class DeleteExtensionRequest(AbstractModel):
+    r"""DeleteExtension request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _ExtensionId: Extension.
+        :type ExtensionId: str
+        """
+        self._SdkAppId = None
+        self._ExtensionId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def ExtensionId(self):
+        r"""Extension.
+        :rtype: str
+        """
+        return self._ExtensionId
+
+    @ExtensionId.setter
+    def ExtensionId(self, ExtensionId):
+        self._ExtensionId = ExtensionId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._ExtensionId = params.get("ExtensionId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DeleteExtensionResponse(AbstractModel):
+    r"""DeleteExtension response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class DeletePredictiveDialingCampaignRequest(AbstractModel):
+    r"""DeletePredictiveDialingCampaign request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _CampaignId: <Task id>.
+        :type CampaignId: int
+        """
+        self._SdkAppId = None
+        self._CampaignId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def CampaignId(self):
+        r"""<Task id>.
+        :rtype: int
+        """
+        return self._CampaignId
+
+    @CampaignId.setter
+    def CampaignId(self, CampaignId):
+        self._CampaignId = CampaignId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._CampaignId = params.get("CampaignId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DeletePredictiveDialingCampaignResponse(AbstractModel):
+    r"""DeletePredictiveDialingCampaign response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class DeleteStaffRequest(AbstractModel):
+    r"""DeleteStaff request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _StaffList: List of customer service emails to be deleted, supports up to 200 at a time.
+        :type StaffList: list of str
+        """
+        self._SdkAppId = None
+        self._StaffList = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def StaffList(self):
+        r"""List of customer service emails to be deleted, supports up to 200 at a time.
+        :rtype: list of str
+        """
+        return self._StaffList
+
+    @StaffList.setter
+    def StaffList(self, StaffList):
+        self._StaffList = StaffList
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._StaffList = params.get("StaffList")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DeleteStaffResponse(AbstractModel):
+    r"""DeleteStaff response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _OnlineStaffList: List of customer service staff that cannot be deleted when they are online.
+        :type OnlineStaffList: list of str
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._OnlineStaffList = None
+        self._RequestId = None
+
+    @property
+    def OnlineStaffList(self):
+        r"""List of customer service staff that cannot be deleted when they are online.
+        :rtype: list of str
+        """
+        return self._OnlineStaffList
+
+    @OnlineStaffList.setter
+    def OnlineStaffList(self, OnlineStaffList):
+        self._OnlineStaffList = OnlineStaffList
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._OnlineStaffList = params.get("OnlineStaffList")
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeAIAgentInfoListRequest(AbstractModel):
+    r"""DescribeAIAgentInfoList request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: App ID (required). can be viewed at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _PageSize: Pagination size, upper limit 100.
+        :type PageSize: int
+        :param _PageNumber: Page number, starting from 0.
+        :type PageNumber: int
+        """
+        self._SdkAppId = None
+        self._PageSize = None
+        self._PageNumber = None
+
+    @property
+    def SdkAppId(self):
+        r"""App ID (required). can be viewed at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def PageSize(self):
+        r"""Pagination size, upper limit 100.
+        :rtype: int
+        """
+        return self._PageSize
+
+    @PageSize.setter
+    def PageSize(self, PageSize):
+        self._PageSize = PageSize
+
+    @property
+    def PageNumber(self):
+        r"""Page number, starting from 0.
+        :rtype: int
+        """
+        return self._PageNumber
+
+    @PageNumber.setter
+    def PageNumber(self, PageNumber):
+        self._PageNumber = PageNumber
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._PageSize = params.get("PageSize")
+        self._PageNumber = params.get("PageNumber")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeAIAgentInfoListResponse(AbstractModel):
+    r"""DescribeAIAgentInfoList response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _AIAgentInfoList: Intelligent agent information list.
+        :type AIAgentInfoList: list of AIAgentInfo
+        :param _TotalCount: Total number of intelligent agents.
+        :type TotalCount: int
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._AIAgentInfoList = None
+        self._TotalCount = None
+        self._RequestId = None
+
+    @property
+    def AIAgentInfoList(self):
+        r"""Intelligent agent information list.
+        :rtype: list of AIAgentInfo
+        """
+        return self._AIAgentInfoList
+
+    @AIAgentInfoList.setter
+    def AIAgentInfoList(self, AIAgentInfoList):
+        self._AIAgentInfoList = AIAgentInfoList
+
+    @property
+    def TotalCount(self):
+        r"""Total number of intelligent agents.
+        :rtype: int
+        """
+        return self._TotalCount
+
+    @TotalCount.setter
+    def TotalCount(self, TotalCount):
+        self._TotalCount = TotalCount
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        if params.get("AIAgentInfoList") is not None:
+            self._AIAgentInfoList = []
+            for item in params.get("AIAgentInfoList"):
+                obj = AIAgentInfo()
+                obj._deserialize(item)
+                self._AIAgentInfoList.append(obj)
+        self._TotalCount = params.get("TotalCount")
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeAIAnalysisResultRequest(AbstractModel):
+    r"""DescribeAIAnalysisResult request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: App ID (required). can be viewed at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _SessionId: Specifies the conversation ID.
+        :type SessionId: str
+        :param _StartTime: Specifies the search start time.	
+        :type StartTime: int
+        :param _EndTime: 1737350008
+        :type EndTime: int
+        """
+        self._SdkAppId = None
+        self._SessionId = None
+        self._StartTime = None
+        self._EndTime = None
+
+    @property
+    def SdkAppId(self):
+        r"""App ID (required). can be viewed at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def SessionId(self):
+        r"""Specifies the conversation ID.
+        :rtype: str
+        """
+        return self._SessionId
+
+    @SessionId.setter
+    def SessionId(self, SessionId):
+        self._SessionId = SessionId
+
+    @property
+    def StartTime(self):
+        r"""Specifies the search start time.	
+        :rtype: int
+        """
+        return self._StartTime
+
+    @StartTime.setter
+    def StartTime(self, StartTime):
+        self._StartTime = StartTime
+
+    @property
+    def EndTime(self):
+        r"""1737350008
+        :rtype: int
+        """
+        return self._EndTime
+
+    @EndTime.setter
+    def EndTime(self, EndTime):
+        self._EndTime = EndTime
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._SessionId = params.get("SessionId")
+        self._StartTime = params.get("StartTime")
+        self._EndTime = params.get("EndTime")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeAIAnalysisResultResponse(AbstractModel):
+    r"""DescribeAIAnalysisResult response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _ResultList: AI session analysis result.
+        :type ResultList: list of AIAnalysisResult
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._ResultList = None
+        self._RequestId = None
+
+    @property
+    def ResultList(self):
+        r"""AI session analysis result.
+        :rtype: list of AIAnalysisResult
+        """
+        return self._ResultList
+
+    @ResultList.setter
+    def ResultList(self, ResultList):
+        self._ResultList = ResultList
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        if params.get("ResultList") is not None:
+            self._ResultList = []
+            for item in params.get("ResultList"):
+                obj = AIAnalysisResult()
+                obj._deserialize(item)
+                self._ResultList.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeAICallExtractResultRequest(AbstractModel):
+    r"""DescribeAICallExtractResult request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _SessionId: Session id.
+        :type SessionId: str
+        :param _StartTime: Search for the start time.
+        :type StartTime: int
+        :param _EndTime: Search for the end time.
+        :type EndTime: int
+        """
+        self._SdkAppId = None
+        self._SessionId = None
+        self._StartTime = None
+        self._EndTime = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def SessionId(self):
+        r"""Session id.
+        :rtype: str
+        """
+        return self._SessionId
+
+    @SessionId.setter
+    def SessionId(self, SessionId):
+        self._SessionId = SessionId
+
+    @property
+    def StartTime(self):
+        r"""Search for the start time.
+        :rtype: int
+        """
+        return self._StartTime
+
+    @StartTime.setter
+    def StartTime(self, StartTime):
+        self._StartTime = StartTime
+
+    @property
+    def EndTime(self):
+        r"""Search for the end time.
+        :rtype: int
+        """
+        return self._EndTime
+
+    @EndTime.setter
+    def EndTime(self, EndTime):
+        self._EndTime = EndTime
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._SessionId = params.get("SessionId")
+        self._StartTime = params.get("StartTime")
+        self._EndTime = params.get("EndTime")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeAICallExtractResultResponse(AbstractModel):
+    r"""DescribeAICallExtractResult response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _ResultList: Result list.
+        :type ResultList: list of AICallExtractResultElement
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._ResultList = None
+        self._RequestId = None
+
+    @property
+    def ResultList(self):
+        r"""Result list.
+        :rtype: list of AICallExtractResultElement
+        """
+        return self._ResultList
+
+    @ResultList.setter
+    def ResultList(self, ResultList):
+        self._ResultList = ResultList
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        if params.get("ResultList") is not None:
+            self._ResultList = []
+            for item in params.get("ResultList"):
+                obj = AICallExtractResultElement()
+                obj._deserialize(item)
+                self._ResultList.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeAILatencyRequest(AbstractModel):
+    r"""DescribeAILatency request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: App ID (required), which can be viewed at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _SessionId: Session ID.
+        :type SessionId: str
+        :param _StartTime: Search start time.	
+        :type StartTime: int
+        :param _EndTime: 1737350008
+        :type EndTime: int
+        """
+        self._SdkAppId = None
+        self._SessionId = None
+        self._StartTime = None
+        self._EndTime = None
+
+    @property
+    def SdkAppId(self):
+        r"""App ID (required), which can be viewed at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def SessionId(self):
+        r"""Session ID.
+        :rtype: str
+        """
+        return self._SessionId
+
+    @SessionId.setter
+    def SessionId(self, SessionId):
+        self._SessionId = SessionId
+
+    @property
+    def StartTime(self):
+        r"""Search start time.	
+        :rtype: int
+        """
+        return self._StartTime
+
+    @StartTime.setter
+    def StartTime(self, StartTime):
+        self._StartTime = StartTime
+
+    @property
+    def EndTime(self):
+        r"""1737350008
+        :rtype: int
+        """
+        return self._EndTime
+
+    @EndTime.setter
+    def EndTime(self, EndTime):
+        self._EndTime = EndTime
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._SessionId = params.get("SessionId")
+        self._StartTime = params.get("StartTime")
+        self._EndTime = params.get("EndTime")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeAILatencyResponse(AbstractModel):
+    r"""DescribeAILatency response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _AILatencyDetail: Detailed data of latency.
+-1 indicates no corresponding data.
+        :type AILatencyDetail: list of AILatencyDetail
+        :param _AILatencyStatistics: Latency statistical data.
+-1 indicates no corresponding data.
+        :type AILatencyStatistics: :class:`tencentcloud.ccc.v20200210.models.AILatencyStatistics`
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._AILatencyDetail = None
+        self._AILatencyStatistics = None
+        self._RequestId = None
+
+    @property
+    def AILatencyDetail(self):
+        r"""Detailed data of latency.
+-1 indicates no corresponding data.
+        :rtype: list of AILatencyDetail
+        """
+        return self._AILatencyDetail
+
+    @AILatencyDetail.setter
+    def AILatencyDetail(self, AILatencyDetail):
+        self._AILatencyDetail = AILatencyDetail
+
+    @property
+    def AILatencyStatistics(self):
+        r"""Latency statistical data.
+-1 indicates no corresponding data.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.AILatencyStatistics`
+        """
+        return self._AILatencyStatistics
+
+    @AILatencyStatistics.setter
+    def AILatencyStatistics(self, AILatencyStatistics):
+        self._AILatencyStatistics = AILatencyStatistics
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        if params.get("AILatencyDetail") is not None:
+            self._AILatencyDetail = []
+            for item in params.get("AILatencyDetail"):
+                obj = AILatencyDetail()
+                obj._deserialize(item)
+                self._AILatencyDetail.append(obj)
+        if params.get("AILatencyStatistics") is not None:
+            self._AILatencyStatistics = AILatencyStatistics()
+            self._AILatencyStatistics._deserialize(params.get("AILatencyStatistics"))
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeAgentCruiseDialingCampaignRequest(AbstractModel):
+    r"""DescribeAgentCruiseDialingCampaign request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _CampaignId: Task id.
+        :type CampaignId: int
+        """
+        self._SdkAppId = None
+        self._CampaignId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def CampaignId(self):
+        r"""Task id.
+        :rtype: int
+        """
+        return self._CampaignId
+
+    @CampaignId.setter
+    def CampaignId(self, CampaignId):
+        self._CampaignId = CampaignId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._CampaignId = params.get("CampaignId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeAgentCruiseDialingCampaignResponse(AbstractModel):
+    r"""DescribeAgentCruiseDialingCampaign response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Name: Task name.
+        :type Name: str
+        :param _Agent: Agent account.
+        :type Agent: str
+        :param _ConcurrencyNumber: Single-Round concurrent call volume 1-20.
+        :type ConcurrencyNumber: int
+        :param _StartTime: Task start time. unix timestamp. the task will automatically start after this time.
+        :type StartTime: int
+        :param _EndTime: Task termination time. unix timestamp. the task will automatically terminate after this time.
+        :type EndTime: int
+        :param _CallOrder: Being called sequence: 0 for random 1 for in order.
+        :type CallOrder: int
+        :param _UUI: Caller custom data, maximum length 1024.
+        :type UUI: str
+        :param _State: Task status 0 not started 1 running 2 completed 3 terminated.
+        :type State: int
+        :param _TotalCalleeCount: Total number of called parties.
+        :type TotalCalleeCount: int
+        :param _CalledCalleeCount: Number of calls made and received.
+        :type CalledCalleeCount: int
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._Name = None
+        self._Agent = None
+        self._ConcurrencyNumber = None
+        self._StartTime = None
+        self._EndTime = None
+        self._CallOrder = None
+        self._UUI = None
+        self._State = None
+        self._TotalCalleeCount = None
+        self._CalledCalleeCount = None
+        self._RequestId = None
+
+    @property
+    def Name(self):
+        r"""Task name.
+        :rtype: str
+        """
+        return self._Name
+
+    @Name.setter
+    def Name(self, Name):
+        self._Name = Name
+
+    @property
+    def Agent(self):
+        r"""Agent account.
+        :rtype: str
+        """
+        return self._Agent
+
+    @Agent.setter
+    def Agent(self, Agent):
+        self._Agent = Agent
+
+    @property
+    def ConcurrencyNumber(self):
+        r"""Single-Round concurrent call volume 1-20.
+        :rtype: int
+        """
+        return self._ConcurrencyNumber
+
+    @ConcurrencyNumber.setter
+    def ConcurrencyNumber(self, ConcurrencyNumber):
+        self._ConcurrencyNumber = ConcurrencyNumber
+
+    @property
+    def StartTime(self):
+        r"""Task start time. unix timestamp. the task will automatically start after this time.
+        :rtype: int
+        """
+        return self._StartTime
+
+    @StartTime.setter
+    def StartTime(self, StartTime):
+        self._StartTime = StartTime
+
+    @property
+    def EndTime(self):
+        r"""Task termination time. unix timestamp. the task will automatically terminate after this time.
+        :rtype: int
+        """
+        return self._EndTime
+
+    @EndTime.setter
+    def EndTime(self, EndTime):
+        self._EndTime = EndTime
+
+    @property
+    def CallOrder(self):
+        r"""Being called sequence: 0 for random 1 for in order.
+        :rtype: int
+        """
+        return self._CallOrder
+
+    @CallOrder.setter
+    def CallOrder(self, CallOrder):
+        self._CallOrder = CallOrder
+
+    @property
+    def UUI(self):
+        r"""Caller custom data, maximum length 1024.
+        :rtype: str
+        """
+        return self._UUI
+
+    @UUI.setter
+    def UUI(self, UUI):
+        self._UUI = UUI
+
+    @property
+    def State(self):
+        r"""Task status 0 not started 1 running 2 completed 3 terminated.
+        :rtype: int
+        """
+        return self._State
+
+    @State.setter
+    def State(self, State):
+        self._State = State
+
+    @property
+    def TotalCalleeCount(self):
+        r"""Total number of called parties.
+        :rtype: int
+        """
+        return self._TotalCalleeCount
+
+    @TotalCalleeCount.setter
+    def TotalCalleeCount(self, TotalCalleeCount):
+        self._TotalCalleeCount = TotalCalleeCount
+
+    @property
+    def CalledCalleeCount(self):
+        r"""Number of calls made and received.
+        :rtype: int
+        """
+        return self._CalledCalleeCount
+
+    @CalledCalleeCount.setter
+    def CalledCalleeCount(self, CalledCalleeCount):
+        self._CalledCalleeCount = CalledCalleeCount
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._Name = params.get("Name")
+        self._Agent = params.get("Agent")
+        self._ConcurrencyNumber = params.get("ConcurrencyNumber")
+        self._StartTime = params.get("StartTime")
+        self._EndTime = params.get("EndTime")
+        self._CallOrder = params.get("CallOrder")
+        self._UUI = params.get("UUI")
+        self._State = params.get("State")
+        self._TotalCalleeCount = params.get("TotalCalleeCount")
+        self._CalledCalleeCount = params.get("CalledCalleeCount")
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeAutoCalloutTaskRequest(AbstractModel):
+    r"""DescribeAutoCalloutTask request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _TaskId: Task id.
+        :type TaskId: int
+        """
+        self._SdkAppId = None
+        self._TaskId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def TaskId(self):
+        r"""Task id.
+        :rtype: int
+        """
+        return self._TaskId
+
+    @TaskId.setter
+    def TaskId(self, TaskId):
+        self._TaskId = TaskId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._TaskId = params.get("TaskId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeAutoCalloutTaskResponse(AbstractModel):
+    r"""DescribeAutoCalloutTask response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Name: Task name.
+        :type Name: str
+        :param _Description: <Task description>.
+        :type Description: str
+        :param _NotBefore: Task start timestamp.
+        :type NotBefore: int
+        :param _NotAfter: Task end timestamp.
+Note: this field may return null, indicating that no valid values can be obtained.
+        :type NotAfter: int
+        :param _Callers: Calling list.
+        :type Callers: list of str
+        :param _Callees: Called information list.
+        :type Callees: list of AutoCalloutTaskCalleeInfo
+        :param _IvrId: IvrId used by the task.
+        :type IvrId: int
+        :param _State: Task status: 0 - initial, 1 - running, 2 - completed, 3 - ending, 4 - terminated.
+        :type State: int
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._Name = None
+        self._Description = None
+        self._NotBefore = None
+        self._NotAfter = None
+        self._Callers = None
+        self._Callees = None
+        self._IvrId = None
+        self._State = None
+        self._RequestId = None
+
+    @property
+    def Name(self):
+        r"""Task name.
+        :rtype: str
+        """
+        return self._Name
+
+    @Name.setter
+    def Name(self, Name):
+        self._Name = Name
+
+    @property
+    def Description(self):
+        r"""<Task description>.
+        :rtype: str
+        """
+        return self._Description
+
+    @Description.setter
+    def Description(self, Description):
+        self._Description = Description
+
+    @property
+    def NotBefore(self):
+        r"""Task start timestamp.
+        :rtype: int
+        """
+        return self._NotBefore
+
+    @NotBefore.setter
+    def NotBefore(self, NotBefore):
+        self._NotBefore = NotBefore
+
+    @property
+    def NotAfter(self):
+        r"""Task end timestamp.
+Note: this field may return null, indicating that no valid values can be obtained.
+        :rtype: int
+        """
+        return self._NotAfter
+
+    @NotAfter.setter
+    def NotAfter(self, NotAfter):
+        self._NotAfter = NotAfter
+
+    @property
+    def Callers(self):
+        r"""Calling list.
+        :rtype: list of str
+        """
+        return self._Callers
+
+    @Callers.setter
+    def Callers(self, Callers):
+        self._Callers = Callers
+
+    @property
+    def Callees(self):
+        r"""Called information list.
+        :rtype: list of AutoCalloutTaskCalleeInfo
+        """
+        return self._Callees
+
+    @Callees.setter
+    def Callees(self, Callees):
+        self._Callees = Callees
+
+    @property
+    def IvrId(self):
+        r"""IvrId used by the task.
+        :rtype: int
+        """
+        return self._IvrId
+
+    @IvrId.setter
+    def IvrId(self, IvrId):
+        self._IvrId = IvrId
+
+    @property
+    def State(self):
+        r"""Task status: 0 - initial, 1 - running, 2 - completed, 3 - ending, 4 - terminated.
+        :rtype: int
+        """
+        return self._State
+
+    @State.setter
+    def State(self, State):
+        self._State = State
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._Name = params.get("Name")
+        self._Description = params.get("Description")
+        self._NotBefore = params.get("NotBefore")
+        self._NotAfter = params.get("NotAfter")
+        self._Callers = params.get("Callers")
+        if params.get("Callees") is not None:
+            self._Callees = []
+            for item in params.get("Callees"):
+                obj = AutoCalloutTaskCalleeInfo()
+                obj._deserialize(item)
+                self._Callees.append(obj)
+        self._IvrId = params.get("IvrId")
+        self._State = params.get("State")
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeAutoCalloutTasksRequest(AbstractModel):
+    r"""DescribeAutoCalloutTasks request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _PageSize: <Page size>.
+        :type PageSize: int
+        :param _PageNumber: Page number.
+        :type PageNumber: int
+        """
+        self._SdkAppId = None
+        self._PageSize = None
+        self._PageNumber = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def PageSize(self):
+        r"""<Page size>.
+        :rtype: int
+        """
+        return self._PageSize
+
+    @PageSize.setter
+    def PageSize(self, PageSize):
+        self._PageSize = PageSize
+
+    @property
+    def PageNumber(self):
+        r"""Page number.
+        :rtype: int
+        """
+        return self._PageNumber
+
+    @PageNumber.setter
+    def PageNumber(self, PageNumber):
+        self._PageNumber = PageNumber
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._PageSize = params.get("PageSize")
+        self._PageNumber = params.get("PageNumber")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeAutoCalloutTasksResponse(AbstractModel):
+    r"""DescribeAutoCalloutTasks response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _TotalCount: Total quantity.
+        :type TotalCount: int
+        :param _Tasks: <Task list>.
+        :type Tasks: list of AutoCalloutTaskInfo
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._TotalCount = None
+        self._Tasks = None
+        self._RequestId = None
+
+    @property
+    def TotalCount(self):
+        r"""Total quantity.
+        :rtype: int
+        """
+        return self._TotalCount
+
+    @TotalCount.setter
+    def TotalCount(self, TotalCount):
+        self._TotalCount = TotalCount
+
+    @property
+    def Tasks(self):
+        r"""<Task list>.
+        :rtype: list of AutoCalloutTaskInfo
+        """
+        return self._Tasks
+
+    @Tasks.setter
+    def Tasks(self, Tasks):
+        self._Tasks = Tasks
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._TotalCount = params.get("TotalCount")
+        if params.get("Tasks") is not None:
+            self._Tasks = []
+            for item in params.get("Tasks"):
+                obj = AutoCalloutTaskInfo()
+                obj._deserialize(item)
+                self._Tasks.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeCCCBuyInfoListRequest(AbstractModel):
+    r"""DescribeCCCBuyInfoList request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppIds: Application id list, query all applications when not transmitted.
+        :type SdkAppIds: list of int
+        """
+        self._SdkAppIds = None
+
+    @property
+    def SdkAppIds(self):
+        r"""Application id list, query all applications when not transmitted.
+        :rtype: list of int
+        """
+        return self._SdkAppIds
+
+    @SdkAppIds.setter
+    def SdkAppIds(self, SdkAppIds):
+        self._SdkAppIds = SdkAppIds
+
+
+    def _deserialize(self, params):
+        self._SdkAppIds = params.get("SdkAppIds")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeCCCBuyInfoListResponse(AbstractModel):
+    r"""DescribeCCCBuyInfoList response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _TotalCount: Total number of applications.
+        :type TotalCount: int
+        :param _SdkAppIdBuyList: Application purchase information list.
+        :type SdkAppIdBuyList: list of SdkAppIdBuyInfo
+        :param _PackageBuyList: Package purchase information list.
+        :type PackageBuyList: list of PackageBuyInfo
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._TotalCount = None
+        self._SdkAppIdBuyList = None
+        self._PackageBuyList = None
+        self._RequestId = None
+
+    @property
+    def TotalCount(self):
+        r"""Total number of applications.
+        :rtype: int
+        """
+        return self._TotalCount
+
+    @TotalCount.setter
+    def TotalCount(self, TotalCount):
+        self._TotalCount = TotalCount
+
+    @property
+    def SdkAppIdBuyList(self):
+        r"""Application purchase information list.
+        :rtype: list of SdkAppIdBuyInfo
+        """
+        return self._SdkAppIdBuyList
+
+    @SdkAppIdBuyList.setter
+    def SdkAppIdBuyList(self, SdkAppIdBuyList):
+        self._SdkAppIdBuyList = SdkAppIdBuyList
+
+    @property
+    def PackageBuyList(self):
+        r"""Package purchase information list.
+        :rtype: list of PackageBuyInfo
+        """
+        return self._PackageBuyList
+
+    @PackageBuyList.setter
+    def PackageBuyList(self, PackageBuyList):
+        self._PackageBuyList = PackageBuyList
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._TotalCount = params.get("TotalCount")
+        if params.get("SdkAppIdBuyList") is not None:
+            self._SdkAppIdBuyList = []
+            for item in params.get("SdkAppIdBuyList"):
+                obj = SdkAppIdBuyInfo()
+                obj._deserialize(item)
+                self._SdkAppIdBuyList.append(obj)
+        if params.get("PackageBuyList") is not None:
+            self._PackageBuyList = []
+            for item in params.get("PackageBuyList"):
+                obj = PackageBuyInfo()
+                obj._deserialize(item)
+                self._PackageBuyList.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeCallInMetricsRequest(AbstractModel):
+    r"""DescribeCallInMetrics request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _EnabledSkillGroup: Whether to return skill group dimension information or not (the default is "yes").
+        :type EnabledSkillGroup: bool
+        :param _EnabledNumber: Whether to return line dimension information or not (the default is "no").
+        :type EnabledNumber: bool
+        :param _GroupIdList: Filter skill group list.
+        :type GroupIdList: list of int
+        """
+        self._SdkAppId = None
+        self._EnabledSkillGroup = None
+        self._EnabledNumber = None
+        self._GroupIdList = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def EnabledSkillGroup(self):
+        r"""Whether to return skill group dimension information or not (the default is "yes").
+        :rtype: bool
+        """
+        return self._EnabledSkillGroup
+
+    @EnabledSkillGroup.setter
+    def EnabledSkillGroup(self, EnabledSkillGroup):
+        self._EnabledSkillGroup = EnabledSkillGroup
+
+    @property
+    def EnabledNumber(self):
+        r"""Whether to return line dimension information or not (the default is "no").
+        :rtype: bool
+        """
+        return self._EnabledNumber
+
+    @EnabledNumber.setter
+    def EnabledNumber(self, EnabledNumber):
+        self._EnabledNumber = EnabledNumber
+
+    @property
+    def GroupIdList(self):
+        r"""Filter skill group list.
+        :rtype: list of int
+        """
+        return self._GroupIdList
+
+    @GroupIdList.setter
+    def GroupIdList(self, GroupIdList):
+        self._GroupIdList = GroupIdList
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._EnabledSkillGroup = params.get("EnabledSkillGroup")
+        self._EnabledNumber = params.get("EnabledNumber")
+        self._GroupIdList = params.get("GroupIdList")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeCallInMetricsResponse(AbstractModel):
+    r"""DescribeCallInMetrics response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Timestamp: Timestamp.
+        :type Timestamp: int
+        :param _TotalMetrics: Overall metrics.
+        :type TotalMetrics: :class:`tencentcloud.ccc.v20200210.models.CallInMetrics`
+        :param _NumberMetrics: Circuit dimension metrics.
+        :type NumberMetrics: list of CallInNumberMetrics
+        :param _SkillGroupMetrics: Skill group dimension metrics.
+        :type SkillGroupMetrics: list of CallInSkillGroupMetrics
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._Timestamp = None
+        self._TotalMetrics = None
+        self._NumberMetrics = None
+        self._SkillGroupMetrics = None
+        self._RequestId = None
+
+    @property
+    def Timestamp(self):
+        r"""Timestamp.
+        :rtype: int
+        """
+        return self._Timestamp
+
+    @Timestamp.setter
+    def Timestamp(self, Timestamp):
+        self._Timestamp = Timestamp
+
+    @property
+    def TotalMetrics(self):
+        r"""Overall metrics.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.CallInMetrics`
+        """
+        return self._TotalMetrics
+
+    @TotalMetrics.setter
+    def TotalMetrics(self, TotalMetrics):
+        self._TotalMetrics = TotalMetrics
+
+    @property
+    def NumberMetrics(self):
+        r"""Circuit dimension metrics.
+        :rtype: list of CallInNumberMetrics
+        """
+        return self._NumberMetrics
+
+    @NumberMetrics.setter
+    def NumberMetrics(self, NumberMetrics):
+        self._NumberMetrics = NumberMetrics
+
+    @property
+    def SkillGroupMetrics(self):
+        r"""Skill group dimension metrics.
+        :rtype: list of CallInSkillGroupMetrics
+        """
+        return self._SkillGroupMetrics
+
+    @SkillGroupMetrics.setter
+    def SkillGroupMetrics(self, SkillGroupMetrics):
+        self._SkillGroupMetrics = SkillGroupMetrics
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._Timestamp = params.get("Timestamp")
+        if params.get("TotalMetrics") is not None:
+            self._TotalMetrics = CallInMetrics()
+            self._TotalMetrics._deserialize(params.get("TotalMetrics"))
+        if params.get("NumberMetrics") is not None:
+            self._NumberMetrics = []
+            for item in params.get("NumberMetrics"):
+                obj = CallInNumberMetrics()
+                obj._deserialize(item)
+                self._NumberMetrics.append(obj)
+        if params.get("SkillGroupMetrics") is not None:
+            self._SkillGroupMetrics = []
+            for item in params.get("SkillGroupMetrics"):
+                obj = CallInSkillGroupMetrics()
+                obj._deserialize(item)
+                self._SkillGroupMetrics.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeExtensionRequest(AbstractModel):
+    r"""DescribeExtension request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _ExtensionId: Extension.
+        :type ExtensionId: str
+        """
+        self._SdkAppId = None
+        self._ExtensionId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def ExtensionId(self):
+        r"""Extension.
+        :rtype: str
+        """
+        return self._ExtensionId
+
+    @ExtensionId.setter
+    def ExtensionId(self, ExtensionId):
+        self._ExtensionId = ExtensionId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._ExtensionId = params.get("ExtensionId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeExtensionResponse(AbstractModel):
+    r"""DescribeExtension response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _ExtensionId: Extension.
+        :type ExtensionId: str
+        :param _ExtensionDomain: Domain name.
+        :type ExtensionDomain: str
+        :param _Password: Registered password.
+        :type Password: str
+        :param _OutboundProxy: Proxy server address.
+        :type OutboundProxy: str
+        :param _Transport: Transfer protocol.
+        :type Transport: str
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._ExtensionId = None
+        self._ExtensionDomain = None
+        self._Password = None
+        self._OutboundProxy = None
+        self._Transport = None
+        self._RequestId = None
+
+    @property
+    def ExtensionId(self):
+        r"""Extension.
+        :rtype: str
+        """
+        return self._ExtensionId
+
+    @ExtensionId.setter
+    def ExtensionId(self, ExtensionId):
+        self._ExtensionId = ExtensionId
+
+    @property
+    def ExtensionDomain(self):
+        r"""Domain name.
+        :rtype: str
+        """
+        return self._ExtensionDomain
+
+    @ExtensionDomain.setter
+    def ExtensionDomain(self, ExtensionDomain):
+        self._ExtensionDomain = ExtensionDomain
+
+    @property
+    def Password(self):
+        r"""Registered password.
+        :rtype: str
+        """
+        return self._Password
+
+    @Password.setter
+    def Password(self, Password):
+        self._Password = Password
+
+    @property
+    def OutboundProxy(self):
+        r"""Proxy server address.
+        :rtype: str
+        """
+        return self._OutboundProxy
+
+    @OutboundProxy.setter
+    def OutboundProxy(self, OutboundProxy):
+        self._OutboundProxy = OutboundProxy
+
+    @property
+    def Transport(self):
+        r"""Transfer protocol.
+        :rtype: str
+        """
+        return self._Transport
+
+    @Transport.setter
+    def Transport(self, Transport):
+        self._Transport = Transport
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._ExtensionId = params.get("ExtensionId")
+        self._ExtensionDomain = params.get("ExtensionDomain")
+        self._Password = params.get("Password")
+        self._OutboundProxy = params.get("OutboundProxy")
+        self._Transport = params.get("Transport")
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeExtensionsRequest(AbstractModel):
+    r"""DescribeExtensions request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _PageNumber: Page number (starting from 0).
+        :type PageNumber: int
+        :param _ExtensionIds: Filtering extension number list.
+        :type ExtensionIds: list of str
+        :param _PageSize: Page size.
+        :type PageSize: int
+        :param _FuzzingKeyWord: Fuzzy query field (fuzzy query for extension number, extension name, agent email, and agent name).
+        :type FuzzingKeyWord: str
+        :param _IsNeedStatus: Whether to return the current status of the telephone or not.
+        :type IsNeedStatus: bool
+        """
+        self._SdkAppId = None
+        self._PageNumber = None
+        self._ExtensionIds = None
+        self._PageSize = None
+        self._FuzzingKeyWord = None
+        self._IsNeedStatus = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def PageNumber(self):
+        r"""Page number (starting from 0).
+        :rtype: int
+        """
+        return self._PageNumber
+
+    @PageNumber.setter
+    def PageNumber(self, PageNumber):
+        self._PageNumber = PageNumber
+
+    @property
+    def ExtensionIds(self):
+        r"""Filtering extension number list.
+        :rtype: list of str
+        """
+        return self._ExtensionIds
+
+    @ExtensionIds.setter
+    def ExtensionIds(self, ExtensionIds):
+        self._ExtensionIds = ExtensionIds
+
+    @property
+    def PageSize(self):
+        r"""Page size.
+        :rtype: int
+        """
+        return self._PageSize
+
+    @PageSize.setter
+    def PageSize(self, PageSize):
+        self._PageSize = PageSize
+
+    @property
+    def FuzzingKeyWord(self):
+        r"""Fuzzy query field (fuzzy query for extension number, extension name, agent email, and agent name).
+        :rtype: str
+        """
+        return self._FuzzingKeyWord
+
+    @FuzzingKeyWord.setter
+    def FuzzingKeyWord(self, FuzzingKeyWord):
+        self._FuzzingKeyWord = FuzzingKeyWord
+
+    @property
+    def IsNeedStatus(self):
+        r"""Whether to return the current status of the telephone or not.
+        :rtype: bool
+        """
+        return self._IsNeedStatus
+
+    @IsNeedStatus.setter
+    def IsNeedStatus(self, IsNeedStatus):
+        self._IsNeedStatus = IsNeedStatus
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._PageNumber = params.get("PageNumber")
+        self._ExtensionIds = params.get("ExtensionIds")
+        self._PageSize = params.get("PageSize")
+        self._FuzzingKeyWord = params.get("FuzzingKeyWord")
+        self._IsNeedStatus = params.get("IsNeedStatus")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeExtensionsResponse(AbstractModel):
+    r"""DescribeExtensions response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Total: Total query count.
+        :type Total: int
+        :param _ExtensionList: Telephone information list.
+        :type ExtensionList: list of ExtensionInfo
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._Total = None
+        self._ExtensionList = None
+        self._RequestId = None
+
+    @property
+    def Total(self):
+        r"""Total query count.
+        :rtype: int
+        """
+        return self._Total
+
+    @Total.setter
+    def Total(self, Total):
+        self._Total = Total
+
+    @property
+    def ExtensionList(self):
+        r"""Telephone information list.
+        :rtype: list of ExtensionInfo
+        """
+        return self._ExtensionList
+
+    @ExtensionList.setter
+    def ExtensionList(self, ExtensionList):
+        self._ExtensionList = ExtensionList
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._Total = params.get("Total")
+        if params.get("ExtensionList") is not None:
+            self._ExtensionList = []
+            for item in params.get("ExtensionList"):
+                obj = ExtensionInfo()
+                obj._deserialize(item)
+                self._ExtensionList.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeIvrAudioListRequest(AbstractModel):
+    r"""DescribeIvrAudioList request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _PageSize: Page size, upper limit 50.
+        :type PageSize: int
+        :param _PageNumber: Page number starting from 0.
+        :type PageNumber: int
+        :param _CustomFileName: File alias.
+        :type CustomFileName: list of str
+        :param _AudioFileName: Filename.
+        :type AudioFileName: list of str
+        :param _FileId: File id.
+        :type FileId: list of int non-negative
+        """
+        self._SdkAppId = None
+        self._PageSize = None
+        self._PageNumber = None
+        self._CustomFileName = None
+        self._AudioFileName = None
+        self._FileId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def PageSize(self):
+        r"""Page size, upper limit 50.
+        :rtype: int
+        """
+        return self._PageSize
+
+    @PageSize.setter
+    def PageSize(self, PageSize):
+        self._PageSize = PageSize
+
+    @property
+    def PageNumber(self):
+        r"""Page number starting from 0.
+        :rtype: int
+        """
+        return self._PageNumber
+
+    @PageNumber.setter
+    def PageNumber(self, PageNumber):
+        self._PageNumber = PageNumber
+
+    @property
+    def CustomFileName(self):
+        r"""File alias.
+        :rtype: list of str
+        """
+        return self._CustomFileName
+
+    @CustomFileName.setter
+    def CustomFileName(self, CustomFileName):
+        self._CustomFileName = CustomFileName
+
+    @property
+    def AudioFileName(self):
+        r"""Filename.
+        :rtype: list of str
+        """
+        return self._AudioFileName
+
+    @AudioFileName.setter
+    def AudioFileName(self, AudioFileName):
+        self._AudioFileName = AudioFileName
+
+    @property
+    def FileId(self):
+        r"""File id.
+        :rtype: list of int non-negative
+        """
+        return self._FileId
+
+    @FileId.setter
+    def FileId(self, FileId):
+        self._FileId = FileId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._PageSize = params.get("PageSize")
+        self._PageNumber = params.get("PageNumber")
+        self._CustomFileName = params.get("CustomFileName")
+        self._AudioFileName = params.get("AudioFileName")
+        self._FileId = params.get("FileId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeIvrAudioListResponse(AbstractModel):
+    r"""DescribeIvrAudioList response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _TotalCount: Total quantity.
+        :type TotalCount: int
+        :param _FileInfo: File information.
+        :type FileInfo: list of AudioFileInfo
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._TotalCount = None
+        self._FileInfo = None
+        self._RequestId = None
+
+    @property
+    def TotalCount(self):
+        r"""Total quantity.
+        :rtype: int
+        """
+        return self._TotalCount
+
+    @TotalCount.setter
+    def TotalCount(self, TotalCount):
+        self._TotalCount = TotalCount
+
+    @property
+    def FileInfo(self):
+        r"""File information.
+        :rtype: list of AudioFileInfo
+        """
+        return self._FileInfo
+
+    @FileInfo.setter
+    def FileInfo(self, FileInfo):
+        self._FileInfo = FileInfo
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._TotalCount = params.get("TotalCount")
+        if params.get("FileInfo") is not None:
+            self._FileInfo = []
+            for item in params.get("FileInfo"):
+                obj = AudioFileInfo()
+                obj._deserialize(item)
+                self._FileInfo.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeNumbersRequest(AbstractModel):
+    r"""DescribeNumbers request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _PageNumber: Page number, starting from 0.
+        :type PageNumber: int
+        :param _PageSize: Page size, default 20.
+        :type PageSize: int
+        """
+        self._SdkAppId = None
+        self._PageNumber = None
+        self._PageSize = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def PageNumber(self):
+        r"""Page number, starting from 0.
+        :rtype: int
+        """
+        return self._PageNumber
+
+    @PageNumber.setter
+    def PageNumber(self, PageNumber):
+        self._PageNumber = PageNumber
+
+    @property
+    def PageSize(self):
+        r"""Page size, default 20.
+        :rtype: int
+        """
+        return self._PageSize
+
+    @PageSize.setter
+    def PageSize(self, PageSize):
+        self._PageSize = PageSize
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._PageNumber = params.get("PageNumber")
+        self._PageSize = params.get("PageSize")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeNumbersResponse(AbstractModel):
+    r"""DescribeNumbers response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _TotalCount: Total quantity.
+        :type TotalCount: int
+        :param _Numbers: Number list.
+        :type Numbers: list of NumberInfo
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._TotalCount = None
+        self._Numbers = None
+        self._RequestId = None
+
+    @property
+    def TotalCount(self):
+        r"""Total quantity.
+        :rtype: int
+        """
+        return self._TotalCount
+
+    @TotalCount.setter
+    def TotalCount(self, TotalCount):
+        self._TotalCount = TotalCount
+
+    @property
+    def Numbers(self):
+        r"""Number list.
+        :rtype: list of NumberInfo
+        """
+        return self._Numbers
+
+    @Numbers.setter
+    def Numbers(self, Numbers):
+        self._Numbers = Numbers
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._TotalCount = params.get("TotalCount")
+        if params.get("Numbers") is not None:
+            self._Numbers = []
+            for item in params.get("Numbers"):
+                obj = NumberInfo()
+                obj._deserialize(item)
+                self._Numbers.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribePSTNActiveSessionListRequest(AbstractModel):
+    r"""DescribePSTNActiveSessionList request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _Offset: Data offset.
+        :type Offset: int
+        :param _Limit: Number of returned data entries, up to 25.
+        :type Limit: int
+        """
+        self._SdkAppId = None
+        self._Offset = None
+        self._Limit = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def Offset(self):
+        r"""Data offset.
+        :rtype: int
+        """
+        return self._Offset
+
+    @Offset.setter
+    def Offset(self, Offset):
+        self._Offset = Offset
+
+    @property
+    def Limit(self):
+        r"""Number of returned data entries, up to 25.
+        :rtype: int
+        """
+        return self._Limit
+
+    @Limit.setter
+    def Limit(self, Limit):
+        self._Limit = Limit
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._Offset = params.get("Offset")
+        self._Limit = params.get("Limit")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribePSTNActiveSessionListResponse(AbstractModel):
+    r"""DescribePSTNActiveSessionList response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Total: Total number of items in the list.
+        :type Total: int
+        :param _Sessions: List content.
+        :type Sessions: list of PSTNSessionInfo
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._Total = None
+        self._Sessions = None
+        self._RequestId = None
+
+    @property
+    def Total(self):
+        r"""Total number of items in the list.
+        :rtype: int
+        """
+        return self._Total
+
+    @Total.setter
+    def Total(self, Total):
+        self._Total = Total
+
+    @property
+    def Sessions(self):
+        r"""List content.
+        :rtype: list of PSTNSessionInfo
+        """
+        return self._Sessions
+
+    @Sessions.setter
+    def Sessions(self, Sessions):
+        self._Sessions = Sessions
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._Total = params.get("Total")
+        if params.get("Sessions") is not None:
+            self._Sessions = []
+            for item in params.get("Sessions"):
+                obj = PSTNSessionInfo()
+                obj._deserialize(item)
+                self._Sessions.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribePredictiveDialingCampaignRequest(AbstractModel):
+    r"""DescribePredictiveDialingCampaign request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _CampaignId: <Task id>.
+        :type CampaignId: int
+        """
+        self._SdkAppId = None
+        self._CampaignId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def CampaignId(self):
+        r"""<Task id>.
+        :rtype: int
+        """
+        return self._CampaignId
+
+    @CampaignId.setter
+    def CampaignId(self, CampaignId):
+        self._CampaignId = CampaignId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._CampaignId = params.get("CampaignId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribePredictiveDialingCampaignResponse(AbstractModel):
+    r"""DescribePredictiveDialingCampaign response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _CampaignId: Task id.
+        :type CampaignId: int
+        :param _Name: Task name.
+        :type Name: str
+        :param _CallOrder: Being called sequence: 0 for random 1 for in order.
+        :type CallOrder: int
+        :param _SkillGroupId: ID of the used skill group of agents.
+        :type SkillGroupId: int
+        :param _IVRId: Specified ivr id.
+        :type IVRId: int
+        :param _Priority: Running priority of multiple tasks in the same application, from high to low 1 - 5.
+        :type Priority: int
+        :param _ExpectedAbandonRate: Expected call drop rate, percentage, 5 - 50.
+        :type ExpectedAbandonRate: int
+        :param _RetryTimes: Number of call retries, 0 - 2.
+        :type RetryTimes: int
+        :param _RetryInterval: Call retry interval, in seconds, [60 - 86,400].
+        :type RetryInterval: int
+        :param _StartTime: Task start time. unix timestamp. the task will automatically start after this time.
+        :type StartTime: int
+        :param _EndTime: Task termination time. unix timestamp. the task will automatically terminate after this time.
+        :type EndTime: int
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._CampaignId = None
+        self._Name = None
+        self._CallOrder = None
+        self._SkillGroupId = None
+        self._IVRId = None
+        self._Priority = None
+        self._ExpectedAbandonRate = None
+        self._RetryTimes = None
+        self._RetryInterval = None
+        self._StartTime = None
+        self._EndTime = None
+        self._RequestId = None
+
+    @property
+    def CampaignId(self):
+        r"""Task id.
+        :rtype: int
+        """
+        return self._CampaignId
+
+    @CampaignId.setter
+    def CampaignId(self, CampaignId):
+        self._CampaignId = CampaignId
+
+    @property
+    def Name(self):
+        r"""Task name.
+        :rtype: str
+        """
+        return self._Name
+
+    @Name.setter
+    def Name(self, Name):
+        self._Name = Name
+
+    @property
+    def CallOrder(self):
+        r"""Being called sequence: 0 for random 1 for in order.
+        :rtype: int
+        """
+        return self._CallOrder
+
+    @CallOrder.setter
+    def CallOrder(self, CallOrder):
+        self._CallOrder = CallOrder
+
+    @property
+    def SkillGroupId(self):
+        r"""ID of the used skill group of agents.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+    @property
+    def IVRId(self):
+        r"""Specified ivr id.
+        :rtype: int
+        """
+        return self._IVRId
+
+    @IVRId.setter
+    def IVRId(self, IVRId):
+        self._IVRId = IVRId
+
+    @property
+    def Priority(self):
+        r"""Running priority of multiple tasks in the same application, from high to low 1 - 5.
+        :rtype: int
+        """
+        return self._Priority
+
+    @Priority.setter
+    def Priority(self, Priority):
+        self._Priority = Priority
+
+    @property
+    def ExpectedAbandonRate(self):
+        r"""Expected call drop rate, percentage, 5 - 50.
+        :rtype: int
+        """
+        return self._ExpectedAbandonRate
+
+    @ExpectedAbandonRate.setter
+    def ExpectedAbandonRate(self, ExpectedAbandonRate):
+        self._ExpectedAbandonRate = ExpectedAbandonRate
+
+    @property
+    def RetryTimes(self):
+        r"""Number of call retries, 0 - 2.
+        :rtype: int
+        """
+        return self._RetryTimes
+
+    @RetryTimes.setter
+    def RetryTimes(self, RetryTimes):
+        self._RetryTimes = RetryTimes
+
+    @property
+    def RetryInterval(self):
+        r"""Call retry interval, in seconds, [60 - 86,400].
+        :rtype: int
+        """
+        return self._RetryInterval
+
+    @RetryInterval.setter
+    def RetryInterval(self, RetryInterval):
+        self._RetryInterval = RetryInterval
+
+    @property
+    def StartTime(self):
+        r"""Task start time. unix timestamp. the task will automatically start after this time.
+        :rtype: int
+        """
+        return self._StartTime
+
+    @StartTime.setter
+    def StartTime(self, StartTime):
+        self._StartTime = StartTime
+
+    @property
+    def EndTime(self):
+        r"""Task termination time. unix timestamp. the task will automatically terminate after this time.
+        :rtype: int
+        """
+        return self._EndTime
+
+    @EndTime.setter
+    def EndTime(self, EndTime):
+        self._EndTime = EndTime
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._CampaignId = params.get("CampaignId")
+        self._Name = params.get("Name")
+        self._CallOrder = params.get("CallOrder")
+        self._SkillGroupId = params.get("SkillGroupId")
+        self._IVRId = params.get("IVRId")
+        self._Priority = params.get("Priority")
+        self._ExpectedAbandonRate = params.get("ExpectedAbandonRate")
+        self._RetryTimes = params.get("RetryTimes")
+        self._RetryInterval = params.get("RetryInterval")
+        self._StartTime = params.get("StartTime")
+        self._EndTime = params.get("EndTime")
+        self._RequestId = params.get("RequestId")
+
+
+class DescribePredictiveDialingCampaignsElement(AbstractModel):
+    r"""Query the predictive outbound call task list elements.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _CampaignId: <Task id>.
+        :type CampaignId: int
+        :param _Name: Task name.
+        :type Name: str
+        :param _Status: Task status 0 - ready to start, 1 - in progress, 2 - paused, 3 - terminated, 4 - completed.
+        :type Status: int
+        :param _StatusReason: Task status reasons 0 - normal, 1 - manually ended, 2 - ended due to overtime.
+        :type StatusReason: int
+        :param _CalleeCount: Number of called numbers.
+        :type CalleeCount: int
+        :param _FinishedCalleeCount: Number of completed calls.
+        :type FinishedCalleeCount: int
+        :param _Priority: Running priority of multiple tasks in the same application, from high to low 1 - 5.
+        :type Priority: int
+        :param _SkillGroupId: ID of the used skill group of agents.
+        :type SkillGroupId: int
+        """
+        self._CampaignId = None
+        self._Name = None
+        self._Status = None
+        self._StatusReason = None
+        self._CalleeCount = None
+        self._FinishedCalleeCount = None
+        self._Priority = None
+        self._SkillGroupId = None
+
+    @property
+    def CampaignId(self):
+        r"""<Task id>.
+        :rtype: int
+        """
+        return self._CampaignId
+
+    @CampaignId.setter
+    def CampaignId(self, CampaignId):
+        self._CampaignId = CampaignId
+
+    @property
+    def Name(self):
+        r"""Task name.
+        :rtype: str
+        """
+        return self._Name
+
+    @Name.setter
+    def Name(self, Name):
+        self._Name = Name
+
+    @property
+    def Status(self):
+        r"""Task status 0 - ready to start, 1 - in progress, 2 - paused, 3 - terminated, 4 - completed.
+        :rtype: int
+        """
+        return self._Status
+
+    @Status.setter
+    def Status(self, Status):
+        self._Status = Status
+
+    @property
+    def StatusReason(self):
+        r"""Task status reasons 0 - normal, 1 - manually ended, 2 - ended due to overtime.
+        :rtype: int
+        """
+        return self._StatusReason
+
+    @StatusReason.setter
+    def StatusReason(self, StatusReason):
+        self._StatusReason = StatusReason
+
+    @property
+    def CalleeCount(self):
+        r"""Number of called numbers.
+        :rtype: int
+        """
+        return self._CalleeCount
+
+    @CalleeCount.setter
+    def CalleeCount(self, CalleeCount):
+        self._CalleeCount = CalleeCount
+
+    @property
+    def FinishedCalleeCount(self):
+        r"""Number of completed calls.
+        :rtype: int
+        """
+        return self._FinishedCalleeCount
+
+    @FinishedCalleeCount.setter
+    def FinishedCalleeCount(self, FinishedCalleeCount):
+        self._FinishedCalleeCount = FinishedCalleeCount
+
+    @property
+    def Priority(self):
+        r"""Running priority of multiple tasks in the same application, from high to low 1 - 5.
+        :rtype: int
+        """
+        return self._Priority
+
+    @Priority.setter
+    def Priority(self, Priority):
+        self._Priority = Priority
+
+    @property
+    def SkillGroupId(self):
+        r"""ID of the used skill group of agents.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+
+    def _deserialize(self, params):
+        self._CampaignId = params.get("CampaignId")
+        self._Name = params.get("Name")
+        self._Status = params.get("Status")
+        self._StatusReason = params.get("StatusReason")
+        self._CalleeCount = params.get("CalleeCount")
+        self._FinishedCalleeCount = params.get("FinishedCalleeCount")
+        self._Priority = params.get("Priority")
+        self._SkillGroupId = params.get("SkillGroupId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribePredictiveDialingCampaignsRequest(AbstractModel):
+    r"""DescribePredictiveDialingCampaigns request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _PageSize: Page size, 100 maximum.
+        :type PageSize: int
+        :param _PageNumber: Page number starting from 0.
+        :type PageNumber: int
+        :param _Name: Query the task list name keyword.
+        :type Name: str
+        :param _SkillGroupId: Query task list skill group id.
+        :type SkillGroupId: int
+        """
+        self._SdkAppId = None
+        self._PageSize = None
+        self._PageNumber = None
+        self._Name = None
+        self._SkillGroupId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def PageSize(self):
+        r"""Page size, 100 maximum.
+        :rtype: int
+        """
+        return self._PageSize
+
+    @PageSize.setter
+    def PageSize(self, PageSize):
+        self._PageSize = PageSize
+
+    @property
+    def PageNumber(self):
+        r"""Page number starting from 0.
+        :rtype: int
+        """
+        return self._PageNumber
+
+    @PageNumber.setter
+    def PageNumber(self, PageNumber):
+        self._PageNumber = PageNumber
+
+    @property
+    def Name(self):
+        r"""Query the task list name keyword.
+        :rtype: str
+        """
+        return self._Name
+
+    @Name.setter
+    def Name(self, Name):
+        self._Name = Name
+
+    @property
+    def SkillGroupId(self):
+        r"""Query task list skill group id.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._PageSize = params.get("PageSize")
+        self._PageNumber = params.get("PageNumber")
+        self._Name = params.get("Name")
+        self._SkillGroupId = params.get("SkillGroupId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribePredictiveDialingCampaignsResponse(AbstractModel):
+    r"""DescribePredictiveDialingCampaigns response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _TotalCount: Total data volume.
+        :type TotalCount: int
+        :param _CampaignList: Data.
+        :type CampaignList: list of DescribePredictiveDialingCampaignsElement
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._TotalCount = None
+        self._CampaignList = None
+        self._RequestId = None
+
+    @property
+    def TotalCount(self):
+        r"""Total data volume.
+        :rtype: int
+        """
+        return self._TotalCount
+
+    @TotalCount.setter
+    def TotalCount(self, TotalCount):
+        self._TotalCount = TotalCount
+
+    @property
+    def CampaignList(self):
+        r"""Data.
+        :rtype: list of DescribePredictiveDialingCampaignsElement
+        """
+        return self._CampaignList
+
+    @CampaignList.setter
+    def CampaignList(self, CampaignList):
+        self._CampaignList = CampaignList
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._TotalCount = params.get("TotalCount")
+        if params.get("CampaignList") is not None:
+            self._CampaignList = []
+            for item in params.get("CampaignList"):
+                obj = DescribePredictiveDialingCampaignsElement()
+                obj._deserialize(item)
+                self._CampaignList.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribePredictiveDialingSessionsRequest(AbstractModel):
+    r"""DescribePredictiveDialingSessions request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _CampaignId: Generated task id.
+        :type CampaignId: int
+        :param _PageSize: Page size, maximum of 1000.
+        :type PageSize: int
+        :param _PageNumber: Page number starting from 0.
+        :type PageNumber: int
+        """
+        self._SdkAppId = None
+        self._CampaignId = None
+        self._PageSize = None
+        self._PageNumber = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def CampaignId(self):
+        r"""Generated task id.
+        :rtype: int
+        """
+        return self._CampaignId
+
+    @CampaignId.setter
+    def CampaignId(self, CampaignId):
+        self._CampaignId = CampaignId
+
+    @property
+    def PageSize(self):
+        r"""Page size, maximum of 1000.
+        :rtype: int
+        """
+        return self._PageSize
+
+    @PageSize.setter
+    def PageSize(self, PageSize):
+        self._PageSize = PageSize
+
+    @property
+    def PageNumber(self):
+        r"""Page number starting from 0.
+        :rtype: int
+        """
+        return self._PageNumber
+
+    @PageNumber.setter
+    def PageNumber(self, PageNumber):
+        self._PageNumber = PageNumber
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._CampaignId = params.get("CampaignId")
+        self._PageSize = params.get("PageSize")
+        self._PageNumber = params.get("PageNumber")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribePredictiveDialingSessionsResponse(AbstractModel):
+    r"""DescribePredictiveDialingSessions response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _TotalCount: Total data volume.
+        :type TotalCount: int
+        :param _SessionList: List of session ids for a call. you can access detailed call bills in batches through https://intl.cloud.tencent.com/document/product/679/47714.?from_cn_redirect=1.
+        :type SessionList: list of str
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._TotalCount = None
+        self._SessionList = None
+        self._RequestId = None
+
+    @property
+    def TotalCount(self):
+        r"""Total data volume.
+        :rtype: int
+        """
+        return self._TotalCount
+
+    @TotalCount.setter
+    def TotalCount(self, TotalCount):
+        self._TotalCount = TotalCount
+
+    @property
+    def SessionList(self):
+        r"""List of session ids for a call. you can access detailed call bills in batches through https://intl.cloud.tencent.com/document/product/679/47714.?from_cn_redirect=1.
+        :rtype: list of str
+        """
+        return self._SessionList
+
+    @SessionList.setter
+    def SessionList(self, SessionList):
+        self._SessionList = SessionList
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._TotalCount = params.get("TotalCount")
+        self._SessionList = params.get("SessionList")
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeProtectedTelCdrRequest(AbstractModel):
+    r"""DescribeProtectedTelCdr request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _StartTimeStamp: Start timestamp. unix second-level timestamp.
+        :type StartTimeStamp: int
+        :param _EndTimeStamp: End timestamp. unix second-level timestamp.
+        :type EndTimeStamp: int
+        :param _SdkAppId: For the application id, you can check https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _PageSize: Page size, upper limit 100.
+        :type PageSize: int
+        :param _PageNumber: Page number starting from 0.
+        :type PageNumber: int
+        """
+        self._StartTimeStamp = None
+        self._EndTimeStamp = None
+        self._SdkAppId = None
+        self._PageSize = None
+        self._PageNumber = None
+
+    @property
+    def StartTimeStamp(self):
+        r"""Start timestamp. unix second-level timestamp.
+        :rtype: int
+        """
+        return self._StartTimeStamp
+
+    @StartTimeStamp.setter
+    def StartTimeStamp(self, StartTimeStamp):
+        self._StartTimeStamp = StartTimeStamp
+
+    @property
+    def EndTimeStamp(self):
+        r"""End timestamp. unix second-level timestamp.
+        :rtype: int
+        """
+        return self._EndTimeStamp
+
+    @EndTimeStamp.setter
+    def EndTimeStamp(self, EndTimeStamp):
+        self._EndTimeStamp = EndTimeStamp
+
+    @property
+    def SdkAppId(self):
+        r"""For the application id, you can check https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def PageSize(self):
+        r"""Page size, upper limit 100.
+        :rtype: int
+        """
+        return self._PageSize
+
+    @PageSize.setter
+    def PageSize(self, PageSize):
+        self._PageSize = PageSize
+
+    @property
+    def PageNumber(self):
+        r"""Page number starting from 0.
+        :rtype: int
+        """
+        return self._PageNumber
+
+    @PageNumber.setter
+    def PageNumber(self, PageNumber):
+        self._PageNumber = PageNumber
+
+
+    def _deserialize(self, params):
+        self._StartTimeStamp = params.get("StartTimeStamp")
+        self._EndTimeStamp = params.get("EndTimeStamp")
+        self._SdkAppId = params.get("SdkAppId")
+        self._PageSize = params.get("PageSize")
+        self._PageNumber = params.get("PageNumber")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeProtectedTelCdrResponse(AbstractModel):
+    r"""DescribeProtectedTelCdr response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _TotalCount: Total number of call records.
+        :type TotalCount: int
+        :param _TelCdrs: Call record.
+        :type TelCdrs: list of TelCdrInfo
+        :param _TelCdrList: Call record.
+        :type TelCdrList: list of TelCdrInfo
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._TotalCount = None
+        self._TelCdrs = None
+        self._TelCdrList = None
+        self._RequestId = None
+
+    @property
+    def TotalCount(self):
+        r"""Total number of call records.
+        :rtype: int
+        """
+        return self._TotalCount
+
+    @TotalCount.setter
+    def TotalCount(self, TotalCount):
+        self._TotalCount = TotalCount
+
+    @property
+    def TelCdrs(self):
+        warnings.warn("parameter `TelCdrs` is deprecated", DeprecationWarning) 
+
+        r"""Call record.
+        :rtype: list of TelCdrInfo
+        """
+        return self._TelCdrs
+
+    @TelCdrs.setter
+    def TelCdrs(self, TelCdrs):
+        warnings.warn("parameter `TelCdrs` is deprecated", DeprecationWarning) 
+
+        self._TelCdrs = TelCdrs
+
+    @property
+    def TelCdrList(self):
+        r"""Call record.
+        :rtype: list of TelCdrInfo
+        """
+        return self._TelCdrList
+
+    @TelCdrList.setter
+    def TelCdrList(self, TelCdrList):
+        self._TelCdrList = TelCdrList
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._TotalCount = params.get("TotalCount")
+        if params.get("TelCdrs") is not None:
+            self._TelCdrs = []
+            for item in params.get("TelCdrs"):
+                obj = TelCdrInfo()
+                obj._deserialize(item)
+                self._TelCdrs.append(obj)
+        if params.get("TelCdrList") is not None:
+            self._TelCdrList = []
+            for item in params.get("TelCdrList"):
+                obj = TelCdrInfo()
+                obj._deserialize(item)
+                self._TelCdrList.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeSessionDetailRequest(AbstractModel):
+    r"""DescribeSessionDetail request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: App ID (required). can be used to view https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _SessionId: Specifies the session id of the call.
+        :type SessionId: str
+        :param _StartTimestamp: Start timestamp. Unix second-level timestamp. supports up to nearly 180 days.
+        :type StartTimestamp: int
+        :param _EndTimestamp: End timestamp, Unix second-level timestamp. the interval range between end time and start time is less than 90 days.
+        :type EndTimestamp: int
+        """
+        self._SdkAppId = None
+        self._SessionId = None
+        self._StartTimestamp = None
+        self._EndTimestamp = None
+
+    @property
+    def SdkAppId(self):
+        r"""App ID (required). can be used to view https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def SessionId(self):
+        r"""Specifies the session id of the call.
+        :rtype: str
+        """
+        return self._SessionId
+
+    @SessionId.setter
+    def SessionId(self, SessionId):
+        self._SessionId = SessionId
+
+    @property
+    def StartTimestamp(self):
+        r"""Start timestamp. Unix second-level timestamp. supports up to nearly 180 days.
+        :rtype: int
+        """
+        return self._StartTimestamp
+
+    @StartTimestamp.setter
+    def StartTimestamp(self, StartTimestamp):
+        self._StartTimestamp = StartTimestamp
+
+    @property
+    def EndTimestamp(self):
+        r"""End timestamp, Unix second-level timestamp. the interval range between end time and start time is less than 90 days.
+        :rtype: int
+        """
+        return self._EndTimestamp
+
+    @EndTimestamp.setter
+    def EndTimestamp(self, EndTimestamp):
+        self._EndTimestamp = EndTimestamp
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._SessionId = params.get("SessionId")
+        self._StartTimestamp = params.get("StartTimestamp")
+        self._EndTimestamp = params.get("EndTimestamp")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeSessionDetailResponse(AbstractModel):
+    r"""DescribeSessionDetail response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Caller: Calling number.
+        :type Caller: str
+        :param _Callee: Called number.
+        :type Callee: str
+        :param _CallType: Call type. valid values: 1 (outgoing call), 2 (incoming call), 3 (audio dial-in), 5 (predictive outbound call), 6 (internal call).
+        :type CallType: int
+        :param _StartTimeStamp: Start timestamp. Unix second-level timestamp.
+        :type StartTimeStamp: int
+        :param _RingTimestamp: Ring timestamp. UNIX second-level timestamp.
+        :type RingTimestamp: int
+        :param _AcceptTimestamp: Answer timestamp. UNIX second-level timestamp.
+        :type AcceptTimestamp: int
+        :param _EndedTimestamp: End timestamp, UNIX second-level timestamp.
+        :type EndedTimestamp: int
+        :param _QueuedTimestamp: Queue entry time. Unix second-level timestamp.
+        :type QueuedTimestamp: int
+        :param _StaffUserId: Agent account.
+        :type StaffUserId: str
+        :param _EndStatus: Refers to the EndStatus field in the DescribeTelCdr api.
+        :type EndStatus: int
+        :param _QueuedSkillGroupId: Queue skill group ID.
+        :type QueuedSkillGroupId: int
+        :param _QueuedSkillGroupName: Queue skill group name.
+        :type QueuedSkillGroupName: str
+        :param _RecordURL: Recording url with authentication and valid period. obtain and pull within a short time frame. do not persist this link.
+        :type RecordURL: str
+        :param _CustomRecordURL: Specifies the COS link for recording transfer to a third party.
+        :type CustomRecordURL: str
+        :param _AsrURL: Recording text information link with authentication and valid period. retrieve it within a short time frame. do not persist this link.
+        :type AsrURL: str
+        :param _VoicemailRecordURL: Voicemail recording url.
+        :type VoicemailRecordURL: list of str
+        :param _VoicemailAsrURL: Voicemail recording text information url. purchase the offline speech recognition package through the console and enable the offline speech recognition switch.
+        :type VoicemailAsrURL: list of str
+        :param _IVRKeyPressed: IVR key information.
+        :type IVRKeyPressed: list of IVRKeyPressedElement
+        :param _PostIVRKeyPressed: Satisfaction rate keystroke information.
+        :type PostIVRKeyPressed: list of IVRKeyPressedElement
+        :param _HungUpSide: Hang-Up side. valid values: seat, user, system.
+        :type HungUpSide: str
+        :param _UUI: Customer custom data (User-to-User Interface).
+        :type UUI: str
+        :param _Events: List of events during a call.
+        :type Events: list of SessionEvent
+        :param _ServeParticipants: List of service participants.
+        :type ServeParticipants: list of ServeParticipant
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._Caller = None
+        self._Callee = None
+        self._CallType = None
+        self._StartTimeStamp = None
+        self._RingTimestamp = None
+        self._AcceptTimestamp = None
+        self._EndedTimestamp = None
+        self._QueuedTimestamp = None
+        self._StaffUserId = None
+        self._EndStatus = None
+        self._QueuedSkillGroupId = None
+        self._QueuedSkillGroupName = None
+        self._RecordURL = None
+        self._CustomRecordURL = None
+        self._AsrURL = None
+        self._VoicemailRecordURL = None
+        self._VoicemailAsrURL = None
+        self._IVRKeyPressed = None
+        self._PostIVRKeyPressed = None
+        self._HungUpSide = None
+        self._UUI = None
+        self._Events = None
+        self._ServeParticipants = None
+        self._RequestId = None
+
+    @property
+    def Caller(self):
+        r"""Calling number.
+        :rtype: str
+        """
+        return self._Caller
+
+    @Caller.setter
+    def Caller(self, Caller):
+        self._Caller = Caller
+
+    @property
+    def Callee(self):
+        r"""Called number.
+        :rtype: str
+        """
+        return self._Callee
+
+    @Callee.setter
+    def Callee(self, Callee):
+        self._Callee = Callee
+
+    @property
+    def CallType(self):
+        r"""Call type. valid values: 1 (outgoing call), 2 (incoming call), 3 (audio dial-in), 5 (predictive outbound call), 6 (internal call).
+        :rtype: int
+        """
+        return self._CallType
+
+    @CallType.setter
+    def CallType(self, CallType):
+        self._CallType = CallType
+
+    @property
+    def StartTimeStamp(self):
+        r"""Start timestamp. Unix second-level timestamp.
+        :rtype: int
+        """
+        return self._StartTimeStamp
+
+    @StartTimeStamp.setter
+    def StartTimeStamp(self, StartTimeStamp):
+        self._StartTimeStamp = StartTimeStamp
+
+    @property
+    def RingTimestamp(self):
+        r"""Ring timestamp. UNIX second-level timestamp.
+        :rtype: int
+        """
+        return self._RingTimestamp
+
+    @RingTimestamp.setter
+    def RingTimestamp(self, RingTimestamp):
+        self._RingTimestamp = RingTimestamp
+
+    @property
+    def AcceptTimestamp(self):
+        r"""Answer timestamp. UNIX second-level timestamp.
+        :rtype: int
+        """
+        return self._AcceptTimestamp
+
+    @AcceptTimestamp.setter
+    def AcceptTimestamp(self, AcceptTimestamp):
+        self._AcceptTimestamp = AcceptTimestamp
+
+    @property
+    def EndedTimestamp(self):
+        r"""End timestamp, UNIX second-level timestamp.
+        :rtype: int
+        """
+        return self._EndedTimestamp
+
+    @EndedTimestamp.setter
+    def EndedTimestamp(self, EndedTimestamp):
+        self._EndedTimestamp = EndedTimestamp
+
+    @property
+    def QueuedTimestamp(self):
+        r"""Queue entry time. Unix second-level timestamp.
+        :rtype: int
+        """
+        return self._QueuedTimestamp
+
+    @QueuedTimestamp.setter
+    def QueuedTimestamp(self, QueuedTimestamp):
+        self._QueuedTimestamp = QueuedTimestamp
+
+    @property
+    def StaffUserId(self):
+        r"""Agent account.
+        :rtype: str
+        """
+        return self._StaffUserId
+
+    @StaffUserId.setter
+    def StaffUserId(self, StaffUserId):
+        self._StaffUserId = StaffUserId
+
+    @property
+    def EndStatus(self):
+        r"""Refers to the EndStatus field in the DescribeTelCdr api.
+        :rtype: int
+        """
+        return self._EndStatus
+
+    @EndStatus.setter
+    def EndStatus(self, EndStatus):
+        self._EndStatus = EndStatus
+
+    @property
+    def QueuedSkillGroupId(self):
+        r"""Queue skill group ID.
+        :rtype: int
+        """
+        return self._QueuedSkillGroupId
+
+    @QueuedSkillGroupId.setter
+    def QueuedSkillGroupId(self, QueuedSkillGroupId):
+        self._QueuedSkillGroupId = QueuedSkillGroupId
+
+    @property
+    def QueuedSkillGroupName(self):
+        r"""Queue skill group name.
+        :rtype: str
+        """
+        return self._QueuedSkillGroupName
+
+    @QueuedSkillGroupName.setter
+    def QueuedSkillGroupName(self, QueuedSkillGroupName):
+        self._QueuedSkillGroupName = QueuedSkillGroupName
+
+    @property
+    def RecordURL(self):
+        r"""Recording url with authentication and valid period. obtain and pull within a short time frame. do not persist this link.
+        :rtype: str
+        """
+        return self._RecordURL
+
+    @RecordURL.setter
+    def RecordURL(self, RecordURL):
+        self._RecordURL = RecordURL
+
+    @property
+    def CustomRecordURL(self):
+        r"""Specifies the COS link for recording transfer to a third party.
+        :rtype: str
+        """
+        return self._CustomRecordURL
+
+    @CustomRecordURL.setter
+    def CustomRecordURL(self, CustomRecordURL):
+        self._CustomRecordURL = CustomRecordURL
+
+    @property
+    def AsrURL(self):
+        r"""Recording text information link with authentication and valid period. retrieve it within a short time frame. do not persist this link.
+        :rtype: str
+        """
+        return self._AsrURL
+
+    @AsrURL.setter
+    def AsrURL(self, AsrURL):
+        self._AsrURL = AsrURL
+
+    @property
+    def VoicemailRecordURL(self):
+        r"""Voicemail recording url.
+        :rtype: list of str
+        """
+        return self._VoicemailRecordURL
+
+    @VoicemailRecordURL.setter
+    def VoicemailRecordURL(self, VoicemailRecordURL):
+        self._VoicemailRecordURL = VoicemailRecordURL
+
+    @property
+    def VoicemailAsrURL(self):
+        r"""Voicemail recording text information url. purchase the offline speech recognition package through the console and enable the offline speech recognition switch.
+        :rtype: list of str
+        """
+        return self._VoicemailAsrURL
+
+    @VoicemailAsrURL.setter
+    def VoicemailAsrURL(self, VoicemailAsrURL):
+        self._VoicemailAsrURL = VoicemailAsrURL
+
+    @property
+    def IVRKeyPressed(self):
+        r"""IVR key information.
+        :rtype: list of IVRKeyPressedElement
+        """
+        return self._IVRKeyPressed
+
+    @IVRKeyPressed.setter
+    def IVRKeyPressed(self, IVRKeyPressed):
+        self._IVRKeyPressed = IVRKeyPressed
+
+    @property
+    def PostIVRKeyPressed(self):
+        r"""Satisfaction rate keystroke information.
+        :rtype: list of IVRKeyPressedElement
+        """
+        return self._PostIVRKeyPressed
+
+    @PostIVRKeyPressed.setter
+    def PostIVRKeyPressed(self, PostIVRKeyPressed):
+        self._PostIVRKeyPressed = PostIVRKeyPressed
+
+    @property
+    def HungUpSide(self):
+        r"""Hang-Up side. valid values: seat, user, system.
+        :rtype: str
+        """
+        return self._HungUpSide
+
+    @HungUpSide.setter
+    def HungUpSide(self, HungUpSide):
+        self._HungUpSide = HungUpSide
+
+    @property
+    def UUI(self):
+        r"""Customer custom data (User-to-User Interface).
+        :rtype: str
+        """
+        return self._UUI
+
+    @UUI.setter
+    def UUI(self, UUI):
+        self._UUI = UUI
+
+    @property
+    def Events(self):
+        r"""List of events during a call.
+        :rtype: list of SessionEvent
+        """
+        return self._Events
+
+    @Events.setter
+    def Events(self, Events):
+        self._Events = Events
+
+    @property
+    def ServeParticipants(self):
+        r"""List of service participants.
+        :rtype: list of ServeParticipant
+        """
+        return self._ServeParticipants
+
+    @ServeParticipants.setter
+    def ServeParticipants(self, ServeParticipants):
+        self._ServeParticipants = ServeParticipants
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._Caller = params.get("Caller")
+        self._Callee = params.get("Callee")
+        self._CallType = params.get("CallType")
+        self._StartTimeStamp = params.get("StartTimeStamp")
+        self._RingTimestamp = params.get("RingTimestamp")
+        self._AcceptTimestamp = params.get("AcceptTimestamp")
+        self._EndedTimestamp = params.get("EndedTimestamp")
+        self._QueuedTimestamp = params.get("QueuedTimestamp")
+        self._StaffUserId = params.get("StaffUserId")
+        self._EndStatus = params.get("EndStatus")
+        self._QueuedSkillGroupId = params.get("QueuedSkillGroupId")
+        self._QueuedSkillGroupName = params.get("QueuedSkillGroupName")
+        self._RecordURL = params.get("RecordURL")
+        self._CustomRecordURL = params.get("CustomRecordURL")
+        self._AsrURL = params.get("AsrURL")
+        self._VoicemailRecordURL = params.get("VoicemailRecordURL")
+        self._VoicemailAsrURL = params.get("VoicemailAsrURL")
+        if params.get("IVRKeyPressed") is not None:
+            self._IVRKeyPressed = []
+            for item in params.get("IVRKeyPressed"):
+                obj = IVRKeyPressedElement()
+                obj._deserialize(item)
+                self._IVRKeyPressed.append(obj)
+        if params.get("PostIVRKeyPressed") is not None:
+            self._PostIVRKeyPressed = []
+            for item in params.get("PostIVRKeyPressed"):
+                obj = IVRKeyPressedElement()
+                obj._deserialize(item)
+                self._PostIVRKeyPressed.append(obj)
+        self._HungUpSide = params.get("HungUpSide")
+        self._UUI = params.get("UUI")
+        if params.get("Events") is not None:
+            self._Events = []
+            for item in params.get("Events"):
+                obj = SessionEvent()
+                obj._deserialize(item)
+                self._Events.append(obj)
+        if params.get("ServeParticipants") is not None:
+            self._ServeParticipants = []
+            for item in params.get("ServeParticipants"):
+                obj = ServeParticipant()
+                obj._deserialize(item)
+                self._ServeParticipants.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeSkillGroupInfoListRequest(AbstractModel):
+    r"""DescribeSkillGroupInfoList request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _PageSize: Page size, upper limit 100.
+        :type PageSize: int
+        :param _PageNumber: <Page number starting from 0.>.
+        :type PageNumber: int
+        :param _SkillGroupId: Using skill group id when querying a single skill group.
+        :type SkillGroupId: int
+        :param _ModifiedTime: Used when querying skill groups with a modified time greater or equal to modifiedtime.
+        :type ModifiedTime: int
+        :param _SkillGroupName: Skill group name.
+        :type SkillGroupName: str
+        """
+        self._SdkAppId = None
+        self._PageSize = None
+        self._PageNumber = None
+        self._SkillGroupId = None
+        self._ModifiedTime = None
+        self._SkillGroupName = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def PageSize(self):
+        r"""Page size, upper limit 100.
+        :rtype: int
+        """
+        return self._PageSize
+
+    @PageSize.setter
+    def PageSize(self, PageSize):
+        self._PageSize = PageSize
+
+    @property
+    def PageNumber(self):
+        r"""<Page number starting from 0.>.
+        :rtype: int
+        """
+        return self._PageNumber
+
+    @PageNumber.setter
+    def PageNumber(self, PageNumber):
+        self._PageNumber = PageNumber
+
+    @property
+    def SkillGroupId(self):
+        r"""Using skill group id when querying a single skill group.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+    @property
+    def ModifiedTime(self):
+        r"""Used when querying skill groups with a modified time greater or equal to modifiedtime.
+        :rtype: int
+        """
+        return self._ModifiedTime
+
+    @ModifiedTime.setter
+    def ModifiedTime(self, ModifiedTime):
+        self._ModifiedTime = ModifiedTime
+
+    @property
+    def SkillGroupName(self):
+        r"""Skill group name.
+        :rtype: str
+        """
+        return self._SkillGroupName
+
+    @SkillGroupName.setter
+    def SkillGroupName(self, SkillGroupName):
+        self._SkillGroupName = SkillGroupName
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._PageSize = params.get("PageSize")
+        self._PageNumber = params.get("PageNumber")
+        self._SkillGroupId = params.get("SkillGroupId")
+        self._ModifiedTime = params.get("ModifiedTime")
+        self._SkillGroupName = params.get("SkillGroupName")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeSkillGroupInfoListResponse(AbstractModel):
+    r"""DescribeSkillGroupInfoList response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _TotalCount: Total number of skill groups.
+        :type TotalCount: int
+        :param _SkillGroupList: Skill group information list.
+        :type SkillGroupList: list of SkillGroupInfoItem
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._TotalCount = None
+        self._SkillGroupList = None
+        self._RequestId = None
+
+    @property
+    def TotalCount(self):
+        r"""Total number of skill groups.
+        :rtype: int
+        """
+        return self._TotalCount
+
+    @TotalCount.setter
+    def TotalCount(self, TotalCount):
+        self._TotalCount = TotalCount
+
+    @property
+    def SkillGroupList(self):
+        r"""Skill group information list.
+        :rtype: list of SkillGroupInfoItem
+        """
+        return self._SkillGroupList
+
+    @SkillGroupList.setter
+    def SkillGroupList(self, SkillGroupList):
+        self._SkillGroupList = SkillGroupList
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._TotalCount = params.get("TotalCount")
+        if params.get("SkillGroupList") is not None:
+            self._SkillGroupList = []
+            for item in params.get("SkillGroupList"):
+                obj = SkillGroupInfoItem()
+                obj._deserialize(item)
+                self._SkillGroupList.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeStaffInfoListRequest(AbstractModel):
+    r"""DescribeStaffInfoList request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _PageSize: Page size, upper limit 9,999.
+        :type PageSize: int
+        :param _PageNumber: Page number starting from 0.
+        :type PageNumber: int
+        :param _StaffMail: Agent account used when querying a single agent.
+        :type StaffMail: str
+        :param _ModifiedTime: Use when querying for agents with a modification time greater or equal to modifiedtime.
+        :type ModifiedTime: int
+        :param _SkillGroupId: Skill group id.
+        :type SkillGroupId: int
+        """
+        self._SdkAppId = None
+        self._PageSize = None
+        self._PageNumber = None
+        self._StaffMail = None
+        self._ModifiedTime = None
+        self._SkillGroupId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def PageSize(self):
+        r"""Page size, upper limit 9,999.
+        :rtype: int
+        """
+        return self._PageSize
+
+    @PageSize.setter
+    def PageSize(self, PageSize):
+        self._PageSize = PageSize
+
+    @property
+    def PageNumber(self):
+        r"""Page number starting from 0.
+        :rtype: int
+        """
+        return self._PageNumber
+
+    @PageNumber.setter
+    def PageNumber(self, PageNumber):
+        self._PageNumber = PageNumber
+
+    @property
+    def StaffMail(self):
+        r"""Agent account used when querying a single agent.
+        :rtype: str
+        """
+        return self._StaffMail
+
+    @StaffMail.setter
+    def StaffMail(self, StaffMail):
+        self._StaffMail = StaffMail
+
+    @property
+    def ModifiedTime(self):
+        r"""Use when querying for agents with a modification time greater or equal to modifiedtime.
+        :rtype: int
+        """
+        return self._ModifiedTime
+
+    @ModifiedTime.setter
+    def ModifiedTime(self, ModifiedTime):
+        self._ModifiedTime = ModifiedTime
+
+    @property
+    def SkillGroupId(self):
+        r"""Skill group id.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._PageSize = params.get("PageSize")
+        self._PageNumber = params.get("PageNumber")
+        self._StaffMail = params.get("StaffMail")
+        self._ModifiedTime = params.get("ModifiedTime")
+        self._SkillGroupId = params.get("SkillGroupId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeStaffInfoListResponse(AbstractModel):
+    r"""DescribeStaffInfoList response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _TotalCount: Total number of agent users.
+        :type TotalCount: int
+        :param _StaffList: Agent user information list.
+        :type StaffList: list of StaffInfo
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._TotalCount = None
+        self._StaffList = None
+        self._RequestId = None
+
+    @property
+    def TotalCount(self):
+        r"""Total number of agent users.
+        :rtype: int
+        """
+        return self._TotalCount
+
+    @TotalCount.setter
+    def TotalCount(self, TotalCount):
+        self._TotalCount = TotalCount
+
+    @property
+    def StaffList(self):
+        r"""Agent user information list.
+        :rtype: list of StaffInfo
+        """
+        return self._StaffList
+
+    @StaffList.setter
+    def StaffList(self, StaffList):
+        self._StaffList = StaffList
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._TotalCount = params.get("TotalCount")
+        if params.get("StaffList") is not None:
+            self._StaffList = []
+            for item in params.get("StaffList"):
+                obj = StaffInfo()
+                obj._deserialize(item)
+                self._StaffList.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeStaffStatusHistoryRequest(AbstractModel):
+    r"""DescribeStaffStatusHistory request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: App ID (required). can be used to view https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _StaffUserId: Agent account.
+        :type StaffUserId: str
+        :param _StartTimestamp: Start timestamp. Unix second-level timestamp. supports up to nearly 180 days.
+        :type StartTimestamp: int
+        :param _EndTimestamp: End timestamp, Unix second-level timestamp. the interval range between end time and start time is less than 7 days.
+        :type EndTimestamp: int
+        :param _Cursor: Specifies the cursor used during paginated retrieval.
+        :type Cursor: str
+        :param _PageSize: Specifies the pagination size.
+        :type PageSize: int
+        """
+        self._SdkAppId = None
+        self._StaffUserId = None
+        self._StartTimestamp = None
+        self._EndTimestamp = None
+        self._Cursor = None
+        self._PageSize = None
+
+    @property
+    def SdkAppId(self):
+        r"""App ID (required). can be used to view https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def StaffUserId(self):
+        r"""Agent account.
+        :rtype: str
+        """
+        return self._StaffUserId
+
+    @StaffUserId.setter
+    def StaffUserId(self, StaffUserId):
+        self._StaffUserId = StaffUserId
+
+    @property
+    def StartTimestamp(self):
+        r"""Start timestamp. Unix second-level timestamp. supports up to nearly 180 days.
+        :rtype: int
+        """
+        return self._StartTimestamp
+
+    @StartTimestamp.setter
+    def StartTimestamp(self, StartTimestamp):
+        self._StartTimestamp = StartTimestamp
+
+    @property
+    def EndTimestamp(self):
+        r"""End timestamp, Unix second-level timestamp. the interval range between end time and start time is less than 7 days.
+        :rtype: int
+        """
+        return self._EndTimestamp
+
+    @EndTimestamp.setter
+    def EndTimestamp(self, EndTimestamp):
+        self._EndTimestamp = EndTimestamp
+
+    @property
+    def Cursor(self):
+        r"""Specifies the cursor used during paginated retrieval.
+        :rtype: str
+        """
+        return self._Cursor
+
+    @Cursor.setter
+    def Cursor(self, Cursor):
+        self._Cursor = Cursor
+
+    @property
+    def PageSize(self):
+        r"""Specifies the pagination size.
+        :rtype: int
+        """
+        return self._PageSize
+
+    @PageSize.setter
+    def PageSize(self, PageSize):
+        self._PageSize = PageSize
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._StaffUserId = params.get("StaffUserId")
+        self._StartTimestamp = params.get("StartTimestamp")
+        self._EndTimestamp = params.get("EndTimestamp")
+        self._Cursor = params.get("Cursor")
+        self._PageSize = params.get("PageSize")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeStaffStatusHistoryResponse(AbstractModel):
+    r"""DescribeStaffStatusHistory response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Data: Specifies the agent status data.
+        :type Data: list of StaffStatus
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._Data = None
+        self._RequestId = None
+
+    @property
+    def Data(self):
+        r"""Specifies the agent status data.
+        :rtype: list of StaffStatus
+        """
+        return self._Data
+
+    @Data.setter
+    def Data(self, Data):
+        self._Data = Data
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        if params.get("Data") is not None:
+            self._Data = []
+            for item in params.get("Data"):
+                obj = StaffStatus()
+                obj._deserialize(item)
+                self._Data.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeStaffStatusMetricsRequest(AbstractModel):
+    r"""DescribeStaffStatusMetrics request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _StaffList: Filter agent list. by default, do not pass all returned agent information.
+        :type StaffList: list of str
+        :param _GroupIdList: Filter skill group id list.
+        :type GroupIdList: list of int
+        :param _StatusList: Filter agent status list agent status free available | busy busy | rest on break | notready not ready | aftercallwork post-call adjustment | offline offline . 
+        :type StatusList: list of str
+        """
+        self._SdkAppId = None
+        self._StaffList = None
+        self._GroupIdList = None
+        self._StatusList = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def StaffList(self):
+        r"""Filter agent list. by default, do not pass all returned agent information.
+        :rtype: list of str
+        """
+        return self._StaffList
+
+    @StaffList.setter
+    def StaffList(self, StaffList):
+        self._StaffList = StaffList
+
+    @property
+    def GroupIdList(self):
+        r"""Filter skill group id list.
+        :rtype: list of int
+        """
+        return self._GroupIdList
+
+    @GroupIdList.setter
+    def GroupIdList(self, GroupIdList):
+        self._GroupIdList = GroupIdList
+
+    @property
+    def StatusList(self):
+        r"""Filter agent status list agent status free available | busy busy | rest on break | notready not ready | aftercallwork post-call adjustment | offline offline . 
+        :rtype: list of str
+        """
+        return self._StatusList
+
+    @StatusList.setter
+    def StatusList(self, StatusList):
+        self._StatusList = StatusList
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._StaffList = params.get("StaffList")
+        self._GroupIdList = params.get("GroupIdList")
+        self._StatusList = params.get("StatusList")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeStaffStatusMetricsResponse(AbstractModel):
+    r"""DescribeStaffStatusMetrics response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Metrics: Real-Time information on agent status.
+        :type Metrics: list of StaffStatusMetrics
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._Metrics = None
+        self._RequestId = None
+
+    @property
+    def Metrics(self):
+        r"""Real-Time information on agent status.
+        :rtype: list of StaffStatusMetrics
+        """
+        return self._Metrics
+
+    @Metrics.setter
+    def Metrics(self, Metrics):
+        self._Metrics = Metrics
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        if params.get("Metrics") is not None:
+            self._Metrics = []
+            for item in params.get("Metrics"):
+                obj = StaffStatusMetrics()
+                obj._deserialize(item)
+                self._Metrics.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeTelCallInfoRequest(AbstractModel):
+    r"""DescribeTelCallInfo request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _StartTimeStamp: Start timestamp, unix timestamp (query dimension supports only daily. for example, to query may 1st, pass starttime:"2023-05-01 00:00:00","endtime":"2023-05-01 23:59:59" timestamp. to query may 1st and may 2nd, pass starttime:"2023-05-01 00:00:00","endtime":"2023-05-02 23:59:59" timestamp).
+        :type StartTimeStamp: int
+        :param _EndTimeStamp: End timestamp, unix timestamp, the query time range is up to 90 days (query dimension supports only daily. for example, to query may 1st, pass starttime:"2023-05-01 00:00:00","endtime":"2023-05-01 23:59:59" timestamp. to query may 1st and may 2nd, pass starttime:"2023-05-01 00:00:00","endtime":"2023-05-02 23:59:59" timestamp).
+        :type EndTimeStamp: int
+        :param _SdkAppIdList: Application id list, when having multiple ids, the returned value is the sum of all the ids.
+        :type SdkAppIdList: list of int
+        """
+        self._StartTimeStamp = None
+        self._EndTimeStamp = None
+        self._SdkAppIdList = None
+
+    @property
+    def StartTimeStamp(self):
+        r"""Start timestamp, unix timestamp (query dimension supports only daily. for example, to query may 1st, pass starttime:"2023-05-01 00:00:00","endtime":"2023-05-01 23:59:59" timestamp. to query may 1st and may 2nd, pass starttime:"2023-05-01 00:00:00","endtime":"2023-05-02 23:59:59" timestamp).
+        :rtype: int
+        """
+        return self._StartTimeStamp
+
+    @StartTimeStamp.setter
+    def StartTimeStamp(self, StartTimeStamp):
+        self._StartTimeStamp = StartTimeStamp
+
+    @property
+    def EndTimeStamp(self):
+        r"""End timestamp, unix timestamp, the query time range is up to 90 days (query dimension supports only daily. for example, to query may 1st, pass starttime:"2023-05-01 00:00:00","endtime":"2023-05-01 23:59:59" timestamp. to query may 1st and may 2nd, pass starttime:"2023-05-01 00:00:00","endtime":"2023-05-02 23:59:59" timestamp).
+        :rtype: int
+        """
+        return self._EndTimeStamp
+
+    @EndTimeStamp.setter
+    def EndTimeStamp(self, EndTimeStamp):
+        self._EndTimeStamp = EndTimeStamp
+
+    @property
+    def SdkAppIdList(self):
+        r"""Application id list, when having multiple ids, the returned value is the sum of all the ids.
+        :rtype: list of int
+        """
+        return self._SdkAppIdList
+
+    @SdkAppIdList.setter
+    def SdkAppIdList(self, SdkAppIdList):
+        self._SdkAppIdList = SdkAppIdList
+
+
+    def _deserialize(self, params):
+        self._StartTimeStamp = params.get("StartTimeStamp")
+        self._EndTimeStamp = params.get("EndTimeStamp")
+        self._SdkAppIdList = params.get("SdkAppIdList")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeTelCallInfoResponse(AbstractModel):
+    r"""DescribeTelCallInfo response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _TelCallOutCount: Number of minutes consumed by outbound package.
+        :type TelCallOutCount: int
+        :param _TelCallInCount: Number of minutes consumed by inbound package.
+        :type TelCallInCount: int
+        :param _SeatUsedCount: Number of agent usage statistics.
+        :type SeatUsedCount: int
+        :param _VoipCallInCount: Number of minutes consumed by audio package.
+        :type VoipCallInCount: int
+        :param _VOIPCallInCount: Number of minutes consumed by audio package.
+        :type VOIPCallInCount: int
+        :param _AsrOfflineCount: Number of minutes consumed by offline speech-to-text package.
+        :type AsrOfflineCount: int
+        :param _AsrRealtimeCount: Number of minutes consumed by real-time speech-to-text package.
+        :type AsrRealtimeCount: int
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._TelCallOutCount = None
+        self._TelCallInCount = None
+        self._SeatUsedCount = None
+        self._VoipCallInCount = None
+        self._VOIPCallInCount = None
+        self._AsrOfflineCount = None
+        self._AsrRealtimeCount = None
+        self._RequestId = None
+
+    @property
+    def TelCallOutCount(self):
+        r"""Number of minutes consumed by outbound package.
+        :rtype: int
+        """
+        return self._TelCallOutCount
+
+    @TelCallOutCount.setter
+    def TelCallOutCount(self, TelCallOutCount):
+        self._TelCallOutCount = TelCallOutCount
+
+    @property
+    def TelCallInCount(self):
+        r"""Number of minutes consumed by inbound package.
+        :rtype: int
+        """
+        return self._TelCallInCount
+
+    @TelCallInCount.setter
+    def TelCallInCount(self, TelCallInCount):
+        self._TelCallInCount = TelCallInCount
+
+    @property
+    def SeatUsedCount(self):
+        r"""Number of agent usage statistics.
+        :rtype: int
+        """
+        return self._SeatUsedCount
+
+    @SeatUsedCount.setter
+    def SeatUsedCount(self, SeatUsedCount):
+        self._SeatUsedCount = SeatUsedCount
+
+    @property
+    def VoipCallInCount(self):
+        warnings.warn("parameter `VoipCallInCount` is deprecated", DeprecationWarning) 
+
+        r"""Number of minutes consumed by audio package.
+        :rtype: int
+        """
+        return self._VoipCallInCount
+
+    @VoipCallInCount.setter
+    def VoipCallInCount(self, VoipCallInCount):
+        warnings.warn("parameter `VoipCallInCount` is deprecated", DeprecationWarning) 
+
+        self._VoipCallInCount = VoipCallInCount
+
+    @property
+    def VOIPCallInCount(self):
+        r"""Number of minutes consumed by audio package.
+        :rtype: int
+        """
+        return self._VOIPCallInCount
+
+    @VOIPCallInCount.setter
+    def VOIPCallInCount(self, VOIPCallInCount):
+        self._VOIPCallInCount = VOIPCallInCount
+
+    @property
+    def AsrOfflineCount(self):
+        r"""Number of minutes consumed by offline speech-to-text package.
+        :rtype: int
+        """
+        return self._AsrOfflineCount
+
+    @AsrOfflineCount.setter
+    def AsrOfflineCount(self, AsrOfflineCount):
+        self._AsrOfflineCount = AsrOfflineCount
+
+    @property
+    def AsrRealtimeCount(self):
+        r"""Number of minutes consumed by real-time speech-to-text package.
+        :rtype: int
+        """
+        return self._AsrRealtimeCount
+
+    @AsrRealtimeCount.setter
+    def AsrRealtimeCount(self, AsrRealtimeCount):
+        self._AsrRealtimeCount = AsrRealtimeCount
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._TelCallOutCount = params.get("TelCallOutCount")
+        self._TelCallInCount = params.get("TelCallInCount")
+        self._SeatUsedCount = params.get("SeatUsedCount")
+        self._VoipCallInCount = params.get("VoipCallInCount")
+        self._VOIPCallInCount = params.get("VOIPCallInCount")
+        self._AsrOfflineCount = params.get("AsrOfflineCount")
+        self._AsrRealtimeCount = params.get("AsrRealtimeCount")
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeTelCdrRequest(AbstractModel):
+    r"""DescribeTelCdr request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _StartTimeStamp: Start timestamp, unix timestamp in seconds. supports up to the past 180 days.
+        :type StartTimeStamp: int
+        :param _EndTimeStamp: End timestamp, unix timestamp in seconds. the range between the end time and start time is less than 90 days.
+        :type EndTimeStamp: int
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _PageSize: Page size (required), up to 100.
+        :type PageSize: int
+        :param _PageNumber: <Page number (required), starting from 0.>.
+        :type PageNumber: int
+        :param _InstanceId: Instance id (deprecated).
+        :type InstanceId: int
+        :param _Limit: Maximum number of returned entries (deprecated).
+        :type Limit: int
+        :param _Offset: Offset (deprecated).
+        :type Offset: int
+        :param _Phones: Filter by phone number.
+        :type Phones: list of str
+        :param _SessionIds: Filter by sessionid.
+        :type SessionIds: list of str
+        """
+        self._StartTimeStamp = None
+        self._EndTimeStamp = None
+        self._SdkAppId = None
+        self._PageSize = None
+        self._PageNumber = None
+        self._InstanceId = None
+        self._Limit = None
+        self._Offset = None
+        self._Phones = None
+        self._SessionIds = None
+
+    @property
+    def StartTimeStamp(self):
+        r"""Start timestamp, unix timestamp in seconds. supports up to the past 180 days.
+        :rtype: int
+        """
+        return self._StartTimeStamp
+
+    @StartTimeStamp.setter
+    def StartTimeStamp(self, StartTimeStamp):
+        self._StartTimeStamp = StartTimeStamp
+
+    @property
+    def EndTimeStamp(self):
+        r"""End timestamp, unix timestamp in seconds. the range between the end time and start time is less than 90 days.
+        :rtype: int
+        """
+        return self._EndTimeStamp
+
+    @EndTimeStamp.setter
+    def EndTimeStamp(self, EndTimeStamp):
+        self._EndTimeStamp = EndTimeStamp
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def PageSize(self):
+        r"""Page size (required), up to 100.
+        :rtype: int
+        """
+        return self._PageSize
+
+    @PageSize.setter
+    def PageSize(self, PageSize):
+        self._PageSize = PageSize
+
+    @property
+    def PageNumber(self):
+        r"""<Page number (required), starting from 0.>.
+        :rtype: int
+        """
+        return self._PageNumber
+
+    @PageNumber.setter
+    def PageNumber(self, PageNumber):
+        self._PageNumber = PageNumber
+
+    @property
+    def InstanceId(self):
+        warnings.warn("parameter `InstanceId` is deprecated", DeprecationWarning) 
+
+        r"""Instance id (deprecated).
+        :rtype: int
+        """
+        return self._InstanceId
+
+    @InstanceId.setter
+    def InstanceId(self, InstanceId):
+        warnings.warn("parameter `InstanceId` is deprecated", DeprecationWarning) 
+
+        self._InstanceId = InstanceId
+
+    @property
+    def Limit(self):
+        r"""Maximum number of returned entries (deprecated).
+        :rtype: int
+        """
+        return self._Limit
+
+    @Limit.setter
+    def Limit(self, Limit):
+        self._Limit = Limit
+
+    @property
+    def Offset(self):
+        r"""Offset (deprecated).
+        :rtype: int
+        """
+        return self._Offset
+
+    @Offset.setter
+    def Offset(self, Offset):
+        self._Offset = Offset
+
+    @property
+    def Phones(self):
+        r"""Filter by phone number.
+        :rtype: list of str
+        """
+        return self._Phones
+
+    @Phones.setter
+    def Phones(self, Phones):
+        self._Phones = Phones
+
+    @property
+    def SessionIds(self):
+        r"""Filter by sessionid.
+        :rtype: list of str
+        """
+        return self._SessionIds
+
+    @SessionIds.setter
+    def SessionIds(self, SessionIds):
+        self._SessionIds = SessionIds
+
+
+    def _deserialize(self, params):
+        self._StartTimeStamp = params.get("StartTimeStamp")
+        self._EndTimeStamp = params.get("EndTimeStamp")
+        self._SdkAppId = params.get("SdkAppId")
+        self._PageSize = params.get("PageSize")
+        self._PageNumber = params.get("PageNumber")
+        self._InstanceId = params.get("InstanceId")
+        self._Limit = params.get("Limit")
+        self._Offset = params.get("Offset")
+        self._Phones = params.get("Phones")
+        self._SessionIds = params.get("SessionIds")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeTelCdrResponse(AbstractModel):
+    r"""DescribeTelCdr response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _TotalCount: Total number of call records.
+        :type TotalCount: int
+        :param _TelCdrs: Call record.
+        :type TelCdrs: list of TelCdrInfo
+        :param _TelCdrList: Call record.
+        :type TelCdrList: list of TelCdrInfo
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._TotalCount = None
+        self._TelCdrs = None
+        self._TelCdrList = None
+        self._RequestId = None
+
+    @property
+    def TotalCount(self):
+        r"""Total number of call records.
+        :rtype: int
+        """
+        return self._TotalCount
+
+    @TotalCount.setter
+    def TotalCount(self, TotalCount):
+        self._TotalCount = TotalCount
+
+    @property
+    def TelCdrs(self):
+        warnings.warn("parameter `TelCdrs` is deprecated", DeprecationWarning) 
+
+        r"""Call record.
+        :rtype: list of TelCdrInfo
+        """
+        return self._TelCdrs
+
+    @TelCdrs.setter
+    def TelCdrs(self, TelCdrs):
+        warnings.warn("parameter `TelCdrs` is deprecated", DeprecationWarning) 
+
+        self._TelCdrs = TelCdrs
+
+    @property
+    def TelCdrList(self):
+        r"""Call record.
+        :rtype: list of TelCdrInfo
+        """
+        return self._TelCdrList
+
+    @TelCdrList.setter
+    def TelCdrList(self, TelCdrList):
+        self._TelCdrList = TelCdrList
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._TotalCount = params.get("TotalCount")
+        if params.get("TelCdrs") is not None:
+            self._TelCdrs = []
+            for item in params.get("TelCdrs"):
+                obj = TelCdrInfo()
+                obj._deserialize(item)
+                self._TelCdrs.append(obj)
+        if params.get("TelCdrList") is not None:
+            self._TelCdrList = []
+            for item in params.get("TelCdrList"):
+                obj = TelCdrInfo()
+                obj._deserialize(item)
+                self._TelCdrList.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeTelRecordAsrRequest(AbstractModel):
+    r"""DescribeTelRecordAsr request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _SessionId: Session id.
+        :type SessionId: str
+        """
+        self._SdkAppId = None
+        self._SessionId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def SessionId(self):
+        r"""Session id.
+        :rtype: str
+        """
+        return self._SessionId
+
+    @SessionId.setter
+    def SessionId(self, SessionId):
+        self._SessionId = SessionId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._SessionId = params.get("SessionId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeTelRecordAsrResponse(AbstractModel):
+    r"""DescribeTelRecordAsr response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _AsrDataList: Recording to text information.
+        :type AsrDataList: list of AsrData
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._AsrDataList = None
+        self._RequestId = None
+
+    @property
+    def AsrDataList(self):
+        r"""Recording to text information.
+        :rtype: list of AsrData
+        """
+        return self._AsrDataList
+
+    @AsrDataList.setter
+    def AsrDataList(self, AsrDataList):
+        self._AsrDataList = AsrDataList
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        if params.get("AsrDataList") is not None:
+            self._AsrDataList = []
+            for item in params.get("AsrDataList"):
+                obj = AsrData()
+                obj._deserialize(item)
+                self._AsrDataList.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class DescribeTelSessionRequest(AbstractModel):
+    r"""DescribeTelSession request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _SessionId: Session id.
+        :type SessionId: str
+        """
+        self._SdkAppId = None
+        self._SessionId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def SessionId(self):
+        r"""Session id.
+        :rtype: str
+        """
+        return self._SessionId
+
+    @SessionId.setter
+    def SessionId(self, SessionId):
+        self._SessionId = SessionId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._SessionId = params.get("SessionId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DescribeTelSessionResponse(AbstractModel):
+    r"""DescribeTelSession response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Session: Session information.
+        :type Session: :class:`tencentcloud.ccc.v20200210.models.PSTNSession`
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._Session = None
+        self._RequestId = None
+
+    @property
+    def Session(self):
+        r"""Session information.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.PSTNSession`
+        """
+        return self._Session
+
+    @Session.setter
+    def Session(self, Session):
+        self._Session = Session
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        if params.get("Session") is not None:
+            self._Session = PSTNSession()
+            self._Session._deserialize(params.get("Session"))
+        self._RequestId = params.get("RequestId")
+
+
+class DisableCCCPhoneNumberRequest(AbstractModel):
+    r"""DisableCCCPhoneNumber request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _PhoneNumbers: Number list starting with 0086.
+        :type PhoneNumbers: list of str
+        :param _Disabled: Disable switch: 0 for enable, 1 for disable.
+        :type Disabled: int
+        :param _SdkAppId: TCCC instance application id.
+        :type SdkAppId: int
+        """
+        self._PhoneNumbers = None
+        self._Disabled = None
+        self._SdkAppId = None
+
+    @property
+    def PhoneNumbers(self):
+        r"""Number list starting with 0086.
+        :rtype: list of str
+        """
+        return self._PhoneNumbers
+
+    @PhoneNumbers.setter
+    def PhoneNumbers(self, PhoneNumbers):
+        self._PhoneNumbers = PhoneNumbers
+
+    @property
+    def Disabled(self):
+        r"""Disable switch: 0 for enable, 1 for disable.
+        :rtype: int
+        """
+        return self._Disabled
+
+    @Disabled.setter
+    def Disabled(self, Disabled):
+        self._Disabled = Disabled
+
+    @property
+    def SdkAppId(self):
+        r"""TCCC instance application id.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+
+    def _deserialize(self, params):
+        self._PhoneNumbers = params.get("PhoneNumbers")
+        self._Disabled = params.get("Disabled")
+        self._SdkAppId = params.get("SdkAppId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class DisableCCCPhoneNumberResponse(AbstractModel):
+    r"""DisableCCCPhoneNumber response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class ErrStaffItem(AbstractModel):
+    r"""When adding customer service personnel in batches, information of the customer service personnel with an error is returned.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _StaffEmail: Agent email address.
+        :type StaffEmail: str
+        :param _Code: Error code.
+        :type Code: str
+        :param _Message: Error description.
+        :type Message: str
+        """
+        self._StaffEmail = None
+        self._Code = None
+        self._Message = None
+
+    @property
+    def StaffEmail(self):
+        r"""Agent email address.
+        :rtype: str
+        """
+        return self._StaffEmail
+
+    @StaffEmail.setter
+    def StaffEmail(self, StaffEmail):
+        self._StaffEmail = StaffEmail
+
+    @property
+    def Code(self):
+        r"""Error code.
+        :rtype: str
+        """
+        return self._Code
+
+    @Code.setter
+    def Code(self, Code):
+        self._Code = Code
+
+    @property
+    def Message(self):
+        r"""Error description.
+        :rtype: str
+        """
+        return self._Message
+
+    @Message.setter
+    def Message(self, Message):
+        self._Message = Message
+
+
+    def _deserialize(self, params):
+        self._StaffEmail = params.get("StaffEmail")
+        self._Code = params.get("Code")
+        self._Message = params.get("Message")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class EventStaffDetail(AbstractModel):
+    r"""Event details.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Staffs: Specifies the agent data.
+        :type Staffs: list of EventStaffElement
+        """
+        self._Staffs = None
+
+    @property
+    def Staffs(self):
+        r"""Specifies the agent data.
+        :rtype: list of EventStaffElement
+        """
+        return self._Staffs
+
+    @Staffs.setter
+    def Staffs(self, Staffs):
+        self._Staffs = Staffs
+
+
+    def _deserialize(self, params):
+        if params.get("Staffs") is not None:
+            self._Staffs = []
+            for item in params.get("Staffs"):
+                obj = EventStaffElement()
+                obj._deserialize(item)
+                self._Staffs.append(obj)
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class EventStaffElement(AbstractModel):
+    r"""Agent information.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Mail: Agent email address.
+        :type Mail: str
+        :param _StaffNumber: Agent id.
+        :type StaffNumber: str
+        """
+        self._Mail = None
+        self._StaffNumber = None
+
+    @property
+    def Mail(self):
+        r"""Agent email address.
+        :rtype: str
+        """
+        return self._Mail
+
+    @Mail.setter
+    def Mail(self, Mail):
+        self._Mail = Mail
+
+    @property
+    def StaffNumber(self):
+        r"""Agent id.
+        :rtype: str
+        """
+        return self._StaffNumber
+
+    @StaffNumber.setter
+    def StaffNumber(self, StaffNumber):
+        self._StaffNumber = StaffNumber
+
+
+    def _deserialize(self, params):
+        self._Mail = params.get("Mail")
+        self._StaffNumber = params.get("StaffNumber")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ExtensionInfo(AbstractModel):
+    r"""Telephone information.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Instance id.
+        :type SdkAppId: int
+        :param _FullExtensionId: Extension full name.
+        :type FullExtensionId: str
+        :param _ExtensionId: Extension.
+        :type ExtensionId: str
+        :param _SkillGroupId: Affiliated skill group list.
+        :type SkillGroupId: str
+        :param _ExtensionName: Extension name.
+        :type ExtensionName: str
+        :param _CreateTime: Creation time.
+        :type CreateTime: int
+        :param _ModifyTime: Last modification time.
+        :type ModifyTime: int
+        :param _Status: Telephone status (0 offline, 100 free, 200 busy).
+        :type Status: int
+        :param _Register: Whether to register.
+        :type Register: bool
+        :param _Relation: Bind agent email.
+        :type Relation: str
+        :param _RelationName: Bind agent name.
+        :type RelationName: str
+        """
+        self._SdkAppId = None
+        self._FullExtensionId = None
+        self._ExtensionId = None
+        self._SkillGroupId = None
+        self._ExtensionName = None
+        self._CreateTime = None
+        self._ModifyTime = None
+        self._Status = None
+        self._Register = None
+        self._Relation = None
+        self._RelationName = None
+
+    @property
+    def SdkAppId(self):
+        r"""Instance id.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def FullExtensionId(self):
+        r"""Extension full name.
+        :rtype: str
+        """
+        return self._FullExtensionId
+
+    @FullExtensionId.setter
+    def FullExtensionId(self, FullExtensionId):
+        self._FullExtensionId = FullExtensionId
+
+    @property
+    def ExtensionId(self):
+        r"""Extension.
+        :rtype: str
+        """
+        return self._ExtensionId
+
+    @ExtensionId.setter
+    def ExtensionId(self, ExtensionId):
+        self._ExtensionId = ExtensionId
+
+    @property
+    def SkillGroupId(self):
+        r"""Affiliated skill group list.
+        :rtype: str
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+    @property
+    def ExtensionName(self):
+        r"""Extension name.
+        :rtype: str
+        """
+        return self._ExtensionName
+
+    @ExtensionName.setter
+    def ExtensionName(self, ExtensionName):
+        self._ExtensionName = ExtensionName
+
+    @property
+    def CreateTime(self):
+        r"""Creation time.
+        :rtype: int
+        """
+        return self._CreateTime
+
+    @CreateTime.setter
+    def CreateTime(self, CreateTime):
+        self._CreateTime = CreateTime
+
+    @property
+    def ModifyTime(self):
+        r"""Last modification time.
+        :rtype: int
+        """
+        return self._ModifyTime
+
+    @ModifyTime.setter
+    def ModifyTime(self, ModifyTime):
+        self._ModifyTime = ModifyTime
+
+    @property
+    def Status(self):
+        r"""Telephone status (0 offline, 100 free, 200 busy).
+        :rtype: int
+        """
+        return self._Status
+
+    @Status.setter
+    def Status(self, Status):
+        self._Status = Status
+
+    @property
+    def Register(self):
+        r"""Whether to register.
+        :rtype: bool
+        """
+        return self._Register
+
+    @Register.setter
+    def Register(self, Register):
+        self._Register = Register
+
+    @property
+    def Relation(self):
+        r"""Bind agent email.
+        :rtype: str
+        """
+        return self._Relation
+
+    @Relation.setter
+    def Relation(self, Relation):
+        self._Relation = Relation
+
+    @property
+    def RelationName(self):
+        r"""Bind agent name.
+        :rtype: str
+        """
+        return self._RelationName
+
+    @RelationName.setter
+    def RelationName(self, RelationName):
+        self._RelationName = RelationName
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._FullExtensionId = params.get("FullExtensionId")
+        self._ExtensionId = params.get("ExtensionId")
+        self._SkillGroupId = params.get("SkillGroupId")
+        self._ExtensionName = params.get("ExtensionName")
+        self._CreateTime = params.get("CreateTime")
+        self._ModifyTime = params.get("ModifyTime")
+        self._Status = params.get("Status")
+        self._Register = params.get("Register")
+        self._Relation = params.get("Relation")
+        self._RelationName = params.get("RelationName")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ForceMemberOfflineRequest(AbstractModel):
+    r"""ForceMemberOffline request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: App ID (required), which can be viewed at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _UserId: Customer service ID.
+        :type UserId: str
+        """
+        self._SdkAppId = None
+        self._UserId = None
+
+    @property
+    def SdkAppId(self):
+        r"""App ID (required), which can be viewed at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def UserId(self):
+        r"""Customer service ID.
+        :rtype: str
+        """
+        return self._UserId
+
+    @UserId.setter
+    def UserId(self, UserId):
+        self._UserId = UserId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._UserId = params.get("UserId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ForceMemberOfflineResponse(AbstractModel):
+    r"""ForceMemberOffline response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class ForwardingConfig(AbstractModel):
+    r"""Call forwarding configuration.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Enabled: Whether to enable.
+        :type Enabled: bool
+        :param _Condition: 1 unconditional call forwarding 2 conditional call forwarding.
+        :type Condition: int
+        :param _Target: Call forwarding destination.
+        :type Target: :class:`tencentcloud.ccc.v20200210.models.ForwardingTarget`
+        """
+        self._Enabled = None
+        self._Condition = None
+        self._Target = None
+
+    @property
+    def Enabled(self):
+        r"""Whether to enable.
+        :rtype: bool
+        """
+        return self._Enabled
+
+    @Enabled.setter
+    def Enabled(self, Enabled):
+        self._Enabled = Enabled
+
+    @property
+    def Condition(self):
+        r"""1 unconditional call forwarding 2 conditional call forwarding.
+        :rtype: int
+        """
+        return self._Condition
+
+    @Condition.setter
+    def Condition(self, Condition):
+        self._Condition = Condition
+
+    @property
+    def Target(self):
+        r"""Call forwarding destination.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.ForwardingTarget`
+        """
+        return self._Target
+
+    @Target.setter
+    def Target(self, Target):
+        self._Target = Target
+
+
+    def _deserialize(self, params):
+        self._Enabled = params.get("Enabled")
+        self._Condition = params.get("Condition")
+        if params.get("Target") is not None:
+            self._Target = ForwardingTarget()
+            self._Target._deserialize(params.get("Target"))
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ForwardingTarget(AbstractModel):
+    r"""Call forwarding destination.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Type: Call forwarding target type. valid values: 1 (agent), 2 (skill group), 3 (extension).
+        :type Type: int
+        :param _StaffUserId: Specifies the agent account when the call forwarding target is set to agent and Type is 1.
+        :type StaffUserId: str
+        :param _SkillGroupId: Specifies the ID of the skill group as the call forwarding target. fill when Type is 2.
+        :type SkillGroupId: int
+        :param _Extension: The account to which the call is forwarded is an extension. fill when Type is 3.
+        :type Extension: str
+        """
+        self._Type = None
+        self._StaffUserId = None
+        self._SkillGroupId = None
+        self._Extension = None
+
+    @property
+    def Type(self):
+        r"""Call forwarding target type. valid values: 1 (agent), 2 (skill group), 3 (extension).
+        :rtype: int
+        """
+        return self._Type
+
+    @Type.setter
+    def Type(self, Type):
+        self._Type = Type
+
+    @property
+    def StaffUserId(self):
+        r"""Specifies the agent account when the call forwarding target is set to agent and Type is 1.
+        :rtype: str
+        """
+        return self._StaffUserId
+
+    @StaffUserId.setter
+    def StaffUserId(self, StaffUserId):
+        self._StaffUserId = StaffUserId
+
+    @property
+    def SkillGroupId(self):
+        r"""Specifies the ID of the skill group as the call forwarding target. fill when Type is 2.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+    @property
+    def Extension(self):
+        r"""The account to which the call is forwarded is an extension. fill when Type is 3.
+        :rtype: str
+        """
+        return self._Extension
+
+    @Extension.setter
+    def Extension(self, Extension):
+        self._Extension = Extension
+
+
+    def _deserialize(self, params):
+        self._Type = params.get("Type")
+        self._StaffUserId = params.get("StaffUserId")
+        self._SkillGroupId = params.get("SkillGroupId")
+        self._Extension = params.get("Extension")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class HangUpCallRequest(AbstractModel):
+    r"""HangUpCall request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _SessionId: Session id.
+        :type SessionId: str
+        """
+        self._SdkAppId = None
+        self._SessionId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def SessionId(self):
+        r"""Session id.
+        :rtype: str
+        """
+        return self._SessionId
+
+    @SessionId.setter
+    def SessionId(self, SessionId):
+        self._SessionId = SessionId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._SessionId = params.get("SessionId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class HangUpCallResponse(AbstractModel):
+    r"""HangUpCall response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class IVRKeyPressedElement(AbstractModel):
+    r"""IVR Key Information.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Key: Hit keyword or press.
+        :type Key: str
+        :param _Label: Tag associated with the key.
+        :type Label: str
+        :param _Timestamp: UNIX millisecond timestamp.
+        :type Timestamp: int
+        :param _NodeLabel: Node tags.
+        :type NodeLabel: str
+        :param _OriginalContent: User'S original input.
+        :type OriginalContent: str
+        :param _TTSPrompt: TTS prompt content.
+        :type TTSPrompt: str
+        """
+        self._Key = None
+        self._Label = None
+        self._Timestamp = None
+        self._NodeLabel = None
+        self._OriginalContent = None
+        self._TTSPrompt = None
+
+    @property
+    def Key(self):
+        r"""Hit keyword or press.
+        :rtype: str
+        """
+        return self._Key
+
+    @Key.setter
+    def Key(self, Key):
+        self._Key = Key
+
+    @property
+    def Label(self):
+        r"""Tag associated with the key.
+        :rtype: str
+        """
+        return self._Label
+
+    @Label.setter
+    def Label(self, Label):
+        self._Label = Label
+
+    @property
+    def Timestamp(self):
+        r"""UNIX millisecond timestamp.
+        :rtype: int
+        """
+        return self._Timestamp
+
+    @Timestamp.setter
+    def Timestamp(self, Timestamp):
+        self._Timestamp = Timestamp
+
+    @property
+    def NodeLabel(self):
+        r"""Node tags.
+        :rtype: str
+        """
+        return self._NodeLabel
+
+    @NodeLabel.setter
+    def NodeLabel(self, NodeLabel):
+        self._NodeLabel = NodeLabel
+
+    @property
+    def OriginalContent(self):
+        r"""User'S original input.
+        :rtype: str
+        """
+        return self._OriginalContent
+
+    @OriginalContent.setter
+    def OriginalContent(self, OriginalContent):
+        self._OriginalContent = OriginalContent
+
+    @property
+    def TTSPrompt(self):
+        r"""TTS prompt content.
+        :rtype: str
+        """
+        return self._TTSPrompt
+
+    @TTSPrompt.setter
+    def TTSPrompt(self, TTSPrompt):
+        self._TTSPrompt = TTSPrompt
+
+
+    def _deserialize(self, params):
+        self._Key = params.get("Key")
+        self._Label = params.get("Label")
+        self._Timestamp = params.get("Timestamp")
+        self._NodeLabel = params.get("NodeLabel")
+        self._OriginalContent = params.get("OriginalContent")
+        self._TTSPrompt = params.get("TTSPrompt")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class Interface(AbstractModel):
+    r"""Callback api.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _URL: API address
+        :type URL: str
+        """
+        self._URL = None
+
+    @property
+    def URL(self):
+        r"""API address
+        :rtype: str
+        """
+        return self._URL
+
+    @URL.setter
+    def URL(self, URL):
+        self._URL = URL
+
+
+    def _deserialize(self, params):
+        self._URL = params.get("URL")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class InvokeLLM(AbstractModel):
+    r"""Service invocation actively initiates requests to the LLM.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Content: Specifies the content of the LLM request.
+        :type Content: str
+        :param _Interrupt: Whether the text is allowed to interrupt the robot speaking.
+        :type Interrupt: bool
+        """
+        self._Content = None
+        self._Interrupt = None
+
+    @property
+    def Content(self):
+        r"""Specifies the content of the LLM request.
+        :rtype: str
+        """
+        return self._Content
+
+    @Content.setter
+    def Content(self, Content):
+        self._Content = Content
+
+    @property
+    def Interrupt(self):
+        r"""Whether the text is allowed to interrupt the robot speaking.
+        :rtype: bool
+        """
+        return self._Interrupt
+
+    @Interrupt.setter
+    def Interrupt(self, Interrupt):
+        self._Interrupt = Interrupt
+
+
+    def _deserialize(self, params):
+        self._Content = params.get("Content")
+        self._Interrupt = params.get("Interrupt")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ModifyExtensionRequest(AbstractModel):
+    r"""ModifyExtension request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _ExtensionId: Extension.
+        :type ExtensionId: str
+        :param _ExtensionName: Extension name.
+        :type ExtensionName: str
+        :param _SkillGroupIds: Affiliated skill group list.
+        :type SkillGroupIds: list of int
+        :param _Relation: Bind agent email account.
+        :type Relation: str
+        """
+        self._SdkAppId = None
+        self._ExtensionId = None
+        self._ExtensionName = None
+        self._SkillGroupIds = None
+        self._Relation = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def ExtensionId(self):
+        r"""Extension.
+        :rtype: str
+        """
+        return self._ExtensionId
+
+    @ExtensionId.setter
+    def ExtensionId(self, ExtensionId):
+        self._ExtensionId = ExtensionId
+
+    @property
+    def ExtensionName(self):
+        r"""Extension name.
+        :rtype: str
+        """
+        return self._ExtensionName
+
+    @ExtensionName.setter
+    def ExtensionName(self, ExtensionName):
+        self._ExtensionName = ExtensionName
+
+    @property
+    def SkillGroupIds(self):
+        r"""Affiliated skill group list.
+        :rtype: list of int
+        """
+        return self._SkillGroupIds
+
+    @SkillGroupIds.setter
+    def SkillGroupIds(self, SkillGroupIds):
+        self._SkillGroupIds = SkillGroupIds
+
+    @property
+    def Relation(self):
+        r"""Bind agent email account.
+        :rtype: str
+        """
+        return self._Relation
+
+    @Relation.setter
+    def Relation(self, Relation):
+        self._Relation = Relation
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._ExtensionId = params.get("ExtensionId")
+        self._ExtensionName = params.get("ExtensionName")
+        self._SkillGroupIds = params.get("SkillGroupIds")
+        self._Relation = params.get("Relation")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ModifyExtensionResponse(AbstractModel):
+    r"""ModifyExtension response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class ModifyOwnNumberApplyRequest(AbstractModel):
+    r"""ModifyOwnNumberApply request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _DetailList: Circuit-Related parameters.
+        :type DetailList: list of OwnNumberApplyDetailItem
+        :param _ApplyId: Approval id.
+        :type ApplyId: int
+        :param _Prefix: Prefix for sending numbers.
+        :type Prefix: str
+        :param _MobileNddPrefix: Domestic long-distance mobile phone prefix.
+        :type MobileNddPrefix: str
+        :param _LocalNumberTrimAC: Removes the area code for local calls.
+        :type LocalNumberTrimAC: bool
+        """
+        self._SdkAppId = None
+        self._DetailList = None
+        self._ApplyId = None
+        self._Prefix = None
+        self._MobileNddPrefix = None
+        self._LocalNumberTrimAC = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def DetailList(self):
+        r"""Circuit-Related parameters.
+        :rtype: list of OwnNumberApplyDetailItem
+        """
+        return self._DetailList
+
+    @DetailList.setter
+    def DetailList(self, DetailList):
+        self._DetailList = DetailList
+
+    @property
+    def ApplyId(self):
+        r"""Approval id.
+        :rtype: int
+        """
+        return self._ApplyId
+
+    @ApplyId.setter
+    def ApplyId(self, ApplyId):
+        self._ApplyId = ApplyId
+
+    @property
+    def Prefix(self):
+        r"""Prefix for sending numbers.
+        :rtype: str
+        """
+        return self._Prefix
+
+    @Prefix.setter
+    def Prefix(self, Prefix):
+        self._Prefix = Prefix
+
+    @property
+    def MobileNddPrefix(self):
+        r"""Domestic long-distance mobile phone prefix.
+        :rtype: str
+        """
+        return self._MobileNddPrefix
+
+    @MobileNddPrefix.setter
+    def MobileNddPrefix(self, MobileNddPrefix):
+        self._MobileNddPrefix = MobileNddPrefix
+
+    @property
+    def LocalNumberTrimAC(self):
+        r"""Removes the area code for local calls.
+        :rtype: bool
+        """
+        return self._LocalNumberTrimAC
+
+    @LocalNumberTrimAC.setter
+    def LocalNumberTrimAC(self, LocalNumberTrimAC):
+        self._LocalNumberTrimAC = LocalNumberTrimAC
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        if params.get("DetailList") is not None:
+            self._DetailList = []
+            for item in params.get("DetailList"):
+                obj = OwnNumberApplyDetailItem()
+                obj._deserialize(item)
+                self._DetailList.append(obj)
+        self._ApplyId = params.get("ApplyId")
+        self._Prefix = params.get("Prefix")
+        self._MobileNddPrefix = params.get("MobileNddPrefix")
+        self._LocalNumberTrimAC = params.get("LocalNumberTrimAC")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ModifyOwnNumberApplyResponse(AbstractModel):
+    r"""ModifyOwnNumberApply response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class ModifyStaffPasswordRequest(AbstractModel):
+    r"""ModifyStaffPassword request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _Email: Agent email.
+        :type Email: str
+        :param _Password: The set password.
+        :type Password: str
+        """
+        self._SdkAppId = None
+        self._Email = None
+        self._Password = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def Email(self):
+        r"""Agent email.
+        :rtype: str
+        """
+        return self._Email
+
+    @Email.setter
+    def Email(self, Email):
+        self._Email = Email
+
+    @property
+    def Password(self):
+        r"""The set password.
+        :rtype: str
+        """
+        return self._Password
+
+    @Password.setter
+    def Password(self, Password):
+        self._Password = Password
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._Email = params.get("Email")
+        self._Password = params.get("Password")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ModifyStaffPasswordResponse(AbstractModel):
+    r"""ModifyStaffPassword response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class ModifyStaffRequest(AbstractModel):
+    r"""ModifyStaff request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _Email: Agent account.
+        :type Email: str
+        :param _Name: Agent name.
+        :type Name: str
+        :param _Phone: Agent phone number (preceded by 0086, example: 008618011111111).
+        :type Phone: str
+        :param _Nick: Agent nickname.
+        :type Nick: str
+        :param _StaffNo: Agent id.
+        :type StaffNo: str
+        :param _SkillGroupIds: Bind skill group id list.
+        :type SkillGroupIds: list of int
+        :param _UseMobileCallOut: Whether the cell phone outbound call switch is enabled or not.
+        :type UseMobileCallOut: bool
+        :param _UseMobileAccept: Cell phone answering pattern: 0 - off | 1 - only when offline | 2 - always.
+        :type UseMobileAccept: int
+        :param _ExtensionNumber: Agent extension number (starting with 1 to 8, 4 - 6 digits).
+        :type ExtensionNumber: str
+        :param _ForwardingConfig: Call forwarding configuration.
+        :type ForwardingConfig: :class:`tencentcloud.ccc.v20200210.models.ForwardingConfig`
+        """
+        self._SdkAppId = None
+        self._Email = None
+        self._Name = None
+        self._Phone = None
+        self._Nick = None
+        self._StaffNo = None
+        self._SkillGroupIds = None
+        self._UseMobileCallOut = None
+        self._UseMobileAccept = None
+        self._ExtensionNumber = None
+        self._ForwardingConfig = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def Email(self):
+        r"""Agent account.
+        :rtype: str
+        """
+        return self._Email
+
+    @Email.setter
+    def Email(self, Email):
+        self._Email = Email
+
+    @property
+    def Name(self):
+        r"""Agent name.
+        :rtype: str
+        """
+        return self._Name
+
+    @Name.setter
+    def Name(self, Name):
+        self._Name = Name
+
+    @property
+    def Phone(self):
+        r"""Agent phone number (preceded by 0086, example: 008618011111111).
+        :rtype: str
+        """
+        return self._Phone
+
+    @Phone.setter
+    def Phone(self, Phone):
+        self._Phone = Phone
+
+    @property
+    def Nick(self):
+        r"""Agent nickname.
+        :rtype: str
+        """
+        return self._Nick
+
+    @Nick.setter
+    def Nick(self, Nick):
+        self._Nick = Nick
+
+    @property
+    def StaffNo(self):
+        r"""Agent id.
+        :rtype: str
+        """
+        return self._StaffNo
+
+    @StaffNo.setter
+    def StaffNo(self, StaffNo):
+        self._StaffNo = StaffNo
+
+    @property
+    def SkillGroupIds(self):
+        r"""Bind skill group id list.
+        :rtype: list of int
+        """
+        return self._SkillGroupIds
+
+    @SkillGroupIds.setter
+    def SkillGroupIds(self, SkillGroupIds):
+        self._SkillGroupIds = SkillGroupIds
+
+    @property
+    def UseMobileCallOut(self):
+        r"""Whether the cell phone outbound call switch is enabled or not.
+        :rtype: bool
+        """
+        return self._UseMobileCallOut
+
+    @UseMobileCallOut.setter
+    def UseMobileCallOut(self, UseMobileCallOut):
+        self._UseMobileCallOut = UseMobileCallOut
+
+    @property
+    def UseMobileAccept(self):
+        r"""Cell phone answering pattern: 0 - off | 1 - only when offline | 2 - always.
+        :rtype: int
+        """
+        return self._UseMobileAccept
+
+    @UseMobileAccept.setter
+    def UseMobileAccept(self, UseMobileAccept):
+        self._UseMobileAccept = UseMobileAccept
+
+    @property
+    def ExtensionNumber(self):
+        r"""Agent extension number (starting with 1 to 8, 4 - 6 digits).
+        :rtype: str
+        """
+        return self._ExtensionNumber
+
+    @ExtensionNumber.setter
+    def ExtensionNumber(self, ExtensionNumber):
+        self._ExtensionNumber = ExtensionNumber
+
+    @property
+    def ForwardingConfig(self):
+        r"""Call forwarding configuration.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.ForwardingConfig`
+        """
+        return self._ForwardingConfig
+
+    @ForwardingConfig.setter
+    def ForwardingConfig(self, ForwardingConfig):
+        self._ForwardingConfig = ForwardingConfig
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._Email = params.get("Email")
+        self._Name = params.get("Name")
+        self._Phone = params.get("Phone")
+        self._Nick = params.get("Nick")
+        self._StaffNo = params.get("StaffNo")
+        self._SkillGroupIds = params.get("SkillGroupIds")
+        self._UseMobileCallOut = params.get("UseMobileCallOut")
+        self._UseMobileAccept = params.get("UseMobileAccept")
+        self._ExtensionNumber = params.get("ExtensionNumber")
+        if params.get("ForwardingConfig") is not None:
+            self._ForwardingConfig = ForwardingConfig()
+            self._ForwardingConfig._deserialize(params.get("ForwardingConfig"))
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ModifyStaffResponse(AbstractModel):
+    r"""ModifyStaff response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class NumberInfo(AbstractModel):
+    r"""Number information.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Number: Number.
+        :type Number: str
+        :param _CallOutSkillGroupIds: Bound outbound call skill group.
+        :type CallOutSkillGroupIds: list of int non-negative
+        :param _State: Number status, 1-normal, 2-disabled due to overdue payment, 4-disabled by the administrator, 5-disabled due to violation.
+        :type State: int
+        """
+        self._Number = None
+        self._CallOutSkillGroupIds = None
+        self._State = None
+
+    @property
+    def Number(self):
+        r"""Number.
+        :rtype: str
+        """
+        return self._Number
+
+    @Number.setter
+    def Number(self, Number):
+        self._Number = Number
+
+    @property
+    def CallOutSkillGroupIds(self):
+        r"""Bound outbound call skill group.
+        :rtype: list of int non-negative
+        """
+        return self._CallOutSkillGroupIds
+
+    @CallOutSkillGroupIds.setter
+    def CallOutSkillGroupIds(self, CallOutSkillGroupIds):
+        self._CallOutSkillGroupIds = CallOutSkillGroupIds
+
+    @property
+    def State(self):
+        r"""Number status, 1-normal, 2-disabled due to overdue payment, 4-disabled by the administrator, 5-disabled due to violation.
+        :rtype: int
+        """
+        return self._State
+
+    @State.setter
+    def State(self, State):
+        self._State = State
+
+
+    def _deserialize(self, params):
+        self._Number = params.get("Number")
+        self._CallOutSkillGroupIds = params.get("CallOutSkillGroupIds")
+        self._State = params.get("State")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class OwnNumberApplyDetailItem(AbstractModel):
+    r"""User-owned number approval detail data type
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _CallType: Number type: 0 - inbound | 1 - outbound | 2 - inbound and outbound.
+        :type CallType: int
+        :param _PhoneNumber: Line number.
+        :type PhoneNumber: str
+        :param _MaxCallCount: Maximum concurrent call number.
+        :type MaxCallCount: int
+        :param _MaxCallPSec: Maximum number of concurrencies per second.
+        :type MaxCallPSec: int
+        :param _OutboundCalleeFormat: Outbound called number format, use {+e.164} or {e.164}. 
+        :type OutboundCalleeFormat: str
+        :param _CarrierPhoneNumber: Specifies the carrier number.
+        :type CarrierPhoneNumber: str
+        """
+        self._CallType = None
+        self._PhoneNumber = None
+        self._MaxCallCount = None
+        self._MaxCallPSec = None
+        self._OutboundCalleeFormat = None
+        self._CarrierPhoneNumber = None
+
+    @property
+    def CallType(self):
+        r"""Number type: 0 - inbound | 1 - outbound | 2 - inbound and outbound.
+        :rtype: int
+        """
+        return self._CallType
+
+    @CallType.setter
+    def CallType(self, CallType):
+        self._CallType = CallType
+
+    @property
+    def PhoneNumber(self):
+        r"""Line number.
+        :rtype: str
+        """
+        return self._PhoneNumber
+
+    @PhoneNumber.setter
+    def PhoneNumber(self, PhoneNumber):
+        self._PhoneNumber = PhoneNumber
+
+    @property
+    def MaxCallCount(self):
+        r"""Maximum concurrent call number.
+        :rtype: int
+        """
+        return self._MaxCallCount
+
+    @MaxCallCount.setter
+    def MaxCallCount(self, MaxCallCount):
+        self._MaxCallCount = MaxCallCount
+
+    @property
+    def MaxCallPSec(self):
+        r"""Maximum number of concurrencies per second.
+        :rtype: int
+        """
+        return self._MaxCallPSec
+
+    @MaxCallPSec.setter
+    def MaxCallPSec(self, MaxCallPSec):
+        self._MaxCallPSec = MaxCallPSec
+
+    @property
+    def OutboundCalleeFormat(self):
+        r"""Outbound called number format, use {+e.164} or {e.164}. 
+        :rtype: str
+        """
+        return self._OutboundCalleeFormat
+
+    @OutboundCalleeFormat.setter
+    def OutboundCalleeFormat(self, OutboundCalleeFormat):
+        self._OutboundCalleeFormat = OutboundCalleeFormat
+
+    @property
+    def CarrierPhoneNumber(self):
+        r"""Specifies the carrier number.
+        :rtype: str
+        """
+        return self._CarrierPhoneNumber
+
+    @CarrierPhoneNumber.setter
+    def CarrierPhoneNumber(self, CarrierPhoneNumber):
+        self._CarrierPhoneNumber = CarrierPhoneNumber
+
+
+    def _deserialize(self, params):
+        self._CallType = params.get("CallType")
+        self._PhoneNumber = params.get("PhoneNumber")
+        self._MaxCallCount = params.get("MaxCallCount")
+        self._MaxCallPSec = params.get("MaxCallPSec")
+        self._OutboundCalleeFormat = params.get("OutboundCalleeFormat")
+        self._CarrierPhoneNumber = params.get("CarrierPhoneNumber")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class PSTNSession(AbstractModel):
+    r"""PSTN session type.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SessionID: Session id.
+        :type SessionID: str
+        :param _RoomID: Temporary room id for session.
+        :type RoomID: str
+        :param _Caller: Caller.
+        :type Caller: str
+        :param _Callee: Called.
+        :type Callee: str
+        :param _StartTimestamp: Start time. unix timestamp.
+        :type StartTimestamp: int
+        :param _RingTimestamp: Ring time. unix timestamp.
+        :type RingTimestamp: int
+        :param _AcceptTimestamp: Answer time. unix timestamp.
+        :type AcceptTimestamp: int
+        :param _StaffEmail: Agent email.
+        :type StaffEmail: str
+        :param _StaffNumber: Agent id.
+        :type StaffNumber: str
+        :param _SessionStatus: Session status.
+Ringing - in progress.
+SeatJoining - waiting for the agent to answer.
+InProgress: in progress.
+Finished - completed.
+        :type SessionStatus: str
+        :param _Direction: Session call direction, 0 - inbound | 1 - outbound.
+        :type Direction: int
+        :param _OutBoundCaller: The number used for transferring to the external line (outbound caller).
+        :type OutBoundCaller: str
+        :param _OutBoundCallee: Outbound callee.
+        :type OutBoundCallee: str
+        :param _ProtectedCaller: Caller number protection id. effective when the number protection map feature is activated, and the caller field is empty.
+        :type ProtectedCaller: str
+        :param _ProtectedCallee: Called number protection id. effective when the number protection map feature is activated, and the callee field is empty.
+        :type ProtectedCallee: str
+        """
+        self._SessionID = None
+        self._RoomID = None
+        self._Caller = None
+        self._Callee = None
+        self._StartTimestamp = None
+        self._RingTimestamp = None
+        self._AcceptTimestamp = None
+        self._StaffEmail = None
+        self._StaffNumber = None
+        self._SessionStatus = None
+        self._Direction = None
+        self._OutBoundCaller = None
+        self._OutBoundCallee = None
+        self._ProtectedCaller = None
+        self._ProtectedCallee = None
+
+    @property
+    def SessionID(self):
+        r"""Session id.
+        :rtype: str
+        """
+        return self._SessionID
+
+    @SessionID.setter
+    def SessionID(self, SessionID):
+        self._SessionID = SessionID
+
+    @property
+    def RoomID(self):
+        r"""Temporary room id for session.
+        :rtype: str
+        """
+        return self._RoomID
+
+    @RoomID.setter
+    def RoomID(self, RoomID):
+        self._RoomID = RoomID
+
+    @property
+    def Caller(self):
+        r"""Caller.
+        :rtype: str
+        """
+        return self._Caller
+
+    @Caller.setter
+    def Caller(self, Caller):
+        self._Caller = Caller
+
+    @property
+    def Callee(self):
+        r"""Called.
+        :rtype: str
+        """
+        return self._Callee
+
+    @Callee.setter
+    def Callee(self, Callee):
+        self._Callee = Callee
+
+    @property
+    def StartTimestamp(self):
+        r"""Start time. unix timestamp.
+        :rtype: int
+        """
+        return self._StartTimestamp
+
+    @StartTimestamp.setter
+    def StartTimestamp(self, StartTimestamp):
+        self._StartTimestamp = StartTimestamp
+
+    @property
+    def RingTimestamp(self):
+        r"""Ring time. unix timestamp.
+        :rtype: int
+        """
+        return self._RingTimestamp
+
+    @RingTimestamp.setter
+    def RingTimestamp(self, RingTimestamp):
+        self._RingTimestamp = RingTimestamp
+
+    @property
+    def AcceptTimestamp(self):
+        r"""Answer time. unix timestamp.
+        :rtype: int
+        """
+        return self._AcceptTimestamp
+
+    @AcceptTimestamp.setter
+    def AcceptTimestamp(self, AcceptTimestamp):
+        self._AcceptTimestamp = AcceptTimestamp
+
+    @property
+    def StaffEmail(self):
+        r"""Agent email.
+        :rtype: str
+        """
+        return self._StaffEmail
+
+    @StaffEmail.setter
+    def StaffEmail(self, StaffEmail):
+        self._StaffEmail = StaffEmail
+
+    @property
+    def StaffNumber(self):
+        r"""Agent id.
+        :rtype: str
+        """
+        return self._StaffNumber
+
+    @StaffNumber.setter
+    def StaffNumber(self, StaffNumber):
+        self._StaffNumber = StaffNumber
+
+    @property
+    def SessionStatus(self):
+        r"""Session status.
+Ringing - in progress.
+SeatJoining - waiting for the agent to answer.
+InProgress: in progress.
+Finished - completed.
+        :rtype: str
+        """
+        return self._SessionStatus
+
+    @SessionStatus.setter
+    def SessionStatus(self, SessionStatus):
+        self._SessionStatus = SessionStatus
+
+    @property
+    def Direction(self):
+        r"""Session call direction, 0 - inbound | 1 - outbound.
+        :rtype: int
+        """
+        return self._Direction
+
+    @Direction.setter
+    def Direction(self, Direction):
+        self._Direction = Direction
+
+    @property
+    def OutBoundCaller(self):
+        r"""The number used for transferring to the external line (outbound caller).
+        :rtype: str
+        """
+        return self._OutBoundCaller
+
+    @OutBoundCaller.setter
+    def OutBoundCaller(self, OutBoundCaller):
+        self._OutBoundCaller = OutBoundCaller
+
+    @property
+    def OutBoundCallee(self):
+        r"""Outbound callee.
+        :rtype: str
+        """
+        return self._OutBoundCallee
+
+    @OutBoundCallee.setter
+    def OutBoundCallee(self, OutBoundCallee):
+        self._OutBoundCallee = OutBoundCallee
+
+    @property
+    def ProtectedCaller(self):
+        r"""Caller number protection id. effective when the number protection map feature is activated, and the caller field is empty.
+        :rtype: str
+        """
+        return self._ProtectedCaller
+
+    @ProtectedCaller.setter
+    def ProtectedCaller(self, ProtectedCaller):
+        self._ProtectedCaller = ProtectedCaller
+
+    @property
+    def ProtectedCallee(self):
+        r"""Called number protection id. effective when the number protection map feature is activated, and the callee field is empty.
+        :rtype: str
+        """
+        return self._ProtectedCallee
+
+    @ProtectedCallee.setter
+    def ProtectedCallee(self, ProtectedCallee):
+        self._ProtectedCallee = ProtectedCallee
+
+
+    def _deserialize(self, params):
+        self._SessionID = params.get("SessionID")
+        self._RoomID = params.get("RoomID")
+        self._Caller = params.get("Caller")
+        self._Callee = params.get("Callee")
+        self._StartTimestamp = params.get("StartTimestamp")
+        self._RingTimestamp = params.get("RingTimestamp")
+        self._AcceptTimestamp = params.get("AcceptTimestamp")
+        self._StaffEmail = params.get("StaffEmail")
+        self._StaffNumber = params.get("StaffNumber")
+        self._SessionStatus = params.get("SessionStatus")
+        self._Direction = params.get("Direction")
+        self._OutBoundCaller = params.get("OutBoundCaller")
+        self._OutBoundCallee = params.get("OutBoundCallee")
+        self._ProtectedCaller = params.get("ProtectedCaller")
+        self._ProtectedCallee = params.get("ProtectedCallee")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class PSTNSessionInfo(AbstractModel):
+    r"""PSTN Session Information.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SessionID: Session id.
+        :type SessionID: str
+        :param _RoomID: Temporary room id for session.
+        :type RoomID: str
+        :param _Caller: Caller.
+        :type Caller: str
+        :param _Callee: Called.
+        :type Callee: str
+        :param _StartTimestamp: Start time. unix timestamp.
+        :type StartTimestamp: str
+        :param _AcceptTimestamp: Answer time. unix timestamp.
+        :type AcceptTimestamp: str
+        :param _StaffEmail: Agent email.
+        :type StaffEmail: str
+        :param _StaffNumber: Agent id.
+        :type StaffNumber: str
+        :param _SessionStatus: Agent status inprogress ongoing.
+        :type SessionStatus: str
+        :param _Direction: Session call direction, 0 - inbound | 1 - outbound.
+        :type Direction: int
+        :param _RingTimestamp: Ring time. unix timestamp.
+        :type RingTimestamp: int
+        :param _ProtectedCaller: Caller number protection id. effective when the number protection map feature is activated, and the caller field is empty.
+        :type ProtectedCaller: str
+        :param _ProtectedCallee: Called number protection id. effective when the number protection map feature is activated, and the callee field is empty.
+        :type ProtectedCallee: str
+        """
+        self._SessionID = None
+        self._RoomID = None
+        self._Caller = None
+        self._Callee = None
+        self._StartTimestamp = None
+        self._AcceptTimestamp = None
+        self._StaffEmail = None
+        self._StaffNumber = None
+        self._SessionStatus = None
+        self._Direction = None
+        self._RingTimestamp = None
+        self._ProtectedCaller = None
+        self._ProtectedCallee = None
+
+    @property
+    def SessionID(self):
+        r"""Session id.
+        :rtype: str
+        """
+        return self._SessionID
+
+    @SessionID.setter
+    def SessionID(self, SessionID):
+        self._SessionID = SessionID
+
+    @property
+    def RoomID(self):
+        r"""Temporary room id for session.
+        :rtype: str
+        """
+        return self._RoomID
+
+    @RoomID.setter
+    def RoomID(self, RoomID):
+        self._RoomID = RoomID
+
+    @property
+    def Caller(self):
+        r"""Caller.
+        :rtype: str
+        """
+        return self._Caller
+
+    @Caller.setter
+    def Caller(self, Caller):
+        self._Caller = Caller
+
+    @property
+    def Callee(self):
+        r"""Called.
+        :rtype: str
+        """
+        return self._Callee
+
+    @Callee.setter
+    def Callee(self, Callee):
+        self._Callee = Callee
+
+    @property
+    def StartTimestamp(self):
+        r"""Start time. unix timestamp.
+        :rtype: str
+        """
+        return self._StartTimestamp
+
+    @StartTimestamp.setter
+    def StartTimestamp(self, StartTimestamp):
+        self._StartTimestamp = StartTimestamp
+
+    @property
+    def AcceptTimestamp(self):
+        r"""Answer time. unix timestamp.
+        :rtype: str
+        """
+        return self._AcceptTimestamp
+
+    @AcceptTimestamp.setter
+    def AcceptTimestamp(self, AcceptTimestamp):
+        self._AcceptTimestamp = AcceptTimestamp
+
+    @property
+    def StaffEmail(self):
+        r"""Agent email.
+        :rtype: str
+        """
+        return self._StaffEmail
+
+    @StaffEmail.setter
+    def StaffEmail(self, StaffEmail):
+        self._StaffEmail = StaffEmail
+
+    @property
+    def StaffNumber(self):
+        r"""Agent id.
+        :rtype: str
+        """
+        return self._StaffNumber
+
+    @StaffNumber.setter
+    def StaffNumber(self, StaffNumber):
+        self._StaffNumber = StaffNumber
+
+    @property
+    def SessionStatus(self):
+        r"""Agent status inprogress ongoing.
+        :rtype: str
+        """
+        return self._SessionStatus
+
+    @SessionStatus.setter
+    def SessionStatus(self, SessionStatus):
+        self._SessionStatus = SessionStatus
+
+    @property
+    def Direction(self):
+        r"""Session call direction, 0 - inbound | 1 - outbound.
+        :rtype: int
+        """
+        return self._Direction
+
+    @Direction.setter
+    def Direction(self, Direction):
+        self._Direction = Direction
+
+    @property
+    def RingTimestamp(self):
+        r"""Ring time. unix timestamp.
+        :rtype: int
+        """
+        return self._RingTimestamp
+
+    @RingTimestamp.setter
+    def RingTimestamp(self, RingTimestamp):
+        self._RingTimestamp = RingTimestamp
+
+    @property
+    def ProtectedCaller(self):
+        r"""Caller number protection id. effective when the number protection map feature is activated, and the caller field is empty.
+        :rtype: str
+        """
+        return self._ProtectedCaller
+
+    @ProtectedCaller.setter
+    def ProtectedCaller(self, ProtectedCaller):
+        self._ProtectedCaller = ProtectedCaller
+
+    @property
+    def ProtectedCallee(self):
+        r"""Called number protection id. effective when the number protection map feature is activated, and the callee field is empty.
+        :rtype: str
+        """
+        return self._ProtectedCallee
+
+    @ProtectedCallee.setter
+    def ProtectedCallee(self, ProtectedCallee):
+        self._ProtectedCallee = ProtectedCallee
+
+
+    def _deserialize(self, params):
+        self._SessionID = params.get("SessionID")
+        self._RoomID = params.get("RoomID")
+        self._Caller = params.get("Caller")
+        self._Callee = params.get("Callee")
+        self._StartTimestamp = params.get("StartTimestamp")
+        self._AcceptTimestamp = params.get("AcceptTimestamp")
+        self._StaffEmail = params.get("StaffEmail")
+        self._StaffNumber = params.get("StaffNumber")
+        self._SessionStatus = params.get("SessionStatus")
+        self._Direction = params.get("Direction")
+        self._RingTimestamp = params.get("RingTimestamp")
+        self._ProtectedCaller = params.get("ProtectedCaller")
+        self._ProtectedCallee = params.get("ProtectedCallee")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class PackageBuyInfo(AbstractModel):
+    r"""Package purchase information.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _PackageId: Package id.
+        :type PackageId: str
+        :param _Type: Package type, 0 - outbound call package | 1 - 400 inbound call package.
+        :type Type: int
+        :param _CapacitySize: <TOTAL_PACKAGE>.
+        :type CapacitySize: int
+        :param _CapacityRemain: Remaining package balance.
+        :type CapacityRemain: int
+        :param _BuyTime: Purchased timestamp.
+        :type BuyTime: int
+        :param _EndTime: Deadline timestamp.
+        :type EndTime: int
+        """
+        self._PackageId = None
+        self._Type = None
+        self._CapacitySize = None
+        self._CapacityRemain = None
+        self._BuyTime = None
+        self._EndTime = None
+
+    @property
+    def PackageId(self):
+        r"""Package id.
+        :rtype: str
+        """
+        return self._PackageId
+
+    @PackageId.setter
+    def PackageId(self, PackageId):
+        self._PackageId = PackageId
+
+    @property
+    def Type(self):
+        r"""Package type, 0 - outbound call package | 1 - 400 inbound call package.
+        :rtype: int
+        """
+        return self._Type
+
+    @Type.setter
+    def Type(self, Type):
+        self._Type = Type
+
+    @property
+    def CapacitySize(self):
+        r"""<TOTAL_PACKAGE>.
+        :rtype: int
+        """
+        return self._CapacitySize
+
+    @CapacitySize.setter
+    def CapacitySize(self, CapacitySize):
+        self._CapacitySize = CapacitySize
+
+    @property
+    def CapacityRemain(self):
+        r"""Remaining package balance.
+        :rtype: int
+        """
+        return self._CapacityRemain
+
+    @CapacityRemain.setter
+    def CapacityRemain(self, CapacityRemain):
+        self._CapacityRemain = CapacityRemain
+
+    @property
+    def BuyTime(self):
+        r"""Purchased timestamp.
+        :rtype: int
+        """
+        return self._BuyTime
+
+    @BuyTime.setter
+    def BuyTime(self, BuyTime):
+        self._BuyTime = BuyTime
+
+    @property
+    def EndTime(self):
+        r"""Deadline timestamp.
+        :rtype: int
+        """
+        return self._EndTime
+
+    @EndTime.setter
+    def EndTime(self, EndTime):
+        self._EndTime = EndTime
+
+
+    def _deserialize(self, params):
+        self._PackageId = params.get("PackageId")
+        self._Type = params.get("Type")
+        self._CapacitySize = params.get("CapacitySize")
+        self._CapacityRemain = params.get("CapacityRemain")
+        self._BuyTime = params.get("BuyTime")
+        self._EndTime = params.get("EndTime")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class PausePredictiveDialingCampaignRequest(AbstractModel):
+    r"""PausePredictiveDialingCampaign request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _CampaignId: Task id.
+        :type CampaignId: int
+        """
+        self._SdkAppId = None
+        self._CampaignId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def CampaignId(self):
+        r"""Task id.
+        :rtype: int
+        """
+        return self._CampaignId
+
+    @CampaignId.setter
+    def CampaignId(self, CampaignId):
+        self._CampaignId = CampaignId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._CampaignId = params.get("CampaignId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class PausePredictiveDialingCampaignResponse(AbstractModel):
+    r"""PausePredictiveDialingCampaign response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class PhoneNumBuyInfo(AbstractModel):
+    r"""Number purchase information.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _PhoneNum: Telephone number.
+        :type PhoneNum: str
+        :param _Type: Number type, 0 - landline | 1 - virtual business number | 2 - ISP number | 3 - 400 number.
+        :type Type: int
+        :param _CallType: Call type of the number, 1 - inbound | 2 - outbound | 3 - inbound and outbound.
+        :type CallType: int
+        :param _BuyTime: Purchased timestamp.
+        :type BuyTime: int
+        :param _EndTime: Deadline timestamp.
+        :type EndTime: int
+        :param _State: Number status, 1-normal | 2-suspended due to non-payment | 4-admin suspended | 5-suspended due to violation.
+        :type State: int
+        """
+        self._PhoneNum = None
+        self._Type = None
+        self._CallType = None
+        self._BuyTime = None
+        self._EndTime = None
+        self._State = None
+
+    @property
+    def PhoneNum(self):
+        r"""Telephone number.
+        :rtype: str
+        """
+        return self._PhoneNum
+
+    @PhoneNum.setter
+    def PhoneNum(self, PhoneNum):
+        self._PhoneNum = PhoneNum
+
+    @property
+    def Type(self):
+        r"""Number type, 0 - landline | 1 - virtual business number | 2 - ISP number | 3 - 400 number.
+        :rtype: int
+        """
+        return self._Type
+
+    @Type.setter
+    def Type(self, Type):
+        self._Type = Type
+
+    @property
+    def CallType(self):
+        r"""Call type of the number, 1 - inbound | 2 - outbound | 3 - inbound and outbound.
+        :rtype: int
+        """
+        return self._CallType
+
+    @CallType.setter
+    def CallType(self, CallType):
+        self._CallType = CallType
+
+    @property
+    def BuyTime(self):
+        r"""Purchased timestamp.
+        :rtype: int
+        """
+        return self._BuyTime
+
+    @BuyTime.setter
+    def BuyTime(self, BuyTime):
+        self._BuyTime = BuyTime
+
+    @property
+    def EndTime(self):
+        r"""Deadline timestamp.
+        :rtype: int
+        """
+        return self._EndTime
+
+    @EndTime.setter
+    def EndTime(self, EndTime):
+        self._EndTime = EndTime
+
+    @property
+    def State(self):
+        r"""Number status, 1-normal | 2-suspended due to non-payment | 4-admin suspended | 5-suspended due to violation.
+        :rtype: int
+        """
+        return self._State
+
+    @State.setter
+    def State(self, State):
+        self._State = State
+
+
+    def _deserialize(self, params):
+        self._PhoneNum = params.get("PhoneNum")
+        self._Type = params.get("Type")
+        self._CallType = params.get("CallType")
+        self._BuyTime = params.get("BuyTime")
+        self._EndTime = params.get("EndTime")
+        self._State = params.get("State")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ResetExtensionPasswordRequest(AbstractModel):
+    r"""ResetExtensionPassword request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _ExtensionId: Extension.
+        :type ExtensionId: str
+        """
+        self._SdkAppId = None
+        self._ExtensionId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def ExtensionId(self):
+        r"""Extension.
+        :rtype: str
+        """
+        return self._ExtensionId
+
+    @ExtensionId.setter
+    def ExtensionId(self, ExtensionId):
+        self._ExtensionId = ExtensionId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._ExtensionId = params.get("ExtensionId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ResetExtensionPasswordResponse(AbstractModel):
+    r"""ResetExtensionPassword response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Password: Reset password.
+        :type Password: str
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._Password = None
+        self._RequestId = None
+
+    @property
+    def Password(self):
+        r"""Reset password.
+        :rtype: str
+        """
+        return self._Password
+
+    @Password.setter
+    def Password(self, Password):
+        self._Password = Password
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._Password = params.get("Password")
+        self._RequestId = params.get("RequestId")
+
+
+class RestoreMemberOnlineRequest(AbstractModel):
+    r"""RestoreMemberOnline request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: App ID (required), which can be viewed at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _UserId: Customer service ID.
+        :type UserId: str
+        """
+        self._SdkAppId = None
+        self._UserId = None
+
+    @property
+    def SdkAppId(self):
+        r"""App ID (required), which can be viewed at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def UserId(self):
+        r"""Customer service ID.
+        :rtype: str
+        """
+        return self._UserId
+
+    @UserId.setter
+    def UserId(self, UserId):
+        self._UserId = UserId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._UserId = params.get("UserId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class RestoreMemberOnlineResponse(AbstractModel):
+    r"""RestoreMemberOnline response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class ResumePredictiveDialingCampaignRequest(AbstractModel):
+    r"""ResumePredictiveDialingCampaign request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _CampaignId: <Task id>.
+        :type CampaignId: int
+        """
+        self._SdkAppId = None
+        self._CampaignId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def CampaignId(self):
+        r"""<Task id>.
+        :rtype: int
+        """
+        return self._CampaignId
+
+    @CampaignId.setter
+    def CampaignId(self, CampaignId):
+        self._CampaignId = CampaignId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._CampaignId = params.get("CampaignId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ResumePredictiveDialingCampaignResponse(AbstractModel):
+    r"""ResumePredictiveDialingCampaign response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class SdkAppIdBuyInfo(AbstractModel):
+    r"""Application purchase information.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id.
+        :type SdkAppId: int
+        :param _Name: Application name.
+        :type Name: str
+        :param _StaffBuyNum: Agent purchase count (still within the validity period).
+        :type StaffBuyNum: int
+        :param _StaffBuyList: Agent purchase list (still within the validity period).
+        :type StaffBuyList: list of StaffBuyInfo
+        :param _PhoneNumBuyList: List of numbers purchased.
+        :type PhoneNumBuyList: list of PhoneNumBuyInfo
+        :param _SipBuyNum: Number of office telephones purchased (still within the validity period).
+        :type SipBuyNum: int
+        """
+        self._SdkAppId = None
+        self._Name = None
+        self._StaffBuyNum = None
+        self._StaffBuyList = None
+        self._PhoneNumBuyList = None
+        self._SipBuyNum = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def Name(self):
+        r"""Application name.
+        :rtype: str
+        """
+        return self._Name
+
+    @Name.setter
+    def Name(self, Name):
+        self._Name = Name
+
+    @property
+    def StaffBuyNum(self):
+        r"""Agent purchase count (still within the validity period).
+        :rtype: int
+        """
+        return self._StaffBuyNum
+
+    @StaffBuyNum.setter
+    def StaffBuyNum(self, StaffBuyNum):
+        self._StaffBuyNum = StaffBuyNum
+
+    @property
+    def StaffBuyList(self):
+        r"""Agent purchase list (still within the validity period).
+        :rtype: list of StaffBuyInfo
+        """
+        return self._StaffBuyList
+
+    @StaffBuyList.setter
+    def StaffBuyList(self, StaffBuyList):
+        self._StaffBuyList = StaffBuyList
+
+    @property
+    def PhoneNumBuyList(self):
+        r"""List of numbers purchased.
+        :rtype: list of PhoneNumBuyInfo
+        """
+        return self._PhoneNumBuyList
+
+    @PhoneNumBuyList.setter
+    def PhoneNumBuyList(self, PhoneNumBuyList):
+        self._PhoneNumBuyList = PhoneNumBuyList
+
+    @property
+    def SipBuyNum(self):
+        r"""Number of office telephones purchased (still within the validity period).
+        :rtype: int
+        """
+        return self._SipBuyNum
+
+    @SipBuyNum.setter
+    def SipBuyNum(self, SipBuyNum):
+        self._SipBuyNum = SipBuyNum
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._Name = params.get("Name")
+        self._StaffBuyNum = params.get("StaffBuyNum")
+        if params.get("StaffBuyList") is not None:
+            self._StaffBuyList = []
+            for item in params.get("StaffBuyList"):
+                obj = StaffBuyInfo()
+                obj._deserialize(item)
+                self._StaffBuyList.append(obj)
+        if params.get("PhoneNumBuyList") is not None:
+            self._PhoneNumBuyList = []
+            for item in params.get("PhoneNumBuyList"):
+                obj = PhoneNumBuyInfo()
+                obj._deserialize(item)
+                self._PhoneNumBuyList.append(obj)
+        self._SipBuyNum = params.get("SipBuyNum")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class SeatUserInfo(AbstractModel):
+    r"""Agent User Information
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Name: Agent name.
+        :type Name: str
+        :param _Mail: Agent email.
+        :type Mail: str
+        :param _StaffNumber: Worker number.
+        :type StaffNumber: str
+        :param _Phone: Agent'S telephone number (with 0086 prefix).
+        :type Phone: str
+        :param _Nick: Agent nickname.
+        :type Nick: str
+        :param _UserId: User id.
+        :type UserId: str
+        :param _SkillGroupNameList: List of skill groups associated with the agent.
+        :type SkillGroupNameList: list of str
+        :param _Role: 1: admin.
+2: quality inspector.
+3: ordinary agent.
+Else: custom role id.
+        :type Role: int
+        :param _ExtensionNumber: Agent extension number (starting with 1 to 8, 4 - 6 digits).
+        :type ExtensionNumber: str
+        """
+        self._Name = None
+        self._Mail = None
+        self._StaffNumber = None
+        self._Phone = None
+        self._Nick = None
+        self._UserId = None
+        self._SkillGroupNameList = None
+        self._Role = None
+        self._ExtensionNumber = None
+
+    @property
+    def Name(self):
+        r"""Agent name.
+        :rtype: str
+        """
+        return self._Name
+
+    @Name.setter
+    def Name(self, Name):
+        self._Name = Name
+
+    @property
+    def Mail(self):
+        r"""Agent email.
+        :rtype: str
+        """
+        return self._Mail
+
+    @Mail.setter
+    def Mail(self, Mail):
+        self._Mail = Mail
+
+    @property
+    def StaffNumber(self):
+        r"""Worker number.
+        :rtype: str
+        """
+        return self._StaffNumber
+
+    @StaffNumber.setter
+    def StaffNumber(self, StaffNumber):
+        self._StaffNumber = StaffNumber
+
+    @property
+    def Phone(self):
+        r"""Agent'S telephone number (with 0086 prefix).
+        :rtype: str
+        """
+        return self._Phone
+
+    @Phone.setter
+    def Phone(self, Phone):
+        self._Phone = Phone
+
+    @property
+    def Nick(self):
+        r"""Agent nickname.
+        :rtype: str
+        """
+        return self._Nick
+
+    @Nick.setter
+    def Nick(self, Nick):
+        self._Nick = Nick
+
+    @property
+    def UserId(self):
+        r"""User id.
+        :rtype: str
+        """
+        return self._UserId
+
+    @UserId.setter
+    def UserId(self, UserId):
+        self._UserId = UserId
+
+    @property
+    def SkillGroupNameList(self):
+        r"""List of skill groups associated with the agent.
+        :rtype: list of str
+        """
+        return self._SkillGroupNameList
+
+    @SkillGroupNameList.setter
+    def SkillGroupNameList(self, SkillGroupNameList):
+        self._SkillGroupNameList = SkillGroupNameList
+
+    @property
+    def Role(self):
+        r"""1: admin.
+2: quality inspector.
+3: ordinary agent.
+Else: custom role id.
+        :rtype: int
+        """
+        return self._Role
+
+    @Role.setter
+    def Role(self, Role):
+        self._Role = Role
+
+    @property
+    def ExtensionNumber(self):
+        r"""Agent extension number (starting with 1 to 8, 4 - 6 digits).
+        :rtype: str
+        """
+        return self._ExtensionNumber
+
+    @ExtensionNumber.setter
+    def ExtensionNumber(self, ExtensionNumber):
+        self._ExtensionNumber = ExtensionNumber
+
+
+    def _deserialize(self, params):
+        self._Name = params.get("Name")
+        self._Mail = params.get("Mail")
+        self._StaffNumber = params.get("StaffNumber")
+        self._Phone = params.get("Phone")
+        self._Nick = params.get("Nick")
+        self._UserId = params.get("UserId")
+        self._SkillGroupNameList = params.get("SkillGroupNameList")
+        self._Role = params.get("Role")
+        self._ExtensionNumber = params.get("ExtensionNumber")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ServeParticipant(AbstractModel):
+    r"""Participant information.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Mail: Agent email.
+        :type Mail: str
+        :param _Phone: Agent phone number.
+        :type Phone: str
+        :param _RingTimestamp: Ringing timestamp, unix second-level timestamp.
+        :type RingTimestamp: int
+        :param _AcceptTimestamp: Answer timestamp. unix second-level timestamp.
+        :type AcceptTimestamp: int
+        :param _EndedTimestamp: End timestamp. unix second-level timestamp.
+        :type EndedTimestamp: int
+        :param _RecordId: Recording id can be indexed to the agent side recording.
+        :type RecordId: str
+        :param _Type: Participant type: "staffseat", "outboundseat", "staffphoneseat".
+        :type Type: str
+        :param _TransferFrom: Transfer source agent information.
+        :type TransferFrom: str
+        :param _TransferFromType: Transfer source participant type is consistent with the type value.
+        :type TransferFromType: str
+        :param _TransferTo: Transfer destination agent information.
+        :type TransferTo: str
+        :param _TransferToType: Transfer destination participant type, which is consistent with type values.
+        :type TransferToType: str
+        :param _SkillGroupId: Skill group id.
+        :type SkillGroupId: int
+        :param _EndStatusString: Ending status.
+        :type EndStatusString: str
+        :param _RecordURL: Recording url.
+        :type RecordURL: str
+        :param _Sequence: Participant sequence number, starting from 0.
+        :type Sequence: int
+        :param _StartTimestamp: Start timestamp. unix second-level timestamp.
+        :type StartTimestamp: int
+        :param _SkillGroupName: Skill group name.
+        :type SkillGroupName: str
+        :param _CustomRecordURL: Address of the third-party cos for transferring recording.
+        :type CustomRecordURL: str
+        """
+        self._Mail = None
+        self._Phone = None
+        self._RingTimestamp = None
+        self._AcceptTimestamp = None
+        self._EndedTimestamp = None
+        self._RecordId = None
+        self._Type = None
+        self._TransferFrom = None
+        self._TransferFromType = None
+        self._TransferTo = None
+        self._TransferToType = None
+        self._SkillGroupId = None
+        self._EndStatusString = None
+        self._RecordURL = None
+        self._Sequence = None
+        self._StartTimestamp = None
+        self._SkillGroupName = None
+        self._CustomRecordURL = None
+
+    @property
+    def Mail(self):
+        r"""Agent email.
+        :rtype: str
+        """
+        return self._Mail
+
+    @Mail.setter
+    def Mail(self, Mail):
+        self._Mail = Mail
+
+    @property
+    def Phone(self):
+        r"""Agent phone number.
+        :rtype: str
+        """
+        return self._Phone
+
+    @Phone.setter
+    def Phone(self, Phone):
+        self._Phone = Phone
+
+    @property
+    def RingTimestamp(self):
+        r"""Ringing timestamp, unix second-level timestamp.
+        :rtype: int
+        """
+        return self._RingTimestamp
+
+    @RingTimestamp.setter
+    def RingTimestamp(self, RingTimestamp):
+        self._RingTimestamp = RingTimestamp
+
+    @property
+    def AcceptTimestamp(self):
+        r"""Answer timestamp. unix second-level timestamp.
+        :rtype: int
+        """
+        return self._AcceptTimestamp
+
+    @AcceptTimestamp.setter
+    def AcceptTimestamp(self, AcceptTimestamp):
+        self._AcceptTimestamp = AcceptTimestamp
+
+    @property
+    def EndedTimestamp(self):
+        r"""End timestamp. unix second-level timestamp.
+        :rtype: int
+        """
+        return self._EndedTimestamp
+
+    @EndedTimestamp.setter
+    def EndedTimestamp(self, EndedTimestamp):
+        self._EndedTimestamp = EndedTimestamp
+
+    @property
+    def RecordId(self):
+        r"""Recording id can be indexed to the agent side recording.
+        :rtype: str
+        """
+        return self._RecordId
+
+    @RecordId.setter
+    def RecordId(self, RecordId):
+        self._RecordId = RecordId
+
+    @property
+    def Type(self):
+        r"""Participant type: "staffseat", "outboundseat", "staffphoneseat".
+        :rtype: str
+        """
+        return self._Type
+
+    @Type.setter
+    def Type(self, Type):
+        self._Type = Type
+
+    @property
+    def TransferFrom(self):
+        r"""Transfer source agent information.
+        :rtype: str
+        """
+        return self._TransferFrom
+
+    @TransferFrom.setter
+    def TransferFrom(self, TransferFrom):
+        self._TransferFrom = TransferFrom
+
+    @property
+    def TransferFromType(self):
+        r"""Transfer source participant type is consistent with the type value.
+        :rtype: str
+        """
+        return self._TransferFromType
+
+    @TransferFromType.setter
+    def TransferFromType(self, TransferFromType):
+        self._TransferFromType = TransferFromType
+
+    @property
+    def TransferTo(self):
+        r"""Transfer destination agent information.
+        :rtype: str
+        """
+        return self._TransferTo
+
+    @TransferTo.setter
+    def TransferTo(self, TransferTo):
+        self._TransferTo = TransferTo
+
+    @property
+    def TransferToType(self):
+        r"""Transfer destination participant type, which is consistent with type values.
+        :rtype: str
+        """
+        return self._TransferToType
+
+    @TransferToType.setter
+    def TransferToType(self, TransferToType):
+        self._TransferToType = TransferToType
+
+    @property
+    def SkillGroupId(self):
+        r"""Skill group id.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+    @property
+    def EndStatusString(self):
+        r"""Ending status.
+        :rtype: str
+        """
+        return self._EndStatusString
+
+    @EndStatusString.setter
+    def EndStatusString(self, EndStatusString):
+        self._EndStatusString = EndStatusString
+
+    @property
+    def RecordURL(self):
+        r"""Recording url.
+        :rtype: str
+        """
+        return self._RecordURL
+
+    @RecordURL.setter
+    def RecordURL(self, RecordURL):
+        self._RecordURL = RecordURL
+
+    @property
+    def Sequence(self):
+        r"""Participant sequence number, starting from 0.
+        :rtype: int
+        """
+        return self._Sequence
+
+    @Sequence.setter
+    def Sequence(self, Sequence):
+        self._Sequence = Sequence
+
+    @property
+    def StartTimestamp(self):
+        r"""Start timestamp. unix second-level timestamp.
+        :rtype: int
+        """
+        return self._StartTimestamp
+
+    @StartTimestamp.setter
+    def StartTimestamp(self, StartTimestamp):
+        self._StartTimestamp = StartTimestamp
+
+    @property
+    def SkillGroupName(self):
+        r"""Skill group name.
+        :rtype: str
+        """
+        return self._SkillGroupName
+
+    @SkillGroupName.setter
+    def SkillGroupName(self, SkillGroupName):
+        self._SkillGroupName = SkillGroupName
+
+    @property
+    def CustomRecordURL(self):
+        r"""Address of the third-party cos for transferring recording.
+        :rtype: str
+        """
+        return self._CustomRecordURL
+
+    @CustomRecordURL.setter
+    def CustomRecordURL(self, CustomRecordURL):
+        self._CustomRecordURL = CustomRecordURL
+
+
+    def _deserialize(self, params):
+        self._Mail = params.get("Mail")
+        self._Phone = params.get("Phone")
+        self._RingTimestamp = params.get("RingTimestamp")
+        self._AcceptTimestamp = params.get("AcceptTimestamp")
+        self._EndedTimestamp = params.get("EndedTimestamp")
+        self._RecordId = params.get("RecordId")
+        self._Type = params.get("Type")
+        self._TransferFrom = params.get("TransferFrom")
+        self._TransferFromType = params.get("TransferFromType")
+        self._TransferTo = params.get("TransferTo")
+        self._TransferToType = params.get("TransferToType")
+        self._SkillGroupId = params.get("SkillGroupId")
+        self._EndStatusString = params.get("EndStatusString")
+        self._RecordURL = params.get("RecordURL")
+        self._Sequence = params.get("Sequence")
+        self._StartTimestamp = params.get("StartTimestamp")
+        self._SkillGroupName = params.get("SkillGroupName")
+        self._CustomRecordURL = params.get("CustomRecordURL")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ServerPushText(AbstractModel):
+    r"""Server controls the chatbot to broadcast specified text.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Text: Specifies the server push broadcast text.
+        :type Text: str
+        :param _Interrupt: Whether to allow the text to interrupt the robot's speaking.
+        :type Interrupt: bool
+        :param _StopAfterPlay: Specifies whether to automatically close the dialogue task after broadcasting the text.
+        :type StopAfterPlay: bool
+        :param _Audio: Specifies the server push broadcast audio.
+Format description: audio must be mono, sampling rate should be consistent with the corresponding TTS, and coded as a Base64 string.
+Input rules: when the Audio field is provided, the system will not accept input in the Text field. the system will play the Audio content in the Audio field directly.
+        :type Audio: str
+        :param _DropMode: Defaults to 0. valid only when Interrupt is false.
+-0 indicates that messages with Interrupt set to false will be dropped when there is an interaction.
+-Indicates that when there is an interaction in progress, messages with Interrupt set to false will not be dropped but cached and processed after the current interaction is completed.
+
+Note: when DropMode is 1, the cache allows multiple messages. if an interruption occurs subsequently, cached messages will be cleared.
+        :type DropMode: int
+        :param _Priority: Message priority of ServerPushText. 0 means interruptible. 1 means not interruptible.
+Note: after receiving a message with Priority=1, any other messages will be ignored (including messages with Priority=1) until the message processing of Priority=1 is complete. this field can be used together with the Interrupt and DropMode fields.
+Example.
+-Priority=1, Interrupt=true. specifies to Interrupt existing interaction and broadcast immediately. the broadcast will not be interrupted during the process.
+-Priority=1, Interrupt=false, DropMode=1. waits for the current interaction to complete before broadcasting. the broadcast will not be interrupted during the process.
+
+        :type Priority: int
+        :param _AddHistory: Specifies whether the text is added to the llm history context.
+        :type AddHistory: bool
+        """
+        self._Text = None
+        self._Interrupt = None
+        self._StopAfterPlay = None
+        self._Audio = None
+        self._DropMode = None
+        self._Priority = None
+        self._AddHistory = None
+
+    @property
+    def Text(self):
+        r"""Specifies the server push broadcast text.
+        :rtype: str
+        """
+        return self._Text
+
+    @Text.setter
+    def Text(self, Text):
+        self._Text = Text
+
+    @property
+    def Interrupt(self):
+        r"""Whether to allow the text to interrupt the robot's speaking.
+        :rtype: bool
+        """
+        return self._Interrupt
+
+    @Interrupt.setter
+    def Interrupt(self, Interrupt):
+        self._Interrupt = Interrupt
+
+    @property
+    def StopAfterPlay(self):
+        r"""Specifies whether to automatically close the dialogue task after broadcasting the text.
+        :rtype: bool
+        """
+        return self._StopAfterPlay
+
+    @StopAfterPlay.setter
+    def StopAfterPlay(self, StopAfterPlay):
+        self._StopAfterPlay = StopAfterPlay
+
+    @property
+    def Audio(self):
+        r"""Specifies the server push broadcast audio.
+Format description: audio must be mono, sampling rate should be consistent with the corresponding TTS, and coded as a Base64 string.
+Input rules: when the Audio field is provided, the system will not accept input in the Text field. the system will play the Audio content in the Audio field directly.
+        :rtype: str
+        """
+        return self._Audio
+
+    @Audio.setter
+    def Audio(self, Audio):
+        self._Audio = Audio
+
+    @property
+    def DropMode(self):
+        r"""Defaults to 0. valid only when Interrupt is false.
+-0 indicates that messages with Interrupt set to false will be dropped when there is an interaction.
+-Indicates that when there is an interaction in progress, messages with Interrupt set to false will not be dropped but cached and processed after the current interaction is completed.
+
+Note: when DropMode is 1, the cache allows multiple messages. if an interruption occurs subsequently, cached messages will be cleared.
+        :rtype: int
+        """
+        return self._DropMode
+
+    @DropMode.setter
+    def DropMode(self, DropMode):
+        self._DropMode = DropMode
+
+    @property
+    def Priority(self):
+        r"""Message priority of ServerPushText. 0 means interruptible. 1 means not interruptible.
+Note: after receiving a message with Priority=1, any other messages will be ignored (including messages with Priority=1) until the message processing of Priority=1 is complete. this field can be used together with the Interrupt and DropMode fields.
+Example.
+-Priority=1, Interrupt=true. specifies to Interrupt existing interaction and broadcast immediately. the broadcast will not be interrupted during the process.
+-Priority=1, Interrupt=false, DropMode=1. waits for the current interaction to complete before broadcasting. the broadcast will not be interrupted during the process.
+
+        :rtype: int
+        """
+        return self._Priority
+
+    @Priority.setter
+    def Priority(self, Priority):
+        self._Priority = Priority
+
+    @property
+    def AddHistory(self):
+        r"""Specifies whether the text is added to the llm history context.
+        :rtype: bool
+        """
+        return self._AddHistory
+
+    @AddHistory.setter
+    def AddHistory(self, AddHistory):
+        self._AddHistory = AddHistory
+
+
+    def _deserialize(self, params):
+        self._Text = params.get("Text")
+        self._Interrupt = params.get("Interrupt")
+        self._StopAfterPlay = params.get("StopAfterPlay")
+        self._Audio = params.get("Audio")
+        self._DropMode = params.get("DropMode")
+        self._Priority = params.get("Priority")
+        self._AddHistory = params.get("AddHistory")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class SessionEvent(AbstractModel):
+    r"""Call event.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Timestamp: Event timestamp. Unix second-level timestamp.
+        :type Timestamp: int
+        :param _EventType: Event type. currently supports StaffHold, StaffUnhold, StaffMute, StaffUnmute.
+        :type EventType: str
+        :param _StaffEventDetail: Describes event details related to the agent.
+        :type StaffEventDetail: :class:`tencentcloud.ccc.v20200210.models.EventStaffDetail`
+        """
+        self._Timestamp = None
+        self._EventType = None
+        self._StaffEventDetail = None
+
+    @property
+    def Timestamp(self):
+        r"""Event timestamp. Unix second-level timestamp.
+        :rtype: int
+        """
+        return self._Timestamp
+
+    @Timestamp.setter
+    def Timestamp(self, Timestamp):
+        self._Timestamp = Timestamp
+
+    @property
+    def EventType(self):
+        r"""Event type. currently supports StaffHold, StaffUnhold, StaffMute, StaffUnmute.
+        :rtype: str
+        """
+        return self._EventType
+
+    @EventType.setter
+    def EventType(self, EventType):
+        self._EventType = EventType
+
+    @property
+    def StaffEventDetail(self):
+        r"""Describes event details related to the agent.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.EventStaffDetail`
+        """
+        return self._StaffEventDetail
+
+    @StaffEventDetail.setter
+    def StaffEventDetail(self, StaffEventDetail):
+        self._StaffEventDetail = StaffEventDetail
+
+
+    def _deserialize(self, params):
+        self._Timestamp = params.get("Timestamp")
+        self._EventType = params.get("EventType")
+        if params.get("StaffEventDetail") is not None:
+            self._StaffEventDetail = EventStaffDetail()
+            self._StaffEventDetail._deserialize(params.get("StaffEventDetail"))
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class SetStaffStatusItem(AbstractModel):
+    r"""Describes the information item for creating a staff.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _StaffUserId: Agent account.
+        :type StaffUserId: str
+        :param _Status: Status. specifies the instance status. valid values: free (idle), notReady (busy), rest (short break).	
+        :type Status: str
+        :param _Reason: Specifies the reason if the break state is set.
+        :type Reason: str
+        """
+        self._StaffUserId = None
+        self._Status = None
+        self._Reason = None
+
+    @property
+    def StaffUserId(self):
+        r"""Agent account.
+        :rtype: str
+        """
+        return self._StaffUserId
+
+    @StaffUserId.setter
+    def StaffUserId(self, StaffUserId):
+        self._StaffUserId = StaffUserId
+
+    @property
+    def Status(self):
+        r"""Status. specifies the instance status. valid values: free (idle), notReady (busy), rest (short break).	
+        :rtype: str
+        """
+        return self._Status
+
+    @Status.setter
+    def Status(self, Status):
+        self._Status = Status
+
+    @property
+    def Reason(self):
+        r"""Specifies the reason if the break state is set.
+        :rtype: str
+        """
+        return self._Reason
+
+    @Reason.setter
+    def Reason(self, Reason):
+        self._Reason = Reason
+
+
+    def _deserialize(self, params):
+        self._StaffUserId = params.get("StaffUserId")
+        self._Status = params.get("Status")
+        self._Reason = params.get("Reason")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class SetStaffStatusRequest(AbstractModel):
+    r"""SetStaffStatus request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: App ID (required). can be checked at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _StaffStatusList: Sets the agent status list. maximum number 10.
+        :type StaffStatusList: list of SetStaffStatusItem
+        """
+        self._SdkAppId = None
+        self._StaffStatusList = None
+
+    @property
+    def SdkAppId(self):
+        r"""App ID (required). can be checked at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def StaffStatusList(self):
+        r"""Sets the agent status list. maximum number 10.
+        :rtype: list of SetStaffStatusItem
+        """
+        return self._StaffStatusList
+
+    @StaffStatusList.setter
+    def StaffStatusList(self, StaffStatusList):
+        self._StaffStatusList = StaffStatusList
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        if params.get("StaffStatusList") is not None:
+            self._StaffStatusList = []
+            for item in params.get("StaffStatusList"):
+                obj = SetStaffStatusItem()
+                obj._deserialize(item)
+                self._StaffStatusList.append(obj)
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class SetStaffStatusResponse(AbstractModel):
+    r"""SetStaffStatus response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _StaffStatusList: Specifies the agent status response list.
+        :type StaffStatusList: list of SetStaffStatusRspItem
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._StaffStatusList = None
+        self._RequestId = None
+
+    @property
+    def StaffStatusList(self):
+        r"""Specifies the agent status response list.
+        :rtype: list of SetStaffStatusRspItem
+        """
+        return self._StaffStatusList
+
+    @StaffStatusList.setter
+    def StaffStatusList(self, StaffStatusList):
+        self._StaffStatusList = StaffStatusList
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        if params.get("StaffStatusList") is not None:
+            self._StaffStatusList = []
+            for item in params.get("StaffStatusList"):
+                obj = SetStaffStatusRspItem()
+                obj._deserialize(item)
+                self._StaffStatusList.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class SetStaffStatusRspItem(AbstractModel):
+    r"""Specifies the staff status response item.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _StaffUserId: Agent account.
+        :type StaffUserId: str
+        :param _ErrorCode: Error code. see the overall error code in the protocol.
+        :type ErrorCode: str
+        :param _ErrorMessage: Error message.
+        :type ErrorMessage: str
+        :param _Status: Current status.
+        :type Status: str
+        :param _Reason: Status if it is on break. specifies the reason.
+        :type Reason: str
+        :param _PreviousStatus: Previous status.
+        :type PreviousStatus: str
+        :param _PreviousReason: If the earlier status is on break, this is the reason.
+        :type PreviousReason: str
+        """
+        self._StaffUserId = None
+        self._ErrorCode = None
+        self._ErrorMessage = None
+        self._Status = None
+        self._Reason = None
+        self._PreviousStatus = None
+        self._PreviousReason = None
+
+    @property
+    def StaffUserId(self):
+        r"""Agent account.
+        :rtype: str
+        """
+        return self._StaffUserId
+
+    @StaffUserId.setter
+    def StaffUserId(self, StaffUserId):
+        self._StaffUserId = StaffUserId
+
+    @property
+    def ErrorCode(self):
+        r"""Error code. see the overall error code in the protocol.
+        :rtype: str
+        """
+        return self._ErrorCode
+
+    @ErrorCode.setter
+    def ErrorCode(self, ErrorCode):
+        self._ErrorCode = ErrorCode
+
+    @property
+    def ErrorMessage(self):
+        r"""Error message.
+        :rtype: str
+        """
+        return self._ErrorMessage
+
+    @ErrorMessage.setter
+    def ErrorMessage(self, ErrorMessage):
+        self._ErrorMessage = ErrorMessage
+
+    @property
+    def Status(self):
+        r"""Current status.
+        :rtype: str
+        """
+        return self._Status
+
+    @Status.setter
+    def Status(self, Status):
+        self._Status = Status
+
+    @property
+    def Reason(self):
+        r"""Status if it is on break. specifies the reason.
+        :rtype: str
+        """
+        return self._Reason
+
+    @Reason.setter
+    def Reason(self, Reason):
+        self._Reason = Reason
+
+    @property
+    def PreviousStatus(self):
+        r"""Previous status.
+        :rtype: str
+        """
+        return self._PreviousStatus
+
+    @PreviousStatus.setter
+    def PreviousStatus(self, PreviousStatus):
+        self._PreviousStatus = PreviousStatus
+
+    @property
+    def PreviousReason(self):
+        r"""If the earlier status is on break, this is the reason.
+        :rtype: str
+        """
+        return self._PreviousReason
+
+    @PreviousReason.setter
+    def PreviousReason(self, PreviousReason):
+        self._PreviousReason = PreviousReason
+
+
+    def _deserialize(self, params):
+        self._StaffUserId = params.get("StaffUserId")
+        self._ErrorCode = params.get("ErrorCode")
+        self._ErrorMessage = params.get("ErrorMessage")
+        self._Status = params.get("Status")
+        self._Reason = params.get("Reason")
+        self._PreviousStatus = params.get("PreviousStatus")
+        self._PreviousReason = params.get("PreviousReason")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class SkillGroupInfoItem(AbstractModel):
+    r"""Skill group information.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SkillGroupId: Skill group id.
+        :type SkillGroupId: int
+        :param _SkillGroupName: Skill group name.
+        :type SkillGroupName: str
+        :param _Type: (Deprecated) type: im, tel, all (full media).
+        :type Type: str
+        :param _RoutePolicy: Session allocation policy.
+        :type RoutePolicy: str
+        :param _UsingLastSeat: Whether the session is allocated to the last serviced agent first.
+        :type UsingLastSeat: int
+        :param _MaxConcurrency: Maximum concurrency number of single client service (default 1 for telephone type).
+        :type MaxConcurrency: int
+        :param _LastModifyTimestamp: Last modification time.
+        :type LastModifyTimestamp: int
+        :param _SkillGroupType: Skill group type 0-cell phone, 1-online, 3-audio, 4-video.	.	
+        :type SkillGroupType: int
+        :param _Alias: Intra-Skill group line number.
+        :type Alias: str
+        :param _RingAll: Specifies whether to enable simultaneous ring.
+        :type RingAll: bool
+        """
+        self._SkillGroupId = None
+        self._SkillGroupName = None
+        self._Type = None
+        self._RoutePolicy = None
+        self._UsingLastSeat = None
+        self._MaxConcurrency = None
+        self._LastModifyTimestamp = None
+        self._SkillGroupType = None
+        self._Alias = None
+        self._RingAll = None
+
+    @property
+    def SkillGroupId(self):
+        r"""Skill group id.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+    @property
+    def SkillGroupName(self):
+        r"""Skill group name.
+        :rtype: str
+        """
+        return self._SkillGroupName
+
+    @SkillGroupName.setter
+    def SkillGroupName(self, SkillGroupName):
+        self._SkillGroupName = SkillGroupName
+
+    @property
+    def Type(self):
+        r"""(Deprecated) type: im, tel, all (full media).
+        :rtype: str
+        """
+        return self._Type
+
+    @Type.setter
+    def Type(self, Type):
+        self._Type = Type
+
+    @property
+    def RoutePolicy(self):
+        r"""Session allocation policy.
+        :rtype: str
+        """
+        return self._RoutePolicy
+
+    @RoutePolicy.setter
+    def RoutePolicy(self, RoutePolicy):
+        self._RoutePolicy = RoutePolicy
+
+    @property
+    def UsingLastSeat(self):
+        r"""Whether the session is allocated to the last serviced agent first.
+        :rtype: int
+        """
+        return self._UsingLastSeat
+
+    @UsingLastSeat.setter
+    def UsingLastSeat(self, UsingLastSeat):
+        self._UsingLastSeat = UsingLastSeat
+
+    @property
+    def MaxConcurrency(self):
+        r"""Maximum concurrency number of single client service (default 1 for telephone type).
+        :rtype: int
+        """
+        return self._MaxConcurrency
+
+    @MaxConcurrency.setter
+    def MaxConcurrency(self, MaxConcurrency):
+        self._MaxConcurrency = MaxConcurrency
+
+    @property
+    def LastModifyTimestamp(self):
+        r"""Last modification time.
+        :rtype: int
+        """
+        return self._LastModifyTimestamp
+
+    @LastModifyTimestamp.setter
+    def LastModifyTimestamp(self, LastModifyTimestamp):
+        self._LastModifyTimestamp = LastModifyTimestamp
+
+    @property
+    def SkillGroupType(self):
+        r"""Skill group type 0-cell phone, 1-online, 3-audio, 4-video.	.	
+        :rtype: int
+        """
+        return self._SkillGroupType
+
+    @SkillGroupType.setter
+    def SkillGroupType(self, SkillGroupType):
+        self._SkillGroupType = SkillGroupType
+
+    @property
+    def Alias(self):
+        r"""Intra-Skill group line number.
+        :rtype: str
+        """
+        return self._Alias
+
+    @Alias.setter
+    def Alias(self, Alias):
+        self._Alias = Alias
+
+    @property
+    def RingAll(self):
+        r"""Specifies whether to enable simultaneous ring.
+        :rtype: bool
+        """
+        return self._RingAll
+
+    @RingAll.setter
+    def RingAll(self, RingAll):
+        self._RingAll = RingAll
+
+
+    def _deserialize(self, params):
+        self._SkillGroupId = params.get("SkillGroupId")
+        self._SkillGroupName = params.get("SkillGroupName")
+        self._Type = params.get("Type")
+        self._RoutePolicy = params.get("RoutePolicy")
+        self._UsingLastSeat = params.get("UsingLastSeat")
+        self._MaxConcurrency = params.get("MaxConcurrency")
+        self._LastModifyTimestamp = params.get("LastModifyTimestamp")
+        self._SkillGroupType = params.get("SkillGroupType")
+        self._Alias = params.get("Alias")
+        self._RingAll = params.get("RingAll")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class SkillGroupItem(AbstractModel):
+    r"""Skill group information.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SkillGroupId: Skill group id.
+        :type SkillGroupId: int
+        :param _SkillGroupName: Skill group name.
+        :type SkillGroupName: str
+        :param _Priority: Priority.
+        :type Priority: int
+        :param _Type: Type: im, tel, all (full media).
+        :type Type: str
+        """
+        self._SkillGroupId = None
+        self._SkillGroupName = None
+        self._Priority = None
+        self._Type = None
+
+    @property
+    def SkillGroupId(self):
+        r"""Skill group id.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+    @property
+    def SkillGroupName(self):
+        r"""Skill group name.
+        :rtype: str
+        """
+        return self._SkillGroupName
+
+    @SkillGroupName.setter
+    def SkillGroupName(self, SkillGroupName):
+        self._SkillGroupName = SkillGroupName
+
+    @property
+    def Priority(self):
+        r"""Priority.
+        :rtype: int
+        """
+        return self._Priority
+
+    @Priority.setter
+    def Priority(self, Priority):
+        self._Priority = Priority
+
+    @property
+    def Type(self):
+        r"""Type: im, tel, all (full media).
+        :rtype: str
+        """
+        return self._Type
+
+    @Type.setter
+    def Type(self, Type):
+        self._Type = Type
+
+
+    def _deserialize(self, params):
+        self._SkillGroupId = params.get("SkillGroupId")
+        self._SkillGroupName = params.get("SkillGroupName")
+        self._Priority = params.get("Priority")
+        self._Type = params.get("Type")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class StaffBuyInfo(AbstractModel):
+    r"""Agent purchase information
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Num: Number of agents purchased.
+        :type Num: int
+        :param _BuyTime: Purchased timestamp.
+        :type BuyTime: int
+        :param _EndTime: Deadline timestamp.
+        :type EndTime: int
+        :param _SipNum: Quantity of office telephones purchased.
+        :type SipNum: int
+        """
+        self._Num = None
+        self._BuyTime = None
+        self._EndTime = None
+        self._SipNum = None
+
+    @property
+    def Num(self):
+        r"""Number of agents purchased.
+        :rtype: int
+        """
+        return self._Num
+
+    @Num.setter
+    def Num(self, Num):
+        self._Num = Num
+
+    @property
+    def BuyTime(self):
+        r"""Purchased timestamp.
+        :rtype: int
+        """
+        return self._BuyTime
+
+    @BuyTime.setter
+    def BuyTime(self, BuyTime):
+        self._BuyTime = BuyTime
+
+    @property
+    def EndTime(self):
+        r"""Deadline timestamp.
+        :rtype: int
+        """
+        return self._EndTime
+
+    @EndTime.setter
+    def EndTime(self, EndTime):
+        self._EndTime = EndTime
+
+    @property
+    def SipNum(self):
+        r"""Quantity of office telephones purchased.
+        :rtype: int
+        """
+        return self._SipNum
+
+    @SipNum.setter
+    def SipNum(self, SipNum):
+        self._SipNum = SipNum
+
+
+    def _deserialize(self, params):
+        self._Num = params.get("Num")
+        self._BuyTime = params.get("BuyTime")
+        self._EndTime = params.get("EndTime")
+        self._SipNum = params.get("SipNum")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class StaffInfo(AbstractModel):
+    r"""Agent Information with Skill Group Priority
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Name: Agent name.
+        :type Name: str
+        :param _Mail: Agent email.
+        :type Mail: str
+        :param _Phone: Agent phone number.
+        :type Phone: str
+        :param _Nick: Agent nickname.
+        :type Nick: str
+        :param _StaffNumber: Agent id.
+        :type StaffNumber: str
+        :param _RoleId: User role ID. if a user is bound to multiple roles, RoleIdList takes precedence.
+        :type RoleId: int
+        :param _RoleIdList: User role id list.
+        :type RoleIdList: int
+        :param _RoleList: Specifies the user role id list.
+        :type RoleList: list of int non-negative
+        :param _SkillGroupList: Affiliated skill group list.
+        :type SkillGroupList: list of SkillGroupItem
+        :param _LastModifyTimestamp: Last modification time.
+        :type LastModifyTimestamp: int
+        :param _ExtensionNumber: Agent extension number (starting with 1 to 8, 4 - 6 digits).
+        :type ExtensionNumber: str
+        :param _ForwardingConfig: Call forwarding configuration.
+        :type ForwardingConfig: :class:`tencentcloud.ccc.v20200210.models.ForwardingConfig`
+        """
+        self._Name = None
+        self._Mail = None
+        self._Phone = None
+        self._Nick = None
+        self._StaffNumber = None
+        self._RoleId = None
+        self._RoleIdList = None
+        self._RoleList = None
+        self._SkillGroupList = None
+        self._LastModifyTimestamp = None
+        self._ExtensionNumber = None
+        self._ForwardingConfig = None
+
+    @property
+    def Name(self):
+        r"""Agent name.
+        :rtype: str
+        """
+        return self._Name
+
+    @Name.setter
+    def Name(self, Name):
+        self._Name = Name
+
+    @property
+    def Mail(self):
+        r"""Agent email.
+        :rtype: str
+        """
+        return self._Mail
+
+    @Mail.setter
+    def Mail(self, Mail):
+        self._Mail = Mail
+
+    @property
+    def Phone(self):
+        r"""Agent phone number.
+        :rtype: str
+        """
+        return self._Phone
+
+    @Phone.setter
+    def Phone(self, Phone):
+        self._Phone = Phone
+
+    @property
+    def Nick(self):
+        r"""Agent nickname.
+        :rtype: str
+        """
+        return self._Nick
+
+    @Nick.setter
+    def Nick(self, Nick):
+        self._Nick = Nick
+
+    @property
+    def StaffNumber(self):
+        r"""Agent id.
+        :rtype: str
+        """
+        return self._StaffNumber
+
+    @StaffNumber.setter
+    def StaffNumber(self, StaffNumber):
+        self._StaffNumber = StaffNumber
+
+    @property
+    def RoleId(self):
+        warnings.warn("parameter `RoleId` is deprecated", DeprecationWarning) 
+
+        r"""User role ID. if a user is bound to multiple roles, RoleIdList takes precedence.
+        :rtype: int
+        """
+        return self._RoleId
+
+    @RoleId.setter
+    def RoleId(self, RoleId):
+        warnings.warn("parameter `RoleId` is deprecated", DeprecationWarning) 
+
+        self._RoleId = RoleId
+
+    @property
+    def RoleIdList(self):
+        warnings.warn("parameter `RoleIdList` is deprecated", DeprecationWarning) 
+
+        r"""User role id list.
+        :rtype: int
+        """
+        return self._RoleIdList
+
+    @RoleIdList.setter
+    def RoleIdList(self, RoleIdList):
+        warnings.warn("parameter `RoleIdList` is deprecated", DeprecationWarning) 
+
+        self._RoleIdList = RoleIdList
+
+    @property
+    def RoleList(self):
+        r"""Specifies the user role id list.
+        :rtype: list of int non-negative
+        """
+        return self._RoleList
+
+    @RoleList.setter
+    def RoleList(self, RoleList):
+        self._RoleList = RoleList
+
+    @property
+    def SkillGroupList(self):
+        r"""Affiliated skill group list.
+        :rtype: list of SkillGroupItem
+        """
+        return self._SkillGroupList
+
+    @SkillGroupList.setter
+    def SkillGroupList(self, SkillGroupList):
+        self._SkillGroupList = SkillGroupList
+
+    @property
+    def LastModifyTimestamp(self):
+        r"""Last modification time.
+        :rtype: int
+        """
+        return self._LastModifyTimestamp
+
+    @LastModifyTimestamp.setter
+    def LastModifyTimestamp(self, LastModifyTimestamp):
+        self._LastModifyTimestamp = LastModifyTimestamp
+
+    @property
+    def ExtensionNumber(self):
+        r"""Agent extension number (starting with 1 to 8, 4 - 6 digits).
+        :rtype: str
+        """
+        return self._ExtensionNumber
+
+    @ExtensionNumber.setter
+    def ExtensionNumber(self, ExtensionNumber):
+        self._ExtensionNumber = ExtensionNumber
+
+    @property
+    def ForwardingConfig(self):
+        r"""Call forwarding configuration.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.ForwardingConfig`
+        """
+        return self._ForwardingConfig
+
+    @ForwardingConfig.setter
+    def ForwardingConfig(self, ForwardingConfig):
+        self._ForwardingConfig = ForwardingConfig
+
+
+    def _deserialize(self, params):
+        self._Name = params.get("Name")
+        self._Mail = params.get("Mail")
+        self._Phone = params.get("Phone")
+        self._Nick = params.get("Nick")
+        self._StaffNumber = params.get("StaffNumber")
+        self._RoleId = params.get("RoleId")
+        self._RoleIdList = params.get("RoleIdList")
+        self._RoleList = params.get("RoleList")
+        if params.get("SkillGroupList") is not None:
+            self._SkillGroupList = []
+            for item in params.get("SkillGroupList"):
+                obj = SkillGroupItem()
+                obj._deserialize(item)
+                self._SkillGroupList.append(obj)
+        self._LastModifyTimestamp = params.get("LastModifyTimestamp")
+        self._ExtensionNumber = params.get("ExtensionNumber")
+        if params.get("ForwardingConfig") is not None:
+            self._ForwardingConfig = ForwardingConfig()
+            self._ForwardingConfig._deserialize(params.get("ForwardingConfig"))
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class StaffSkillGroupList(AbstractModel):
+    r"""Bound skill group list for agents.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SkillGroupId: Skill group id.
+        :type SkillGroupId: int
+        :param _Priority: Priority of the agent in the skill group (1 is the highest, 5 is the lowest, 3 by default).
+        :type Priority: int
+        """
+        self._SkillGroupId = None
+        self._Priority = None
+
+    @property
+    def SkillGroupId(self):
+        r"""Skill group id.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+    @property
+    def Priority(self):
+        r"""Priority of the agent in the skill group (1 is the highest, 5 is the lowest, 3 by default).
+        :rtype: int
+        """
+        return self._Priority
+
+    @Priority.setter
+    def Priority(self, Priority):
+        self._Priority = Priority
+
+
+    def _deserialize(self, params):
+        self._SkillGroupId = params.get("SkillGroupId")
+        self._Priority = params.get("Priority")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class StaffStatus(AbstractModel):
+    r"""Agent status.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Cursor: Specifies the cursor used for querying in pagination scenarios.
+        :type Cursor: str
+        :param _Timestamp: Status timestamp. Unix second-level timestamp.
+        :type Timestamp: int
+        :param _Status: Agent status free | busy | rest | notReady | afterCallWork | offline.
+        :type Status: str
+        :param _SessionId: Specifies the session Id for status association.
+        :type SessionId: str
+        :param _Reason: Reason for break.
+        :type Reason: str
+        :param _StaffEmail: Agent email.
+        :type StaffEmail: str
+        :param _StaffNo: Agent id.
+        :type StaffNo: str
+        """
+        self._Cursor = None
+        self._Timestamp = None
+        self._Status = None
+        self._SessionId = None
+        self._Reason = None
+        self._StaffEmail = None
+        self._StaffNo = None
+
+    @property
+    def Cursor(self):
+        r"""Specifies the cursor used for querying in pagination scenarios.
+        :rtype: str
+        """
+        return self._Cursor
+
+    @Cursor.setter
+    def Cursor(self, Cursor):
+        self._Cursor = Cursor
+
+    @property
+    def Timestamp(self):
+        r"""Status timestamp. Unix second-level timestamp.
+        :rtype: int
+        """
+        return self._Timestamp
+
+    @Timestamp.setter
+    def Timestamp(self, Timestamp):
+        self._Timestamp = Timestamp
+
+    @property
+    def Status(self):
+        r"""Agent status free | busy | rest | notReady | afterCallWork | offline.
+        :rtype: str
+        """
+        return self._Status
+
+    @Status.setter
+    def Status(self, Status):
+        self._Status = Status
+
+    @property
+    def SessionId(self):
+        r"""Specifies the session Id for status association.
+        :rtype: str
+        """
+        return self._SessionId
+
+    @SessionId.setter
+    def SessionId(self, SessionId):
+        self._SessionId = SessionId
+
+    @property
+    def Reason(self):
+        r"""Reason for break.
+        :rtype: str
+        """
+        return self._Reason
+
+    @Reason.setter
+    def Reason(self, Reason):
+        self._Reason = Reason
+
+    @property
+    def StaffEmail(self):
+        r"""Agent email.
+        :rtype: str
+        """
+        return self._StaffEmail
+
+    @StaffEmail.setter
+    def StaffEmail(self, StaffEmail):
+        self._StaffEmail = StaffEmail
+
+    @property
+    def StaffNo(self):
+        r"""Agent id.
+        :rtype: str
+        """
+        return self._StaffNo
+
+    @StaffNo.setter
+    def StaffNo(self, StaffNo):
+        self._StaffNo = StaffNo
+
+
+    def _deserialize(self, params):
+        self._Cursor = params.get("Cursor")
+        self._Timestamp = params.get("Timestamp")
+        self._Status = params.get("Status")
+        self._SessionId = params.get("SessionId")
+        self._Reason = params.get("Reason")
+        self._StaffEmail = params.get("StaffEmail")
+        self._StaffNo = params.get("StaffNo")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class StaffStatusExtra(AbstractModel):
+    r"""Supplementary Information on Agent Status
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Type: IM - text | tel - cell phone | all - full media.
+        :type Type: str
+        :param _Direct: IN - inbound | out - outbound.
+        :type Direct: str
+        """
+        self._Type = None
+        self._Direct = None
+
+    @property
+    def Type(self):
+        r"""IM - text | tel - cell phone | all - full media.
+        :rtype: str
+        """
+        return self._Type
+
+    @Type.setter
+    def Type(self, Type):
+        self._Type = Type
+
+    @property
+    def Direct(self):
+        r"""IN - inbound | out - outbound.
+        :rtype: str
+        """
+        return self._Direct
+
+    @Direct.setter
+    def Direct(self, Direct):
+        self._Direct = Direct
+
+
+    def _deserialize(self, params):
+        self._Type = params.get("Type")
+        self._Direct = params.get("Direct")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class StaffStatusMetrics(AbstractModel):
+    r"""Agent status-related information
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Email: Agent email.
+        :type Email: str
+        :param _Status: Agent status free available | busy busy | rest on break | notready not ready | aftercallwork post-call adjustment | offline offline.
+        :type Status: str
+        :param _StatusExtra: Supplementary information on agent status.
+        :type StatusExtra: :class:`tencentcloud.ccc.v20200210.models.StaffStatusExtra`
+        :param _OnlineDuration: Total online duration of the day.
+        :type OnlineDuration: int
+        :param _FreeDuration: Total available duration of the day.
+        :type FreeDuration: int
+        :param _BusyDuration: Total busy duration of the day.
+        :type BusyDuration: int
+        :param _NotReadyDuration: Total not ready status duration of the day.
+        :type NotReadyDuration: int
+        :param _RestDuration: Total break duration of the day.
+        :type RestDuration: int
+        :param _AfterCallWorkDuration: Adjust the total duration of after-call work for the day.
+        :type AfterCallWorkDuration: int
+        :param _Reason: Reason for break.
+        :type Reason: str
+        :param _ReserveRest: Whether to reserve break status.
+        :type ReserveRest: bool
+        :param _ReserveNotReady: Whether to reserve not ready status.
+        :type ReserveNotReady: bool
+        :param _UseMobileAccept: Cell phone answering pattern: 0 - off | 1 - only when offline | 2 - always.
+        :type UseMobileAccept: int
+        :param _UseMobileCallOut: Cell phone outbound call switch.
+        :type UseMobileCallOut: bool
+        :param _LastOnlineTimestamp: Last online timestamp.
+Note: this field may return null, indicating that no valid values can be obtained.
+        :type LastOnlineTimestamp: int
+        :param _LastStatusTimestamp: Last status timestamp.
+Note: this field may return null, indicating that no valid values can be obtained.
+        :type LastStatusTimestamp: int
+        :param _ClientInfo: Specifies the endpoint information for customer service logon.
+        :type ClientInfo: list of ClientInfo
+        """
+        self._Email = None
+        self._Status = None
+        self._StatusExtra = None
+        self._OnlineDuration = None
+        self._FreeDuration = None
+        self._BusyDuration = None
+        self._NotReadyDuration = None
+        self._RestDuration = None
+        self._AfterCallWorkDuration = None
+        self._Reason = None
+        self._ReserveRest = None
+        self._ReserveNotReady = None
+        self._UseMobileAccept = None
+        self._UseMobileCallOut = None
+        self._LastOnlineTimestamp = None
+        self._LastStatusTimestamp = None
+        self._ClientInfo = None
+
+    @property
+    def Email(self):
+        r"""Agent email.
+        :rtype: str
+        """
+        return self._Email
+
+    @Email.setter
+    def Email(self, Email):
+        self._Email = Email
+
+    @property
+    def Status(self):
+        r"""Agent status free available | busy busy | rest on break | notready not ready | aftercallwork post-call adjustment | offline offline.
+        :rtype: str
+        """
+        return self._Status
+
+    @Status.setter
+    def Status(self, Status):
+        self._Status = Status
+
+    @property
+    def StatusExtra(self):
+        r"""Supplementary information on agent status.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.StaffStatusExtra`
+        """
+        return self._StatusExtra
+
+    @StatusExtra.setter
+    def StatusExtra(self, StatusExtra):
+        self._StatusExtra = StatusExtra
+
+    @property
+    def OnlineDuration(self):
+        r"""Total online duration of the day.
+        :rtype: int
+        """
+        return self._OnlineDuration
+
+    @OnlineDuration.setter
+    def OnlineDuration(self, OnlineDuration):
+        self._OnlineDuration = OnlineDuration
+
+    @property
+    def FreeDuration(self):
+        r"""Total available duration of the day.
+        :rtype: int
+        """
+        return self._FreeDuration
+
+    @FreeDuration.setter
+    def FreeDuration(self, FreeDuration):
+        self._FreeDuration = FreeDuration
+
+    @property
+    def BusyDuration(self):
+        r"""Total busy duration of the day.
+        :rtype: int
+        """
+        return self._BusyDuration
+
+    @BusyDuration.setter
+    def BusyDuration(self, BusyDuration):
+        self._BusyDuration = BusyDuration
+
+    @property
+    def NotReadyDuration(self):
+        r"""Total not ready status duration of the day.
+        :rtype: int
+        """
+        return self._NotReadyDuration
+
+    @NotReadyDuration.setter
+    def NotReadyDuration(self, NotReadyDuration):
+        self._NotReadyDuration = NotReadyDuration
+
+    @property
+    def RestDuration(self):
+        r"""Total break duration of the day.
+        :rtype: int
+        """
+        return self._RestDuration
+
+    @RestDuration.setter
+    def RestDuration(self, RestDuration):
+        self._RestDuration = RestDuration
+
+    @property
+    def AfterCallWorkDuration(self):
+        r"""Adjust the total duration of after-call work for the day.
+        :rtype: int
+        """
+        return self._AfterCallWorkDuration
+
+    @AfterCallWorkDuration.setter
+    def AfterCallWorkDuration(self, AfterCallWorkDuration):
+        self._AfterCallWorkDuration = AfterCallWorkDuration
+
+    @property
+    def Reason(self):
+        r"""Reason for break.
+        :rtype: str
+        """
+        return self._Reason
+
+    @Reason.setter
+    def Reason(self, Reason):
+        self._Reason = Reason
+
+    @property
+    def ReserveRest(self):
+        r"""Whether to reserve break status.
+        :rtype: bool
+        """
+        return self._ReserveRest
+
+    @ReserveRest.setter
+    def ReserveRest(self, ReserveRest):
+        self._ReserveRest = ReserveRest
+
+    @property
+    def ReserveNotReady(self):
+        r"""Whether to reserve not ready status.
+        :rtype: bool
+        """
+        return self._ReserveNotReady
+
+    @ReserveNotReady.setter
+    def ReserveNotReady(self, ReserveNotReady):
+        self._ReserveNotReady = ReserveNotReady
+
+    @property
+    def UseMobileAccept(self):
+        r"""Cell phone answering pattern: 0 - off | 1 - only when offline | 2 - always.
+        :rtype: int
+        """
+        return self._UseMobileAccept
+
+    @UseMobileAccept.setter
+    def UseMobileAccept(self, UseMobileAccept):
+        self._UseMobileAccept = UseMobileAccept
+
+    @property
+    def UseMobileCallOut(self):
+        r"""Cell phone outbound call switch.
+        :rtype: bool
+        """
+        return self._UseMobileCallOut
+
+    @UseMobileCallOut.setter
+    def UseMobileCallOut(self, UseMobileCallOut):
+        self._UseMobileCallOut = UseMobileCallOut
+
+    @property
+    def LastOnlineTimestamp(self):
+        r"""Last online timestamp.
+Note: this field may return null, indicating that no valid values can be obtained.
+        :rtype: int
+        """
+        return self._LastOnlineTimestamp
+
+    @LastOnlineTimestamp.setter
+    def LastOnlineTimestamp(self, LastOnlineTimestamp):
+        self._LastOnlineTimestamp = LastOnlineTimestamp
+
+    @property
+    def LastStatusTimestamp(self):
+        r"""Last status timestamp.
+Note: this field may return null, indicating that no valid values can be obtained.
+        :rtype: int
+        """
+        return self._LastStatusTimestamp
+
+    @LastStatusTimestamp.setter
+    def LastStatusTimestamp(self, LastStatusTimestamp):
+        self._LastStatusTimestamp = LastStatusTimestamp
+
+    @property
+    def ClientInfo(self):
+        r"""Specifies the endpoint information for customer service logon.
+        :rtype: list of ClientInfo
+        """
+        return self._ClientInfo
+
+    @ClientInfo.setter
+    def ClientInfo(self, ClientInfo):
+        self._ClientInfo = ClientInfo
+
+
+    def _deserialize(self, params):
+        self._Email = params.get("Email")
+        self._Status = params.get("Status")
+        if params.get("StatusExtra") is not None:
+            self._StatusExtra = StaffStatusExtra()
+            self._StatusExtra._deserialize(params.get("StatusExtra"))
+        self._OnlineDuration = params.get("OnlineDuration")
+        self._FreeDuration = params.get("FreeDuration")
+        self._BusyDuration = params.get("BusyDuration")
+        self._NotReadyDuration = params.get("NotReadyDuration")
+        self._RestDuration = params.get("RestDuration")
+        self._AfterCallWorkDuration = params.get("AfterCallWorkDuration")
+        self._Reason = params.get("Reason")
+        self._ReserveRest = params.get("ReserveRest")
+        self._ReserveNotReady = params.get("ReserveNotReady")
+        self._UseMobileAccept = params.get("UseMobileAccept")
+        self._UseMobileCallOut = params.get("UseMobileCallOut")
+        self._LastOnlineTimestamp = params.get("LastOnlineTimestamp")
+        self._LastStatusTimestamp = params.get("LastStatusTimestamp")
+        if params.get("ClientInfo") is not None:
+            self._ClientInfo = []
+            for item in params.get("ClientInfo"):
+                obj = ClientInfo()
+                obj._deserialize(item)
+                self._ClientInfo.append(obj)
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class StopAutoCalloutTaskRequest(AbstractModel):
+    r"""StopAutoCalloutTask request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _TaskId: Task id.
+        :type TaskId: int
+        """
+        self._SdkAppId = None
+        self._TaskId = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def TaskId(self):
+        r"""Task id.
+        :rtype: int
+        """
+        return self._TaskId
+
+    @TaskId.setter
+    def TaskId(self, TaskId):
+        self._TaskId = TaskId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._TaskId = params.get("TaskId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class StopAutoCalloutTaskResponse(AbstractModel):
+    r"""StopAutoCalloutTask response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class TelCdrInfo(AbstractModel):
+    r"""Phone call information
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Caller: Caller number.
+        :type Caller: str
+        :param _Callee: Called number.
+        :type Callee: str
+        :param _Time: Call initiation timestamp, unix timestamp.
+        :type Time: int
+        :param _Direction: Call direction: 0 - inbound, 1 - outbound.
+        :type Direction: int
+        :param _CallType: Call Type: 1. Voice outbound call 2. Voice Inbound call 3. Audio Inbound 5 Predictive Dialing Call 6. Internal Call between Staff
+        :type CallType: int
+        :param _Duration: Call duration.
+        :type Duration: int
+        :param _RecordURL: Recording information.
+        :type RecordURL: str
+        :param _RecordId: Recording id.
+        :type RecordId: str
+        :param _SeatUser: Agent information.
+        :type SeatUser: :class:`tencentcloud.ccc.v20200210.models.SeatUserInfo`
+        :param _EndStatus: EndStatus corresponds one-to-one with EndStatusString. the specific enumeration is as follows:.
+
+**Scenario**	EndStatus	EndStatusString	Status description.
+
+Incoming & outgoing calls. 1. ok. normal call.
+
+IVR period user give up.
+
+**User give up while in queue**.
+
+Inbound call 104 ringingGiveUp. specifies the user gives up during ringing.
+
+Inbound call 105. specifies no agent online.
+
+Inbound call notWorkTime **off hours**.   
+
+IVR ends automatically (no manual intervention).
+
+Inbound call. 100. blocklist (system side).
+
+restrictedCallee. specifies the global outbound call risk number interception (system side).
+
+Outbound call 109 tooManyRequest **outbound call frequency control interception (system side)**.
+
+Outbound call 110 restrictedArea **block outgoing calls by region (system side)**.
+
+restrictedTime. specifies the outbound call interception period on the system side.
+                         
+202 notAnswer **callee unanswered**.
+
+Outbound call 203 userReject **callee reject hangup**.
+
+Power off. **callee powered off**.
+
+205            numberNotExist	**callee nonexistent number**.
+
+Busy. specifies the callee is busy.
+
+Outbound call 207 outOfCredit **callee in arrears**.
+
+208 operatorError indicates operator channel exception.
+
+Outgoing call caller cancellation.
+
+Outgoing call	        210	           notInService	**callee out of service area**.
+
+Phone call in/out 211 clientError **client error**.
+
+Outgoing call 212 carrierBlocked **carrier blocklist**.
+
+Note: call reminder.
+
+Outbound call 215 numberInvalid **called number is invalid**.
+
+Outbound call 216 callRestricted. note: call restricted.
+
+Callee restricted by blocklist.
+
+Outbound call 218 areaRestricted. **callee area restricted**.
+
+Prompt call forwarding.
+
+Caller cancellation during ringing.
+
+Caller cancel without ring.
+
+Audio dial-in 501 call conflict **VoIP user call termination**.
+
+VoIP user client timeout.
+
+Audio dial-in 503 VoIP user client error.
+
+Chinese version please go domestic site (https://cloud.tencent.com/document/product/679/123938).
+
+English version please go international site (https://www.tencentcloud.com/document/product/1229/71847?lang=en).
+        :type EndStatus: int
+        :param _SkillGroup: Skill group name.
+        :type SkillGroup: str
+        :param _CallerLocation: Caller'S location.
+        :type CallerLocation: str
+        :param _IVRDuration: Time spent in ivr stage.
+        :type IVRDuration: int
+        :param _RingTimestamp: Ring timestamp. unix second-level timestamp.
+        :type RingTimestamp: int
+        :param _AcceptTimestamp: Answer timestamp. unix second-level timestamp.
+        :type AcceptTimestamp: int
+        :param _EndedTimestamp: End timestamp. unix second-level timestamp.
+        :type EndedTimestamp: int
+        :param _IVRKeyPressed: IVR key information, e.g. ["1","2","3"].
+        :type IVRKeyPressed: list of str
+        :param _HungUpSide: Hang-Up side, seat, user, system.
+        :type HungUpSide: str
+        :param _ServeParticipants: Service participant list.
+        :type ServeParticipants: list of ServeParticipant
+        :param _SkillGroupId: Skill group id.
+        :type SkillGroupId: int
+        :param _EndStatusString: Refers to the EndStatus field.
+        :type EndStatusString: str
+        :param _StartTimestamp: Session start timestamp. unix second-level timestamp.
+        :type StartTimestamp: int
+        :param _QueuedTimestamp: Queue entry time. unix second-level timestamp.
+        :type QueuedTimestamp: int
+        :param _PostIVRKeyPressed: Post-IVR key information (e.g. [{"key":"1","label":"very satisfied"}]).
+        :type PostIVRKeyPressed: list of IVRKeyPressedElement
+        :param _QueuedSkillGroupId: Queue skill group id.
+        :type QueuedSkillGroupId: int
+        :param _SessionId: Session id.
+        :type SessionId: str
+        :param _ProtectedCaller: Caller number protection id. effective when the number protection map feature is activated, and the caller field is empty.
+        :type ProtectedCaller: str
+        :param _ProtectedCallee: Called number protection id. effective when the number protection map feature is activated, and the callee field is empty.
+        :type ProtectedCallee: str
+        :param _Uui: Customer custom data. (user - to - user interface).
+Note: this field may return null, indicating that no valid values can be obtained.
+        :type Uui: str
+        :param _UUI: Customer custom data. (user - to - user interface).
+        :type UUI: str
+        :param _IVRKeyPressedEx: IVR key information (e.g. [{"key":"1","label":"very satisfied"}]).
+        :type IVRKeyPressedEx: list of IVRKeyPressedElement
+        :param _AsrUrl: Access to the asr text information address of the recording.
+        :type AsrUrl: str
+        :param _AsrStatus: ASRUrl status: complete.
+Completed;.
+Processing.
+Generating.
+NotExists.
+No record (offline asr generation is not enabled or no package is available).
+        :type AsrStatus: str
+        :param _CustomRecordURL: Address of the third-party cos for transferring recording.
+        :type CustomRecordURL: str
+        :param _Remark: Remarks.
+        :type Remark: str
+        :param _QueuedSkillGroupName: Queue skill group name.
+        :type QueuedSkillGroupName: str
+        :param _VoicemailRecordURL: Audio message recording url during call.
+        :type VoicemailRecordURL: list of str
+        :param _VoicemailAsrURL: Text information address of asr audio message during a call.
+        :type VoicemailAsrURL: list of str
+        """
+        self._Caller = None
+        self._Callee = None
+        self._Time = None
+        self._Direction = None
+        self._CallType = None
+        self._Duration = None
+        self._RecordURL = None
+        self._RecordId = None
+        self._SeatUser = None
+        self._EndStatus = None
+        self._SkillGroup = None
+        self._CallerLocation = None
+        self._IVRDuration = None
+        self._RingTimestamp = None
+        self._AcceptTimestamp = None
+        self._EndedTimestamp = None
+        self._IVRKeyPressed = None
+        self._HungUpSide = None
+        self._ServeParticipants = None
+        self._SkillGroupId = None
+        self._EndStatusString = None
+        self._StartTimestamp = None
+        self._QueuedTimestamp = None
+        self._PostIVRKeyPressed = None
+        self._QueuedSkillGroupId = None
+        self._SessionId = None
+        self._ProtectedCaller = None
+        self._ProtectedCallee = None
+        self._Uui = None
+        self._UUI = None
+        self._IVRKeyPressedEx = None
+        self._AsrUrl = None
+        self._AsrStatus = None
+        self._CustomRecordURL = None
+        self._Remark = None
+        self._QueuedSkillGroupName = None
+        self._VoicemailRecordURL = None
+        self._VoicemailAsrURL = None
+
+    @property
+    def Caller(self):
+        r"""Caller number.
+        :rtype: str
+        """
+        return self._Caller
+
+    @Caller.setter
+    def Caller(self, Caller):
+        self._Caller = Caller
+
+    @property
+    def Callee(self):
+        r"""Called number.
+        :rtype: str
+        """
+        return self._Callee
+
+    @Callee.setter
+    def Callee(self, Callee):
+        self._Callee = Callee
+
+    @property
+    def Time(self):
+        r"""Call initiation timestamp, unix timestamp.
+        :rtype: int
+        """
+        return self._Time
+
+    @Time.setter
+    def Time(self, Time):
+        self._Time = Time
+
+    @property
+    def Direction(self):
+        r"""Call direction: 0 - inbound, 1 - outbound.
+        :rtype: int
+        """
+        return self._Direction
+
+    @Direction.setter
+    def Direction(self, Direction):
+        self._Direction = Direction
+
+    @property
+    def CallType(self):
+        r"""Call Type: 1. Voice outbound call 2. Voice Inbound call 3. Audio Inbound 5 Predictive Dialing Call 6. Internal Call between Staff
+        :rtype: int
+        """
+        return self._CallType
+
+    @CallType.setter
+    def CallType(self, CallType):
+        self._CallType = CallType
+
+    @property
+    def Duration(self):
+        r"""Call duration.
+        :rtype: int
+        """
+        return self._Duration
+
+    @Duration.setter
+    def Duration(self, Duration):
+        self._Duration = Duration
+
+    @property
+    def RecordURL(self):
+        r"""Recording information.
+        :rtype: str
+        """
+        return self._RecordURL
+
+    @RecordURL.setter
+    def RecordURL(self, RecordURL):
+        self._RecordURL = RecordURL
+
+    @property
+    def RecordId(self):
+        r"""Recording id.
+        :rtype: str
+        """
+        return self._RecordId
+
+    @RecordId.setter
+    def RecordId(self, RecordId):
+        self._RecordId = RecordId
+
+    @property
+    def SeatUser(self):
+        r"""Agent information.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.SeatUserInfo`
+        """
+        return self._SeatUser
+
+    @SeatUser.setter
+    def SeatUser(self, SeatUser):
+        self._SeatUser = SeatUser
+
+    @property
+    def EndStatus(self):
+        r"""EndStatus corresponds one-to-one with EndStatusString. the specific enumeration is as follows:.
+
+**Scenario**	EndStatus	EndStatusString	Status description.
+
+Incoming & outgoing calls. 1. ok. normal call.
+
+IVR period user give up.
+
+**User give up while in queue**.
+
+Inbound call 104 ringingGiveUp. specifies the user gives up during ringing.
+
+Inbound call 105. specifies no agent online.
+
+Inbound call notWorkTime **off hours**.   
+
+IVR ends automatically (no manual intervention).
+
+Inbound call. 100. blocklist (system side).
+
+restrictedCallee. specifies the global outbound call risk number interception (system side).
+
+Outbound call 109 tooManyRequest **outbound call frequency control interception (system side)**.
+
+Outbound call 110 restrictedArea **block outgoing calls by region (system side)**.
+
+restrictedTime. specifies the outbound call interception period on the system side.
+                         
+202 notAnswer **callee unanswered**.
+
+Outbound call 203 userReject **callee reject hangup**.
+
+Power off. **callee powered off**.
+
+205            numberNotExist	**callee nonexistent number**.
+
+Busy. specifies the callee is busy.
+
+Outbound call 207 outOfCredit **callee in arrears**.
+
+208 operatorError indicates operator channel exception.
+
+Outgoing call caller cancellation.
+
+Outgoing call	        210	           notInService	**callee out of service area**.
+
+Phone call in/out 211 clientError **client error**.
+
+Outgoing call 212 carrierBlocked **carrier blocklist**.
+
+Note: call reminder.
+
+Outbound call 215 numberInvalid **called number is invalid**.
+
+Outbound call 216 callRestricted. note: call restricted.
+
+Callee restricted by blocklist.
+
+Outbound call 218 areaRestricted. **callee area restricted**.
+
+Prompt call forwarding.
+
+Caller cancellation during ringing.
+
+Caller cancel without ring.
+
+Audio dial-in 501 call conflict **VoIP user call termination**.
+
+VoIP user client timeout.
+
+Audio dial-in 503 VoIP user client error.
+
+Chinese version please go domestic site (https://cloud.tencent.com/document/product/679/123938).
+
+English version please go international site (https://www.tencentcloud.com/document/product/1229/71847?lang=en).
+        :rtype: int
+        """
+        return self._EndStatus
+
+    @EndStatus.setter
+    def EndStatus(self, EndStatus):
+        self._EndStatus = EndStatus
+
+    @property
+    def SkillGroup(self):
+        r"""Skill group name.
+        :rtype: str
+        """
+        return self._SkillGroup
+
+    @SkillGroup.setter
+    def SkillGroup(self, SkillGroup):
+        self._SkillGroup = SkillGroup
+
+    @property
+    def CallerLocation(self):
+        r"""Caller'S location.
+        :rtype: str
+        """
+        return self._CallerLocation
+
+    @CallerLocation.setter
+    def CallerLocation(self, CallerLocation):
+        self._CallerLocation = CallerLocation
+
+    @property
+    def IVRDuration(self):
+        r"""Time spent in ivr stage.
+        :rtype: int
+        """
+        return self._IVRDuration
+
+    @IVRDuration.setter
+    def IVRDuration(self, IVRDuration):
+        self._IVRDuration = IVRDuration
+
+    @property
+    def RingTimestamp(self):
+        r"""Ring timestamp. unix second-level timestamp.
+        :rtype: int
+        """
+        return self._RingTimestamp
+
+    @RingTimestamp.setter
+    def RingTimestamp(self, RingTimestamp):
+        self._RingTimestamp = RingTimestamp
+
+    @property
+    def AcceptTimestamp(self):
+        r"""Answer timestamp. unix second-level timestamp.
+        :rtype: int
+        """
+        return self._AcceptTimestamp
+
+    @AcceptTimestamp.setter
+    def AcceptTimestamp(self, AcceptTimestamp):
+        self._AcceptTimestamp = AcceptTimestamp
+
+    @property
+    def EndedTimestamp(self):
+        r"""End timestamp. unix second-level timestamp.
+        :rtype: int
+        """
+        return self._EndedTimestamp
+
+    @EndedTimestamp.setter
+    def EndedTimestamp(self, EndedTimestamp):
+        self._EndedTimestamp = EndedTimestamp
+
+    @property
+    def IVRKeyPressed(self):
+        r"""IVR key information, e.g. ["1","2","3"].
+        :rtype: list of str
+        """
+        return self._IVRKeyPressed
+
+    @IVRKeyPressed.setter
+    def IVRKeyPressed(self, IVRKeyPressed):
+        self._IVRKeyPressed = IVRKeyPressed
+
+    @property
+    def HungUpSide(self):
+        r"""Hang-Up side, seat, user, system.
+        :rtype: str
+        """
+        return self._HungUpSide
+
+    @HungUpSide.setter
+    def HungUpSide(self, HungUpSide):
+        self._HungUpSide = HungUpSide
+
+    @property
+    def ServeParticipants(self):
+        r"""Service participant list.
+        :rtype: list of ServeParticipant
+        """
+        return self._ServeParticipants
+
+    @ServeParticipants.setter
+    def ServeParticipants(self, ServeParticipants):
+        self._ServeParticipants = ServeParticipants
+
+    @property
+    def SkillGroupId(self):
+        r"""Skill group id.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+    @property
+    def EndStatusString(self):
+        r"""Refers to the EndStatus field.
+        :rtype: str
+        """
+        return self._EndStatusString
+
+    @EndStatusString.setter
+    def EndStatusString(self, EndStatusString):
+        self._EndStatusString = EndStatusString
+
+    @property
+    def StartTimestamp(self):
+        r"""Session start timestamp. unix second-level timestamp.
+        :rtype: int
+        """
+        return self._StartTimestamp
+
+    @StartTimestamp.setter
+    def StartTimestamp(self, StartTimestamp):
+        self._StartTimestamp = StartTimestamp
+
+    @property
+    def QueuedTimestamp(self):
+        r"""Queue entry time. unix second-level timestamp.
+        :rtype: int
+        """
+        return self._QueuedTimestamp
+
+    @QueuedTimestamp.setter
+    def QueuedTimestamp(self, QueuedTimestamp):
+        self._QueuedTimestamp = QueuedTimestamp
+
+    @property
+    def PostIVRKeyPressed(self):
+        r"""Post-IVR key information (e.g. [{"key":"1","label":"very satisfied"}]).
+        :rtype: list of IVRKeyPressedElement
+        """
+        return self._PostIVRKeyPressed
+
+    @PostIVRKeyPressed.setter
+    def PostIVRKeyPressed(self, PostIVRKeyPressed):
+        self._PostIVRKeyPressed = PostIVRKeyPressed
+
+    @property
+    def QueuedSkillGroupId(self):
+        r"""Queue skill group id.
+        :rtype: int
+        """
+        return self._QueuedSkillGroupId
+
+    @QueuedSkillGroupId.setter
+    def QueuedSkillGroupId(self, QueuedSkillGroupId):
+        self._QueuedSkillGroupId = QueuedSkillGroupId
+
+    @property
+    def SessionId(self):
+        r"""Session id.
+        :rtype: str
+        """
+        return self._SessionId
+
+    @SessionId.setter
+    def SessionId(self, SessionId):
+        self._SessionId = SessionId
+
+    @property
+    def ProtectedCaller(self):
+        r"""Caller number protection id. effective when the number protection map feature is activated, and the caller field is empty.
+        :rtype: str
+        """
+        return self._ProtectedCaller
+
+    @ProtectedCaller.setter
+    def ProtectedCaller(self, ProtectedCaller):
+        self._ProtectedCaller = ProtectedCaller
+
+    @property
+    def ProtectedCallee(self):
+        r"""Called number protection id. effective when the number protection map feature is activated, and the callee field is empty.
+        :rtype: str
+        """
+        return self._ProtectedCallee
+
+    @ProtectedCallee.setter
+    def ProtectedCallee(self, ProtectedCallee):
+        self._ProtectedCallee = ProtectedCallee
+
+    @property
+    def Uui(self):
+        warnings.warn("parameter `Uui` is deprecated", DeprecationWarning) 
+
+        r"""Customer custom data. (user - to - user interface).
+Note: this field may return null, indicating that no valid values can be obtained.
+        :rtype: str
+        """
+        return self._Uui
+
+    @Uui.setter
+    def Uui(self, Uui):
+        warnings.warn("parameter `Uui` is deprecated", DeprecationWarning) 
+
+        self._Uui = Uui
+
+    @property
+    def UUI(self):
+        r"""Customer custom data. (user - to - user interface).
+        :rtype: str
+        """
+        return self._UUI
+
+    @UUI.setter
+    def UUI(self, UUI):
+        self._UUI = UUI
+
+    @property
+    def IVRKeyPressedEx(self):
+        r"""IVR key information (e.g. [{"key":"1","label":"very satisfied"}]).
+        :rtype: list of IVRKeyPressedElement
+        """
+        return self._IVRKeyPressedEx
+
+    @IVRKeyPressedEx.setter
+    def IVRKeyPressedEx(self, IVRKeyPressedEx):
+        self._IVRKeyPressedEx = IVRKeyPressedEx
+
+    @property
+    def AsrUrl(self):
+        r"""Access to the asr text information address of the recording.
+        :rtype: str
+        """
+        return self._AsrUrl
+
+    @AsrUrl.setter
+    def AsrUrl(self, AsrUrl):
+        self._AsrUrl = AsrUrl
+
+    @property
+    def AsrStatus(self):
+        r"""ASRUrl status: complete.
+Completed;.
+Processing.
+Generating.
+NotExists.
+No record (offline asr generation is not enabled or no package is available).
+        :rtype: str
+        """
+        return self._AsrStatus
+
+    @AsrStatus.setter
+    def AsrStatus(self, AsrStatus):
+        self._AsrStatus = AsrStatus
+
+    @property
+    def CustomRecordURL(self):
+        r"""Address of the third-party cos for transferring recording.
+        :rtype: str
+        """
+        return self._CustomRecordURL
+
+    @CustomRecordURL.setter
+    def CustomRecordURL(self, CustomRecordURL):
+        self._CustomRecordURL = CustomRecordURL
+
+    @property
+    def Remark(self):
+        r"""Remarks.
+        :rtype: str
+        """
+        return self._Remark
+
+    @Remark.setter
+    def Remark(self, Remark):
+        self._Remark = Remark
+
+    @property
+    def QueuedSkillGroupName(self):
+        r"""Queue skill group name.
+        :rtype: str
+        """
+        return self._QueuedSkillGroupName
+
+    @QueuedSkillGroupName.setter
+    def QueuedSkillGroupName(self, QueuedSkillGroupName):
+        self._QueuedSkillGroupName = QueuedSkillGroupName
+
+    @property
+    def VoicemailRecordURL(self):
+        r"""Audio message recording url during call.
+        :rtype: list of str
+        """
+        return self._VoicemailRecordURL
+
+    @VoicemailRecordURL.setter
+    def VoicemailRecordURL(self, VoicemailRecordURL):
+        self._VoicemailRecordURL = VoicemailRecordURL
+
+    @property
+    def VoicemailAsrURL(self):
+        r"""Text information address of asr audio message during a call.
+        :rtype: list of str
+        """
+        return self._VoicemailAsrURL
+
+    @VoicemailAsrURL.setter
+    def VoicemailAsrURL(self, VoicemailAsrURL):
+        self._VoicemailAsrURL = VoicemailAsrURL
+
+
+    def _deserialize(self, params):
+        self._Caller = params.get("Caller")
+        self._Callee = params.get("Callee")
+        self._Time = params.get("Time")
+        self._Direction = params.get("Direction")
+        self._CallType = params.get("CallType")
+        self._Duration = params.get("Duration")
+        self._RecordURL = params.get("RecordURL")
+        self._RecordId = params.get("RecordId")
+        if params.get("SeatUser") is not None:
+            self._SeatUser = SeatUserInfo()
+            self._SeatUser._deserialize(params.get("SeatUser"))
+        self._EndStatus = params.get("EndStatus")
+        self._SkillGroup = params.get("SkillGroup")
+        self._CallerLocation = params.get("CallerLocation")
+        self._IVRDuration = params.get("IVRDuration")
+        self._RingTimestamp = params.get("RingTimestamp")
+        self._AcceptTimestamp = params.get("AcceptTimestamp")
+        self._EndedTimestamp = params.get("EndedTimestamp")
+        self._IVRKeyPressed = params.get("IVRKeyPressed")
+        self._HungUpSide = params.get("HungUpSide")
+        if params.get("ServeParticipants") is not None:
+            self._ServeParticipants = []
+            for item in params.get("ServeParticipants"):
+                obj = ServeParticipant()
+                obj._deserialize(item)
+                self._ServeParticipants.append(obj)
+        self._SkillGroupId = params.get("SkillGroupId")
+        self._EndStatusString = params.get("EndStatusString")
+        self._StartTimestamp = params.get("StartTimestamp")
+        self._QueuedTimestamp = params.get("QueuedTimestamp")
+        if params.get("PostIVRKeyPressed") is not None:
+            self._PostIVRKeyPressed = []
+            for item in params.get("PostIVRKeyPressed"):
+                obj = IVRKeyPressedElement()
+                obj._deserialize(item)
+                self._PostIVRKeyPressed.append(obj)
+        self._QueuedSkillGroupId = params.get("QueuedSkillGroupId")
+        self._SessionId = params.get("SessionId")
+        self._ProtectedCaller = params.get("ProtectedCaller")
+        self._ProtectedCallee = params.get("ProtectedCallee")
+        self._Uui = params.get("Uui")
+        self._UUI = params.get("UUI")
+        if params.get("IVRKeyPressedEx") is not None:
+            self._IVRKeyPressedEx = []
+            for item in params.get("IVRKeyPressedEx"):
+                obj = IVRKeyPressedElement()
+                obj._deserialize(item)
+                self._IVRKeyPressedEx.append(obj)
+        self._AsrUrl = params.get("AsrUrl")
+        self._AsrStatus = params.get("AsrStatus")
+        self._CustomRecordURL = params.get("CustomRecordURL")
+        self._Remark = params.get("Remark")
+        self._QueuedSkillGroupName = params.get("QueuedSkillGroupName")
+        self._VoicemailRecordURL = params.get("VoicemailRecordURL")
+        self._VoicemailAsrURL = params.get("VoicemailAsrURL")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class TimeRange(AbstractModel):
+    r"""Time range, 24-hour system, format: 09:00:00.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _StartTime: Start time.
+        :type StartTime: str
+        :param _EndTime: End time.
+        :type EndTime: str
+        """
+        self._StartTime = None
+        self._EndTime = None
+
+    @property
+    def StartTime(self):
+        r"""Start time.
+        :rtype: str
+        """
+        return self._StartTime
+
+    @StartTime.setter
+    def StartTime(self, StartTime):
+        self._StartTime = StartTime
+
+    @property
+    def EndTime(self):
+        r"""End time.
+        :rtype: str
+        """
+        return self._EndTime
+
+    @EndTime.setter
+    def EndTime(self, EndTime):
+        self._EndTime = EndTime
+
+
+    def _deserialize(self, params):
+        self._StartTime = params.get("StartTime")
+        self._EndTime = params.get("EndTime")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ToneWordInfo(AbstractModel):
+    r"""Undertake filler word info.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _FirstSentenceTimeout: Specifies the timeout period for the first request in seconds.
+        :type FirstSentenceTimeout: float
+        :param _ZHToneWords: Undertakes a modal particle.
+        :type ZHToneWords: :class:`tencentcloud.ccc.v20200210.models.ZHToneWordsInfo`
+        """
+        self._FirstSentenceTimeout = None
+        self._ZHToneWords = None
+
+    @property
+    def FirstSentenceTimeout(self):
+        r"""Specifies the timeout period for the first request in seconds.
+        :rtype: float
+        """
+        return self._FirstSentenceTimeout
+
+    @FirstSentenceTimeout.setter
+    def FirstSentenceTimeout(self, FirstSentenceTimeout):
+        self._FirstSentenceTimeout = FirstSentenceTimeout
+
+    @property
+    def ZHToneWords(self):
+        r"""Undertakes a modal particle.
+        :rtype: :class:`tencentcloud.ccc.v20200210.models.ZHToneWordsInfo`
+        """
+        return self._ZHToneWords
+
+    @ZHToneWords.setter
+    def ZHToneWords(self, ZHToneWords):
+        self._ZHToneWords = ZHToneWords
+
+
+    def _deserialize(self, params):
+        self._FirstSentenceTimeout = params.get("FirstSentenceTimeout")
+        if params.get("ZHToneWords") is not None:
+            self._ZHToneWords = ZHToneWordsInfo()
+            self._ZHToneWords._deserialize(params.get("ZHToneWords"))
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class TransferToManualRequest(AbstractModel):
+    r"""TransferToManual request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: App ID (required), which can be viewed at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _SessionId: Session ID.
+        :type SessionId: str
+        :param _SkillGroupId: Skill group Id.
+        :type SkillGroupId: int
+        """
+        self._SdkAppId = None
+        self._SessionId = None
+        self._SkillGroupId = None
+
+    @property
+    def SdkAppId(self):
+        r"""App ID (required), which can be viewed at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def SessionId(self):
+        r"""Session ID.
+        :rtype: str
+        """
+        return self._SessionId
+
+    @SessionId.setter
+    def SessionId(self, SessionId):
+        self._SessionId = SessionId
+
+    @property
+    def SkillGroupId(self):
+        r"""Skill group Id.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._SessionId = params.get("SessionId")
+        self._SkillGroupId = params.get("SkillGroupId")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class TransferToManualResponse(AbstractModel):
+    r"""TransferToManual response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class UnbindNumberCallOutSkillGroupRequest(AbstractModel):
+    r"""UnbindNumberCallOutSkillGroup request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _Number: Number to be unbound.
+        :type Number: str
+        :param _SkillGroupIds: List of skill group ids to be unbound.
+        :type SkillGroupIds: list of int non-negative
+        """
+        self._SdkAppId = None
+        self._Number = None
+        self._SkillGroupIds = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def Number(self):
+        r"""Number to be unbound.
+        :rtype: str
+        """
+        return self._Number
+
+    @Number.setter
+    def Number(self, Number):
+        self._Number = Number
+
+    @property
+    def SkillGroupIds(self):
+        r"""List of skill group ids to be unbound.
+        :rtype: list of int non-negative
+        """
+        return self._SkillGroupIds
+
+    @SkillGroupIds.setter
+    def SkillGroupIds(self, SkillGroupIds):
+        self._SkillGroupIds = SkillGroupIds
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._Number = params.get("Number")
+        self._SkillGroupIds = params.get("SkillGroupIds")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class UnbindNumberCallOutSkillGroupResponse(AbstractModel):
+    r"""UnbindNumberCallOutSkillGroup response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class UnbindStaffSkillGroupListRequest(AbstractModel):
+    r"""UnbindStaffSkillGroupList request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _StaffEmail: Customer service email.
+        :type StaffEmail: str
+        :param _SkillGroupList: Unbound skill group list.
+        :type SkillGroupList: list of int
+        """
+        self._SdkAppId = None
+        self._StaffEmail = None
+        self._SkillGroupList = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def StaffEmail(self):
+        r"""Customer service email.
+        :rtype: str
+        """
+        return self._StaffEmail
+
+    @StaffEmail.setter
+    def StaffEmail(self, StaffEmail):
+        self._StaffEmail = StaffEmail
+
+    @property
+    def SkillGroupList(self):
+        r"""Unbound skill group list.
+        :rtype: list of int
+        """
+        return self._SkillGroupList
+
+    @SkillGroupList.setter
+    def SkillGroupList(self, SkillGroupList):
+        self._SkillGroupList = SkillGroupList
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._StaffEmail = params.get("StaffEmail")
+        self._SkillGroupList = params.get("SkillGroupList")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class UnbindStaffSkillGroupListResponse(AbstractModel):
+    r"""UnbindStaffSkillGroupList response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class UpdateCCCSkillGroupRequest(AbstractModel):
+    r"""UpdateCCCSkillGroup request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _SkillGroupID: Skill group id.
+        :type SkillGroupID: int
+        :param _SkillGroupName: Modified skill group name.
+        :type SkillGroupName: str
+        :param _MaxConcurrency: Modified maximum concurrency, with the maximum synchronization being 2.
+        :type MaxConcurrency: int
+        :param _RingAll: True for simultaneous ringing, false for sequential ringing.
+        :type RingAll: bool
+        """
+        self._SdkAppId = None
+        self._SkillGroupID = None
+        self._SkillGroupName = None
+        self._MaxConcurrency = None
+        self._RingAll = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def SkillGroupID(self):
+        r"""Skill group id.
+        :rtype: int
+        """
+        return self._SkillGroupID
+
+    @SkillGroupID.setter
+    def SkillGroupID(self, SkillGroupID):
+        self._SkillGroupID = SkillGroupID
+
+    @property
+    def SkillGroupName(self):
+        r"""Modified skill group name.
+        :rtype: str
+        """
+        return self._SkillGroupName
+
+    @SkillGroupName.setter
+    def SkillGroupName(self, SkillGroupName):
+        self._SkillGroupName = SkillGroupName
+
+    @property
+    def MaxConcurrency(self):
+        r"""Modified maximum concurrency, with the maximum synchronization being 2.
+        :rtype: int
+        """
+        return self._MaxConcurrency
+
+    @MaxConcurrency.setter
+    def MaxConcurrency(self, MaxConcurrency):
+        self._MaxConcurrency = MaxConcurrency
+
+    @property
+    def RingAll(self):
+        r"""True for simultaneous ringing, false for sequential ringing.
+        :rtype: bool
+        """
+        return self._RingAll
+
+    @RingAll.setter
+    def RingAll(self, RingAll):
+        self._RingAll = RingAll
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._SkillGroupID = params.get("SkillGroupID")
+        self._SkillGroupName = params.get("SkillGroupName")
+        self._MaxConcurrency = params.get("MaxConcurrency")
+        self._RingAll = params.get("RingAll")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class UpdateCCCSkillGroupResponse(AbstractModel):
+    r"""UpdateCCCSkillGroup response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class UpdatePredictiveDialingCampaignRequest(AbstractModel):
+    r"""UpdatePredictiveDialingCampaign request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _CampaignId: Generated task id.
+        :type CampaignId: int
+        :param _Name: Task name.
+        :type Name: str
+        :param _Callees: Called list supporting e.164 or number formats without country code.
+        :type Callees: list of str
+        :param _Callers: Calling list using the number formats displayed on the management side.
+        :type Callers: list of str
+        :param _CallOrder: Being called sequence: 0 for random 1 for in order.
+        :type CallOrder: int
+        :param _SkillGroupId: ID of the used skill group of agents.
+        :type SkillGroupId: int
+        :param _Priority: Running priority of multiple tasks in the same application, from high to low 1 - 5.
+        :type Priority: int
+        :param _ExpectedAbandonRate: Expected call drop rate, percentage, 5 - 50.	.	
+        :type ExpectedAbandonRate: int
+        :param _RetryInterval: Call retry interval, in seconds, [60 - 86,400].
+        :type RetryInterval: int
+        :param _StartTime: Task start time. unix timestamp. the task will automatically start after this time.
+        :type StartTime: int
+        :param _EndTime: Task termination time. unix timestamp. the task will automatically terminate after this time.
+        :type EndTime: int
+        :param _IVRId: Specified ivr id.
+        :type IVRId: int
+        :param _RetryTimes: Number of call retries, 0 - 2.
+        :type RetryTimes: int
+        :param _Variables: Custom variable.
+        :type Variables: list of Variable
+        :param _UUI: 	UUI
+        :type UUI: str
+        :param _CalleeAttributes: Property of the called.
+        :type CalleeAttributes: list of CalleeAttribute
+        """
+        self._SdkAppId = None
+        self._CampaignId = None
+        self._Name = None
+        self._Callees = None
+        self._Callers = None
+        self._CallOrder = None
+        self._SkillGroupId = None
+        self._Priority = None
+        self._ExpectedAbandonRate = None
+        self._RetryInterval = None
+        self._StartTime = None
+        self._EndTime = None
+        self._IVRId = None
+        self._RetryTimes = None
+        self._Variables = None
+        self._UUI = None
+        self._CalleeAttributes = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def CampaignId(self):
+        r"""Generated task id.
+        :rtype: int
+        """
+        return self._CampaignId
+
+    @CampaignId.setter
+    def CampaignId(self, CampaignId):
+        self._CampaignId = CampaignId
+
+    @property
+    def Name(self):
+        r"""Task name.
+        :rtype: str
+        """
+        return self._Name
+
+    @Name.setter
+    def Name(self, Name):
+        self._Name = Name
+
+    @property
+    def Callees(self):
+        r"""Called list supporting e.164 or number formats without country code.
+        :rtype: list of str
+        """
+        return self._Callees
+
+    @Callees.setter
+    def Callees(self, Callees):
+        self._Callees = Callees
+
+    @property
+    def Callers(self):
+        r"""Calling list using the number formats displayed on the management side.
+        :rtype: list of str
+        """
+        return self._Callers
+
+    @Callers.setter
+    def Callers(self, Callers):
+        self._Callers = Callers
+
+    @property
+    def CallOrder(self):
+        r"""Being called sequence: 0 for random 1 for in order.
+        :rtype: int
+        """
+        return self._CallOrder
+
+    @CallOrder.setter
+    def CallOrder(self, CallOrder):
+        self._CallOrder = CallOrder
+
+    @property
+    def SkillGroupId(self):
+        r"""ID of the used skill group of agents.
+        :rtype: int
+        """
+        return self._SkillGroupId
+
+    @SkillGroupId.setter
+    def SkillGroupId(self, SkillGroupId):
+        self._SkillGroupId = SkillGroupId
+
+    @property
+    def Priority(self):
+        r"""Running priority of multiple tasks in the same application, from high to low 1 - 5.
+        :rtype: int
+        """
+        return self._Priority
+
+    @Priority.setter
+    def Priority(self, Priority):
+        self._Priority = Priority
+
+    @property
+    def ExpectedAbandonRate(self):
+        r"""Expected call drop rate, percentage, 5 - 50.	.	
+        :rtype: int
+        """
+        return self._ExpectedAbandonRate
+
+    @ExpectedAbandonRate.setter
+    def ExpectedAbandonRate(self, ExpectedAbandonRate):
+        self._ExpectedAbandonRate = ExpectedAbandonRate
+
+    @property
+    def RetryInterval(self):
+        r"""Call retry interval, in seconds, [60 - 86,400].
+        :rtype: int
+        """
+        return self._RetryInterval
+
+    @RetryInterval.setter
+    def RetryInterval(self, RetryInterval):
+        self._RetryInterval = RetryInterval
+
+    @property
+    def StartTime(self):
+        r"""Task start time. unix timestamp. the task will automatically start after this time.
+        :rtype: int
+        """
+        return self._StartTime
+
+    @StartTime.setter
+    def StartTime(self, StartTime):
+        self._StartTime = StartTime
+
+    @property
+    def EndTime(self):
+        r"""Task termination time. unix timestamp. the task will automatically terminate after this time.
+        :rtype: int
+        """
+        return self._EndTime
+
+    @EndTime.setter
+    def EndTime(self, EndTime):
+        self._EndTime = EndTime
+
+    @property
+    def IVRId(self):
+        r"""Specified ivr id.
+        :rtype: int
+        """
+        return self._IVRId
+
+    @IVRId.setter
+    def IVRId(self, IVRId):
+        self._IVRId = IVRId
+
+    @property
+    def RetryTimes(self):
+        r"""Number of call retries, 0 - 2.
+        :rtype: int
+        """
+        return self._RetryTimes
+
+    @RetryTimes.setter
+    def RetryTimes(self, RetryTimes):
+        self._RetryTimes = RetryTimes
+
+    @property
+    def Variables(self):
+        r"""Custom variable.
+        :rtype: list of Variable
+        """
+        return self._Variables
+
+    @Variables.setter
+    def Variables(self, Variables):
+        self._Variables = Variables
+
+    @property
+    def UUI(self):
+        r"""	UUI
+        :rtype: str
+        """
+        return self._UUI
+
+    @UUI.setter
+    def UUI(self, UUI):
+        self._UUI = UUI
+
+    @property
+    def CalleeAttributes(self):
+        r"""Property of the called.
+        :rtype: list of CalleeAttribute
+        """
+        return self._CalleeAttributes
+
+    @CalleeAttributes.setter
+    def CalleeAttributes(self, CalleeAttributes):
+        self._CalleeAttributes = CalleeAttributes
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        self._CampaignId = params.get("CampaignId")
+        self._Name = params.get("Name")
+        self._Callees = params.get("Callees")
+        self._Callers = params.get("Callers")
+        self._CallOrder = params.get("CallOrder")
+        self._SkillGroupId = params.get("SkillGroupId")
+        self._Priority = params.get("Priority")
+        self._ExpectedAbandonRate = params.get("ExpectedAbandonRate")
+        self._RetryInterval = params.get("RetryInterval")
+        self._StartTime = params.get("StartTime")
+        self._EndTime = params.get("EndTime")
+        self._IVRId = params.get("IVRId")
+        self._RetryTimes = params.get("RetryTimes")
+        if params.get("Variables") is not None:
+            self._Variables = []
+            for item in params.get("Variables"):
+                obj = Variable()
+                obj._deserialize(item)
+                self._Variables.append(obj)
+        self._UUI = params.get("UUI")
+        if params.get("CalleeAttributes") is not None:
+            self._CalleeAttributes = []
+            for item in params.get("CalleeAttributes"):
+                obj = CalleeAttribute()
+                obj._deserialize(item)
+                self._CalleeAttributes.append(obj)
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class UpdatePredictiveDialingCampaignResponse(AbstractModel):
+    r"""UpdatePredictiveDialingCampaign response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._RequestId = None
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        self._RequestId = params.get("RequestId")
+
+
+class UploadAudioInfo(AbstractModel):
+    r"""Upload Audio File Information
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _CustomFileName: File alias (can be duplicated).
+        :type CustomFileName: str
+        :param _AudioUrl: Audio file link (supports mp3 and wav formats, file size not exceeding 5mb).
+        :type AudioUrl: str
+        """
+        self._CustomFileName = None
+        self._AudioUrl = None
+
+    @property
+    def CustomFileName(self):
+        r"""File alias (can be duplicated).
+        :rtype: str
+        """
+        return self._CustomFileName
+
+    @CustomFileName.setter
+    def CustomFileName(self, CustomFileName):
+        self._CustomFileName = CustomFileName
+
+    @property
+    def AudioUrl(self):
+        r"""Audio file link (supports mp3 and wav formats, file size not exceeding 5mb).
+        :rtype: str
+        """
+        return self._AudioUrl
+
+    @AudioUrl.setter
+    def AudioUrl(self, AudioUrl):
+        self._AudioUrl = AudioUrl
+
+
+    def _deserialize(self, params):
+        self._CustomFileName = params.get("CustomFileName")
+        self._AudioUrl = params.get("AudioUrl")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class UploadIvrAudioFailedInfo(AbstractModel):
+    r"""Failed to upload audio file information
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _FileName: Filename.
+        :type FileName: str
+        :param _FailedMsg: Reason for failure.
+        :type FailedMsg: str
+        """
+        self._FileName = None
+        self._FailedMsg = None
+
+    @property
+    def FileName(self):
+        r"""Filename.
+        :rtype: str
+        """
+        return self._FileName
+
+    @FileName.setter
+    def FileName(self, FileName):
+        self._FileName = FileName
+
+    @property
+    def FailedMsg(self):
+        r"""Reason for failure.
+        :rtype: str
+        """
+        return self._FailedMsg
+
+    @FailedMsg.setter
+    def FailedMsg(self, FailedMsg):
+        self._FailedMsg = FailedMsg
+
+
+    def _deserialize(self, params):
+        self._FileName = params.get("FileName")
+        self._FailedMsg = params.get("FailedMsg")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class UploadIvrAudioRequest(AbstractModel):
+    r"""UploadIvrAudio request structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _SdkAppId: Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :type SdkAppId: int
+        :param _AudioList: Audio file list.
+        :type AudioList: list of UploadAudioInfo
+        """
+        self._SdkAppId = None
+        self._AudioList = None
+
+    @property
+    def SdkAppId(self):
+        r"""Application id (required) can be found at https://console.cloud.tencent.com/ccc.
+        :rtype: int
+        """
+        return self._SdkAppId
+
+    @SdkAppId.setter
+    def SdkAppId(self, SdkAppId):
+        self._SdkAppId = SdkAppId
+
+    @property
+    def AudioList(self):
+        r"""Audio file list.
+        :rtype: list of UploadAudioInfo
+        """
+        return self._AudioList
+
+    @AudioList.setter
+    def AudioList(self, AudioList):
+        self._AudioList = AudioList
+
+
+    def _deserialize(self, params):
+        self._SdkAppId = params.get("SdkAppId")
+        if params.get("AudioList") is not None:
+            self._AudioList = []
+            for item in params.get("AudioList"):
+                obj = UploadAudioInfo()
+                obj._deserialize(item)
+                self._AudioList.append(obj)
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class UploadIvrAudioResponse(AbstractModel):
+    r"""UploadIvrAudio response structure.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _FailedFileList: List of files that failed to be uploaded.
+        :type FailedFileList: list of UploadIvrAudioFailedInfo
+        :param _SuccessFileList: List of successfully uploaded files.
+        :type SuccessFileList: list of AudioFileInfo
+        :param _RequestId: The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :type RequestId: str
+        """
+        self._FailedFileList = None
+        self._SuccessFileList = None
+        self._RequestId = None
+
+    @property
+    def FailedFileList(self):
+        r"""List of files that failed to be uploaded.
+        :rtype: list of UploadIvrAudioFailedInfo
+        """
+        return self._FailedFileList
+
+    @FailedFileList.setter
+    def FailedFileList(self, FailedFileList):
+        self._FailedFileList = FailedFileList
+
+    @property
+    def SuccessFileList(self):
+        r"""List of successfully uploaded files.
+        :rtype: list of AudioFileInfo
+        """
+        return self._SuccessFileList
+
+    @SuccessFileList.setter
+    def SuccessFileList(self, SuccessFileList):
+        self._SuccessFileList = SuccessFileList
+
+    @property
+    def RequestId(self):
+        r"""The unique request ID, generated by the server, will be returned for every request (if the request fails to reach the server for other reasons, the request will not obtain a RequestId). RequestId is required for locating a problem.
+        :rtype: str
+        """
+        return self._RequestId
+
+    @RequestId.setter
+    def RequestId(self, RequestId):
+        self._RequestId = RequestId
+
+
+    def _deserialize(self, params):
+        if params.get("FailedFileList") is not None:
+            self._FailedFileList = []
+            for item in params.get("FailedFileList"):
+                obj = UploadIvrAudioFailedInfo()
+                obj._deserialize(item)
+                self._FailedFileList.append(obj)
+        if params.get("SuccessFileList") is not None:
+            self._SuccessFileList = []
+            for item in params.get("SuccessFileList"):
+                obj = AudioFileInfo()
+                obj._deserialize(item)
+                self._SuccessFileList.append(obj)
+        self._RequestId = params.get("RequestId")
+
+
+class Variable(AbstractModel):
+    r"""Variable.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Key: Variable name.
+        :type Key: str
+        :param _Value: Variable value.
+        :type Value: str
+        """
+        self._Key = None
+        self._Value = None
+
+    @property
+    def Key(self):
+        r"""Variable name.
+        :rtype: str
+        """
+        return self._Key
+
+    @Key.setter
+    def Key(self, Key):
+        self._Key = Key
+
+    @property
+    def Value(self):
+        r"""Variable value.
+        :rtype: str
+        """
+        return self._Value
+
+    @Value.setter
+    def Value(self, Value):
+        self._Value = Value
+
+
+    def _deserialize(self, params):
+        self._Key = params.get("Key")
+        self._Value = params.get("Value")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
+
+
+class ZHToneWordsInfo(AbstractModel):
+    r"""Undertake filler word.
+
+    """
+
+    def __init__(self):
+        r"""
+        :param _Neutral: Specifies the word list.
+        :type Neutral: list of str
+        :param _Positive: Positive word list.
+        :type Positive: list of str
+        :param _Negative: Negative word list.
+        :type Negative: list of str
+        """
+        self._Neutral = None
+        self._Positive = None
+        self._Negative = None
+
+    @property
+    def Neutral(self):
+        r"""Specifies the word list.
+        :rtype: list of str
+        """
+        return self._Neutral
+
+    @Neutral.setter
+    def Neutral(self, Neutral):
+        self._Neutral = Neutral
+
+    @property
+    def Positive(self):
+        r"""Positive word list.
+        :rtype: list of str
+        """
+        return self._Positive
+
+    @Positive.setter
+    def Positive(self, Positive):
+        self._Positive = Positive
+
+    @property
+    def Negative(self):
+        r"""Negative word list.
+        :rtype: list of str
+        """
+        return self._Negative
+
+    @Negative.setter
+    def Negative(self, Negative):
+        self._Negative = Negative
+
+
+    def _deserialize(self, params):
+        self._Neutral = params.get("Neutral")
+        self._Positive = params.get("Positive")
+        self._Negative = params.get("Negative")
+        memeber_set = set(params.keys())
+        for name, value in vars(self).items():
+            property_name = name[1:]
+            if property_name in memeber_set:
+                memeber_set.remove(property_name)
+        if len(memeber_set) > 0:
+            warnings.warn("%s fileds are useless." % ",".join(memeber_set))
+        
